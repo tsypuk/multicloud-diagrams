@@ -10,6 +10,8 @@ packages = [{include = "multicloud_diagrams"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 
+[tool.poetry.group.dev.dependencies]
+git-changelog = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]
