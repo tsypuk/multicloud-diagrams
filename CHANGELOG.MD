@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.2.2](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.2.2) - 2023-05-14
+
+<small>[Compare with 0.2.1](https://github.com/tsypuk/multicloud-diagrams/compare/0.2.1...0.2.2)</small>
+
+### Docs
+
+- updated project details ([3cc1796](https://github.com/tsypuk/multicloud-diagrams/commit/3cc17965a991268c818539e8c140cdf862cbe59d) by Roman Tsypuk).
+
 ## [0.2.1](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.2.1) - 2023-05-14
 
 <small>[Compare with 0.2.0](https://github.com/tsypuk/multicloud-diagrams/compare/0.2.0...0.2.1)</small>
