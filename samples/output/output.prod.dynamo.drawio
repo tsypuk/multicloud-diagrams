@@ -1,0 +1,42 @@
+<mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
+	<diagram id="diagram_1" name="AWS components">
+		<mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+			<root>
+				<mxCell id="0" />
+				<mxCell id="1" parent="0" />
+				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table &lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Capacity mode&lt;/b&gt;: PAY_PER_REQUEST&lt;BR&gt;&lt;b&gt;DeletionProtectionEnabled&lt;/b&gt;: False&lt;BR&gt;&lt;b&gt;ItemCount&lt;/b&gt;: 10000&lt;BR&gt;&lt;b&gt;Replicas&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;TableSizeBytes&lt;/b&gt;: 99999" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
+					<!--vertex:prod-dynamo-table-->
+					<mxGeometry width="72" height="81" as="geometry" x="218" />
+				</mxCell>
+				<mxCell id="vertex:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" value="&lt;b&gt;Name&lt;/b&gt;: 2023-14-12T08:29:21.074&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream &lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;LatestStreamLabel&lt;/b&gt;: 2023-04-14T08:29:21.074&lt;BR&gt;&lt;b&gt;StreamViewType&lt;/b&gt;: NEW_AND_OLD_IMAGES" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.dynamodb_stream" parent="1" vertex="1">
+					<!--vertex:2023-14-12T08:29:21.074-->
+					<mxGeometry width="78" height="78" as="geometry" y="303" />
+				</mxCell>
+				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" edge="2">
+					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream-->
+					<mxGeometry as="geometry" />
+				</mxCell>
+				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" value="DynamoDBStream" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" vertex="1" connectable="0">
+					<mxGeometry relative="1" as="geometry">
+						<mxPoint as="offset" />
+					</mxGeometry>
+				</mxCell>
+				<mxCell id="vertex:Schema:prod-dynamo-table:list" value="&lt;b&gt;Schema:prod-dynamo-table&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+					<mxGeometry width="300" height="60" as="geometry" x="462" y="351.5" />
+				</mxCell>
+				<mxCell id="vertex:Schema:prod-dynamo-table:row:0" value="recordId : HASH" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Schema:prod-dynamo-table:list" vertex="1">
+					<mxGeometry width="300" height="30" as="geometry" y="30" />
+				</mxCell>
+				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:Schema:prod-dynamo-table:list" edge="2">
+					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list-->
+					<mxGeometry as="geometry" />
+				</mxCell>
+				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list" value="Key Schema" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list" vertex="1" connectable="0">
+					<mxGeometry relative="1" as="geometry">
+						<mxPoint as="offset" />
+					</mxGeometry>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>
