@@ -2,7 +2,7 @@
 venv/
 
 dist/
-
+/__pycache__/
 *.iml
 
 

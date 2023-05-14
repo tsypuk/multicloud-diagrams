@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "samples"
+version = "0.1.0"
+description = "Sample code example HOW-TO use multicloud-diagrams"
+authors = ["Roman Tsypuk <tsypuk.conf@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+multicloud-diagrams = "^0.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

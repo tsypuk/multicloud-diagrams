@@ -148,7 +148,7 @@ class MultiCloudDiagrams:
                 if 'y' in self.prev_coords[f'vertex:{table_name}:row:{index}']:
                     mx_geometry.set('y', self.prev_coords[f'vertex:{table_name}:row:{index}']['y'])
 
-    def add_vertex(self, id: str, node_name: str, ARN: str, metadata='', node_type=''):
+    def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_type=''):
 
         # check that there is no such vertex already
         exist = False
@@ -168,7 +168,7 @@ class MultiCloudDiagrams:
                                     'mxCell',
                                     id=f'vertex:{node_type}:{id}',
                                     # id = f'vertex:{ARN}',
-                                    value=f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {ARN} {stringified_metadata}',
+                                    value=f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn} {stringified_metadata}',
                                     style=("verticalLabelPosition=bottom;"
                                            "html=1;"
                                            "verticalAlign=top;"
