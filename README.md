@@ -40,14 +40,14 @@ Generating `drawio` diagrams from the code (Diagrams as a Code) for popular Amaz
 
 - Output compiled [drawio diagram](samples/output/output.prod.dynamo.drawio):
 
-![output.prod.dynamo.png](samples/output/png/output.prod.dynamo.png)
+![output.prod.dynamo.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.dynamo.png)
 
 #### AWS IAM Graph
 
 - Source [aws_dynamo.py](samples/samples/aws_dynamo.py)
 - Output compiled [drawio diagram](samples/output/output.prod.iam-roles.drawio)
 
-![output.prod.iam-roles.png](samples/output/png/output.prod.iam-roles.png)
+![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles.png)
 
 ### FYI:
 
