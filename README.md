@@ -43,7 +43,7 @@ Generating `drawio` diagrams from the code (Diagrams as a Code) for popular Amaz
 
 #### AWS IAM Graph
 
-- Source [aws_dynamo.py](samples/samples/aws_dynamo.py)
+- Source [aws_dynamo.py](samples/samples/aws_iam_roles.py)
 - Output compiled [drawio diagram](samples/output/output.prod.iam-roles.drawio)
 
 ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles.png?raw=True)
