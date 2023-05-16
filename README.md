@@ -3,7 +3,6 @@ MultiCloud Diagrams is a package for generating and rendering Diagrams-As-a-Code
 - you can use it by defining ``Diagrams as a Code``, compile to drawio vector format, edit vector drawio representation (align components location).
 - other option is to query infrastructure elements with popular libraries, like aws boto, preprocess desired elements and compile them into drawio using ``multicloud-diagrams``.
 
-
 - **Source code:** https://github.com/tsypuk/multicloud-diagrams
 - **PyPI multicloud-diagrams:** https://pypi.org/project/multicloud-diagrams/
 - **Sponsor project:** https://patreon.com/tsypuk
@@ -36,15 +35,15 @@ Generating `drawio` diagrams from the code (Diagrams as a Code) for popular Amaz
 
 #### AWS DynamoDB Details
 
-- Source [aws_dynamo.py](samples/samples/aws_dynamo.py)
+- Source [aws_dynamo.py](https://github.com/tsypuk/multicloud-diagrams/samples/samples/aws_dynamo.py)
+- Output compiled [drawio diagram](https://github.com/tsypuk/multicloud-diagrams/samples/output/output.prod.dynamo.drawio):
 
-- Output compiled [drawio diagram](samples/output/output.prod.dynamo.drawio):
 ![output.prod.dynamo.png](https://github.com/tsypuk/multicloud-diagrams/raw/main/samples/output/png/output.prod.dynamo.png?raw=True)
 
 #### AWS IAM Graph
 
-- Source [aws_dynamo.py](samples/samples/aws_iam_roles.py)
-- Output compiled [drawio diagram](samples/output/output.prod.iam-roles.drawio)
+- Source [aws_dynamo.py](https://github.com/tsypuk/multicloud-diagrams/samples/samples/aws_iam_roles.py)
+- Output compiled [drawio diagram](https://github.com/tsypuk/multicloud-diagrams/samples/output/output.prod.iam-roles.drawio)
 
 ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles.png?raw=True)
 
