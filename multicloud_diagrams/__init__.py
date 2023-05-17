@@ -2,6 +2,8 @@ import xml.etree.ElementTree as et
 import logging
 import os.path
 
+import yaml
+
 
 class MultiCloudDiagrams:
     def __init__(self):
@@ -296,6 +298,35 @@ class MultiCloudDiagrams:
         for link in links:
             self.add_link(src_node_id=link['sourceNodeID'], dst_node_id=link['destinationNodeID'])
         return
+
+    def augment_from_yaml(self, yaml_name: str):
+        with open(yaml_name, 'r') as file:
+            data = yaml.safe_load(file)
+            for vertex in data['vertices']:
+                self.add_vertex(
+                    id=vertex['arn'],
+                    node_name=vertex['name'],
+                    arn=vertex['arn'],
+                    node_type=vertex['type'],
+                    # optional attributes
+                    metadata={},
+                    # icon
+                )
+            for edge in data['edges']:
+                self.add_link(
+                    src_node_id=self._build_vertex_id(data['vertices'], edge, 'src'),
+                    dst_node_id=self._build_vertex_id(data['vertices'], edge, 'dst'),
+                    action=[edge['label']]
+                )
+
+    def _build_vertex_id(self, vertex_details, edge, src_dst_marker: str):
+        resource = {}
+        if f'{src_dst_marker}_arn' in edge:
+            resource["type"] = edge[f"{src_dst_marker}_type"]
+            resource["arn"] = edge[f'{src_dst_marker}_arn']
+        elif src_dst_marker in edge:
+            resource = [vertex for vertex in vertex_details if vertex['name'] == edge[src_dst_marker]][0]
+        return f'{resource["type"]}:{resource["arn"]}'
 
     def read_coords_from_file(self, file_name: str):
         if os.path.isfile(file_name):

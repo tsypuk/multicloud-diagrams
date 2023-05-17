@@ -3,6 +3,7 @@ venv/
 
 dist/
 /__pycache__/
+tests/__pycache__/
 multicloud_diagrams/__pycache__/
 *.iml
 
