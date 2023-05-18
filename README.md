@@ -76,8 +76,8 @@ MultiCloud Diagrams is a package for generating and rendering Diagrams-As-a-Code
         }
 ```
 
-- Source [aws_dynamo_boto3_response.py](https://github.com/tsypuk/multicloud-diagrams/samples/samples/aws_dynamo_boto3_response.py)
-- Output compiled [output.prod.dynamo.drawio](https://github.com/tsypuk/multicloud-diagrams/samples/output/output.prod.dynamo.drawio):
+- Source [aws_dynamo_boto3_response.py](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/samples/aws_dynamo_boto3_response.py)
+- Output compiled [output.prod.dynamo.drawio](https://raw.githubusercontent.com/tsypuk/multicloud-diagrams/main/samples/output/output.prod.dynamo.drawio):
 
 ![output.prod.dynamo.png](https://github.com/tsypuk/multicloud-diagrams/raw/main/samples/output/png/output.prod.dynamo.png?raw=True)
 
@@ -136,8 +136,8 @@ MultiCloud Diagrams is a package for generating and rendering Diagrams-As-a-Code
     mcd.add_link(src_node_id=f'lambda_function:{consumer_func_arn}', dst_node_id=f'dynamo:{dynamo_arn}')
 ```
 
-- Source [aws_service_end_2_end](https://github.com/tsypuk/multicloud-diagrams/samples/samples/aws_service_end_2_end.py)
-- Output compiled [output.prod.end2end.drawio](https://github.com/tsypuk/multicloud-diagrams/samples/output/output.prod.end2end.drawio)
+- Source [aws_service_end_2_end](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/samples/aws_service_end_2_end.py)
+- Output compiled [output.prod.end2end.drawio](https://raw.githubusercontent.com/tsypuk/multicloud-diagrams/main/samples/output/output.prod.end2end.drawio)
 
 ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.end2end.png?raw=True)
 
@@ -182,11 +182,10 @@ edges:
     label: Allow DynamoDB read access,
     link_type: none }
 ```
+- Source [aws_iam_from_yaml.py](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/samples/aws_iam_from_yaml.py)
+- Output compiled [output.prod.iam-roles-from-yaml.drawio](https://raw.githubusercontent.com/tsypuk/multicloud-diagrams/main/samples/output/output.prod.iam-roles-from-yaml.drawio)
 
-- Source [aws_iam_from_yaml.py](https://github.com/tsypuk/multicloud-diagrams/samples/samples/[aws_iam_from_yaml.py)
-- Output compiled [output.prod.iam-roles-from-yaml.drawio](https://github.com/tsypuk/multicloud-diagrams/samples/output/output.prod.iam-roles-from-yaml.drawio)
-
-![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles-from-yaml.png?raw=True)
+- ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles-from-yaml.png?raw=True)
 
 
 ### FYI:
