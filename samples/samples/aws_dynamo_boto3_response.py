@@ -149,7 +149,7 @@ def prepare_data_model(mcd):
     rows_keys = []
     for attribute in dynamo_table['KeySchema']:
         rows_keys.append(attribute['AttributeName'] + ' : ' + attribute['KeyType'])
-    mcd.add_list(f'Schema:{table_name}', rows=rows_keys)
+    mcd.add_list(table_name=f'Schema:{table_name}', rows=rows_keys)
     mcd.add_link(f'dynamo:{table_arn}', f'Schema:{table_name}:list', action=['Key Schema'])
 
     # Attributes
@@ -164,7 +164,7 @@ def prepare_data_model(mcd):
         attributes = []
         for attribute in dynamo_table['LocalSecondaryIndexes']:
             attributes.append('IndexName: ' + attribute['IndexName'])
-        mcd.add_list(f'LSIs:{table_name}', rows=attributes)
+        mcd.add_list(table_name=f'LSIs:{table_name}', rows=attributes)
         mcd.add_link(f'dynamo:{table_arn}', f'LSIs:{table_name}:list', action=['index: LSI'])
 
         for attribute in dynamo_table['LocalSecondaryIndexes']:
@@ -181,7 +181,7 @@ def prepare_data_model(mcd):
             rows_schema = rows_schema.rstrip(rows_schema[-1]) + '}'
             attributes.append('Schema: ' + rows_schema)
 
-            mcd.add_list(f'LSI:{table_name}-{index_name}', rows=attributes)
+            mcd.add_list(table_name=f'LSI:{table_name}-{index_name}', rows=attributes)
             mcd.add_link(f'LSIs:{table_name}:list', f'LSI:{table_name}-{index_name}:list', action=[f'LSI : {index_name}'])
 
     # Global Secondary Indexes
@@ -189,7 +189,7 @@ def prepare_data_model(mcd):
         rows = []
         for attribute in dynamo_table['GlobalSecondaryIndexes']:
             rows.append('IndexName: ' + attribute['IndexName'])
-        mcd.add_list(f'GSIs:{table_name}', rows=rows)
+        mcd.add_list(table_name=f'GSIs:{table_name}', rows=rows)
         mcd.add_link(f'dynamo:{table_arn}', f'GSIs:{table_name}:list', action=['index: GSI'])
 
         for attribute in dynamo_table['GlobalSecondaryIndexes']:
@@ -209,7 +209,7 @@ def prepare_data_model(mcd):
             rows_schema = rows_schema.rstrip(rows_schema[-1]) + '}'
             rows.append('Schema: ' + rows_schema)
 
-            mcd.add_list(f'GSI:{table_name}-{index_name}', rows=rows)
+            mcd.add_list(table_name=f'GSI:{table_name}-{index_name}', rows=rows)
             mcd.add_link(f'GSIs:{table_name}:list', f'GSI:{table_name}-{index_name}:list', action=[f'GSI : {index_name}'])
 
 

@@ -45,15 +45,22 @@ class MultiCloudDiagrams:
         else:
             return ''
 
-    def add_list(self, table_id: str, table_name='', rows=[], width="300"):
+    # green fillColor=#d5e8d4
+    # red fillColor=#f8cecc;"
+    def add_list(self, table_id='', table_name='', fillColor='', rows=[], width="300"):
+        if not table_id:
+            table_id = table_name
+
+        style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
+
+        if fillColor:
+            style += f"fillColor={fillColor}"
 
         mx_cell = et.SubElement(self.root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
-                                style=("swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;"
-                                       "startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;"
-                                       "collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"),
+                                style=(style),
                                 parent="1",
                                 vertex="1")
 
