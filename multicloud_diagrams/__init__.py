@@ -45,12 +45,11 @@ class MultiCloudDiagrams:
         else:
             return ''
 
-    def add_list(self, table_name='', rows=[]):
-        width = "300"
+    def add_list(self, table_id: str, table_name='', rows=[], width="300"):
 
         mx_cell = et.SubElement(self.root,
                                 'mxCell',
-                                id=f'vertex:{table_name}:list',
+                                id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
                                 style=("swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;"
                                        "startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;"
@@ -63,31 +62,31 @@ class MultiCloudDiagrams:
         mx_geometry.set('as', 'geometry')
 
         # Position Vertex based on X,Y cords
-        if f'vertex:{table_name}:list' in self.prev_coords:
-            if 'x' in self.prev_coords[f'vertex:{table_name}:list']:
-                mx_geometry.set('x', self.prev_coords[f'vertex:{table_name}:list']['x'])
-            if 'y' in self.prev_coords[f'vertex:{table_name}:list']:
-                mx_geometry.set('y', self.prev_coords[f'vertex:{table_name}:list']['y'])
+        if f'vertex:{table_id}:list' in self.prev_coords:
+            if 'x' in self.prev_coords[f'vertex:{table_id}:list']:
+                mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:list']['x'])
+            if 'y' in self.prev_coords[f'vertex:{table_id}:list']:
+                mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:list']['y'])
 
         for index, item in enumerate(rows):
             mx_cell = et.SubElement(self.root,
                                     'mxCell',
-                                    id=f'vertex:{table_name}:row:{index}',
+                                    id=f'vertex:{table_id}:row:{index}',
                                     value=item,
                                     style=("text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;"
                                            "spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];"
                                            "portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;"),
-                                    parent=f'vertex:{table_name}:list',
+                                    parent=f'vertex:{table_id}:list',
                                     vertex="1")
 
             mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
             mx_geometry.set('as', 'geometry')
             # Position Vertex based on X,Y cords
-            if f'vertex:{table_name}:row:{index}' in self.prev_coords:
-                if 'x' in self.prev_coords[f'vertex:{table_name}:row:{index}']:
-                    mx_geometry.set('x', self.prev_coords[f'vertex:{table_name}:row:{index}']['x'])
-                if 'y' in self.prev_coords[f'vertex:{table_name}:row:{index}']:
-                    mx_geometry.set('y', self.prev_coords[f'vertex:{table_name}:row:{index}']['y'])
+            if f'vertex:{table_id}:row:{index}' in self.prev_coords:
+                if 'x' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
+                    mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:row:{index}']['x'])
+                if 'y' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
+                    mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:row:{index}']['y'])
 
     def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_type=''):
 
