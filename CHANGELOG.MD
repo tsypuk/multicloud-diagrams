@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.2](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.2) - 2023-06-15
+
+<small>[Compare with 0.3.1](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.1...0.3.2)</small>
+
+### Features
+
+- add ID,width to list element drawio ([d7b8764](https://github.com/tsypuk/multicloud-diagrams/commit/d7b87646e54bed3a94c9821063cd809240335c71) by Roman Tsypuk).
+- Moved fallback icons to dedicated file. Added loading all cloud providers. updated augmented_resources.yaml ([182b2fc](https://github.com/tsypuk/multicloud-diagrams/commit/182b2fc94d0555f0a5f134de36dfb84de5998ba3) by Roman Tsypuk).
+
 ## [0.3.1](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.1) - 2023-05-18
 
 <small>[Compare with 0.3.0](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.0...0.3.1)</small>
