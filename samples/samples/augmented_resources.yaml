@@ -6,7 +6,6 @@ vertices:
     type: iam_role
     arn: arn:aws:iam::123456789:role/prod-lambda-name
   - name: prod-cloudwatch-policy
-    icon: broker
     type: iam_policy
     arn: arn:aws:iam::123456789:policy/prod-cloudwatch-policy
   - name: prod-s3-policy
