@@ -187,6 +187,16 @@ edges:
 
 - ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles-from-yaml.png?raw=True)
 
+```shell
+poetry build
+export PYPI_USERNAME=
+export PYPI_PASSWORD=
+poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
+
+cd samples/samples
+poetry install
+poetry run python aws_iam_roles_from_code_with_enum.py
+```
 
 ### FYI:
 
