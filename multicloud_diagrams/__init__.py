@@ -101,6 +101,11 @@ class MultiCloudDiagrams:
                 mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:list']['x'])
             if 'y' in self.prev_coords[f'vertex:{table_id}:list']:
                 mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:list']['y'])
+            if 'height' in self.prev_coords[f'vertex:{table_id}:list']:
+                mx_geometry.set('height', self.prev_coords[f'vertex:{table_id}:list']['height'])
+            if 'width' in self.prev_coords[f'vertex:{table_id}:list']:
+                mx_geometry.set('width', self.prev_coords[f'vertex:{table_id}:list']['width'])
+
 
         for index, item in enumerate(rows):
             mx_cell = et.SubElement(self.root,
@@ -121,6 +126,10 @@ class MultiCloudDiagrams:
                     mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:row:{index}']['x'])
                 if 'y' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
                     mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:row:{index}']['y'])
+                if 'height' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
+                    mx_geometry.set('height', self.prev_coords[f'vertex:{table_id}:row:{index}']['height'])
+                if 'width' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
+                    mx_geometry.set('width', self.prev_coords[f'vertex:{table_id}:row:{index}']['width'])
 
     def add_service(self, id: str, node_name: str, arn: str, metadata='', node_enum=Services):
         # Type checking
@@ -170,6 +179,10 @@ class MultiCloudDiagrams:
                     mx_geometry.set('x', self.prev_coords[f'vertex:{node_type}:{id}']['x'])
                 if 'y' in self.prev_coords[f'vertex:{node_type}:{id}']:
                     mx_geometry.set('y', self.prev_coords[f'vertex:{node_type}:{id}']['y'])
+                if 'height' in self.prev_coords[f'vertex:{node_type}:{id}']:
+                    mx_geometry.set('height', self.prev_coords[f'vertex:{node_type}:{id}']['height'])
+                if 'width' in self.prev_coords[f'vertex:{node_type}:{id}']:
+                    mx_geometry.set('width', self.prev_coords[f'vertex:{node_type}:{id}']['width'])
 
     def add_vertex_list(self, vertexes):
         for vertex in vertexes:
@@ -319,6 +332,10 @@ class MultiCloudDiagrams:
                         cords['x'] = data.get('x')
                     if data.get('y') is not None:
                         cords['y'] = data.get('y')
+                    if data.get('height') is not None:
+                        cords['height'] = data.get('height')
+                    if data.get('width') is not None:
+                        cords['width'] = data.get('width')
                     self.prev_coords[neighbor.get('id')] = cords
 
     def export_to_file(self, file_path):
