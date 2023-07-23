@@ -3,7 +3,34 @@ import xml.etree.ElementTree as et
 import logging
 import os.path
 import pkgutil
+from enum import Enum
+from typing import Union
+
 import yaml
+
+
+class AWS(Enum):
+    lambda_function = "lambda_function"
+    sqs = "sqs"
+    sns = "sns"
+    iam_role = "iam_role"
+    iam_policy = "iam_policy"
+    iam_permission = "iam_permission"
+    dynamo = "dynamo"
+    dynamo_stream = "dynamo_stream"
+    api_gw = "api_gw"
+    s3 = "s3"
+    kms = "kms"
+    ssm = "ssm"
+    mq = "mq"
+
+
+class OnPrem(Enum):
+    http = "http"
+    mq_broker = "mq_broker"
+
+
+Services = Union[AWS, OnPrem]
 
 
 class MultiCloudDiagrams:
@@ -51,7 +78,7 @@ class MultiCloudDiagrams:
         if not table_id:
             table_id = table_name
 
-        style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
+        style = "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
 
         if fillColor:
             style += f"fillColor={fillColor}"
@@ -94,6 +121,12 @@ class MultiCloudDiagrams:
                     mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:row:{index}']['x'])
                 if 'y' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
                     mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:row:{index}']['y'])
+
+    def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_enum=Services):
+        # Type checking
+        if not isinstance(node_enum, self.Services):
+            raise TypeError('direction must be an instance of Direction Enum')
+        self.add_vertex(self, id=id, node_name=node_name, arn=arn, metadata=metadata, node_type=node_enum.value)
 
     def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_type=''):
 
