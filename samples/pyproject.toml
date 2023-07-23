@@ -7,7 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-multicloud-diagrams = "^0.3.4"
+pyyaml = "^6.0"
+#multicloud-diagrams = "^0.3.4"
+multicloud-diagrams = {path = "../", develop = true}
 
 
 [build-system]

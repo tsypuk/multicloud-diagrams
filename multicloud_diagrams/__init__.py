@@ -122,11 +122,11 @@ class MultiCloudDiagrams:
                 if 'y' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
                     mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:row:{index}']['y'])
 
-    def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_enum=Services):
+    def add_service(self, id: str, node_name: str, arn: str, metadata='', node_enum=Services):
         # Type checking
-        if not isinstance(node_enum, self.Services):
-            raise TypeError('direction must be an instance of Direction Enum')
-        self.add_vertex(self, id=id, node_name=node_name, arn=arn, metadata=metadata, node_type=node_enum.value)
+        if not isinstance(node_enum, Services):
+            raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
+        self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
     def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_type=''):
 
