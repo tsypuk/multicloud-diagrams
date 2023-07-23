@@ -106,12 +106,12 @@ class MultiCloudDiagrams:
             if 'width' in self.prev_coords[f'vertex:{table_id}:list']:
                 mx_geometry.set('width', self.prev_coords[f'vertex:{table_id}:list']['width'])
 
-
         for index, item in enumerate(rows):
+            name, value = item.split(":", 1)
             mx_cell = et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{table_id}:row:{index}',
-                                    value=item,
+                                    value=f'<b>{name}</b>: {value}',
                                     style=("text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;"
                                            "spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];"
                                            "portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;"),
