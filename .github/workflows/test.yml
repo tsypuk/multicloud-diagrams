@@ -1,0 +1,33 @@
+name: Run tests
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/test.yml"
+      - "**.py"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/test.yml"
+      - "**.py"
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        python: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install poetry
+        run: pip install poetry
+      - name: Run all tests
+        run: |
+          poetry install
+          poetry run python -m unittest -v tests/*.py
