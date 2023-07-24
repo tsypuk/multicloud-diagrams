@@ -1,4 +1,13 @@
-MultiCloud Diagrams is a package for generating and rendering Diagrams-As-a-Code (DAG) in popular drawio format for different Cloud providers.
+# MultiCloud Diagrams
+
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![PyPI version](https://badge.fury.io/py/multicloud-diagrams.svg)](https://badge.fury.io/py/multicloud-diagrams)
+![python version](https://img.shields.io/badge/python-%3E%3D%203.10-blue?logo=python)
+
+Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` format for multiple Cloud providers.
+
+<a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 
 - you can use it by defining ``Diagrams as a Code``, compile to drawio vector format, edit vector drawio representation (align components location).
 - other option is to query infrastructure elements with popular libraries, like aws boto, preprocess desired elements and compile them into drawio using ``multicloud-diagrams``.
@@ -9,6 +18,13 @@ MultiCloud Diagrams is a package for generating and rendering Diagrams-As-a-Code
 - **View changelog:** https://github.com/tsypuk/multicloud-diagrams/blob/main/CHANGELOG.MD
 - **Bug reports:** https://github.com/tsypuk/multicloud-diagrams/issues
 - **Samples and examples:** https://github.com/tsypuk/multicloud-diagrams/tree/main/samples/samples
+
+## Supported Cloud Provides
+
+![aws provider](https://img.shields.io/badge/AWS-orange?logo=amazon-aws&color=ff9900)
+![azure provider](https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6)
+![gcp provider](https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4)
+![on premise provider](https://img.shields.io/badge/OnPremise-orange?color=5f87bf)
 
 ### Features:
 - allows to generate drawio diagram with predefined styles for popular aws services, support graph-based connection with named edges
