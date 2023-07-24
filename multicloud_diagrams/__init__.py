@@ -264,6 +264,12 @@ class MultiCloudDiagrams:
                     # <mxPoint as="offset"/>
                     mx_geometry = et.SubElement(mx_geometry, 'mxPoint')
                     mx_geometry.set('as', 'offset')
+                    if f'label:{src_node_id}:to:{dest_node_id}' in self.prev_coords:
+                        if 'x' in self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']:
+                            mx_geometry.set('x', self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']['x'])
+                        if 'y' in self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']:
+                            mx_geometry.set('y', self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']['y'])
+
                     # </mxGeometry>
                     # </mxCell>
             else:
@@ -336,6 +342,16 @@ class MultiCloudDiagrams:
                         cords['height'] = data.get('height')
                     if data.get('width') is not None:
                         cords['width'] = data.get('width')
+                    self.prev_coords[neighbor.get('id')] = cords
+
+                elif neighbor.get('id').startswith("label:"):
+                    data = neighbor.find('mxGeometry')
+                    mx_point = data.find('mxPoint')
+                    cords = {}
+                    if mx_point.get('x') is not None:
+                        cords['x'] = mx_point.get('x')
+                    if mx_point.get('y') is not None:
+                        cords['y'] = mx_point.get('y')
                     self.prev_coords[neighbor.get('id')] = cords
 
     def export_to_file(self, file_path):
