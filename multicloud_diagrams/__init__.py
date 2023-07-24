@@ -72,22 +72,22 @@ class MultiCloudDiagrams:
         else:
             return ''
 
-    # green fillColor=#d5e8d4
-    # red fillColor=#f8cecc;"
-    def add_list(self, table_id='', table_name='', fillColor='', rows=[], width="300"):
+    # green fill_color=#d5e8d4
+    # red fill_color=#f8cecc;"
+    def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300"):
         if not table_id:
             table_id = table_name
 
         style = "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
 
-        if fillColor:
-            style += f"fillColor={fillColor}"
+        if fill_color:
+            style += f"fillColor={fill_color}"
 
         mx_cell = et.SubElement(self.root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
-                                style=(style),
+                                style=style,
                                 parent="1",
                                 vertex="1")
 
@@ -96,15 +96,7 @@ class MultiCloudDiagrams:
         mx_geometry.set('as', 'geometry')
 
         # Position Vertex based on X,Y cords
-        if f'vertex:{table_id}:list' in self.prev_coords:
-            if 'x' in self.prev_coords[f'vertex:{table_id}:list']:
-                mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:list']['x'])
-            if 'y' in self.prev_coords[f'vertex:{table_id}:list']:
-                mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:list']['y'])
-            if 'height' in self.prev_coords[f'vertex:{table_id}:list']:
-                mx_geometry.set('height', self.prev_coords[f'vertex:{table_id}:list']['height'])
-            if 'width' in self.prev_coords[f'vertex:{table_id}:list']:
-                mx_geometry.set('width', self.prev_coords[f'vertex:{table_id}:list']['width'])
+        self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
 
         for index, item in enumerate(rows):
             name, value = item.split(":", 1)
@@ -121,15 +113,7 @@ class MultiCloudDiagrams:
             mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
             mx_geometry.set('as', 'geometry')
             # Position Vertex based on X,Y cords
-            if f'vertex:{table_id}:row:{index}' in self.prev_coords:
-                if 'x' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
-                    mx_geometry.set('x', self.prev_coords[f'vertex:{table_id}:row:{index}']['x'])
-                if 'y' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
-                    mx_geometry.set('y', self.prev_coords[f'vertex:{table_id}:row:{index}']['y'])
-                if 'height' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
-                    mx_geometry.set('height', self.prev_coords[f'vertex:{table_id}:row:{index}']['height'])
-                if 'width' in self.prev_coords[f'vertex:{table_id}:row:{index}']:
-                    mx_geometry.set('width', self.prev_coords[f'vertex:{table_id}:row:{index}']['width'])
+            self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
 
     def add_service(self, id: str, node_name: str, arn: str, metadata='', node_enum=Services):
         # Type checking
@@ -174,19 +158,26 @@ class MultiCloudDiagrams:
             mx_geometry.set('as', 'geometry')
 
             # Position Vertex based on X,Y cords
-            if f'vertex:{node_type}:{id}' in self.prev_coords:
-                if 'x' in self.prev_coords[f'vertex:{node_type}:{id}']:
-                    mx_geometry.set('x', self.prev_coords[f'vertex:{node_type}:{id}']['x'])
-                if 'y' in self.prev_coords[f'vertex:{node_type}:{id}']:
-                    mx_geometry.set('y', self.prev_coords[f'vertex:{node_type}:{id}']['y'])
-                if 'height' in self.prev_coords[f'vertex:{node_type}:{id}']:
-                    mx_geometry.set('height', self.prev_coords[f'vertex:{node_type}:{id}']['height'])
-                if 'width' in self.prev_coords[f'vertex:{node_type}:{id}']:
-                    mx_geometry.set('width', self.prev_coords[f'vertex:{node_type}:{id}']['width'])
+            self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{node_type}:{id}')
+
+    def update_vertex_coords_width_height_from_prev_version(self, mx_geometry, vertex_id):
+        self.update_vertex_coords_from_prev_version(mx_geometry, vertex_id)
+        if vertex_id in self.prev_coords:
+            if 'height' in self.prev_coords[vertex_id]:
+                mx_geometry.set('height', self.prev_coords[vertex_id]['height'])
+            if 'width' in self.prev_coords[vertex_id]:
+                mx_geometry.set('width', self.prev_coords[vertex_id]['width'])
+
+    def update_vertex_coords_from_prev_version(self, mx_geometry, vertex_id):
+        if vertex_id in self.prev_coords:
+            if 'x' in self.prev_coords[vertex_id]:
+                mx_geometry.set('x', self.prev_coords[vertex_id]['x'])
+            if 'y' in self.prev_coords[vertex_id]:
+                mx_geometry.set('y', self.prev_coords[vertex_id]['y'])
 
     def add_vertex_list(self, vertexes):
         for vertex in vertexes:
-            self.add_vertex(id=vertex['id'], node_name=vertex['nodeName'], metadata=vertex['nodeDescription'],
+            self.add_vertex(id=vertex['id'], arn=vertex[id], node_name=vertex['nodeName'], metadata=vertex['nodeDescription'],
                             node_type=vertex['nodeType'])
         return
 
@@ -264,11 +255,8 @@ class MultiCloudDiagrams:
                     # <mxPoint as="offset"/>
                     mx_geometry = et.SubElement(mx_geometry, 'mxPoint')
                     mx_geometry.set('as', 'offset')
-                    if f'label:{src_node_id}:to:{dest_node_id}' in self.prev_coords:
-                        if 'x' in self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']:
-                            mx_geometry.set('x', self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']['x'])
-                        if 'y' in self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']:
-                            mx_geometry.set('y', self.prev_coords[f'label:{src_node_id}:to:{dest_node_id}']['y'])
+
+                    self.update_vertex_coords_from_prev_version(mx_geometry, f'label:{src_node_id}:to:{dest_node_id}')
 
                     # </mxGeometry>
                     # </mxCell>
