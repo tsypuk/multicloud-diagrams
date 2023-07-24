@@ -48,7 +48,7 @@ Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` format for mu
 - kms
 - ssm
 
-### Library can be used with different approaches and even mix all of them. Samples and usage:
+### Library usage samples:
 
 #### 1. Generating AWS DynamoDB Details drawio diagram based on library, http, awscli, etc. Example based on boto3 DynamoDB response
 
@@ -203,6 +203,8 @@ edges:
 
 - ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles-from-yaml.png?raw=True)
 
+### Publishing 
+
 ```shell
 poetry build
 export PYPI_USERNAME=
@@ -214,6 +216,6 @@ poetry install
 poetry run python aws_iam_roles_from_code_with_enum.py
 ```
 
-### FYI:
+### Contribution Guide:
 
 OpenSource Guide, [How to contribute to opensource](https://opensource.guide/)
