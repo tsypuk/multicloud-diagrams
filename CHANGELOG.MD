@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.9](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.9) - 2023-07-24
+
+<small>[Compare with 0.3.2](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.2...0.3.9)</small>
+
+### Docs
+
+- updated docs ([0ef5b6d](https://github.com/tsypuk/multicloud-diagrams/commit/0ef5b6de770589f3d8c906bd98e2db1591964650) by Roman Tsypuk).
+
+### Features
+
+- coordinates of label on edges are persisted; reload label position from previous version of diagram ([a630f2c](https://github.com/tsypuk/multicloud-diagrams/commit/a630f2cefdc3707b53645275390cce713f95c7b6) by Roman Tsypuk).
+- list element marked with bold key and stroke text for value; added ':' delimiter ([7ac91e4](https://github.com/tsypuk/multicloud-diagrams/commit/7ac91e47227c1e57b7b8f3777dc54e40a72c61da) by Roman Tsypuk).
+- height and width are persisted; loaded from previous diagram version for all nodes and lists ([b9f8437](https://github.com/tsypuk/multicloud-diagrams/commit/b9f84373fa172d459c611d84b19ed9385a768d69) by Roman Tsypuk).
+- added support for mq, http, amazon mq, added call  with enum service ([a92bc42](https://github.com/tsypuk/multicloud-diagrams/commit/a92bc4225323230ce99d8da609c8c25ad1e89b05) by Roman Tsypuk).
+- added table fill for drawio; tableID is optional for backward compatibility ([3bd6351](https://github.com/tsypuk/multicloud-diagrams/commit/3bd635187282d7779d0e4e200960429acd03af54) by Roman Tsypuk).
+
 ## [0.3.2](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.2) - 2023-06-15
 
 <small>[Compare with 0.3.1](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.1...0.3.2)</small>
