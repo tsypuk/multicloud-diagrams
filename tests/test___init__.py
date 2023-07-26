@@ -67,3 +67,21 @@ class TestMultiCloudDiagrams(TestCase):
         result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
         # then
         self.assertEqual('iam_policy:arn:aws:iam::123456789:policy/prod-dynamo-policy', result)
+
+    def test_stringify_dict(self):
+        # given
+        mcd = MultiCloudDiagrams()
+        metadata = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+        # when
+        result = mcd.stringify_dict(metadata)
+        # then
+        self.assertEqual('<BR>-----------<BR><b>key1</b>: value1<BR><b>key2</b>: value2<BR><b>key3</b>: value3', result)
+
+    def test_stringify_dict_empty(self):
+        # given
+        mcd = MultiCloudDiagrams()
+        metadata = {}
+        # when
+        result = mcd.stringify_dict(metadata)
+        # then
+        self.assertEqual('', result)

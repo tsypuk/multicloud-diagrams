@@ -56,17 +56,17 @@ class MultiCloudDiagrams:
         path = pkgutil.get_data(__package__, f'providers/{provider}.json')
         supported_vertex.update(json.loads(path.decode("utf-8")))
 
-    def get_vertex_metadata(self, node_type: str) -> object:
+    def get_vertex_metadata(self, node_type: str) -> dict:
         if node_type in self.supported_vertex:
             return self.supported_vertex[node_type]
         else:
-            logging.warn(
+            logging.warning(
                 f'No such nodeType: {node_type} in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest')
             return self.supported_vertex['fallback_vertex']
 
     @staticmethod
     def stringify_dict(metadata: dict) -> str:
-        if metadata != '':
+        if metadata:
             # return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k.capitalize()}</b>: {v}' for k, v in metadata.items()])
             return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k}</b>: {v}' for k, v in metadata.items()])
         else:
@@ -115,13 +115,13 @@ class MultiCloudDiagrams:
             # Position Vertex based on X,Y cords
             self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
 
-    def add_service(self, id: str, node_name: str, arn: str, metadata='', node_enum=Services):
+    def add_service(self, id: str, node_name: str, arn: str, metadata={}, node_enum=Services):
         # Type checking
         if not isinstance(node_enum, Services):
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
-    def add_vertex(self, id: str, node_name: str, arn: str, metadata='', node_type=''):
+    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type=''):
 
         # check that there is no such vertex already
         exist = False
