@@ -26,9 +26,7 @@ class TestMultiCloudDiagramsAWSVertecies(TestUtilities):
         self.verify_mxfile_default(et.ElementTree(tree))
 
         mx_cells = tree.findall("./*/*/*/")
-        self.assertEqual(3, len(mx_cells))
-        self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
-        self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
+        self.verify_vertex_added_in_isolation(mx_cells)
 
         expected = {
             'id': 'vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table',
@@ -38,3 +36,35 @@ class TestMultiCloudDiagramsAWSVertecies(TestUtilities):
             'vertex': '1'
         }
         self.verify_mx_cell(mx_cells[2], expected)
+
+    def test_sqs(self):
+        # given
+        mcd = MultiCloudDiagrams()
+
+        # when
+        sqs_arn = 'arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo'
+        metadata = {
+            "DelaySeconds": 0,
+            "FifoQueue": "TRUE",
+            "ReceiveMessageWaitTimeSeconds": 0,
+            "SqsManagedSseEnabled": "false",
+            "VisibilityTimeout": 30
+        }
+        mcd.add_vertex(id=sqs_arn, node_name='events', arn=sqs_arn, node_type='sqs', metadata=metadata)
+
+        # then
+        tree = et.ElementTree(mcd.mxfile)
+        self.verify_mxfile_default(et.ElementTree(tree))
+
+        mx_cells = tree.findall("./*/*/*/")
+        self.verify_vertex_added_in_isolation(mx_cells)
+
+        expected = {
+            'id': 'vertex:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo',
+            'value': '<b>Name</b>: events<BR><b>ARN</b>: arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo <BR>-----------<BR><b>DelaySeconds</b>: 0<BR><b>FifoQueue</b>: TRUE<BR><b>ReceiveMessageWaitTimeSeconds</b>: 0<BR><b>SqsManagedSseEnabled</b>: false<BR><b>VisibilityTimeout</b>: 30',
+            'style': 'verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;fillColor=#F58534;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom',
+            'parent': '1',
+            'vertex': '1'
+        }
+        self.verify_mx_cell(mx_cells[2], expected)
+
