@@ -1,7 +1,7 @@
 from multicloud_diagrams import MultiCloudDiagrams
 import xml.etree.ElementTree as et
 
-from test_utils import TestUtilities
+from tests.test_utils import TestUtilities
 
 
 class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
