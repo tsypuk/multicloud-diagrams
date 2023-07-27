@@ -1,7 +1,7 @@
-from unittest import TestCase
+import unittest
 
 
-class TestUtilities(TestCase):
+class TestUtilities(unittest.TestCase):
 
     def verify_mx_cell(self, mx_cell, expected):
         # then

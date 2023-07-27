@@ -1,7 +1,7 @@
 from multicloud_diagrams import MultiCloudDiagrams
 import xml.etree.ElementTree as et
 
-from tests.test_utils import TestUtilities
+from utils.utils import TestUtilities
 
 
 class TestMultiCloudDiagramsAWSVertecies(TestUtilities):
