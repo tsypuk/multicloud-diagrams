@@ -45,3 +45,19 @@ class TestMultiCloudDiagramsDrawIO(TestCase):
         self.assertEqual('mxGraphModel', mx_graph_model.tag)
         expected = {'dx': '1015', 'dy': '661', 'grid': '1', 'gridSize': '10', 'guides': '1', 'tooltips': '1', 'connect': '1', 'arrows': '1', 'fold': '1', 'page': '1', 'pageScale': '1', 'pageWidth': '850', 'pageHeight': '1100', 'math': '0', 'shadow': '0'}
         self.assertEqual(expected, mx_graph_model.attrib)
+
+
+    def test_root(self):
+        # given
+        mcd = MultiCloudDiagrams()
+
+        # when
+        tree = et.ElementTree(mcd.mxfile)
+        root = tree.find("./diagram/mxGraphModel/root")
+        # root = tree.find("./diagram/mxGraphModel/*")
+        # TODO check that it is single element
+
+        # then
+        self.assertEqual('root', root.tag)
+        expected = {}
+        self.assertEqual(expected, root.attrib)
