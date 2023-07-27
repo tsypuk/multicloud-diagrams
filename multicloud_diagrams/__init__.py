@@ -34,7 +34,7 @@ Services = Union[AWS, OnPrem]
 
 
 class MultiCloudDiagrams:
-    def __init__(self):
+    def __init__(self, debug_mode=False):
         self.mxfile = et.Element('mxfile', host="multicloud-diagrams",
                                  agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                  type="MultiCloud")
@@ -45,6 +45,8 @@ class MultiCloudDiagrams:
         self.root = et.SubElement(self.mx_graph_model, 'root')
         self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id="0")
         self.mx_cell_id_1 = et.SubElement(self.root, 'mxCell', id="1", parent="0")
+
+        self.debug_mode = debug_mode
 
     prev_coords = {}
 
@@ -145,8 +147,8 @@ class MultiCloudDiagrams:
                                     style=(f"{shape_parameters['style']}"),
                                     parent="1",
                                     vertex="1")
-
-            mx_cell.insert(0, et.Comment(f'vertex:{node_name}'))
+            if self.debug_mode:
+                mx_cell.insert(0, et.Comment(f'vertex:{node_name}'))
             mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=shape_parameters['width'],
                                         height=shape_parameters['height'])
             mx_geometry.set('as', 'geometry')
@@ -224,7 +226,8 @@ class MultiCloudDiagrams:
                                         target=f'vertex:{dest_node_id}',
                                         edge="2")
 
-                mx_cell.insert(0, et.Comment(f'edge:{src_node_id}:to:{dest_node_id}'))
+                if self.debug_mode:
+                    mx_cell.insert(0, et.Comment(f'edge:{src_node_id}:to:{dest_node_id}'))
                 mx_geometry = et.SubElement(mx_cell, 'mxGeometry')
                 mx_geometry.set('as', 'geometry')
 

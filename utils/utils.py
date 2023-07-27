@@ -9,11 +9,11 @@ class TestUtilities(unittest.TestCase):
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))
-        path = os.path.join(project_folder, '../multicloud_diagrams/providers/aws_services.json')
-        with open(path, 'r') as file:
-            json_data = json.load(file)
-
-        self.supported_vertex.update(json_data)
+        for provides_file in ['aws_services', 'fallback']:
+            path = os.path.join(project_folder, f'../multicloud_diagrams/providers/{provides_file}.json')
+            with open(path, 'r') as file:
+                json_data = json.load(file)
+            self.supported_vertex.update(json_data)
 
     def verify_mx_cell(self, mx_cell, expected):
         # then
@@ -70,7 +70,7 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-    def verify_aws_resource(self, expected: dict, mx_file: et.Element, resource_name, resource_type):
+    def verify_aws_resource(self, expected: dict, mx_file: et.Element, resource_name, resource_type, debug_mode=False):
         tree = et.ElementTree(mx_file)
         self.verify_mxfile_default(et.ElementTree(tree))
 
@@ -82,17 +82,20 @@ class TestUtilities(unittest.TestCase):
             del expected['style']
         expected['style'] = self.supported_vertex[resource_type]['style']
 
-        self.verify_mx_cell(mx_cells[2], expected)
-        # <!--vertex:node-name-->
-        # <mxGeometry width="69" height="72" as="geometry"/>
         children = mx_cells[2].findall("./*")
-        self.assertEqual(2, len(children))
 
-        comment = children[0]
-        self.assertEqual(f'vertex:{resource_name}', comment.text)
-        self.assertEqual(0, len(comment.attrib))
+        self.verify_mx_cell(mx_cells[2], expected)
+        children_count = 1
+        if debug_mode:
+            comment = children[0]
+            self.assertEqual(f'vertex:{resource_name}', comment.text)
+            self.assertEqual(0, len(comment.attrib))
+            children_count = 2
+            mx_geometry = children[1]
+        else:
+            mx_geometry = children[0]
 
-        mx_geometry = children[1]
+        self.assertEqual(children_count, len(children))
         self.assertEqual('mxGeometry', mx_geometry.tag)
         self.assertEqual('geometry', mx_geometry.attrib['as'])
         # 'height', 'width' are verified based on providers file content
