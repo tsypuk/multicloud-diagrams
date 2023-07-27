@@ -53,7 +53,7 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_graph_models(tree.findall("/*/"))
         self.verify_roots(tree.findall("./*/*/"))
 
-    def verify_vertex_added_in_isolation(self, mx_cells):
+    def verify_vertex_in_isolation(self, mx_cells):
         self.assertEqual(3, len(mx_cells))
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
