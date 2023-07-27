@@ -1,4 +1,4 @@
-name: Run tests
+name: Run tests & flakehell lint
 
 on:
   push:
@@ -32,3 +32,22 @@ jobs:
         run: |
           poetry install
           poetry run python -m unittest -v tests/*.py
+  code-quality:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ "3.11" ]
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install poetry
+        run: pip install poetry
+      - name: Install dependencies
+        run: |
+          poetry install
+      - name: Run safety
+        run: poetry run flakehell lint
