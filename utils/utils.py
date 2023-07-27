@@ -1,8 +1,19 @@
+import os
 import unittest
+import json
 import xml.etree.ElementTree as et
 
 
 class TestUtilities(unittest.TestCase):
+    supported_vertex = {}
+
+    def setUp(self) -> None:
+        project_folder = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(project_folder, f'../multicloud_diagrams/providers/aws_services.json')
+        with open(path, 'r') as file:
+            json_data = json.load(file)
+
+        self.supported_vertex.update(json_data)
 
     def verify_mx_cell(self, mx_cell, expected):
         # then
@@ -59,11 +70,30 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-    def verify_aws_resource(self, expected, mx_file: et.Element):
+    def verify_aws_resource(self, expected: dict, mx_file: et.Element, resource_name, resource_type):
         tree = et.ElementTree(mx_file)
         self.verify_mxfile_default(et.ElementTree(tree))
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_vertex_in_isolation(mx_cells)
 
+        # 'style' is verified based on providers file content
+        if 'style' in expected: del expected['style']
+        expected['style'] = self.supported_vertex[resource_type]['style']
+
         self.verify_mx_cell(mx_cells[2], expected)
+        # <!--vertex:node-name-->
+        # <mxGeometry width="69" height="72" as="geometry"/>
+        children = mx_cells[2].findall("./*")
+        self.assertEqual(2, len(children))
+
+        comment = children[0]
+        self.assertEqual(f'vertex:{resource_name}', comment.text)
+        self.assertEqual(0, len(comment.attrib))
+
+        mx_geometry = children[1]
+        self.assertEqual('mxGeometry', mx_geometry.tag)
+        self.assertEqual('geometry', mx_geometry.attrib['as'])
+        # 'height', 'width' are verified based on providers file content
+        self.assertEqual(self.supported_vertex[resource_type]['height'], mx_geometry.attrib['height'])
+        self.assertEqual(self.supported_vertex[resource_type]['width'], mx_geometry.attrib['width'])

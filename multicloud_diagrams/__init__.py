@@ -142,13 +142,7 @@ class MultiCloudDiagrams:
                                     id=f'vertex:{node_type}:{id}',
                                     # id = f'vertex:{ARN}',
                                     value=f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn} {stringified_metadata}',
-                                    style=("verticalLabelPosition=bottom;"
-                                           "html=1;"
-                                           "verticalAlign=top;"
-                                           "aspect=fixed;align=left;"
-                                           "pointerEvents=1;"
-                                           f"{shape_parameters['style']}"
-                                           ""),
+                                    style=(f"{shape_parameters['style']}"),
                                     parent="1",
                                     vertex="1")
 
