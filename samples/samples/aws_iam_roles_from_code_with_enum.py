@@ -1,5 +1,3 @@
-from enum import Enum
-
 from multicloud_diagrams import MultiCloudDiagrams
 from multicloud_diagrams import AWS
 

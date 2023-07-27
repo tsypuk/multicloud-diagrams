@@ -29,20 +29,21 @@ def prepare_data_model(mcd):
         'TableSizeBytes': 123,
         'ItemCount': 123,
         'TableArn': 'arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table',
-        'LocalSecondaryIndexes': [{
-            'IndexName': 'firstIndex',
-            'KeySchema': [
-                {
-                    'AttributeName': 'string',
-                    'KeyType': 'HASH'
+        'LocalSecondaryIndexes': [
+            {
+                'IndexName': 'firstIndex',
+                'KeySchema': [
+                    {
+                        'AttributeName': 'string',
+                        'KeyType': 'HASH'
+                    },
+                ],
+                'Projection': {
+                    'ProjectionType': 'ALL'
                 },
-            ],
-            'Projection': {
-                'ProjectionType': 'ALL'
+                'IndexSizeBytes': 777,
+                'ItemCount': 123,
             },
-            'IndexSizeBytes': 777,
-            'ItemCount': 123,
-        },
             {
                 'IndexName': 'secondIndex',
                 'KeySchema': [
@@ -57,7 +58,6 @@ def prepare_data_model(mcd):
                 'IndexSizeBytes': 777,
                 'ItemCount': 123,
             }
-
         ],
         'GlobalSecondaryIndexes': [
             {

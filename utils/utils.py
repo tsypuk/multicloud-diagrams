@@ -9,7 +9,7 @@ class TestUtilities(unittest.TestCase):
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))
-        path = os.path.join(project_folder, f'../multicloud_diagrams/providers/aws_services.json')
+        path = os.path.join(project_folder, '../multicloud_diagrams/providers/aws_services.json')
         with open(path, 'r') as file:
             json_data = json.load(file)
 
@@ -78,7 +78,8 @@ class TestUtilities(unittest.TestCase):
         self.verify_vertex_in_isolation(mx_cells)
 
         # 'style' is verified based on providers file content
-        if 'style' in expected: del expected['style']
+        if 'style' in expected:
+            del expected['style']
         expected['style'] = self.supported_vertex[resource_type]['style']
 
         self.verify_mx_cell(mx_cells[2], expected)

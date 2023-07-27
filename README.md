@@ -217,6 +217,18 @@ poetry install
 poetry run python aws_iam_roles_from_code_with_enum.py
 ```
 
+```shell
+poetry run flakehell plugins
+NAME        | VERSION  | CODES            | RULES
+mccabe      | 0.6.1    | C90              | +*
+pycodestyle | 2.7.0    | E, W             | +*, -E501
+pyflakes    | 2.3.1    | F                | +*
+pylint      | 0.0.0    | C, E, F, I, R, W | +*
+
+poetry run flakehell lint
+
+```
+
 ### Contribution Guide:
 
 OpenSource Guide, [How to contribute to opensource](https://opensource.guide/)
