@@ -46,3 +46,9 @@ class TestUtilities(TestCase):
         self.assertEqual('root', root.tag)
         expected = {}
         self.assertEqual(expected, root.attrib)
+
+    def verify_mxfile_default(self, tree):
+        self.verify_mxfile(tree.findall("."))
+        self.verify_diagrams(tree.findall("./"))
+        self.verify_mx_graph_models(tree.findall("/*/"))
+        self.verify_roots(tree.findall("./*/*/"))
