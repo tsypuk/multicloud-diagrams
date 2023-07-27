@@ -1,5 +1,4 @@
 from multicloud_diagrams import MultiCloudDiagrams
-import xml.etree.ElementTree as et
 
 from utils.utils import TestUtilities
 
@@ -20,14 +19,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
         }
         mcd.add_vertex(id=table_arn, node_name=table_name, arn=table_arn, node_type='dynamo', metadata=metadata)
 
-
         # then
-        tree = et.ElementTree(mcd.mxfile)
-        self.verify_mxfile_default(et.ElementTree(tree))
-
-        mx_cells = tree.findall("./*/*/*/")
-        self.verify_vertex_in_isolation(mx_cells)
-
         expected = {
             'id': 'vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table',
             'value': '<b>Name</b>: prod-dynamo-table<BR><b>ARN</b>: arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table <BR>-----------<BR><b>DeletionProtectionEnabled</b>: True<BR><b>ItemCount</b>: 900<BR><b>TableSizeBytes</b>: 123',
@@ -35,7 +27,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_mx_cell(mx_cells[2], expected)
+        self.verify_aws_resource(expected, mcd.mxfile)
 
     def test_sqs(self):
         # given
@@ -53,12 +45,6 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
         mcd.add_vertex(id=sqs_arn, node_name='int-eu-live-events.fifo', arn=sqs_arn, node_type='sqs', metadata=metadata)
 
         # then
-        tree = et.ElementTree(mcd.mxfile)
-        self.verify_mxfile_default(et.ElementTree(tree))
-
-        mx_cells = tree.findall("./*/*/*/")
-        self.verify_vertex_in_isolation(mx_cells)
-
         expected = {
             'id': 'vertex:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo',
             'value': '<b>Name</b>: int-eu-live-events.fifo<BR><b>ARN</b>: arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo <BR>-----------<BR><b>DelaySeconds</b>: 0<BR><b>FifoQueue</b>: TRUE<BR><b>ReceiveMessageWaitTimeSeconds</b>: 0<BR><b>SqsManagedSseEnabled</b>: false<BR><b>VisibilityTimeout</b>: 30',
@@ -66,7 +52,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_mx_cell(mx_cells[2], expected)
+        self.verify_aws_resource(expected, mcd.mxfile)
 
     def test_sns(self):
         # given
@@ -82,12 +68,6 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
         mcd.add_vertex(id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata)
 
         # then
-        tree = et.ElementTree(mcd.mxfile)
-        self.verify_mxfile_default(et.ElementTree(tree))
-
-        mx_cells = tree.findall("./*/*/*/")
-        self.verify_vertex_in_isolation(mx_cells)
-
         expected = {
             'id': 'vertex:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo',
             'value': '<b>Name</b>: internal.fifo<BR><b>ARN</b>: arn:aws:sns:eu-west-1:123456789012:internal.fifo <BR>-----------<BR><b>Owner</b>: 123456789012<BR><b>SubscriptionsConfirmed</b>: 3<BR><b>SubscriptionsPending</b>: 0',
@@ -95,8 +75,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_mx_cell(mx_cells[2], expected)
-
+        self.verify_aws_resource(expected, mcd.mxfile)
 
     def test_lambda(self):
         # given
@@ -118,12 +97,6 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
         mcd.add_vertex(id=func_arn, node_name='producer-lambda', arn=func_arn, node_type='lambda_function', metadata=metadata)
 
         # then
-        tree = et.ElementTree(mcd.mxfile)
-        self.verify_mxfile_default(et.ElementTree(tree))
-
-        mx_cells = tree.findall("./*/*/*/")
-        self.verify_vertex_in_isolation(mx_cells)
-
         expected = {
             'id': 'vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789:function:producer-lambda',
             'value': "<b>Name</b>: producer-lambda<BR><b>ARN</b>: arn:aws:lambda:eu-west-1:123456789:function:producer-lambda <BR>-----------<BR><b>CodeSize</b>: 1234<BR><b>Handler</b>: main<BR><b>Layers</b>: 0<BR><b>Memory</b>: 128<BR><b>PackageType</b>: Zip<BR><b>Runtime</b>: go1.x<BR><b>Timeout</b>: 30<BR><b>TracingConfig</b>: {'Mode': 'Active'}<BR><b>Version</b>: $LATEST",
@@ -131,6 +104,4 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_mx_cell(mx_cells[2], expected)
-
-
+        self.verify_aws_resource(expected, mcd.mxfile)

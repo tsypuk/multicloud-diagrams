@@ -1,4 +1,5 @@
 import unittest
+import xml.etree.ElementTree as et
 
 
 class TestUtilities(unittest.TestCase):
@@ -50,10 +51,19 @@ class TestUtilities(unittest.TestCase):
     def verify_mxfile_default(self, tree):
         self.verify_mxfile(tree.findall("."))
         self.verify_diagrams(tree.findall("./"))
-        self.verify_mx_graph_models(tree.findall("/*/"))
+        self.verify_mx_graph_models(tree.findall("./*/"))
         self.verify_roots(tree.findall("./*/*/"))
 
     def verify_vertex_in_isolation(self, mx_cells):
         self.assertEqual(3, len(mx_cells))
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
+
+    def verify_aws_resource(self, expected, mx_file: et.Element):
+        tree = et.ElementTree(mx_file)
+        self.verify_mxfile_default(et.ElementTree(tree))
+
+        mx_cells = tree.findall("./*/*/*/")
+        self.verify_vertex_in_isolation(mx_cells)
+
+        self.verify_mx_cell(mx_cells[2], expected)
