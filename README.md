@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![PyPI version](https://badge.fury.io/py/multicloud-diagrams.svg)](https://badge.fury.io/py/multicloud-diagrams)
-![python version](https://img.shields.io/badge/python-%3E%3D%203.10-blue?logo=python)
+![python version](https://img.shields.io/badge/python-%3E%3D%203.7-blue?logo=python)
 ![Run tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
 
 Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` format for multiple Cloud providers.

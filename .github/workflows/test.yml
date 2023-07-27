@@ -13,7 +13,8 @@ on:
     paths:
       - ".github/workflows/test.yml"
       - "**.py"
-
+#https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
+# GitHub supported python versions
 jobs:
   test:
     strategy:
@@ -22,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
       - name: Install poetry
