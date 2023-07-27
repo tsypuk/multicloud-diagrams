@@ -36,7 +36,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
 
         # then
         # ./diagram/mxGraphModel/
-        self.verify_mx_graph_models(tree.findall("/*/"))
+        self.verify_mx_graph_models(tree.findall("./*/"))
 
     def test_root(self):
         # given
