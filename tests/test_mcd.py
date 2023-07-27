@@ -3,8 +3,10 @@ from unittest import TestCase
 from multicloud_diagrams import MultiCloudDiagrams
 import xml.etree.ElementTree as et
 
+from test_utils import TestUtilities
 
-class TestMultiCloudDiagramsDefaultDrawIO(TestCase):
+
+class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
 
     def test_drawio_preambula(self):
         # given
@@ -84,7 +86,3 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestCase):
         self.assertEqual(2, len(mxcells))
         self.verify_mx_cell(mxcells[0], expected={'id': '0'})
         self.verify_mx_cell(mxcells[1], expected={'id': '1', 'parent': '0'})
-
-    def verify_mx_cell(self, mx_cell, expected):
-        self.assertEqual('mxCell', mx_cell.tag)
-        self.assertEqual(expected, mx_cell.attrib)
