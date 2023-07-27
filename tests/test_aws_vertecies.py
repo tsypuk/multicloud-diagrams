@@ -97,3 +97,40 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
         }
         self.verify_mx_cell(mx_cells[2], expected)
 
+
+    def test_lambda(self):
+        # given
+        mcd = MultiCloudDiagrams()
+
+        # when
+        func_arn = 'arn:aws:lambda:eu-west-1:123456789:function:producer-lambda'
+        metadata = {
+            "CodeSize": 1234,
+            "Handler": "main",
+            "Layers": 0,
+            "Memory": 128,
+            "PackageType": "Zip",
+            "Runtime": "go1.x",
+            "Timeout": 30,
+            "TracingConfig": "{'Mode': 'Active'}",
+            "Version": "$LATEST"
+        }
+        mcd.add_vertex(id=func_arn, node_name='producer-lambda', arn=func_arn, node_type='lambda_function', metadata=metadata)
+
+        # then
+        tree = et.ElementTree(mcd.mxfile)
+        self.verify_mxfile_default(et.ElementTree(tree))
+
+        mx_cells = tree.findall("./*/*/*/")
+        self.verify_vertex_in_isolation(mx_cells)
+
+        expected = {
+            'id': 'vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789:function:producer-lambda',
+            'value': "<b>Name</b>: producer-lambda<BR><b>ARN</b>: arn:aws:lambda:eu-west-1:123456789:function:producer-lambda <BR>-----------<BR><b>CodeSize</b>: 1234<BR><b>Handler</b>: main<BR><b>Layers</b>: 0<BR><b>Memory</b>: 128<BR><b>PackageType</b>: Zip<BR><b>Runtime</b>: go1.x<BR><b>Timeout</b>: 30<BR><b>TracingConfig</b>: {'Mode': 'Active'}<BR><b>Version</b>: $LATEST",
+            'style': 'verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;shape=mxgraph.aws3.lambda_function;prIcon=server;fillColor=#F58534;gradientColor=none;html=1;',
+            'parent': '1',
+            'vertex': '1'
+        }
+        self.verify_mx_cell(mx_cells[2], expected)
+
+
