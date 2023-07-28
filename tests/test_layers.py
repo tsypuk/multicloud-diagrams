@@ -53,8 +53,9 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         self.assertEqual(layers_count + 1, len(mx_cells))
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         expected_layer = {1: ''}
-        for id in range(layers_count):
-            self.verify_mx_cell(mx_cells[id + 1], expected={'id': f'{id + 1}', 'parent': '0'})
+        self.verify_mx_cell(mx_cells[1], expected={'id': f'{1}', 'parent': '0'})
+        for id in range(1, layers_count, 1):
+            self.verify_mx_cell(mx_cells[id + 1], expected={'id': f'{id + 1}', 'parent': '0', 'value': f'L{id + 1}'})
             if id > 0:
                 expected_layer[id + 1] = f'L{id + 1}'
         self.assertEqual(expected_layer, mcd.layers)

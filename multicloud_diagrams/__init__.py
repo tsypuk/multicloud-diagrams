@@ -34,7 +34,7 @@ Services = Union[AWS, OnPrem]
 
 
 class MultiCloudDiagrams:
-    def __init__(self, debug_mode=False):
+    def __init__(self, debug_mode=False, layer_name=''):
         self.mxfile = et.Element('mxfile', host="multicloud-diagrams",
                                  agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                  type="MultiCloud")
@@ -45,12 +45,14 @@ class MultiCloudDiagrams:
         self.root = et.SubElement(self.mx_graph_model, 'root')
         self.layers = {}
         self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id="0")
-        self.add_layer()
+        self.add_layer(layer_name)
         self.debug_mode = debug_mode
 
     def add_layer(self, layer_name: str = ''):
         self.layers[self.get_current_layer_count() + 1] = layer_name
         self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
+        if layer_name is not '':
+            self.mx_cell_id_0.attrib['value'] = layer_name
 
     def get_current_layer_count(self):
         return len(self.layers)
@@ -75,7 +77,7 @@ class MultiCloudDiagrams:
                 raise AttributeError(f'Layer ID: {layer_id} more than current layers ({current_layers})')
             return layer_id
         else:
-            return 0
+            return 1
 
     prev_coords = {}
 
@@ -152,7 +154,7 @@ class MultiCloudDiagrams:
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
-    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type='', layer_name='', layer_id=''):
+    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type='', layer_name=None, layer_id=None):
 
         # check that there is no such vertex already
         exist = False
@@ -168,7 +170,7 @@ class MultiCloudDiagrams:
 
             stringified_metadata = self.stringify_dict(metadata)
 
-            parent_id = get_layer_id(layer_name, layer_id)
+            parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{id}',
