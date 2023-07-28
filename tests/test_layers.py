@@ -75,7 +75,7 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         self.verify_layers(mx_cells, 1, mcd)
         self.assertEqual(1, layer_id)
 
-    def test_get_layer_id_2_layers(self):
+    def test_get_layer_name_2_layers(self):
         # given
         mcd = MultiCloudDiagrams(debug_mode=True)
         mcd.add_layer('L2')
@@ -111,7 +111,7 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         self.assertEqual(1, layer_id)
         self.assertEqual(2, layer_id_l2)
 
-    def test_get_layer_not_exist_id(self):
+    def test_get_layer_by_name_not_exist_id(self):
         # given
         mcd = MultiCloudDiagrams(debug_mode=True)
 
@@ -126,7 +126,7 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 1, mcd)
 
-    def test_get_layer_not_exist_id(self):
+    def test_get_layer_by_id_not_exist_id(self):
         # given
         mcd = MultiCloudDiagrams(debug_mode=True)
 

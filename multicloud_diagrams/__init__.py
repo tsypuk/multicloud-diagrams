@@ -51,7 +51,7 @@ class MultiCloudDiagrams:
     def add_layer(self, layer_name: str = ''):
         self.layers[self.get_current_layer_count() + 1] = layer_name
         self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
-        if layer_name is not '':
+        if layer_name != '':
             self.mx_cell_id_0.attrib['value'] = layer_name
 
     def get_current_layer_count(self):
