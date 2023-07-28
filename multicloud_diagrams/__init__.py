@@ -267,14 +267,14 @@ class MultiCloudDiagrams:
     def add_link(self, src_node_id, dst_node_id, action=[]):
         self.add_connection(src_node_id, dst_node_id, "none", "none", action)
 
-    def add_bidirectional_link(self, src_node_id, dst_node_id):
-        self.add_connection(src_node_id, dst_node_id, "classic", "classic")
+    def add_bidirectional_link(self, src_node_id, dst_node_id, action=[]):
+        self.add_connection(src_node_id, dst_node_id, "classic", "classic", action)
 
-    def add_unidirectional_link(self, src_node_id, dst_node_id):
-        self.add_connection(src_node_id, dst_node_id, "none", "classic")
+    def add_unidirectional_link(self, src_node_id, dst_node_id, action=[]):
+        self.add_connection(src_node_id, dst_node_id, "none", "classic", action)
 
-    def add_unidirectional_reverse_link(self, src_node_id, dst_node_id):
-        self.add_connection(src_node_id, dst_node_id, "classic", "none")
+    def add_unidirectional_reverse_link(self, src_node_id, dst_node_id, action=[]):
+        self.add_connection(src_node_id, dst_node_id, "classic", "none", action)
 
     def add_link_list(self, links):
         for link in links:
