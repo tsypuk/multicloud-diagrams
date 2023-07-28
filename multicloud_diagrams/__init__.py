@@ -55,6 +55,28 @@ class MultiCloudDiagrams:
     def get_current_layer_count(self):
         return len(self.layers)
 
+    def get_layer_id_by_name(self, layer_name):
+        for key, val in self.layers.items():
+            if val == layer_name:
+                return key
+        return None
+
+    def get_layer_id(self, layer_name=None, layer_id=None):
+        if layer_name is not None:
+            layer_id = self.get_layer_id_by_name(layer_name)
+            if layer_id is not None:
+                return layer_id
+            else:
+                raise AttributeError(f'Layer name: {layer_name} not exist')
+        elif layer_id is not None:
+            # check
+            current_layers = self.get_current_layer_count()
+            if layer_id > current_layers:
+                raise AttributeError(f'Layer ID: {layer_id} more than current layers ({current_layers})')
+            return layer_id
+        else:
+            return 0
+
     prev_coords = {}
 
     supported_vertex = {}
@@ -130,7 +152,7 @@ class MultiCloudDiagrams:
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
-    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type=''):
+    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type='', layer_name='', layer_id=''):
 
         # check that there is no such vertex already
         exist = False
@@ -146,13 +168,14 @@ class MultiCloudDiagrams:
 
             stringified_metadata = self.stringify_dict(metadata)
 
+            parent_id = get_layer_id(layer_name, layer_id)
             mx_cell = et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{id}',
                                     # id = f'vertex:{ARN}',
                                     value=f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn} {stringified_metadata}',
                                     style=(f"{shape_parameters['style']}"),
-                                    parent="1",
+                                    parent=parent_id,
                                     vertex="1")
             if self.debug_mode:
                 mx_cell.insert(0, et.Comment(f'vertex:{node_name}'))
