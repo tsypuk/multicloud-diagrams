@@ -43,10 +43,17 @@ class MultiCloudDiagrams:
                                             guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
                                             pageScale="1", pageWidth="850", pageHeight="1100", math="0", shadow="0")
         self.root = et.SubElement(self.mx_graph_model, 'root')
+        self.layers = {}
         self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id="0")
-        self.mx_cell_id_1 = et.SubElement(self.root, 'mxCell', id="1", parent="0")
-
+        self.add_layer()
         self.debug_mode = debug_mode
+
+    def add_layer(self, layer_name: str = ''):
+        self.layers[self.get_current_layer_count() + 1] = layer_name
+        self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
+
+    def get_current_layer_count(self):
+        return len(self.layers)
 
     prev_coords = {}
 
