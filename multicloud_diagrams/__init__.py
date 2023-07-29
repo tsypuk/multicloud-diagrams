@@ -132,7 +132,7 @@ class MultiCloudDiagrams:
         path = pkgutil.get_data(__package__, f'providers/{provider}.json')
         supported_vertex.update(json.loads(path.decode("utf-8")))
 
-    def get_vertex_metadata(self, node_type: str) -> dict:
+    def get_node_template(self, node_type: str) -> dict:
         if node_type in self.supported_vertex:
             return self.supported_vertex[node_type].copy()
         else:
@@ -205,22 +205,22 @@ class MultiCloudDiagrams:
                 break
 
         if not exist:
-            shape_parameters = self.get_vertex_metadata(node_type)
+            node_template = self.get_node_template(node_type)
             if fill_color is not None:
-                shape_parameters['style'] = update_fill_color(shape_parameters['style'], fill_color)
+                node_template['style'] = update_fill_color(node_template['style'], fill_color)
 
             parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{id}',
                                     value=assemble_node_name(node_name, arn, metadata),
-                                    style=f"{shape_parameters['style']}",
+                                    style=f"{node_template['style']}",
                                     parent=parent_id,
                                     vertex="1")
             if self.debug_mode:
                 mx_cell.insert(0, et.Comment(f'vertex:{node_name}'))
-            mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=shape_parameters['width'],
-                                        height=shape_parameters['height'])
+            mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=node_template['width'],
+                                        height=node_template['height'])
             mx_geometry.set('as', 'geometry')
 
             # Position Vertex based on X,Y cords
