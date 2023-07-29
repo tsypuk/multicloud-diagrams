@@ -1,5 +1,5 @@
 import json
-import xml.etree.ElementTree as et
+import xml.etree.ElementTree as Et
 import logging
 import os.path
 import pkgutil
@@ -71,13 +71,13 @@ def assemble_node_name(node_name, arn, metadata):
 
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
-        self.mx_file = et.Element('mxfile',
+        self.mx_file = Et.Element('mxfile',
                                   host="multicloud-diagrams",
                                   agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                   type="MultiCloud")
 
-        self.diagram = et.SubElement(self.mx_file, 'diagram', id="diagram_1", name="AWS components")
-        self.mx_graph_model = et.SubElement(self.diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
+        self.diagram = Et.SubElement(self.mx_file, 'diagram', id="diagram_1", name="AWS components")
+        self.mx_graph_model = Et.SubElement(self.diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
                                             guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
                                             pageScale="1", pageWidth="850", pageHeight="1100", math="0")
         if shadow:
@@ -85,15 +85,15 @@ class MultiCloudDiagrams:
         else:
             self.mx_graph_model.attrib['shadow'] = '0'
 
-        self.root = et.SubElement(self.mx_graph_model, 'root')
+        self.root = Et.SubElement(self.mx_graph_model, 'root')
         self.layers = {}
-        self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id="0")
+        self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id="0")
         self.add_layer(layer_name)
         self.debug_mode = debug_mode
 
     def add_layer(self, layer_name: str = ''):
         self.layers[self.get_current_layer_count() + 1] = layer_name
-        self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
+        self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
         if layer_name != '':
             self.mx_cell_id_0.attrib['value'] = layer_name
 
@@ -147,12 +147,15 @@ class MultiCloudDiagrams:
         if not table_id:
             table_id = table_name
         # TODO mode all styling to external resource file
-        style = "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
+        style = (
+            "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;"
+            "resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
+        )
 
         if fill_color:
             style += f"fillColor={fill_color}"
 
-        mx_cell = et.SubElement(self.root,
+        mx_cell = Et.SubElement(self.root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
@@ -160,7 +163,7 @@ class MultiCloudDiagrams:
                                 parent="1",
                                 vertex="1")
 
-        mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=width,
+        mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width,
                                     height=str(30 * (1 + len(rows))))
         mx_geometry.set('as', 'geometry')
 
@@ -169,17 +172,17 @@ class MultiCloudDiagrams:
 
         for index, item in enumerate(rows):
             name, value = item.split(":", 1)
-            mx_cell = et.SubElement(self.root,
+            mx_cell = Et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{table_id}:row:{index}',
                                     value=f'<b>{name}</b>: {value}',
                                     style=("text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;"
-                                           "spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];"
+                                           "spacingLeft=4;spacingRight=4;overflow=hidden;"
                                            "portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;"),
                                     parent=f'vertex:{table_id}:list',
                                     vertex="1")
 
-            mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
+            mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
             mx_geometry.set('as', 'geometry')
             # Position Vertex based on X,Y cords
             self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
@@ -210,7 +213,7 @@ class MultiCloudDiagrams:
                 node_template['style'] = update_fill_color(node_template['style'], fill_color)
 
             parent_id = str(self.get_layer_id(layer_name, layer_id))
-            mx_cell = et.SubElement(self.root,
+            mx_cell = Et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{id}',
                                     value=assemble_node_name(node_name, arn, metadata),
@@ -218,8 +221,8 @@ class MultiCloudDiagrams:
                                     parent=parent_id,
                                     vertex="1")
             if self.debug_mode:
-                mx_cell.insert(0, et.Comment(f'vertex:{node_name}'))
-            mx_geometry = et.SubElement(mx_cell, 'mxGeometry', width=node_template['width'],
+                mx_cell.insert(0, Et.Comment(f'vertex:{node_name}'))
+            mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=node_template['width'],
                                         height=node_template['height'])
             mx_geometry.set('as', 'geometry')
 
@@ -281,7 +284,7 @@ class MultiCloudDiagrams:
                                 break
                     break
             if not edge_exist:
-                mx_cell = et.SubElement(self.root,
+                mx_cell = Et.SubElement(self.root,
                                         'mxCell',
                                         id=f'edge:{src_node_id}:to:{dest_node_id}',
                                         style=f'endFill=0;endArrow={start};endArrow={end};',
@@ -291,15 +294,15 @@ class MultiCloudDiagrams:
                                         edge="2")
 
                 if self.debug_mode:
-                    mx_cell.insert(0, et.Comment(f'edge:{src_node_id}:to:{dest_node_id}'))
-                mx_geometry = et.SubElement(mx_cell, 'mxGeometry')
+                    mx_cell.insert(0, Et.Comment(f'edge:{src_node_id}:to:{dest_node_id}'))
+                mx_geometry = Et.SubElement(mx_cell, 'mxGeometry')
                 mx_geometry.set('as', 'geometry')
 
                 # Add label to edge
                 if len(labels) > 0:
                     # style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];"
                     # style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;
-                    mx_cell = et.SubElement(self.root,
+                    mx_cell = Et.SubElement(self.root,
                                             'mxCell',
                                             id=f'label:{src_node_id}:to:{dest_node_id}',
                                             value=stringify_labels(labels),
@@ -308,13 +311,13 @@ class MultiCloudDiagrams:
                                             vertex="1",
                                             connectable="0")
                     # <mxGeometry relative="1" as="geometry">
-                    mx_geometry = et.SubElement(mx_cell,
+                    mx_geometry = Et.SubElement(mx_cell,
                                                 'mxGeometry',
                                                 relative="1"
                                                 )
                     mx_geometry.set('as', 'geometry')
                     # <mxPoint as="offset"/>
-                    mx_geometry = et.SubElement(mx_geometry, 'mxPoint')
+                    mx_geometry = Et.SubElement(mx_geometry, 'mxPoint')
                     mx_geometry.set('as', 'offset')
 
                     self.update_vertex_coords_from_prev_version(mx_geometry, f'label:{src_node_id}:to:{dest_node_id}')
@@ -367,7 +370,7 @@ class MultiCloudDiagrams:
 
     def read_coords_from_file(self, file_name: str):
         if os.path.isfile(file_name):
-            tree = et.parse(file_name)
+            tree = Et.parse(file_name)
             root = tree.getroot()
 
             for neighbor in root.iter('mxCell'):
@@ -396,7 +399,7 @@ class MultiCloudDiagrams:
 
     def export_to_file(self, file_path):
         with open(file_path, 'wb') as file:
-            tree = et.ElementTree(self.mx_file)
-            et.indent(tree, space="\t", level=0)
+            tree = Et.ElementTree(self.mx_file)
+            Et.indent(tree, space="\t", level=0)
             tree.write(file, encoding='utf-8')
         return

@@ -21,7 +21,9 @@ class TestMultiCloudDiagramsColors(TestUtilities):
         # then
         expected = {
             'id': 'vertex:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo',
-            'value': '<b>Name</b>: internal.fifo<BR><b>ARN</b>: arn:aws:sns:eu-west-1:123456789012:internal.fifo<BR>-----------<BR><b>Owner</b>: 123456789012<BR><b>SubscriptionsConfirmed</b>: 3<BR><b>SubscriptionsPending</b>: 0',
+            'value': '<b>Name</b>: internal.fifo<BR><b>ARN</b>: arn:aws:sns:eu-west-1:123456789012:internal.fifo'
+                     '<BR>-----------<BR>'
+                     '<b>Owner</b>: 123456789012<BR><b>SubscriptionsConfirmed</b>: 3<BR><b>SubscriptionsPending</b>: 0',
             'parent': '1',
             'vertex': '1'
         }
@@ -45,7 +47,9 @@ class TestMultiCloudDiagramsColors(TestUtilities):
         # then
         expected = {
             'id': 'vertex:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo',
-            'value': '<b>Name</b>: internal.fifo<BR><b>ARN</b>: arn:aws:sns:eu-west-1:123456789012:internal.fifo<BR>-----------<BR><b>Owner</b>: 123456789012<BR><b>SubscriptionsConfirmed</b>: 3<BR><b>SubscriptionsPending</b>: 0',
+            'value': '<b>Name</b>: internal.fifo<BR><b>ARN</b>: arn:aws:sns:eu-west-1:123456789012:internal.fifo'
+                     '<BR>-----------<BR>'
+                     '<b>Owner</b>: 123456789012<BR><b>SubscriptionsConfirmed</b>: 3<BR><b>SubscriptionsPending</b>: 0',
             'parent': '1',
             'vertex': '1'
         }

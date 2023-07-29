@@ -1,7 +1,7 @@
 import os
 import unittest
 import json
-import xml.etree.ElementTree as et
+import xml.etree.ElementTree as Et
 
 from multicloud_diagrams import update_fill_color
 
@@ -76,9 +76,9 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-    def verify_aws_resource(self, expected: dict, mx_file: et.Element, resource_name, resource_type, debug_mode=False, fill_color=None):
-        tree = et.ElementTree(mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+    def verify_aws_resource(self, expected: dict, mx_file: Et.Element, resource_name, resource_type, debug_mode=False, fill_color=None):
+        tree = Et.ElementTree(mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_vertex_in_isolation(mx_cells)
