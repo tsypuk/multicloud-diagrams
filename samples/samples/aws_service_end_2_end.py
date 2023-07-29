@@ -2,7 +2,7 @@ from multicloud_diagrams import MultiCloudDiagrams
 
 
 def prepare_end2end(mcd):
-    producer_func_arn = 'arn:aws:lambda:eu-west-1:123456789:function:producer-lambda'
+    producer_func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:producer-lambda'
     metadata = {
         "CodeSize": 1234,
         "Handler": "main",
@@ -16,13 +16,13 @@ def prepare_end2end(mcd):
     }
     mcd.add_vertex(id=producer_func_arn, node_name='producer-lambda', arn=producer_func_arn, node_type='lambda_function', metadata=metadata)
 
-    consumer_func_arn = 'arn:aws:lambda:eu-west-1:123456789:function:consumer-lambda'
+    consumer_func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda'
     mcd.add_vertex(id=consumer_func_arn, node_name='consumer-lambda', arn=consumer_func_arn, node_type='lambda_function')
 
-    dynamo_arn = 'arn:aws:dynamodb:eu-west-1:123456789:table/table1'
+    dynamo_arn = 'arn:aws:dynamodb:eu-west-1:123456789012:table/table1'
     mcd.add_vertex(id=dynamo_arn, node_name='table1', arn=dynamo_arn, node_type='dynamo')
 
-    sns_arn = 'arn:aws:sns:eu-west-1:123456789:internal.fifo'
+    sns_arn = 'arn:aws:sns:eu-west-1:123456789012:internal.fifo'
     metadata = {
         "Owner": 123456789,
         "SubscriptionsConfirmed": 3,
@@ -30,7 +30,7 @@ def prepare_end2end(mcd):
     }
     mcd.add_vertex(id=sns_arn, node_name='internal', arn=sns_arn, node_type='sns', metadata=metadata)
 
-    sqs_arn = 'arn:aws:sqs:eu-west-1:123456789:int-eu-live-events.fifo'
+    sqs_arn = 'arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo'
     metadata = {
         "DelaySeconds": 0,
         "FifoQueue": "TRUE",
@@ -40,7 +40,7 @@ def prepare_end2end(mcd):
     }
     mcd.add_vertex(id=sqs_arn, node_name='events', arn=sqs_arn, node_type='sqs', metadata=metadata)
 
-    sqs_arn2 = 'arn:aws:sqs:eu-west-1:123456789:int-eu-live-events2.fifo'
+    sqs_arn2 = 'arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events2.fifo'
     mcd.add_vertex(id=sqs_arn2, node_name='events2', arn=sqs_arn2, node_type='sqs')
 
     s3_arn = 'arn:aws:s3:::bucket_name/key_name'

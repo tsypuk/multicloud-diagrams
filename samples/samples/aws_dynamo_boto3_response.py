@@ -28,7 +28,7 @@ def prepare_data_model(mcd):
         ],
         'TableSizeBytes': 123,
         'ItemCount': 123,
-        'TableArn': 'arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table',
+        'TableArn': 'arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table',
         'LocalSecondaryIndexes': [
             {
                 'IndexName': 'firstIndex',

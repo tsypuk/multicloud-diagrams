@@ -140,13 +140,40 @@ class MultiCloudDiagrams:
                 f'No such nodeType: {node_type} in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest')
             return self.supported_vertex['fallback_vertex'].copy()
 
-    # TODO add snapshot function
+    # json snapshot
     def add_snapshot(self, table_id='', table_name='', fill_color='', snapshot: str = '', width="300"):
-        print('')
+        if not table_id:
+            table_id = table_name
+        self.prepare_table(table_id=table_id, table_name=table_name, fill_color=fill_color, rows_count=1, width=width)
+        self.prepare_row(1, snapshot, table_id, width)
 
+    # add_map
     def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300"):
         if not table_id:
             table_id = table_name
+        self.prepare_table(table_id=table_id, table_name=table_name, fill_color=fill_color, rows_count=len(rows), width=width)
+
+        for index, item in enumerate(rows):
+            name, value = item.split(":", 1)
+            self.prepare_row(index, f'<b>{name}</b>: {value}', table_id, width)
+
+    def prepare_row(self, index, snapshot, table_id='', width="300"):
+        mx_cell = Et.SubElement(self.root,
+                                'mxCell',
+                                id=f'vertex:{table_id}:row:{index}',
+                                value=snapshot,
+                                style=("text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;"
+                                       "spacingLeft=4;spacingRight=4;overflow=hidden;"
+                                       "portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;"),
+                                parent=f'vertex:{table_id}:list',
+                                vertex="1")
+
+        mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
+        mx_geometry.set('as', 'geometry')
+        # Position Vertex based on X,Y cords
+        self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
+
+    def prepare_table(self, table_id='', table_name='', fill_color='', rows_count=0, width="300"):
         # TODO mode all styling to external resource file
         style = (
             "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;"
@@ -165,28 +192,11 @@ class MultiCloudDiagrams:
                                 vertex="1")
 
         mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width,
-                                    height=str(30 * (1 + len(rows))))
+                                    height=str(30 * (1 + rows_count)))
         mx_geometry.set('as', 'geometry')
 
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
-
-        for index, item in enumerate(rows):
-            name, value = item.split(":", 1)
-            mx_cell = Et.SubElement(self.root,
-                                    'mxCell',
-                                    id=f'vertex:{table_id}:row:{index}',
-                                    value=f'<b>{name}</b>: {value}',
-                                    style=("text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;"
-                                           "spacingLeft=4;spacingRight=4;overflow=hidden;"
-                                           "portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;"),
-                                    parent=f'vertex:{table_id}:list',
-                                    vertex="1")
-
-            mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
-            mx_geometry.set('as', 'geometry')
-            # Position Vertex based on X,Y cords
-            self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
 
     def add_service(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_enum=Services):
         if metadata is None:
