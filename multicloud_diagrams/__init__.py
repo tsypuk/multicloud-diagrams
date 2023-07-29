@@ -140,9 +140,10 @@ class MultiCloudDiagrams:
                 f'No such nodeType: {node_type} in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest')
             return self.supported_vertex['fallback_vertex'].copy()
 
-    # green fill_color=#d5e8d4
-    # red fill_color=#f8cecc;"
-    # TODO cover with tests list
+    # TODO add snapshot function
+    def add_snapshot(self, table_id='', table_name='', fill_color='', snapshot: str = '', width="300"):
+        print('')
+
     def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300"):
         if not table_id:
             table_id = table_name
@@ -395,6 +396,12 @@ class MultiCloudDiagrams:
                     if mx_point.get('y') is not None:
                         cords['y'] = mx_point.get('y')
                     self.prev_coords[neighbor.get('id')] = cords
+
+    def dump(self):
+        from xml.dom import minidom
+        rough_string = Et.tostring(self.mx_file, 'utf-8')
+        reparsed = minidom.parseString(rough_string)
+        print(reparsed.toprettyxml(indent="  "))
 
     def export_to_file(self, file_path):
         with open(file_path, 'wb') as file:

@@ -120,3 +120,9 @@ class TestUtilities(unittest.TestCase):
             if id > 0:
                 expected_layer[id + 1] = f'L{id + 1}'
         self.assertEqual(expected_layer, mcd.layers)
+
+    def verify_mx_geometry(self, children):
+        self.assertEqual(1, len(children))
+        mx_geometry = children[0]
+        self.assertEqual('mxGeometry', mx_geometry.tag)
+        self.assertEqual('geometry', mx_geometry.attrib['as'])
