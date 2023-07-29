@@ -1,5 +1,5 @@
 from multicloud_diagrams import MultiCloudDiagrams
-import xml.etree.ElementTree as et
+import xml.etree.ElementTree as ET
 
 from utils.utils import TestUtilities
 
@@ -11,8 +11,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         mcd = MultiCloudDiagrams(debug_mode=True)
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
 
@@ -26,8 +26,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         mcd.add_layer('L2')
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
 
@@ -42,8 +42,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         mcd.add_layer('L3')
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
 
@@ -57,8 +57,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         layer_id = mcd.get_layer_id(layer_name='')
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 1, mcd)
@@ -74,8 +74,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         layer_id_l2 = mcd.get_layer_id(layer_name='L2')
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 2, mcd)
@@ -92,8 +92,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         layer_id_l2 = mcd.get_layer_id(layer_id=2)
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 2, mcd)
@@ -109,8 +109,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
             mcd.get_layer_id(layer_name='L2')
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 1, mcd)
@@ -124,8 +124,8 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
             mcd.get_layer_id(layer_id=2)
 
         # then
-        tree = et.ElementTree(mcd.mx_file)
-        self.verify_mxfile_default(et.ElementTree(tree))
+        tree = ET.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 1, mcd)

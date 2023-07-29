@@ -1,5 +1,5 @@
 from multicloud_diagrams import MultiCloudDiagrams
-import xml.etree.ElementTree as et
+import xml.etree.ElementTree as ET
 
 from utils.utils import TestUtilities
 
@@ -11,7 +11,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         self.verify_mxfile(tree.findall("."))
@@ -21,7 +21,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         # ./diagram/
@@ -32,7 +32,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         # ./diagram/mxGraphModel/
@@ -43,7 +43,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         # ./diagram/mxGraphModel/root
@@ -54,7 +54,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         # ./diagram/mxGraphModel/root/mxCell
@@ -87,7 +87,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams(shadow=True)
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         self.verify_mx_graph_models(tree.findall("./*/"))
@@ -97,7 +97,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         self.verify_mx_graph_models(tree.findall("./*/"))
@@ -108,7 +108,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         mcd = MultiCloudDiagrams(shadow=shadow_mode)
 
         # when
-        tree = et.ElementTree(mcd.mx_file)
+        tree = ET.ElementTree(mcd.mx_file)
 
         # then
         self.verify_mx_graph_models(tree.findall("./*/"), shadow_mode=shadow_mode)

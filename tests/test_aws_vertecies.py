@@ -3,7 +3,7 @@ from multicloud_diagrams import MultiCloudDiagrams
 from utils.utils import TestUtilities
 
 
-class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
+class TestMCDAWSVertexInIsolation(TestUtilities):
 
     def test_dynamo(self):
         # given
