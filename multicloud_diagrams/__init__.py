@@ -250,7 +250,6 @@ class MultiCloudDiagrams:
                             node_type=vertex['nodeType'])
         return
 
-    # TODO add tests for connection
     def add_connection(self, src_node_id, dest_node_id, start, end, labels=[]):
         # Check that both source and destination exist, before creating edge
         found = 0
