@@ -66,7 +66,7 @@ def stringify_labels(labels: []) -> str:
 
 
 def assemble_node_name(node_name, arn, metadata):
-    return f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn}{"<BR>-----------<BR>" + stringify_dict(metadata) if metadata else ""}'
+    return f'<b>Name</b>: {node_name}{"<BR><b>ARN</b>: " + arn if arn else ""}{"<BR>-----------<BR>" + stringify_dict(metadata) if metadata else ""}'
 
 
 class MultiCloudDiagrams:
@@ -187,7 +187,7 @@ class MultiCloudDiagrams:
             # Position Vertex based on X,Y cords
             self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
 
-    def add_service(self, id: str, node_name: str, arn: str, metadata: dict = None, node_enum=Services):
+    def add_service(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_enum=Services):
         if metadata is None:
             metadata = {}
         # Type checking
@@ -195,7 +195,7 @@ class MultiCloudDiagrams:
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
-    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None):
+    def add_vertex(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None):
         if metadata is None:
             metadata = {}
         # check that there is no such vertex already

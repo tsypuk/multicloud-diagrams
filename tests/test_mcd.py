@@ -131,3 +131,22 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
             'vertex': '1'
         }
         self.verify_aws_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=False)
+
+    def test_add_vertex_no_arn(self):
+        # given
+        mcd = MultiCloudDiagrams()
+        resource_type = "test"
+        resource_name = "test_name"
+
+        # when
+        mcd.add_vertex(id="123", node_name=resource_name, node_type=resource_type)
+
+        # then
+        expected = {
+            'id': 'vertex:test:123',
+            'value': '<b>Name</b>: test_name',
+            'style': 'sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Info.svg;',
+            'parent': '1',
+            'vertex': '1'
+        }
+        self.verify_aws_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=False)
