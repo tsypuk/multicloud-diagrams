@@ -43,7 +43,7 @@ def update_fill_color(style_str, node_color):
 def stringify_dict(metadata: dict) -> str:
     if metadata:
         # return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k.capitalize()}</b>: {v}' for k, v in metadata.items()])
-        return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k}</b>: {v}' for k, v in metadata.items()])
+        return '<BR>'.join([f'<b>{k}</b>: {v}' for k, v in metadata.items()])
     else:
         return ''
 
@@ -63,6 +63,10 @@ def stringify_labels(labels: []) -> str:
         return '<BR>'.join([f'{k}' for k in labels])
     else:
         return ''
+
+
+def assemble_node_name(node_name, arn, metadata):
+    return f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn} {"<BR>-----------<BR>" + stringify_dict(metadata) if metadata else ""}'
 
 
 class MultiCloudDiagrams:
@@ -202,14 +206,11 @@ class MultiCloudDiagrams:
             if fill_color is not None:
                 shape_parameters['style'] = update_fill_color(shape_parameters['style'], fill_color)
 
-            stringified_metadata = stringify_dict(metadata)
-
             parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{id}',
-                                    # id = f'vertex:{ARN}',
-                                    value=f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn} {stringified_metadata}',
+                                    value=assemble_node_name(node_name, arn, metadata),
                                     style=f"{shape_parameters['style']}",
                                     parent=parent_id,
                                     vertex="1")
@@ -272,7 +273,7 @@ class MultiCloudDiagrams:
                                     if label in old_label:
                                         print('skip label exists')
                                     else:
-                                        mxLabel.attrib['value'] = old_label + '<BR><BR>' + self._stringify_labels([label])
+                                        mxLabel.attrib['value'] = old_label + '<BR><BR>' + stringify_labels([label])
 
                                 break
                     break
@@ -298,7 +299,7 @@ class MultiCloudDiagrams:
                     mx_cell = et.SubElement(self.root,
                                             'mxCell',
                                             id=f'label:{src_node_id}:to:{dest_node_id}',
-                                            value=self._stringify_labels(labels),
+                                            value=stringify_labels(labels),
                                             style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;",
                                             parent=f'edge:{src_node_id}:to:{dest_node_id}',
                                             vertex="1",

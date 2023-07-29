@@ -68,7 +68,7 @@ class TestMultiCloudDiagrams(TestCase):
         # when
         result = stringify_dict(metadata)
         # then
-        self.assertEqual('<BR>-----------<BR><b>key1</b>: value1<BR><b>key2</b>: value2<BR><b>key3</b>: value3', result)
+        self.assertEqual('<b>key1</b>: value1<BR><b>key2</b>: value2<BR><b>key3</b>: value3', result)
 
     def test_stringify_dict_empty(self):
         # given

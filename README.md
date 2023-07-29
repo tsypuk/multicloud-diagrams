@@ -23,9 +23,11 @@ Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` format for mu
 ## Supported Cloud Provides
 
 ![aws provider](https://img.shields.io/badge/AWS-orange?logo=amazon-aws&color=ff9900)
-![azure provider](https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6)
-![gcp provider](https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4)
 ![on premise provider](https://img.shields.io/badge/OnPremise-orange?color=5f87bf)
+
+[//]: # (![azure provider]&#40;https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6&#41;)
+[//]: # (![gcp provider]&#40;https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4&#41;)
+
 
 ### Features:
 - allows to generate drawio diagram with predefined styles for popular aws services, support graph-based connection with named edges
@@ -38,6 +40,7 @@ Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` format for mu
 - mix and augment Diagram-as-code, real infra crawler, static yaml-based content to diagram
 
 ### Supported AWS services:
+TODO (create Landscape png)
 
 - lambda_function
 - sqs

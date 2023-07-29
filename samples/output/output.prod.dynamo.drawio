@@ -1,34 +1,30 @@
 <mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
 	<diagram id="diagram_1" name="AWS components">
-		<mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+		<mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
 			<root>
 				<mxCell id="0" />
 				<mxCell id="1" parent="0" />
 				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table &lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DeletionProtectionEnabled&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;ItemCount&lt;/b&gt;: 123&lt;BR&gt;&lt;b&gt;TableSizeBytes&lt;/b&gt;: 123" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
-					<!--vertex:prod-dynamo-table-->
 					<mxGeometry width="72" height="81" as="geometry" x="746" />
 				</mxCell>
 				<mxCell id="vertex:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" value="&lt;b&gt;Name&lt;/b&gt;: 2023-04-14T08:29:21.074&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream &lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;LatestStreamLabel&lt;/b&gt;: 2023-04-14T08:29:21.074&lt;BR&gt;&lt;b&gt;StreamViewType&lt;/b&gt;: NEW_IMAGE" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.dynamodb_stream" parent="1" vertex="1">
-					<!--vertex:2023-04-14T08:29:21.074-->
-					<mxGeometry width="78" height="78" as="geometry" y="274" />
+					<mxGeometry width="78" height="78" as="geometry" x="220" y="1" />
 				</mxCell>
 				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" edge="2">
-					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" value="DynamoDBStream" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:dynamo_stream:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table/stream" vertex="1" connectable="0">
 					<mxGeometry relative="1" as="geometry">
-						<mxPoint as="offset" />
+						<mxPoint as="offset" y="-20" />
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:Schema:prod-dynamo-table:list" value="&lt;b&gt;Schema:prod-dynamo-table&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="60" as="geometry" x="462" y="322.5" />
+					<mxGeometry width="240" height="60" as="geometry" x="250" y="262.5" />
 				</mxCell>
 				<mxCell id="vertex:Schema:prod-dynamo-table:row:0" value="&lt;b&gt;string &lt;/b&gt;:  HASH" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Schema:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="240" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:Schema:prod-dynamo-table:list" edge="2">
-					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list" value="Key Schema" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Schema:prod-dynamo-table:list" vertex="1" connectable="0">
@@ -37,19 +33,18 @@
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:Attributes:prod-dynamo-table:list" value="&lt;b&gt;Attributes:prod-dynamo-table&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="120" as="geometry" x="792" y="292.5" />
+					<mxGeometry width="240" height="120" as="geometry" x="250" y="360" />
 				</mxCell>
 				<mxCell id="vertex:Attributes:prod-dynamo-table:row:0" value="&lt;b&gt;first &lt;/b&gt;:  S" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Attributes:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="240" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="vertex:Attributes:prod-dynamo-table:row:1" value="&lt;b&gt;second &lt;/b&gt;:  N" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Attributes:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="60" />
+					<mxGeometry width="240" height="30" as="geometry" y="60" />
 				</mxCell>
 				<mxCell id="vertex:Attributes:prod-dynamo-table:row:2" value="&lt;b&gt;third &lt;/b&gt;:  B" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Attributes:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="90" />
+					<mxGeometry width="240" height="30" as="geometry" y="90" />
 				</mxCell>
 				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Attributes:prod-dynamo-table:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:Attributes:prod-dynamo-table:list" edge="2">
-					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Attributes:prod-dynamo-table:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Attributes:prod-dynamo-table:list" value="AttributeDefinitions" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:Attributes:prod-dynamo-table:list" vertex="1" connectable="0">
@@ -58,43 +53,41 @@
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:LSIs:prod-dynamo-table:list" value="&lt;b&gt;LSIs:prod-dynamo-table&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="90" as="geometry" x="1122" y="307.5" />
+					<mxGeometry width="218" height="90" as="geometry" x="673" y="262.5" />
 				</mxCell>
 				<mxCell id="vertex:LSIs:prod-dynamo-table:row:0" value="&lt;b&gt;IndexName&lt;/b&gt;:  firstIndex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSIs:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="218" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="vertex:LSIs:prod-dynamo-table:row:1" value="&lt;b&gt;IndexName&lt;/b&gt;:  secondIndex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSIs:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="60" />
+					<mxGeometry width="218" height="30" as="geometry" y="60" />
 				</mxCell>
 				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:LSIs:prod-dynamo-table:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:LSIs:prod-dynamo-table:list" edge="2">
-					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:LSIs:prod-dynamo-table:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:LSIs:prod-dynamo-table:list" value="index: LSI" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:LSIs:prod-dynamo-table:list" vertex="1" connectable="0">
 					<mxGeometry relative="1" as="geometry">
-						<mxPoint as="offset" />
+						<mxPoint as="offset" x="28" y="49" />
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-firstIndex:list" value="&lt;b&gt;LSI:prod-dynamo-table-firstIndex&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="180" as="geometry" x="396" y="576" />
+					<mxGeometry width="244" height="180" as="geometry" x="502" y="440" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-firstIndex:row:0" value="&lt;b&gt;IndexName&lt;/b&gt;:  firstIndex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-firstIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="244" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-firstIndex:row:1" value="&lt;b&gt;IndexSizeBytes&lt;/b&gt;:  777" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-firstIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="60" />
+					<mxGeometry width="244" height="30" as="geometry" y="60" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-firstIndex:row:2" value="&lt;b&gt;ItemCount&lt;/b&gt;:  123" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-firstIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="90" />
+					<mxGeometry width="244" height="30" as="geometry" y="90" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-firstIndex:row:3" value="&lt;b&gt;ProjectionType&lt;/b&gt;:  ALL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-firstIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="120" />
+					<mxGeometry width="244" height="30" as="geometry" y="120" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-firstIndex:row:4" value="&lt;b&gt;Schema&lt;/b&gt;:  { string: HASH}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-firstIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="150" />
+					<mxGeometry width="244" height="30" as="geometry" y="150" />
 				</mxCell>
 				<mxCell id="edge:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-firstIndex:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:LSIs:prod-dynamo-table:list" target="vertex:LSI:prod-dynamo-table-firstIndex:list" edge="2">
-					<!--edge:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-firstIndex:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-firstIndex:list" value="LSI : firstIndex" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-firstIndex:list" vertex="1" connectable="0">
@@ -103,25 +96,24 @@
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-secondIndex:list" value="&lt;b&gt;LSI:prod-dynamo-table-secondIndex&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="180" as="geometry" x="726" y="576" />
+					<mxGeometry width="250" height="180" as="geometry" x="818" y="440" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-secondIndex:row:0" value="&lt;b&gt;IndexName&lt;/b&gt;:  secondIndex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-secondIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="250" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-secondIndex:row:1" value="&lt;b&gt;IndexSizeBytes&lt;/b&gt;:  777" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-secondIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="60" />
+					<mxGeometry width="250" height="30" as="geometry" y="60" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-secondIndex:row:2" value="&lt;b&gt;ItemCount&lt;/b&gt;:  123" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-secondIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="90" />
+					<mxGeometry width="250" height="30" as="geometry" y="90" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-secondIndex:row:3" value="&lt;b&gt;ProjectionType&lt;/b&gt;:  ALL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-secondIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="120" />
+					<mxGeometry width="250" height="30" as="geometry" y="120" />
 				</mxCell>
 				<mxCell id="vertex:LSI:prod-dynamo-table-secondIndex:row:4" value="&lt;b&gt;Schema&lt;/b&gt;:  { alternativeKey: RANGE}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:LSI:prod-dynamo-table-secondIndex:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="150" />
+					<mxGeometry width="250" height="30" as="geometry" y="150" />
 				</mxCell>
 				<mxCell id="edge:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-secondIndex:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:LSIs:prod-dynamo-table:list" target="vertex:LSI:prod-dynamo-table-secondIndex:list" edge="2">
-					<!--edge:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-secondIndex:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-secondIndex:list" value="LSI : secondIndex" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:LSIs:prod-dynamo-table:list:to:LSI:prod-dynamo-table-secondIndex:list" vertex="1" connectable="0">
@@ -130,49 +122,47 @@
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:GSIs:prod-dynamo-table:list" value="&lt;b&gt;GSIs:prod-dynamo-table&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="60" as="geometry" x="1452" y="322.5" />
+					<mxGeometry width="218" height="60" as="geometry" x="1100" y="230" />
 				</mxCell>
 				<mxCell id="vertex:GSIs:prod-dynamo-table:row:0" value="&lt;b&gt;IndexName&lt;/b&gt;:  string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSIs:prod-dynamo-table:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="218" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:GSIs:prod-dynamo-table:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table" target="vertex:GSIs:prod-dynamo-table:list" edge="2">
-					<!--edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:GSIs:prod-dynamo-table:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:GSIs:prod-dynamo-table:list" value="index: GSI" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:dynamo:arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table:to:GSIs:prod-dynamo-table:list" vertex="1" connectable="0">
 					<mxGeometry relative="1" as="geometry">
-						<mxPoint as="offset" />
+						<mxPoint as="offset" x="83" y="15" />
 					</mxGeometry>
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:list" value="&lt;b&gt;GSI:prod-dynamo-table-string&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-					<mxGeometry width="300" height="270" as="geometry" x="1452" y="531" />
+					<mxGeometry width="228" height="270" as="geometry" x="1095" y="352.5" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:0" value="&lt;b&gt;IndexName&lt;/b&gt;:  string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+					<mxGeometry width="228" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:1" value="&lt;b&gt;IndexSizeBytes&lt;/b&gt;:  123" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="60" />
+					<mxGeometry width="228" height="30" as="geometry" y="60" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:2" value="&lt;b&gt;IndexStatus&lt;/b&gt;:  ACTIVE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="90" />
+					<mxGeometry width="228" height="30" as="geometry" y="90" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:3" value="&lt;b&gt;ItemCount&lt;/b&gt;:  123" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="120" />
+					<mxGeometry width="228" height="30" as="geometry" y="120" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:4" value="&lt;b&gt;RCU&lt;/b&gt;:  123" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="150" />
+					<mxGeometry width="228" height="30" as="geometry" y="150" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:5" value="&lt;b&gt;WCU&lt;/b&gt;:  123" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="180" />
+					<mxGeometry width="228" height="30" as="geometry" y="180" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:6" value="&lt;b&gt;ProjectionType&lt;/b&gt;:  ALL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="210" />
+					<mxGeometry width="228" height="30" as="geometry" y="210" />
 				</mxCell>
 				<mxCell id="vertex:GSI:prod-dynamo-table-string:row:7" value="&lt;b&gt;Schema&lt;/b&gt;:  { string: HASH}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:GSI:prod-dynamo-table-string:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="240" />
+					<mxGeometry width="228" height="30" as="geometry" y="240" />
 				</mxCell>
 				<mxCell id="edge:GSIs:prod-dynamo-table:list:to:GSI:prod-dynamo-table-string:list" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:GSIs:prod-dynamo-table:list" target="vertex:GSI:prod-dynamo-table-string:list" edge="2">
-					<!--edge:GSIs:prod-dynamo-table:list:to:GSI:prod-dynamo-table-string:list-->
 					<mxGeometry as="geometry" />
 				</mxCell>
 				<mxCell id="label:GSIs:prod-dynamo-table:list:to:GSI:prod-dynamo-table-string:list" value="GSI : string" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:GSIs:prod-dynamo-table:list:to:GSI:prod-dynamo-table-string:list" vertex="1" connectable="0">
