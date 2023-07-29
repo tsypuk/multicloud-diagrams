@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from multicloud_diagrams import MultiCloudDiagrams
+from multicloud_diagrams import MultiCloudDiagrams, update_fill_color, stringify_dict
 
 
 class TestMultiCloudDiagrams(TestCase):
@@ -70,18 +70,26 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test_stringify_dict(self):
         # given
-        mcd = MultiCloudDiagrams()
         metadata = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
         # when
-        result = mcd.stringify_dict(metadata)
+        result = stringify_dict(metadata)
         # then
         self.assertEqual('<BR>-----------<BR><b>key1</b>: value1<BR><b>key2</b>: value2<BR><b>key3</b>: value3', result)
 
     def test_stringify_dict_empty(self):
         # given
-        mcd = MultiCloudDiagrams()
         metadata = {}
         # when
-        result = mcd.stringify_dict(metadata)
+        result = stringify_dict(metadata)
         # then
         self.assertEqual('', result)
+
+    def test_update_fill_color(self):
+        # given-when
+        result = update_fill_color(
+            style_str='sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;',
+            node_color='#FF0000')
+        # then
+        self.assertEqual(
+            'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#FF0000;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;',
+            result)

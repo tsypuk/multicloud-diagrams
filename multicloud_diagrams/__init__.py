@@ -5,6 +5,7 @@ import os.path
 import pkgutil
 from enum import Enum
 from typing import Union
+import re
 
 import yaml
 
@@ -33,9 +34,24 @@ class OnPrem(Enum):
 Services = Union[AWS, OnPrem]
 
 
+def update_fill_color(style_str, node_color):
+    pattern = r'fillColor=([^;]+)'
+    # Replace the 'fillColor' value with the node_color
+    return re.sub(pattern, f'fillColor={node_color}', style_str)
+
+
+def stringify_dict(metadata: dict) -> str:
+    if metadata:
+        # return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k.capitalize()}</b>: {v}' for k, v in metadata.items()])
+        return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k}</b>: {v}' for k, v in metadata.items()])
+    else:
+        return ''
+
+
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
-        self.mxfile = et.Element('mxfile', host="multicloud-diagrams",
+        self.mxfile = et.Element('mxfile',
+                                 host="multicloud-diagrams",
                                  agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                  type="MultiCloud")
 
@@ -97,19 +113,11 @@ class MultiCloudDiagrams:
 
     def get_vertex_metadata(self, node_type: str) -> dict:
         if node_type in self.supported_vertex:
-            return self.supported_vertex[node_type]
+            return self.supported_vertex[node_type].copy()
         else:
             logging.warning(
                 f'No such nodeType: {node_type} in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest')
-            return self.supported_vertex['fallback_vertex']
-
-    @staticmethod
-    def stringify_dict(metadata: dict) -> str:
-        if metadata:
-            # return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k.capitalize()}</b>: {v}' for k, v in metadata.items()])
-            return '<BR>-----------<BR>' + '<BR>'.join([f'<b>{k}</b>: {v}' for k, v in metadata.items()])
-        else:
-            return ''
+            return self.supported_vertex['fallback_vertex'].copy()
 
     # green fill_color=#d5e8d4
     # red fill_color=#f8cecc;"
@@ -160,7 +168,7 @@ class MultiCloudDiagrams:
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
-    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type='', layer_name=None, layer_id=None):
+    def add_vertex(self, id: str, node_name: str, arn: str, metadata: dict = {}, node_type='', layer_name=None, layer_id=None, fill_color=None):
 
         # check that there is no such vertex already
         exist = False
@@ -173,8 +181,10 @@ class MultiCloudDiagrams:
 
         if not exist:
             shape_parameters = self.get_vertex_metadata(node_type)
+            if fill_color is not None:
+                shape_parameters['style'] = update_fill_color(shape_parameters['style'], fill_color)
 
-            stringified_metadata = self.stringify_dict(metadata)
+            stringified_metadata = stringify_dict(metadata)
 
             parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = et.SubElement(self.root,

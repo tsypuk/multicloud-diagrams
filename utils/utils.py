@@ -3,6 +3,8 @@ import unittest
 import json
 import xml.etree.ElementTree as et
 
+from multicloud_diagrams import update_fill_color
+
 
 class TestUtilities(unittest.TestCase):
     supported_vertex = {}
@@ -74,7 +76,7 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-    def verify_aws_resource(self, expected: dict, mx_file: et.Element, resource_name, resource_type, debug_mode=False):
+    def verify_aws_resource(self, expected: dict, mx_file: et.Element, resource_name, resource_type, debug_mode=False, fill_color=None):
         tree = et.ElementTree(mx_file)
         self.verify_mxfile_default(et.ElementTree(tree))
 
@@ -85,6 +87,8 @@ class TestUtilities(unittest.TestCase):
         if 'style' in expected:
             del expected['style']
         expected['style'] = self.supported_vertex[resource_type]['style']
+        if fill_color is not None:
+            expected['style'] = update_fill_color(expected['style'], fill_color)
 
         children = mx_cells[2].findall("./*")
 
@@ -105,3 +109,14 @@ class TestUtilities(unittest.TestCase):
         # 'height', 'width' are verified based on providers file content
         self.assertEqual(self.supported_vertex[resource_type]['height'], mx_geometry.attrib['height'])
         self.assertEqual(self.supported_vertex[resource_type]['width'], mx_geometry.attrib['width'])
+
+    def verify_layers(self, mx_cells, layers_count, mcd):
+        self.assertEqual(layers_count + 1, len(mx_cells))
+        self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
+        expected_layer = {1: ''}
+        self.verify_mx_cell(mx_cells[1], expected={'id': f'{1}', 'parent': '0'})
+        for id in range(1, layers_count, 1):
+            self.verify_mx_cell(mx_cells[id + 1], expected={'id': f'{id + 1}', 'parent': '0', 'value': f'L{id + 1}'})
+            if id > 0:
+                expected_layer[id + 1] = f'L{id + 1}'
+        self.assertEqual(expected_layer, mcd.layers)
