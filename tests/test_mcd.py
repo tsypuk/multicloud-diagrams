@@ -81,3 +81,34 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
             'vertex': '1'
         }
         self.verify_aws_resource(expected, mcd.mxfile, resource_name, 'fallback_vertex', debug_mode=True)
+
+    def test_shadow_drawio(self):
+        # given
+        mcd = MultiCloudDiagrams(shadow=True)
+
+        # when
+        tree = et.ElementTree(mcd.mxfile)
+
+        # then
+        self.verify_mx_graph_models(tree.findall("./*/"))
+
+    def test_default_shadow_drawio(self):
+        # given
+        mcd = MultiCloudDiagrams()
+
+        # when
+        tree = et.ElementTree(mcd.mxfile)
+
+        # then
+        self.verify_mx_graph_models(tree.findall("./*/"))
+
+    def test_no_shadow_drawio(self):
+        # given
+        shadow_mode = False
+        mcd = MultiCloudDiagrams(shadow=shadow_mode)
+
+        # when
+        tree = et.ElementTree(mcd.mxfile)
+
+        # then
+        self.verify_mx_graph_models(tree.findall("./*/"), shadow_mode=shadow_mode)

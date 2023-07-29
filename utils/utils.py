@@ -30,6 +30,7 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual('PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.',
                          root.attrib['agent'])
         self.assertEqual('MultiCloud', root.attrib['type'])
+        self.assertNotIn('shadow', root.attrib)
 
     def verify_diagrams(self, diagrams):
         diagram = diagrams[0]
@@ -40,14 +41,17 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual('diagram_1', diagram.attrib['id'])
         self.assertEqual('AWS components', diagram.attrib['name'])
 
-    def verify_mx_graph_models(self, mx_graph_models):
+    def verify_mx_graph_models(self, mx_graph_models, shadow_mode=True):
         mx_graph_model = mx_graph_models[0]
+        shadow_value = '0'
+        if shadow_mode:
+            shadow_value = '1'
 
         # then
         self.assertEqual(1, len(mx_graph_models))
         self.assertEqual('mxGraphModel', mx_graph_model.tag)
         expected = {'dx': '1015', 'dy': '661', 'grid': '1', 'gridSize': '10', 'guides': '1', 'tooltips': '1', 'connect': '1', 'arrows': '1', 'fold': '1', 'page': '1', 'pageScale': '1',
-                    'pageWidth': '850', 'pageHeight': '1100', 'math': '0', 'shadow': '0'}
+                    'pageWidth': '850', 'pageHeight': '1100', 'math': '0', 'shadow': shadow_value}
         self.assertEqual(expected, mx_graph_model.attrib)
 
     def verify_roots(self, roots):

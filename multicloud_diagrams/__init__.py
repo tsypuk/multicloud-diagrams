@@ -34,14 +34,20 @@ Services = Union[AWS, OnPrem]
 
 
 class MultiCloudDiagrams:
-    def __init__(self, debug_mode=False, layer_name=''):
+    def __init__(self, debug_mode=False, shadow=True, layer_name=''):
         self.mxfile = et.Element('mxfile', host="multicloud-diagrams",
                                  agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                  type="MultiCloud")
+
         self.diagram = et.SubElement(self.mxfile, 'diagram', id="diagram_1", name="AWS components")
         self.mx_graph_model = et.SubElement(self.diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
                                             guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
-                                            pageScale="1", pageWidth="850", pageHeight="1100", math="0", shadow="0")
+                                            pageScale="1", pageWidth="850", pageHeight="1100", math="0")
+        if shadow:
+            self.mx_graph_model.attrib['shadow'] = '1'
+        else:
+            self.mx_graph_model.attrib['shadow'] = '0'
+
         self.root = et.SubElement(self.mx_graph_model, 'root')
         self.layers = {}
         self.mx_cell_id_0 = et.SubElement(self.root, 'mxCell', id="0")
