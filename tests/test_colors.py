@@ -25,7 +25,7 @@ class TestMultiCloudDiagramsColors(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mxfile, 'internal.fifo', 'sns')
+        self.verify_aws_resource(expected, mcd.mx_file, 'internal.fifo', 'sns')
 
     def test_add_custom_node_color(self):
         # given
@@ -49,4 +49,4 @@ class TestMultiCloudDiagramsColors(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mxfile, 'internal.fifo', 'sns', fill_color=node_color)
+        self.verify_aws_resource(expected, mcd.mx_file, 'internal.fifo', 'sns', fill_color=node_color)

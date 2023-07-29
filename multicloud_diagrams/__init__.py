@@ -48,14 +48,31 @@ def stringify_dict(metadata: dict) -> str:
         return ''
 
 
+def build_vertex_id(vertex_details, edge, src_dst_marker: str):
+    resource = {}
+    if f'{src_dst_marker}_arn' in edge:
+        resource["type"] = edge[f"{src_dst_marker}_type"]
+        resource["arn"] = edge[f'{src_dst_marker}_arn']
+    elif src_dst_marker in edge:
+        resource = [vertex for vertex in vertex_details if vertex['name'] == edge[src_dst_marker]][0]
+    return f'{resource["type"]}:{resource["arn"]}'
+
+
+def stringify_labels(labels: []) -> str:
+    if len(labels) > 0:
+        return '<BR>'.join([f'{k}' for k in labels])
+    else:
+        return ''
+
+
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
-        self.mxfile = et.Element('mxfile',
-                                 host="multicloud-diagrams",
-                                 agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
-                                 type="MultiCloud")
+        self.mx_file = et.Element('mxfile',
+                                  host="multicloud-diagrams",
+                                  agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
+                                  type="MultiCloud")
 
-        self.diagram = et.SubElement(self.mxfile, 'diagram', id="diagram_1", name="AWS components")
+        self.diagram = et.SubElement(self.mx_file, 'diagram', id="diagram_1", name="AWS components")
         self.mx_graph_model = et.SubElement(self.diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
                                             guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
                                             pageScale="1", pageWidth="850", pageHeight="1100", math="0")
@@ -121,10 +138,11 @@ class MultiCloudDiagrams:
 
     # green fill_color=#d5e8d4
     # red fill_color=#f8cecc;"
+    # TODO cover with tests list
     def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300"):
         if not table_id:
             table_id = table_name
-
+        # TODO mode all styling to external resource file
         style = "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
 
         if fill_color:
@@ -192,7 +210,7 @@ class MultiCloudDiagrams:
                                     id=f'vertex:{node_type}:{id}',
                                     # id = f'vertex:{ARN}',
                                     value=f'<b>Name</b>: {node_name}<BR><b>ARN</b>: {arn} {stringified_metadata}',
-                                    style=(f"{shape_parameters['style']}"),
+                                    style=f"{shape_parameters['style']}",
                                     parent=parent_id,
                                     vertex="1")
             if self.debug_mode:
@@ -225,13 +243,7 @@ class MultiCloudDiagrams:
                             node_type=vertex['nodeType'])
         return
 
-    @staticmethod
-    def _stringify_labels(labels: []) -> str:
-        if len(labels) > 0:
-            return '<BR>'.join([f'{k}' for k in labels])
-        else:
-            return ''
-
+    # TODO add tests for connection
     def add_connection(self, src_node_id, dest_node_id, start, end, labels=[]):
         # Check that both source and destination exist, before creating edge
         found = 0
@@ -344,19 +356,10 @@ class MultiCloudDiagrams:
                 )
             for edge in data['edges']:
                 self.add_link(
-                    src_node_id=self._build_vertex_id(data['vertices'], edge, 'src'),
-                    dst_node_id=self._build_vertex_id(data['vertices'], edge, 'dst'),
+                    src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
+                    dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
                     action=[edge['label']]
                 )
-
-    def _build_vertex_id(self, vertex_details, edge, src_dst_marker: str):
-        resource = {}
-        if f'{src_dst_marker}_arn' in edge:
-            resource["type"] = edge[f"{src_dst_marker}_type"]
-            resource["arn"] = edge[f'{src_dst_marker}_arn']
-        elif src_dst_marker in edge:
-            resource = [vertex for vertex in vertex_details if vertex['name'] == edge[src_dst_marker]][0]
-        return f'{resource["type"]}:{resource["arn"]}'
 
     def read_coords_from_file(self, file_name: str):
         if os.path.isfile(file_name):
@@ -389,7 +392,7 @@ class MultiCloudDiagrams:
 
     def export_to_file(self, file_path):
         with open(file_path, 'wb') as file:
-            tree = et.ElementTree(self.mxfile)
+            tree = et.ElementTree(self.mx_file)
             et.indent(tree, space="\t", level=0)
             tree.write(file, encoding='utf-8')
         return

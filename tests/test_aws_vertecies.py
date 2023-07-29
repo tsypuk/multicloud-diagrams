@@ -26,7 +26,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mxfile, 'prod-dynamo-table', 'dynamo')
+        self.verify_aws_resource(expected, mcd.mx_file, 'prod-dynamo-table', 'dynamo')
 
     def test_sqs(self):
         # given
@@ -50,7 +50,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mxfile, 'int-eu-live-events.fifo', 'sqs')
+        self.verify_aws_resource(expected, mcd.mx_file, 'int-eu-live-events.fifo', 'sqs')
 
     def test_sns(self):
         # given
@@ -72,7 +72,7 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mxfile, 'internal.fifo', 'sns')
+        self.verify_aws_resource(expected, mcd.mx_file, 'internal.fifo', 'sns')
 
     def test_lambda(self):
         # given
@@ -100,4 +100,4 @@ class Test_MCD_AWS_Vertex_Isolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mxfile, 'producer-lambda', 'lambda_function')
+        self.verify_aws_resource(expected, mcd.mx_file, 'producer-lambda', 'lambda_function')

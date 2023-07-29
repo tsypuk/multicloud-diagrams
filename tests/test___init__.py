@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from multicloud_diagrams import MultiCloudDiagrams, update_fill_color, stringify_dict
+from multicloud_diagrams import update_fill_color, stringify_dict, build_vertex_id
 
 
 class TestMultiCloudDiagrams(TestCase):
@@ -12,59 +12,53 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test__build_vertex_id_approach_1_src(self):
         # given
-        mcd = MultiCloudDiagrams()
         edge = {'src': 'prod-lambda-name', 'dst': 'role-lambda-name', 'label': 'HasRole', 'link_type': 'none'}
         # when
-        result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
+        result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
         # then
         self.assertEqual('lambda_function:arn:aws:lambda:eu-west-1:123456789:function:prod-lambda-name', result)
 
     def test__build_vertex_id_approach_1_dst_arn(self):
         # given
-        mcd = MultiCloudDiagrams()
         edge = {'src': 'prod-lambda-name', 'dst': 'role-lambda-name', 'label': 'HasRole', 'link_type': 'none'}
         # when
-        result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
+        result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
         # then
         self.assertEqual('iam_role:arn:aws:iam::123456789:role/prod-lambda-name', result)
 
     def test__build_vertex_id_approach_2_dst_arn(self):
         # given
-        mcd = MultiCloudDiagrams()
         edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst_arn': 'arn:aws:iam::123456789:policy/prod-s3-policy', 'dst_type': 'iam_policy',
                 'label': 'Allow S3 access', 'link_type': 'none'}
         # when
-        result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
+        result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
         # then
         self.assertEqual('iam_policy:arn:aws:iam::123456789:policy/prod-s3-policy', result)
 
     def test__build_vertex_id_approach_2_src_arn(self):
         # given
-        mcd = MultiCloudDiagrams()
         edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst_arn': 'arn:aws:iam::123456789:policy/prod-s3-policy', 'dst_type': 'iam_policy',
                 'label': 'Allow S3 access', 'link_type': 'none'}
         # when
-        result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
+        result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
         # then
         self.assertEqual('iam_role:arn:aws:iam::123456789:role/prod-lambda-name', result)
 
     def test__build_vertex_id_approach_3_src_arn(self):
         # given
-        mcd = MultiCloudDiagrams()
         edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst': 'prod-dynamodb-policy',
                 'label': 'Allow DynamoDB read access', 'link_type': 'none'}
         # when
-        result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
+        result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
         # then
         self.assertEqual('iam_role:arn:aws:iam::123456789:role/prod-lambda-name', result)
 
     def test__build_vertex_id_approach_3_dst(self):
         # given
-        mcd = MultiCloudDiagrams()
         edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst': 'prod-dynamodb-policy',
                 'label': 'Allow DynamoDB read access', 'link_type': 'none'}
         # when
-        result = mcd._build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
+        result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
         # then
         self.assertEqual('iam_policy:arn:aws:iam::123456789:policy/prod-dynamo-policy', result)
 
