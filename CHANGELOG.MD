@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.10](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.10) - 2023-08-01
+
+<small>[Compare with 0.3.9](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.9...0.3.10)</small>
+
+### Docs
+
+- udpated readme ([791d298](https://github.com/tsypuk/multicloud-diagrams/commit/791d29859860514c26e6b9fd85ca794e45014f9a) by Roman Tsypuk).
+- updated changelog ([c61e12c](https://github.com/tsypuk/multicloud-diagrams/commit/c61e12cd8666e61cec62c29eee5968c723859297) by Roman Tsypuk).
+
+### Features
+
+- added snapshot to diagram ([b855cc5](https://github.com/tsypuk/multicloud-diagrams/commit/b855cc58a665f07a519748112635d5d7b867d3c9) by Roman Tsypuk).
+- added fillColor change for any AWS node; added tests ([8e40b52](https://github.com/tsypuk/multicloud-diagrams/commit/8e40b52f17e88b75cc5a48220e79c0f84db610c0) by Roman Tsypuk).
+- added shadow mode for rendering ([21cc025](https://github.com/tsypuk/multicloud-diagrams/commit/21cc025717b3be461a3b076a034a64741eb08e29) by Roman Tsypuk).
+- aws nodes can be added to different drawio layers ([b58584f](https://github.com/tsypuk/multicloud-diagrams/commit/b58584fcf9d9cee06ea2eff2eb9a47a484ec99e1) by Roman Tsypuk).
+- support layers in the draw.io ([e210ec9](https://github.com/tsypuk/multicloud-diagrams/commit/e210ec94af94d22bfb2a2652a8845056a519b43b) by Roman Tsypuk).
+
+### Tests 
+
+- added label in edge verification; added fill dump function ([97e08e1](https://github.com/tsypuk/multicloud-diagrams/commit/97e08e10070e89cc340470ecc8dd9c2f9fda1fcb) by Roman Tsypuk).
+- added edge connection link between edges (sqs and lambda) ([17083d8](https://github.com/tsypuk/multicloud-diagrams/commit/17083d8ff98afcfc7513abd6b1bb75e58876df96) by Roman Tsypuk).
+- refactoring ([86b9a82](https://github.com/tsypuk/multicloud-diagrams/commit/86b9a824be6e706b7a784299377cf8dfa4887c83) by Roman Tsypuk).
+- debug_mode verification added ([5cdbd93](https://github.com/tsypuk/multicloud-diagrams/commit/5cdbd93aaa2d8c3e2eb82eb14705d290a35e8637) by Roman Tsypuk).
+- full generic verification of aws node based on provider.json; fixed style duplicated values ([99259b5](https://github.com/tsypuk/multicloud-diagrams/commit/99259b5c5fea387d0b149dfa62cbee35733953f3) by Roman Tsypuk).
+- added lambda vertex verification ([f936b9a](https://github.com/tsypuk/multicloud-diagrams/commit/f936b9a653374771f6afa9effd3189c24a28b9da) by Roman Tsypuk).
+- added sns vertex verification ([8be56a5](https://github.com/tsypuk/multicloud-diagrams/commit/8be56a5bb87c16537b21fb9bd17bd3510087d42a) by Roman Tsypuk).
+- added sqs vertex verification ([03ecea8](https://github.com/tsypuk/multicloud-diagrams/commit/03ecea8433c5b3a8995198bd219d72eb0fcff253) by Roman Tsypuk).
+- move utils ([167db1a](https://github.com/tsypuk/multicloud-diagrams/commit/167db1a6b34190f0f000c61f8ba212581860c8b2) by Roman Tsypuk).
+- added aws dynamodb vertex verification ([536e357](https://github.com/tsypuk/multicloud-diagrams/commit/536e357737c6c2da7ff48bbfc73a65cadea94608) by Roman Tsypuk).
+- cover default drawio; small refactoring ([ac357f4](https://github.com/tsypuk/multicloud-diagrams/commit/ac357f4cdc4fba523b659dc9140c1dd29085d659) by Roman Tsypuk).
+- added github tests run ([8dcda03](https://github.com/tsypuk/multicloud-diagrams/commit/8dcda03e51c141f34853581512112701e0c1491d) by Roman Tsypuk).
+
 ## [0.3.9](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.9) - 2023-07-24
 
 <small>[Compare with 0.3.2](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.2...0.3.9)</small>

@@ -232,6 +232,11 @@ poetry run flakehell lint
 
 ```
 
+```shell
+poetry run git-changelog -c angular -s docs,feat,test --output CHANGELOG.MD
+git push --tags
+```
+
 ### Contribution Guide:
 
 OpenSource Guide, [How to contribute to opensource](https://opensource.guide/)
