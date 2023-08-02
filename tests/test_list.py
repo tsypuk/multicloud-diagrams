@@ -18,7 +18,7 @@ class TestMCDList(TestUtilities):
 
         # when
         mcd.add_list(table_name=f'Schema:{table_name}', rows=rows_keys)
-        mcd.dump()
+        # mcd.dump()
         # then
 
         tree = Et.ElementTree(mcd.mx_file)

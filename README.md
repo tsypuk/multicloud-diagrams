@@ -5,52 +5,41 @@
 ![python version](https://img.shields.io/badge/python-%3E%3D%203.7-blue?logo=python)
 ![Run tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
 
-Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` format for multiple Cloud providers.
+Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` vector format  for multiple Cloud providers. This is graph not static, so you can  move, edit, position nodes like you want.
 
 <a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-
-- you can use it by defining ``Diagrams as a Code``, compile to drawio vector format, edit vector drawio representation (align components location).
-- other option is to query infrastructure elements with popular libraries, like aws boto, preprocess desired elements and compile them into drawio using ``multicloud-diagrams``.
 
 - **Source code:** https://github.com/tsypuk/multicloud-diagrams
 - **PyPI multicloud-diagrams:** https://pypi.org/project/multicloud-diagrams/
 - **Sponsor project:** https://patreon.com/tsypuk
-- **View changelog:** https://github.com/tsypuk/multicloud-diagrams/blob/main/CHANGELOG.MD
+- **CHANGELOG:** https://github.com/tsypuk/multicloud-diagrams/blob/main/CHANGELOG.MD
 - **Bug reports:** https://github.com/tsypuk/multicloud-diagrams/issues
 - **Samples and examples:** https://github.com/tsypuk/multicloud-diagrams/tree/main/samples/samples
 
-## Supported Cloud Provides
+### Supported Nodes Landscape:
+
+![landscape.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/landscape.png)
+
+### Cloud Provides:
+
+#### Supported:
 
 ![aws provider](https://img.shields.io/badge/AWS-orange?logo=amazon-aws&color=ff9900)
 ![on premise provider](https://img.shields.io/badge/OnPremise-orange?color=5f87bf)
 
-[//]: # (![azure provider]&#40;https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6&#41;)
-[//]: # (![gcp provider]&#40;https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4&#41;)
-
+#### Planned to be added:
+![azure provider](https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6)
+![gcp provider](https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4)
 
 ### Features:
 - allows to generate drawio diagram with predefined styles for popular aws services, support graph-based connection with named edges
 - supports single and batch elements append to diagram
 - duplicates detection to prevent ball of mud in file format and diagram
-- verification that both vertices present on diagram when adding edge connection between them 
+- verification that both vertices present on diagram when adding edge connection between them
 - if the node is not present, fallback to default icon when rendering
 - read previous version of drawio file and reuses existing vertices coordinates when generating a new version
 - generate diagram from ``YAML`` definition
 - mix and augment Diagram-as-code, real infra crawler, static yaml-based content to diagram
-
-### Supported AWS services:
-TODO (create Landscape png)
-
-- lambda_function
-- sqs
-- sns
-- iam_role/iam_policy/iam_permission
-- dynamo/dynamo_stream
-- api_gw
-- s3
-- kms
-- ssm
 
 ### Library usage samples:
 

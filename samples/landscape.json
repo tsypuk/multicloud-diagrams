@@ -1,0 +1,150 @@
+[
+  {
+    "resource_type": "dynamo",
+    "data": {
+      "arn": "arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table",
+      "name": "prod-dynamo-table",
+      "metadata": {
+        "DeletionProtectionEnabled": "True",
+        "ItemCount": 900,
+        "TableSizeBytes": 123
+      }
+    }
+  },
+  {
+    "resource_type": "dynamo_stream",
+    "data": {
+      "arn": "arn:aws:dynamodb:eu-west-1:123456789012:table/transactions-outbox/stream",
+      "name": "transactions-outbox",
+      "metadata": {
+        "LatestStreamLabel": "2022-12-05T06:41:33.710",
+        "StreamViewType": "StreamViewType"
+      }
+    }
+  },
+  {
+    "resource_type": "api_gw",
+    "data": {
+      "arn": "4kwel11111",
+      "name": "prod-rules",
+      "metadata": {
+        "api_key_source": "HEADER",
+        "endpoint_configuration": "{'types': ['EDGE']}",
+        "id": "4kwel11111"
+      }
+    }
+  },
+  {
+    "resource_type": "sqs",
+    "data": {
+      "arn": "arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo",
+      "name": "int-eu-live-events.fifo",
+      "metadata": {
+        "DelaySeconds": 0,
+        "FifoQueue": "TRUE",
+        "ReceiveMessageWaitTimeSeconds": 0,
+        "SqsManagedSseEnabled": "false",
+        "VisibilityTimeout": 30
+      }
+    }
+  },
+  {
+    "resource_type": "sns",
+    "data": {
+      "arn": "arn:aws:sns:eu-west-1:123456789012:internal.fifo",
+      "name": "internal.fifo",
+      "metadata": {
+        "Owner": 123456789012,
+        "SubscriptionsConfirmed": 3,
+        "SubscriptionsPending": 0
+      }
+    }
+  },
+  {
+    "resource_type": "lambda_function",
+    "data": {
+      "arn": "arn:aws:lambda:eu-west-1:123456789:function:producer-lambda",
+      "name": "producer-lambda",
+      "metadata": {
+        "CodeSize": 1234,
+        "Handler": "main",
+        "Layers": 0,
+        "Memory": 128,
+        "PackageType": "Zip",
+        "Runtime": "go1.x",
+        "Timeout": 30,
+        "TracingConfig": "{'Mode': 'Active'}",
+        "Version": "$LATEST"
+      }
+    }
+  },
+  {
+    "resource_type": "iam_role",
+    "data": {
+      "name": "serverless_role",
+      "arn": "arn:aws:iam::123456789012:role/serverless_role"
+    }
+  },
+  {
+    "resource_type": "iam_policy",
+    "data": {
+      "name": "access-userPolicy",
+      "arn": "arn:aws:iam::123456789012:policy/access-userPolicy"
+    }
+  },
+  {
+    "resource_type": "iam_permission",
+    "data": {
+      "name": "permission",
+      "arn": "arn:aws:iam::123456789012:policy/permission"
+    }
+  },
+  {
+    "resource_type": "s3",
+    "data": {
+      "arn": "arn:aws:s3:eu-west-1:123456789012:shared_bucket",
+      "name": "shared_bucket",
+      "metadata": {}
+    }
+  },
+  {
+    "resource_type": "kms",
+    "data": {
+      "arn": "arn:aws:kms:eu-west-1:123456789012:encr_key",
+      "name": "encr_key",
+      "metadata": {}
+    }
+  },
+  {
+    "resource_type": "ssm",
+    "data": {
+      "arn": "arn:aws:ssm:eu-west-1:123456789012:rds_params",
+      "name": "rds_params",
+      "metadata": {}
+    }
+  },
+  {
+    "resource_type": "mq",
+    "data": {
+      "arn": "arn:aws:mq:eu-west-1:123456789012:event_broker",
+      "name": "event_broker",
+      "metadata": {}
+    }
+  },
+  {
+    "resource_type": "mq_broker",
+    "data": {
+      "arn": "arn:aws:mq_broker:eu-west-1:123456789012:mq_broker",
+      "name": "mq_broker",
+      "metadata": {}
+    }
+  },
+  {
+    "resource_type": "http",
+    "data": {
+      "arn": "http://ipranges.com",
+      "name": "http",
+      "metadata": {}
+    }
+  }
+]
