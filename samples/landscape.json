@@ -146,5 +146,26 @@
       "name": "http",
       "metadata": {}
     }
+  },
+  {
+    "resource_type": "event_bridge",
+    "data": {
+      "arn": "arn:aws:scheduler:eu-west-1:123456789012:schedule/group-1/schedule-1",
+      "name": "schedule-1",
+      "metadata": {
+        "CreationDate": "2023-03-28 17:24:07",
+        "FlexibleTimeWindow": "{'Mode': 'OFF'}",
+        "GroupName": "group-1",
+        "Input": {"val1":123,"val3":333},
+        "ModificationDate": "2023-04-28 08:00:30",
+        "RetryPolicy": "{'MaximumEventAgeInSeconds': 86400, 'MaximumRetryAttempts': 185}",
+        "RoleArn": "arn:aws:iam::123456789012:role/serverless/DefaultRole",
+        "ScheduleExpression": "rate(7 days)",
+        "ScheduleExpressionTimezone": "UTC",
+        "StartDate": "2023-04-21 08:00:00",
+        "State": "ENABLED",
+        "Target": "arn:aws:lambda:eu-west-1:123456789012:function:executor"
+      }
+    }
   }
 ]
