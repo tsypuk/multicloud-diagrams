@@ -26,7 +26,7 @@ def main():
     # given
     project_folder = os.path.dirname(os.path.abspath(__file__))
     path = os.path.join(project_folder, 'landscape.json')
-    json_data = {}
+
     with open(path, 'r') as file:
         json_data = json.load(file)
 

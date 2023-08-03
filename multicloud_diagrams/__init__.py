@@ -255,9 +255,9 @@ class MultiCloudDiagrams:
 
             # X,Y were passed
             if x:
-                mx_geometry.set('x', x)
+                mx_geometry.set('x', str(x))
             if 'y':
-                mx_geometry.set('y', y)
+                mx_geometry.set('y', str(y))
 
     def update_vertex_coords_width_height_from_prev_version(self, mx_geometry, vertex_id):
         self.update_vertex_coords_from_prev_version(mx_geometry, vertex_id)
@@ -274,7 +274,7 @@ class MultiCloudDiagrams:
             if 'y' in self.prev_coords[vertex_id]:
                 mx_geometry.set('y', self.prev_coords[vertex_id]['y'])
 
-    def add_vertex_list(self, vertexes, color_func=None, distribution: Distribution = None,
+    def add_vertex_list(self, vertexes, distribution: Distribution = None,
                         layer_name: str = None, layer_id: str = None):
         match getattr(distribution, 'algorithm', None):
             case 'Table':
@@ -293,7 +293,7 @@ class MultiCloudDiagrams:
                             arn=vertex['arn'],
                             node_name=vertex['node_name'],
                             node_type=vertex['node_type'],
-                            x=str(x_position), y=str(y_position),
+                            x=x_position, y=y_position,
                             layer_name=layer_name,
                             layer_id=layer_id,
                             fill_color=vertex['fill_color']
