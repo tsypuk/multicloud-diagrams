@@ -33,6 +33,22 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
 
         self.verify_layers(mx_cells, 2, mcd)
 
+    def test_add_same_layers(self):
+        # given
+        mcd = MultiCloudDiagrams(debug_mode=True)
+
+        # when
+        mcd.add_layer('L2')
+        mcd.add_layer('L2')
+
+        # then
+        tree = Et.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
+
+        mx_cells = tree.findall("./*/*/*/")
+
+        self.verify_layers(mx_cells, 2, mcd)
+
     def test_add_3_layers(self):
         # given
         mcd = MultiCloudDiagrams(debug_mode=True)

@@ -92,10 +92,11 @@ class MultiCloudDiagrams:
         self.debug_mode = debug_mode
 
     def add_layer(self, layer_name: str = ''):
-        self.layers[self.get_current_layer_count() + 1] = layer_name
-        self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
-        if layer_name != '':
-            self.mx_cell_id_0.attrib['value'] = layer_name
+        if self.get_layer_id_by_name(layer_name) is None:
+            self.layers[self.get_current_layer_count() + 1] = layer_name
+            self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
+            if layer_name != '':
+                self.mx_cell_id_0.attrib['value'] = layer_name
 
     def get_current_layer_count(self):
         return len(self.layers)
