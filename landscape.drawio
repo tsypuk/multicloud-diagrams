@@ -7,7 +7,7 @@
 				<mxCell id="vertex:Build Details Landscape:list" value="&lt;b&gt;Build Details Landscape&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
 					<mxGeometry width="300" height="150" as="geometry" y="-80" />
 				</mxCell>
-				<mxCell id="vertex:Build Details Landscape:row:0" value="&lt;b&gt;Build Time&lt;/b&gt;:  2023-08-03 13:27:47" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
+				<mxCell id="vertex:Build Details Landscape:row:0" value="&lt;b&gt;Build Time&lt;/b&gt;:  2023-08-03 19:27:47" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
 					<mxGeometry width="300" height="30" as="geometry" y="30" />
 				</mxCell>
 				<mxCell id="vertex:Build Details Landscape:row:1" value="&lt;b&gt;MultiCloud-Diagrams version&lt;/b&gt;:  0.3.10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
@@ -16,7 +16,7 @@
 				<mxCell id="vertex:Build Details Landscape:row:2" value="&lt;b&gt;Supported nodes&lt;/b&gt;:  16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
 					<mxGeometry width="300" height="30" as="geometry" y="90" />
 				</mxCell>
-				<mxCell id="vertex:Build Details Landscape:row:3" value="&lt;b&gt;HASH&lt;/b&gt;:  a33fd4bc466979e7" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
+				<mxCell id="vertex:Build Details Landscape:row:3" value="&lt;b&gt;HASH&lt;/b&gt;:  506298939055a138" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
 					<mxGeometry width="300" height="30" as="geometry" y="120" />
 				</mxCell>
 				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DeletionProtectionEnabled&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;ItemCount&lt;/b&gt;: 900&lt;BR&gt;&lt;b&gt;TableSizeBytes&lt;/b&gt;: 123" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
@@ -65,7 +65,7 @@
 					<mxGeometry width="63" height="66" as="geometry" x="417.5" y="126" />
 				</mxCell>
 				<mxCell id="vertex:event_bridge:arn:aws:scheduler:eu-west-1:123456789012:schedule/group-1/schedule-1" value="&lt;b&gt;Name&lt;/b&gt;: schedule-1&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:scheduler:eu-west-1:123456789012:schedule/group-1/schedule-1&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;CreationDate&lt;/b&gt;: 2023-03-28 17:24:07&lt;BR&gt;&lt;b&gt;FlexibleTimeWindow&lt;/b&gt;: {'Mode': 'OFF'}&lt;BR&gt;&lt;b&gt;GroupName&lt;/b&gt;: group-1&lt;BR&gt;&lt;b&gt;Input&lt;/b&gt;: {'val1': 123, 'val3': 333}&lt;BR&gt;&lt;b&gt;ModificationDate&lt;/b&gt;: 2023-04-28 08:00:30&lt;BR&gt;&lt;b&gt;RetryPolicy&lt;/b&gt;: {'MaximumEventAgeInSeconds': 86400, 'MaximumRetryAttempts': 185}&lt;BR&gt;&lt;b&gt;RoleArn&lt;/b&gt;: arn:aws:iam::123456789012:role/serverless/DefaultRole&lt;BR&gt;&lt;b&gt;ScheduleExpression&lt;/b&gt;: rate(7 days)&lt;BR&gt;&lt;b&gt;ScheduleExpressionTimezone&lt;/b&gt;: UTC&lt;BR&gt;&lt;b&gt;StartDate&lt;/b&gt;: 2023-04-21 08:00:00&lt;BR&gt;&lt;b&gt;State&lt;/b&gt;: ENABLED&lt;BR&gt;&lt;b&gt;Target&lt;/b&gt;: arn:aws:lambda:eu-west-1:123456789012:function:executor" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;" parent="1" vertex="1">
-					<mxGeometry width="78" height="78" as="geometry" x="1570" y="-47.25" />
+					<mxGeometry width="78" height="78" as="geometry" x="1570" y="-46.25" />
 				</mxCell>
 			</root>
 		</mxGraphModel>

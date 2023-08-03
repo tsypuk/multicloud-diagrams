@@ -256,7 +256,7 @@ class MultiCloudDiagrams:
             # X,Y were passed
             if x:
                 mx_geometry.set('x', str(x))
-            if 'y':
+            if y:
                 mx_geometry.set('y', str(y))
 
     def update_vertex_coords_width_height_from_prev_version(self, mx_geometry, vertex_id):
@@ -296,6 +296,7 @@ class MultiCloudDiagrams:
                             x=x_position, y=y_position,
                             layer_name=layer_name,
                             layer_id=layer_id,
+                            metadata=vertex['metadata'],
                             fill_color=vertex['fill_color']
                         )
 
