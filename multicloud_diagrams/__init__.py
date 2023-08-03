@@ -69,6 +69,17 @@ def assemble_node_name(node_name, arn, metadata):
     return f'<b>Name</b>: {node_name}{"<BR><b>ARN</b>: " + arn if arn else ""}{"<BR>-----------<BR>" + stringify_dict(metadata) if metadata else ""}'
 
 
+class Distribution:
+    algorithm: str
+    element_width: int
+    element_height: int
+    vertical_spacing: int = 5
+    horizontal_spacing: int = 5
+    start_x: int = 0
+    start_y: int = 0
+    columns: int = 1
+
+
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
         self.mx_file = Et.Element('mxfile',
@@ -207,7 +218,8 @@ class MultiCloudDiagrams:
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(id, node_name, arn, metadata, node_enum.value)
 
-    def add_vertex(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None):
+    def add_vertex(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
+                   x: int = None, y: int = None):
         if metadata is None:
             metadata = {}
         # check that there is no such vertex already
@@ -241,6 +253,12 @@ class MultiCloudDiagrams:
             # Position Vertex based on X,Y cords
             self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{node_type}:{id}')
 
+            # X,Y were passed
+            if x:
+                mx_geometry.set('x', x)
+            if 'y':
+                mx_geometry.set('y', y)
+
     def update_vertex_coords_width_height_from_prev_version(self, mx_geometry, vertex_id):
         self.update_vertex_coords_from_prev_version(mx_geometry, vertex_id)
         if vertex_id in self.prev_coords:
@@ -256,11 +274,42 @@ class MultiCloudDiagrams:
             if 'y' in self.prev_coords[vertex_id]:
                 mx_geometry.set('y', self.prev_coords[vertex_id]['y'])
 
-    def add_vertex_list(self, vertexes):
-        for vertex in vertexes:
-            self.add_vertex(id=vertex['id'], arn=vertex[id], node_name=vertex['nodeName'], metadata=vertex['nodeDescription'],
-                            node_type=vertex['nodeType'])
-        return
+    def add_vertex_list(self, vertexes, color_func=None, distribution: Distribution = None,
+                        layer_name: str = None, layer_id: str = None):
+        match getattr(distribution, 'algorithm', None):
+            case 'Table':
+                if distribution.algorithm == 'Table':
+                    r = (len(vertexes) + distribution.columns - 1) // distribution.columns
+                    current_row = 0
+                    current_column = 0
+
+                    for index, vertex in enumerate(vertexes):
+                        row_index = current_row % r
+                        column_index = current_column % distribution.columns
+                        x_position = column_index * distribution.element_width + distribution.start_x
+                        y_position = row_index * distribution.element_height + distribution.start_y
+                        self.add_vertex(
+                            id=vertex['id'],
+                            arn=vertex['arn'],
+                            node_name=vertex['node_name'],
+                            node_type=vertex['node_type'],
+                            x=str(x_position), y=str(y_position),
+                            layer_name=layer_name,
+                            layer_id=layer_id,
+                            fill_color=vertex['fill_color']
+                        )
+
+                        current_column += 1
+                        if current_column >= distribution.columns:
+                            current_column = 0
+                            current_row += 1
+            case None:
+                for vertex in vertexes:
+                    self.add_vertex(id=vertex['id'], arn=vertex[id], node_name=vertex['nodeName'], metadata=vertex['nodeDescription'],
+                                    node_type=vertex['nodeType'],
+                                    layer_name=layer_name,
+                                    layer_id=layer_id,
+                                    fill_color=vertex['fill_color'])
 
     def add_connection(self, src_node_id, dest_node_id, start, end, labels=[]):
         # Check that both source and destination exist, before creating edge
