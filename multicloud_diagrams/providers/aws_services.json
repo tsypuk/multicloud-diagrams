@@ -2,85 +2,71 @@
   "lambda_function": {
     "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;shape=mxgraph.aws3.lambda_function;prIcon=server;fillColor=#F58534;gradientColor=none;html=1;",
     "width": "69",
-    "height": "72",
-    "nodeLevel": "4"
+    "height": "72"
   },
   "sqs": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;",
     "width": "78",
-    "height": "78",
-    "nodeLevel": "4"
+    "height": "78"
   },
   "sns": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;",
     "width": "78",
-    "height": "78",
-    "nodeLevel": "4"
+    "height": "78"
   },
   "iam_role": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.role;fillColor=#759C3E;gradientColor=none;",
     "width": "94.5",
-    "height": "79.5",
-    "nodeLevel": "3"
+    "height": "79.5"
   },
   "iam_policy": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.policy;",
     "width": "78",
-    "height": "67",
-    "nodeLevel": "1"
+    "height": "67"
   },
   "iam_permission": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.permissions_2;fillColor=#D2D3D3;gradientColor=none;",
     "width": "46.5",
-    "height": "63",
-    "nodeLevel": "2"
+    "height": "63"
   },
   "dynamo": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;",
     "width": "72",
-    "height": "81",
-    "nodeLevel": "1"
+    "height": "81"
   },
   "dynamo_stream": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.dynamodb_stream",
     "width": "78",
-    "height": "78",
-    "nodeLevel": "1"
+    "height": "78"
   },
   "api_gw": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;",
     "width": "76.5",
-    "height": "93",
-    "nodeLevel": "4"
+    "height": "93"
   },
   "s3": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.bucket_with_objects;fillColor=#E05243;gradientColor=none;",
     "width": "78",
-    "height": "78",
-    "nodeLevel": "4"
+    "height": "78"
   },
   "kms": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.kms;fillColor=#759C3E;gradientColor=none;",
     "width": "76.5",
-    "height": "93",
-    "nodeLevel": "4"
+    "height": "93"
   },
   "ssm": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.parameter_store;fillColor=#759C3E;gradientColor=none;",
     "width": "75",
-    "height": "102",
-    "nodeLevel": "4"
+    "height": "102"
   },
   "mq": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mq;",
     "width": "78",
-    "height": "78",
-    "nodeLevel": "2"
+    "height": "78"
   },
   "event_bridge": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;",
     "width": "78",
-    "height": "78",
-    "nodeLevel": "2"
+    "height": "78"
   }
 }
