@@ -160,16 +160,20 @@ class MultiCloudDiagrams:
         self.prepare_row(1, snapshot, table_id, width)
 
     # add_map
-    def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300"):
+    def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300", layer_name: str = None, layer_id: str = None,
+                 x: int = None, y: int = None):
+        parent_id = str(self.get_layer_id(layer_name, layer_id))
         if not table_id:
             table_id = table_name
-        self.prepare_table(table_id=table_id, table_name=table_name, fill_color=fill_color, rows_count=len(rows), width=width)
+        self.prepare_table(table_id=table_id, table_name=table_name, fill_color=fill_color, rows_count=len(rows), width=width, parent_id=parent_id, x=x, y=y)
 
+        y = 0
         for index, item in enumerate(rows):
+            y = y + 30
             name, value = item.split(":", 1)
-            self.prepare_row(index, f'<b>{name}</b>: {value}', table_id, width)
+            self.prepare_row(index, f'<b>{name}</b>: {value}', table_id, width, y=y)
 
-    def prepare_row(self, index, snapshot, table_id='', width="300"):
+    def prepare_row(self, index, snapshot, table_id='', width="300", y=30):
         mx_cell = Et.SubElement(self.root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:row:{index}',
@@ -180,12 +184,13 @@ class MultiCloudDiagrams:
                                 parent=f'vertex:{table_id}:list',
                                 vertex="1")
 
-        mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width, height="30")
+        mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width, height="30", y=str(y))
         mx_geometry.set('as', 'geometry')
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
 
-    def prepare_table(self, table_id='', table_name='', fill_color='', rows_count=0, width="300"):
+    def prepare_table(self, table_id='', table_name='', fill_color='', rows_count=0, width="300", parent_id: str = "1",
+                      x: int = None, y: int = None):
         # TODO mode all styling to external resource file
         style = (
             "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;"
@@ -200,12 +205,18 @@ class MultiCloudDiagrams:
                                 id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
                                 style=style,
-                                parent="1",
+                                parent=parent_id,
                                 vertex="1")
 
         mx_geometry = Et.SubElement(mx_cell, 'mxGeometry', width=width,
                                     height=str(30 * (1 + rows_count)))
         mx_geometry.set('as', 'geometry')
+
+        # X,Y were passed
+        if x:
+            mx_geometry.set('x', str(x))
+        if y:
+            mx_geometry.set('y', str(y))
 
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
@@ -274,8 +285,7 @@ class MultiCloudDiagrams:
             if 'y' in self.prev_coords[vertex_id]:
                 mx_geometry.set('y', self.prev_coords[vertex_id]['y'])
 
-    def add_vertex_list(self, vertexes, distribution: Distribution = None,
-                        layer_name: str = None, layer_id: str = None):
+    def add_vertex_list(self, vertexes, distribution: Distribution = None):
         match getattr(distribution, 'algorithm', None):
             case 'Table':
                 if distribution.algorithm == 'Table':
@@ -288,29 +298,25 @@ class MultiCloudDiagrams:
                         column_index = current_column % distribution.columns
                         x_position = column_index * distribution.element_width + distribution.start_x
                         y_position = row_index * distribution.element_height + distribution.start_y
-                        self.add_vertex(
-                            id=vertex['id'],
-                            arn=vertex['arn'],
-                            node_name=vertex['node_name'],
-                            node_type=vertex['node_type'],
-                            x=x_position, y=y_position,
-                            layer_name=layer_name,
-                            layer_id=layer_id,
-                            metadata=vertex['metadata'],
-                            fill_color=vertex['fill_color']
-                        )
+                        vertex['x'] = x_position
+                        vertex['y'] = y_position
+                        self.add_vertex(**vertex)
 
                         current_column += 1
                         if current_column >= distribution.columns:
                             current_column = 0
                             current_row += 1
-            case None:
+            case 'Pyramid':
+                print('TODO implement')
+            case 'Line':
+                print('TODO implement')
+            case 'Cycle':
+                print('TODO implement')
+            case 'Sphere':
+                print('TODO implement')
+            case None, _:
                 for vertex in vertexes:
-                    self.add_vertex(id=vertex['id'], arn=vertex[id], node_name=vertex['nodeName'], metadata=vertex['nodeDescription'],
-                                    node_type=vertex['nodeType'],
-                                    layer_name=layer_name,
-                                    layer_id=layer_id,
-                                    fill_color=vertex['fill_color'])
+                    self.add_vertex(**vertex)
 
     def add_connection(self, src_node_id, dest_node_id, start, end, labels=[]):
         # Check that both source and destination exist, before creating edge
