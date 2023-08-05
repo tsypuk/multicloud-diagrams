@@ -36,17 +36,14 @@ test:
 check:
 	@echo Old tag: $(TAG) New tag: $(NEW_VERSION)
 
-release: landscape
-	$(call colorecho, "Update git TAG...")
+release:
+	$(call colorecho, "Releasing new version...")
+	poetry version $(NEW_VERSION)
+	git add .
+	git tag $(NEW_VERSION)
 	$(MAKE) changelog
-
-	# Commit the changes with the commit message
-	git add . \
-    poetry version $(NEW_VERSION) \
-    git add . \
-
-    git commit -m "bump: version $(VERSION) -> $(NEW_VERSION)" \
-    git tag $(NEW_VERSION) \
-    git push \
+	git tag -d $(NEW_VERSION)
+	git add . && git commit -m "bump: version $(TAG) -> $(NEW_VERSION)" && git tag $(NEW_VERSION)
+	git push
 	git push --tags
 
