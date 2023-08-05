@@ -160,8 +160,10 @@ class MultiCloudDiagrams:
         self.prepare_row(1, snapshot, table_id, width)
 
     # add_map
-    def add_list(self, table_id='', table_name='', fill_color='', rows=[], width="300", layer_name: str = None, layer_id: str = None,
+    def add_list(self, table_id='', table_name='', fill_color='', rows=None, width="300", layer_name: str = None, layer_id: str = None,
                  x: int = None, y: int = None):
+        if rows is None:
+            rows = []
         parent_id = str(self.get_layer_id(layer_name, layer_id))
         if not table_id:
             table_id = table_name
@@ -318,7 +320,9 @@ class MultiCloudDiagrams:
                 for vertex in vertexes:
                     self.add_vertex(**vertex)
 
-    def add_connection(self, src_node_id, dest_node_id, start, end, labels=[]):
+    def add_connection(self, src_node_id, dest_node_id, start, end, labels=None):
+        if labels is None:
+            labels = []
         # Check that both source and destination exist, before creating edge
         found = 0
         for mx_cell in self.root:
@@ -398,16 +402,16 @@ class MultiCloudDiagrams:
             logging.error(
                 f'Not both vertexes present to build Edge between them (expected vertex:{src_node_id} & vertex:{dest_node_id})')
 
-    def add_link(self, src_node_id, dst_node_id, action=[]):
+    def add_link(self, src_node_id, dst_node_id, action=None):
         self.add_connection(src_node_id, dst_node_id, "none", "none", action)
 
-    def add_bidirectional_link(self, src_node_id, dst_node_id, action=[]):
+    def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         self.add_connection(src_node_id, dst_node_id, "classic", "classic", action)
 
-    def add_unidirectional_link(self, src_node_id, dst_node_id, action=[]):
+    def add_unidirectional_link(self, src_node_id, dst_node_id, action=None):
         self.add_connection(src_node_id, dst_node_id, "none", "classic", action)
 
-    def add_unidirectional_reverse_link(self, src_node_id, dst_node_id, action=[]):
+    def add_unidirectional_reverse_link(self, src_node_id, dst_node_id, action=None):
         self.add_connection(src_node_id, dst_node_id, "classic", "none", action)
 
     def add_link_list(self, links):
