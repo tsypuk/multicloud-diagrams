@@ -7,309 +7,131 @@ nav_order: 2
 # Getting started
 {: .no_toc }
 
- has some specific configuration parameters that can be defined in your Jekyll site's \_config.yml file.
-{: .fs-6 .fw-300 }
+Welcome to ``multicloud-diagrams`` 👋 This section will walk you through the basic installation process and provide a quick example to get you started. 
+If you're looking for more advanced features and customization options, be sure to explore the subsequent sections in our comprehensive documentation.
 
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
+   
 ---
 
 
-## Site logo
+## Dependency details
 
-```yaml
-# Set a path/url to a logo that will be displayed instead of the title
-logo: "/assets/images/just-the-docs.png"
+The ``multicloud-diagrams`` package is a Python library that provides support for major ``Python`` versions, including ``3.7``, ``3.8``, ``3.9``, ``3.10``, and ``3.11``.
+The package ensures compatibility with these Python versions by running tests using a Git workflow.
+These tests are designed to verify that the library functions as expected across each mentioned Python version.
+
+The package is readily accessible on [PyPI: https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/) 
+for easy installation and usage. As an open-source project, it encourages community participation and welcomes contributions from developers
+[https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
+Whether you want to use the package's functionalities or contribute to its improvement, it offers a user-friendly experience, backed by an active and engaged community.
+
+
+
+
+## Installation
+
+You can install ``multicloud-diagrams`` using ``pip``, the package manager for Python:
+
+```shell
+pip install multicloud-diagrams
 ```
 
-## Site favicon
+If you are using ``poetry`` follow this instructions:
 
-```yaml
-# Set a path/url to a favicon that will be displayed by the browser
-favicon_ico: "/assets/images/favicon.ico"
+```shell
+poetry add multicloud-diagrams
 ```
 
-If the path to your favicon is `/favicon.ico`, you can leave `favicon_ico` unset.
-
-## Search
+Edit your ``project.toml`` and add ``multicloud-diagrams`` as dependecy:
 
 ```yaml
-# Enable or disable the site search
-# Supports true (default) or false
-search_enabled: true
-
-search:
-  # Split pages into sections that can be searched individually
-  # Supports 1 - 6, default: 2
-  heading_level: 2
-  # Maximum amount of previews per search result
-  # Default: 3
-  previews: 3
-  # Maximum amount of words to display before a matched word in the preview
-  # Default: 5
-  preview_words_before: 5
-  # Maximum amount of words to display after a matched word in the preview
-  # Default: 10
-  preview_words_after: 10
-  # Set the search token separator
-  # Default: /[\s\-/]+/
-  # Example: enable support for hyphenated search words
-  tokenizer_separator: /[\s/]+/
-  # Display the relative url in search results
-  # Supports true (default) or false
-  rel_url: true
-  # Enable or disable the search button that appears in the bottom right corner of every page
-  # Supports true or false (default)
-  button: false
+[ tool.poetry.dependencies ]
+  python = "^3.7"
+  pyyaml = "^6.0"
+  multicloud-diagrams = "^0.3.10"
 ```
 
-## Mermaid Diagrams
+## Usage
+
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+The minimum configuration requires importing MultiCloudDiagrams, adding vertices, connecting them with links and exporting to output file. 
 
-The minimum configuration requires the key for `version` ([from jsDelivr](https://cdn.jsdelivr.net/npm/mermaid/)) in `_config.yml`:
+```python
+from multicloud_diagrams import MultiCloudDiagrams
 
-```yaml
-mermaid:
-  # Version of mermaid library
-  # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "9.1.3"
+# Create a new cloud diagram
+mcd = MultiCloudDiagrams()
+
+output_file = '../output/diagram.drawio'
+func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name'
+mcd.add_vertex(node_id=func_arn, node_name='prod-lambda-name', arn=func_arn, node_type='lambda_function')
+
+role_arn = 'arn:aws:iam::123456789012:role/prod-lambda-name'
+mcd.add_vertex(node_id=role_arn, node_name='role-lambda-name', arn=role_arn, node_type='iam_role')
+mcd.add_link(src_node_id=f'lambda_function:{func_arn}', dst_node_id=f'iam_role:{role_arn}')
+
+mcd.export_to_file(output_file)
 ```
 
-Provide a `path` instead of a `version` key to load the mermaid library from a local file.
+## Open drawio editor and position nodes manually or using automated Alignment
 
-## Aux links
-
-```yaml
-# Aux links for the upper right navigation
-aux_links:
-  "Just the Docs on GitHub":
-    - "//github.com/just-the-docs/just-the-docs"
-
-# Makes Aux links open in a new tab. Default is false
-aux_links_new_tab: false
-```
-
-## Heading anchor links
-
-```yaml
-# Heading anchor links appear on hover over h1-h6 tags in page content
-# allowing users to deep link to a particular heading on a page.
-#
-# Supports true (default) or false
-heading_anchors: true
-```
-
-## External navigation links
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+## Reuse coordinates from previous diagram version
 
-External links can be added to the navigation through the `nav_external_links` option.
-
-## Footer content
-
-```yaml
-# Footer content
-# appears at the bottom of every page's main content
-# Note: The footer_content option is deprecated and will be removed in a future major release. Please use `_includes/footer_custom.html` for more robust
-markup / liquid-based content.
-footer_content: "Copyright &copy; 2017-2020 Patrick Marsceill. Distributed by an <a href=\"https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt\">MIT license.</a>"
-
-# Footer last edited timestamp
-last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
-last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
-
-# Footer "Edit this page on GitHub" link text
-gh_edit_link: true # show or hide edit this page link
-gh_edit_link_text: "Edit this page on GitHub."
-gh_edit_repository: "https://github.com/just-the-docs/just-the-docs" # the github URL for your repo
-gh_edit_branch: "main" # the branch that your docs is served from
-# gh_edit_source: docs # the source that your files originate from
-gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
-```
-
-_note: `footer_content` is deprecated, but still supported. For a better experience we have moved this into an include called `_includes/footer_custom.html` which will allow for robust markup / liquid-based content._
-
-- the "page last modified" data will only display if a page has a key called `last_modified_date`, formatted in some readable date format
-- `last_edit_time_format` uses Ruby's DateTime formatter; see examples and more information [at this link.](https://apidock.com/ruby/DateTime/strftime)
-- `gh_edit_repository` is the URL of the project's GitHub repository
-- `gh_edit_branch` is the branch that the docs site is served from; defaults to `main`
-- `gh_edit_source` is the source directory that your project files are stored in (should be the same as [site.source](https://jekyllrb.com/docs/configuration/options/))
-- `gh_edit_view_mode` is `"tree"` by default, which brings the user to the github page; switch to `"edit"` to bring the user directly into editing mode
-
-## Color scheme
-
-```yaml
-# Color scheme supports "light" (default) and "dark"
-color_scheme: dark
-```
-
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
-
-<script>
-const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-
-jtd.addEvent(toggleDarkMode, 'click', function(){
-  if (jtd.getTheme() === 'dark') {
-    jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Preview dark color scheme';
-  } else {
-    jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Return to the light side';
-  }
-});
-</script>
-
-
-## Lambda
 {: .d-inline-block }
 
-New (v0.4.0)
+New (v0.2.1)
 {: .label .label-green }
 
-To use this feature, you need to configure a `color` and (optionally) `title` for each kind of callout you want to use, e.g.:
+```python
+from multicloud_diagrams import MultiCloudDiagrams
 
-```yaml
-callouts:
-  warning:
-    title: Warning
-    color: red
+# Create a new cloud diagram
+mcd = MultiCloudDiagrams()
+
+output_file = '../output/diagram.drawio'
+mcd.read_coords_from_file(output_file)
+
+func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name'
+mcd.add_vertex(node_id=func_arn, node_name='prod-lambda-name', arn=func_arn, node_type='lambda_function')
+
+role_arn = 'arn:aws:iam::123456789012:role/prod-lambda-name'
+mcd.add_vertex(node_id=role_arn, node_name='role-lambda-name', arn=role_arn, node_type='iam_role')
+mcd.add_link(src_node_id=f'lambda_function:{func_arn}', dst_node_id=f'iam_role:{role_arn}')
+
+# We can write to same Diagram
+mcd.export_to_file(output_file)
+
+# Or write to a new Diagram version
+mcd.export_to_file('../output/diagram.drawio')
 ```
 
-This uses the color `$red-000` for the background of the callout, and `$red-300` for the title and box decoration.[^dark] You can then style a paragraph as a `warning` callout like this:
+## Vertices and Edges
 
-```markdown
-{: .warning }
-A paragraph...
-```
+Each ``vertex`` has a mandatory and optional attributes.
 
-[^dark]:
-    If you use the `dark` color scheme, this callout uses `$red-300` for the background, and `$red-000` for the title.
+Mandatory Attributes:
+- node_id
+- node_name
+- arn
+- node_type
 
-The colors `grey-lt`, `grey-dk`, `purple`, `blue`, `green`, `yellow`, and `red` are predefined; to use a custom color, you need to define its `000` and `300` levels in your SCSS files. For example, to use `pink`, add the following to your `_sass/custom/setup.scss` file:
+Optional Attributes:
+- metadata
 
-```scss
-$pink-000: #f77ef1;
-$pink-100: #f967f1;
-$pink-200: #e94ee1;
-$pink-300: #dd2cd4;
-```
+To see the list of all supported nodes (currently AWS and on-prem), syntax of each node with examples, please follow to ``AWS Components`` section
 
-You can override the default `opacity` of the background for a particular callout, e.g.:
 
-```yaml
-callouts:
-  custom:
-    color: pink
-    opacity: 0.3
-```
+Vertices are connected using edges, by specifying source and target Vertex IDs. Also allowing to add labels to connection.
 
-You can change the default opacity (`0.2`) for all callouts, e.g.:
+ID syntax is: ``RESOURCE_TYPE:ARN``
+Examples: f'lambda_function:{func_arn}' f'iam_role:{role_arn}'
 
-```yaml
-callouts_opacity: 0.3
-```
-
-You can also adjust the overall level of callouts.
-The value of `callouts_level` is either `quiet` or `loud`;
-`loud` increases the saturation and lightness of the backgrounds.
-The default level is `quiet` when using the `light` or custom color schemes,
-and `loud` when using the `dark color scheme.`
-
-See [Lambda]({% link docs/aws-components/lambda.md %}) for more information.
-
-## Google Analytics
-
-{: .warning }
-> [Google Analytics 4 will replace Universal Analytics](https://support.google.com/analytics/answer/11583528). On **July 1, 2023**, standard Universal Analytics properties will stop processing new hits. The earlier you migrate, the more historical data and insights you will have in Google Analytics 4.
-
-Universal Analytics (UA) and Google Analytics 4 (GA4) properties are supported.
-
-```yaml
-# Google Analytics Tracking (optional)
-# Supports a CSV of tracking ID strings (eg. "UA-1234567-89,G-1AB234CDE5")
-ga_tracking: UA-2709176-10
-ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
-```
-
-### Multiple IDs
-{: .d-inline-block .no_toc }
-
-New (v0.4.0)
-{: .label .label-green }
-
-This theme supports multiple comma-separated tracking IDs. This helps seamlessly transition UA properties to GA4 properties by tracking both for a while.
-
-```yaml
-ga_tracking: "UA-1234567-89,G-1AB234CDE5"
-```
-
-## Document collections
-
-By default, the navigation and search include normal [pages](https://jekyllrb.com/docs/pages/).
-You can also use [Jekyll collections](https://jekyllrb.com/docs/collections/) which group documents semantically together.
-
-{: .warning }
-> Collection folders always start with an underscore (`_`), e.g. `_tests`. You won't see your collections if you omit the prefix.
-
-For example, put all your test files in the `_tests` folder and create the `tests` collection:
-
-```yaml
-# Define Jekyll collections
-collections:
-  # Define a collection named "tests", its documents reside in the "_tests" directory
-  tests:
-    permalink: "/:collection/:path/"
-    output: true
-
-just_the_docs:
-  # Define which collections are used in just-the-docs
-  collections:
-    # Reference the "tests" collection
-    tests:
-      # Give the collection a name
-      name: Tests
-      # Exclude the collection from the navigation
-      # Supports true or false (default)
-      # nav_exclude: true
-      # Fold the collection in the navigation
-      # Supports true or false (default)
-      # nav_fold: true  # note: this option is new in v0.4
-      # Exclude the collection from the search
-      # Supports true or false (default)
-      # search_exclude: true
-```
-
-The navigation for all your normal pages (if any) is displayed before those in collections.
-
-You can reference multiple collections.
-This creates categories in the navigation with the configured names.
-
-```yaml
-collections:
-  tests:
-    permalink: "/:collection/:path/"
-    output: true
-  tutorials:
-    permalink: "/:collection/:path/"
-    output: true
-
-just_the_docs:
-  collections:
-    tests:
-      name: Tests
-    tutorials:
-      name: Tutorials
-```
-
-When *all* your pages are in a single collection, its name is not displayed.
-
-The navigation for each collection is a separate name space for page titles: a page in one collection cannot be a child of a page in a different collection, or of a normal page.
+For more advanced use cases, detailed customization options, and in-depth functionalities, please continue exploring the next sections in our documentation. There, you will find a wealth of information to help you leverage the full potential of multicloud-diagrams in your projects. Happy diagramming!

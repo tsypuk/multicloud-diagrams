@@ -10,10 +10,14 @@ permalink: /
 # Generate you Cloud Infrastructure into popular draw.io format
 {: .fs-9 }
 
-Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
+As an architect, developer, or DevOps professional with experience in using Public Cloud Providers, we all recognize the crucial importance of well-documented 
+infrastructure and architecture with diagrams for driving successful projects. 
+
+Throughout my journey, I have explored multiple tools available in the market but found them lacking in meeting our specific requirements.
+
 {: .fs-6 .fw-300 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get started now](docs/configuration.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][multicloud-diagrams repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
