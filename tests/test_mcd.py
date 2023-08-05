@@ -70,7 +70,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         resource_name = "test_name"
 
         # when
-        mcd.add_vertex(id="123", node_name=resource_name, arn="test_arn", metadata={}, node_type=resource_type)
+        mcd.add_vertex(node_id="123", node_name=resource_name, arn="test_arn", metadata={}, node_type=resource_type)
 
         # then
         expected = {
@@ -120,7 +120,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         resource_name = "test_name"
 
         # when
-        mcd.add_vertex(id="123", node_name=resource_name, arn="test_arn", node_type=resource_type)
+        mcd.add_vertex(node_id="123", node_name=resource_name, arn="test_arn", node_type=resource_type)
 
         # then
         expected = {
@@ -139,7 +139,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
         resource_name = "test_name"
 
         # when
-        mcd.add_vertex(id="123", node_name=resource_name, node_type=resource_type)
+        mcd.add_vertex(node_id="123", node_name=resource_name, node_type=resource_type)
 
         # then
         expected = {

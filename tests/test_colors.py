@@ -16,7 +16,7 @@ class TestMultiCloudDiagramsColors(TestUtilities):
             "SubscriptionsConfirmed": 3,
             "SubscriptionsPending": 0
         }
-        mcd.add_vertex(id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata)
+        mcd.add_vertex(node_id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata)
 
         # then
         expected = {
@@ -42,7 +42,7 @@ class TestMultiCloudDiagramsColors(TestUtilities):
         }
 
         # when
-        mcd.add_vertex(id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata, fill_color=node_color)
+        mcd.add_vertex(node_id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata, fill_color=node_color)
 
         # then
         expected = {

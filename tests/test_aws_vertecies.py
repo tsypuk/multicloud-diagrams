@@ -17,7 +17,7 @@ class TestMCDAWSVertexInIsolation(TestUtilities):
             'ItemCount': 900,
             'TableSizeBytes': 123
         }
-        mcd.add_vertex(id=table_arn, node_name=table_name, arn=table_arn, node_type='dynamo', metadata=metadata)
+        mcd.add_vertex(node_id=table_arn, node_name=table_name, arn=table_arn, node_type='dynamo', metadata=metadata)
 
         # then
         expected = {
@@ -43,7 +43,7 @@ class TestMCDAWSVertexInIsolation(TestUtilities):
             "SqsManagedSseEnabled": "false",
             "VisibilityTimeout": 30
         }
-        mcd.add_vertex(id=sqs_arn, node_name='int-eu-live-events.fifo', arn=sqs_arn, node_type='sqs', metadata=metadata)
+        mcd.add_vertex(node_id=sqs_arn, node_name='int-eu-live-events.fifo', arn=sqs_arn, node_type='sqs', metadata=metadata)
 
         # then
         expected = {
@@ -67,7 +67,7 @@ class TestMCDAWSVertexInIsolation(TestUtilities):
             "SubscriptionsConfirmed": 3,
             "SubscriptionsPending": 0
         }
-        mcd.add_vertex(id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata)
+        mcd.add_vertex(node_id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata)
 
         # then
         expected = {
@@ -97,7 +97,7 @@ class TestMCDAWSVertexInIsolation(TestUtilities):
             "TracingConfig": "{'Mode': 'Active'}",
             "Version": "$LATEST"
         }
-        mcd.add_vertex(id=func_arn, node_name='producer-lambda', arn=func_arn, node_type='lambda_function', metadata=metadata)
+        mcd.add_vertex(node_id=func_arn, node_name='producer-lambda', arn=func_arn, node_type='lambda_function', metadata=metadata)
 
         # then
         expected = {

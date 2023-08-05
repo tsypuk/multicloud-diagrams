@@ -6,7 +6,7 @@ import pkgutil
 from enum import Enum
 from typing import Union
 import re
-
+from typing import cast
 import yaml
 
 
@@ -80,6 +80,7 @@ class Distribution:
     columns: int = 1
 
 
+# noinspection SpellCheckingInspection
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
         self.mx_file = Et.Element('mxfile',
@@ -223,15 +224,15 @@ class MultiCloudDiagrams:
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
 
-    def add_service(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_enum=Services):
+    def add_service(self, node_id: str, node_name: str, node_enum: Services, arn: str = None, metadata: dict = None):
         if metadata is None:
             metadata = {}
         # Type checking
         if not isinstance(node_enum, Services):
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
-        self.add_vertex(id, node_name, arn, metadata, node_enum.value)
+        self.add_vertex(node_id, node_name, arn, metadata, cast(str, node_enum.value))
 
-    def add_vertex(self, id: str, node_name: str, arn: str = None, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
+    def add_vertex(self, node_id: str, node_name: str, arn: str = None, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
                    x: int = None, y: int = None):
         if metadata is None:
             metadata = {}
@@ -239,8 +240,8 @@ class MultiCloudDiagrams:
         exist = False
         for mx_cell in self.root:
             # print(mxCell.attrib['id'])
-            if mx_cell.attrib['id'] == f'vertex:{node_type}:{id}':
-                logging.warning(f'Already exists: vertex:{node_type}:{id} name:{node_name}')
+            if mx_cell.attrib['id'] == f'vertex:{node_type}:{node_id}':
+                logging.warning(f'Already exists: vertex:{node_type}:{node_id} name:{node_name}')
                 exist = True
                 break
 
@@ -252,7 +253,7 @@ class MultiCloudDiagrams:
             parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = Et.SubElement(self.root,
                                     'mxCell',
-                                    id=f'vertex:{node_type}:{id}',
+                                    id=f'vertex:{node_type}:{node_id}',
                                     value=assemble_node_name(node_name, arn, metadata),
                                     style=f"{node_template['style']}",
                                     parent=parent_id,
@@ -264,7 +265,7 @@ class MultiCloudDiagrams:
             mx_geometry.set('as', 'geometry')
 
             # Position Vertex based on X,Y cords
-            self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{node_type}:{id}')
+            self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{node_type}:{node_id}')
 
             # X,Y were passed
             if x:
@@ -424,7 +425,7 @@ class MultiCloudDiagrams:
             data = yaml.safe_load(file)
             for vertex in data['vertices']:
                 self.add_vertex(
-                    id=vertex['arn'],
+                    node_id=vertex['arn'],
                     node_name=vertex['name'],
                     arn=vertex['arn'],
                     node_type=vertex['type'],
@@ -471,8 +472,8 @@ class MultiCloudDiagrams:
     def dump(self):
         from xml.dom import minidom
         rough_string = Et.tostring(self.mx_file, 'utf-8')
-        reparsed = minidom.parseString(rough_string)
-        print(reparsed.toprettyxml(indent="  "))
+        parsed = minidom.parseString(rough_string)
+        print(parsed.toprettyxml(indent="  "))
 
     def export_to_file(self, file_path):
         with open(file_path, 'wb') as file:
