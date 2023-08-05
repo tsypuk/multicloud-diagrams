@@ -47,3 +47,6 @@ release:
 	git push
 	git push --tags
 
+release2docs:
+	$(call colorecho, "Releasing new version...")
+	{ echo '---'; echo 'title: CHANGELOG'; echo 'layout: default'; echo '---'; echo ''; cat CHANGELOG.MD; } > "docs/CHANGELOG.md"
