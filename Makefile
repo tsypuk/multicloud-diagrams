@@ -13,6 +13,11 @@ endef
 
 .PHONY: run
 
+doc:
+	$(call colorecho, "Starting Documentation locally...")
+	cd docs && bundle exec just-the-docs rake search:init \
+	cd docs && bundle exec jekyll serve --trace
+
 landscape:
 	$(call colorecho, "Generating new Landscape...")
 	cd samples && poetry run python landscape.py

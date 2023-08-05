@@ -7,17 +7,17 @@
 				<mxCell id="vertex:Build Details Landscape:list" value="&lt;b&gt;Build Details Landscape&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
 					<mxGeometry width="300" height="150" as="geometry" y="-80" />
 				</mxCell>
-				<mxCell id="vertex:Build Details Landscape:row:0" value="&lt;b&gt;Build Time&lt;/b&gt;:  2023-08-03 19:27:47" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="30" />
+				<mxCell id="vertex:Build Details Landscape:row:0" value="&lt;b&gt;Build Time&lt;/b&gt;:  2023-08-05 09:52:04" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
+					<mxGeometry width="300" height="30" y="30" as="geometry" />
 				</mxCell>
 				<mxCell id="vertex:Build Details Landscape:row:1" value="&lt;b&gt;MultiCloud-Diagrams version&lt;/b&gt;:  0.3.10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="60" />
+					<mxGeometry width="300" height="30" y="60" as="geometry" />
 				</mxCell>
 				<mxCell id="vertex:Build Details Landscape:row:2" value="&lt;b&gt;Supported nodes&lt;/b&gt;:  16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="90" />
+					<mxGeometry width="300" height="30" y="90" as="geometry" />
 				</mxCell>
-				<mxCell id="vertex:Build Details Landscape:row:3" value="&lt;b&gt;HASH&lt;/b&gt;:  506298939055a138" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
-					<mxGeometry width="300" height="30" as="geometry" y="120" />
+				<mxCell id="vertex:Build Details Landscape:row:3" value="&lt;b&gt;HASH&lt;/b&gt;:  abc45e963713372a" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Build Details Landscape:list" vertex="1">
+					<mxGeometry width="300" height="30" y="120" as="geometry" />
 				</mxCell>
 				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DeletionProtectionEnabled&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;ItemCount&lt;/b&gt;: 900&lt;BR&gt;&lt;b&gt;TableSizeBytes&lt;/b&gt;: 123" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
 					<mxGeometry width="72" height="81" as="geometry" x="1092" y="340" />
