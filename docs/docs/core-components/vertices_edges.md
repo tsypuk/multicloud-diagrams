@@ -7,41 +7,39 @@ nav_order: 1
 
 # Vertices & Edges
 
-Tables are responsive by default, allowing wide tables to have a horizontal scroll to access columns outside of the normal viewport.
+## Vertex
 
-<div class="code-example" markdown="1">
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-</div>
-```markdown
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+```python
+def add_vertex(self, 
+               node_id: str, node_name: str, arn: str = None, metadata: dict = None,
+               node_type: str = '', layer_name: str = None, layer_id: str = None,
+               fill_color: str = None, x: int = None, y: int = None)
 ```
 
-## Vertices and Edges
+| Mandatory |           |
+|:----------|:------------------|
+| node_id   | good swedish fish |
+| node_name | good and plenty   |
+| arn       | good `oreos`      |
+| node_type | good `zoute` drop |
+
+
+| Optional   |        |
+|:-----------|:------------------|
+| metadata   | good swedish fish |
+| layer_name | good swedish fish |
+| layer_id   | good swedish fish |
+| fill_color | good swedish fish |
+| x          | good swedish fish |
+| y          | good swedish fish |
+
+## Edge
 
 Each ``vertex`` has a mandatory and optional attributes.
 
-Mandatory Attributes:
-
-- node_id
-- node_name
-- arn
-- node_type
-
-Optional Attributes:
-
-- metadata
+| Optional Attributes  | head two          |
+|:---------------------|:------------------|
+| metadata             | good swedish fish |
 
 To see the list of all supported nodes (currently AWS and on-prem), syntax of each node with examples, please follow to ``AWS Components`` section
 
