@@ -75,7 +75,7 @@ Edit your ``project.toml`` and add ``multicloud-diagrams`` as dependecy:
 [ tool.poetry.dependencies ]
   python = "^3.7"
   pyyaml = "^6.0"
-  multicloud-diagrams = "^0.3.10"
+  multicloud-diagrams = ^"{{ site.data['tag'] }}"
 ```
 
 ## Usage
