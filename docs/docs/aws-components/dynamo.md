@@ -14,7 +14,7 @@ New (v0.2.0)
 ## Code Snippet:
 
 ```python
-{% root_include ../tests/aws/test_dynamo.py 9:20 %}
+{% root_include ../tests/aws/test_dynamo.py 11:22 %}
 ```
 
 ## Rendering:

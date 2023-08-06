@@ -14,7 +14,7 @@ New (v0.2.0)
 ## Code Snippet:
 
 ```python
-{% root_include ../tests/aws/test_lambda.py 9:25 %}
+{% root_include ../tests/aws/test_lambda.py 11:27 %}
 ```
 
 ## Rendering:

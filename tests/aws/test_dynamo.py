@@ -1,6 +1,8 @@
 from multicloud_diagrams import MultiCloudDiagrams
 
 from utils.utils import TestUtilities
+
+
 # NOTE!!! Content of this file is mapped to documentation with lines position
 
 class TestAWSVertexInIsolation(TestUtilities):

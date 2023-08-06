@@ -19,7 +19,7 @@ git-changelog = "^1.0.1"
 pyyaml = "^6.0"
 
 [tool.flakehell]
-exclude = ["README.md", "./venv/"]
+exclude = ["README.md", "./venv/", "./docs"]
 format = "colored"
 max_line_length = 88
 show_source = true

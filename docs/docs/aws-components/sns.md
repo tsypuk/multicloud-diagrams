@@ -14,7 +14,7 @@ New (v0.2.0)
 ## Code Snippet:
 
 ```python
-{% root_include ../tests/aws/test_sns.py 9:19 %}
+{% root_include ../tests/aws/test_sns.py 11:21 %}
 ```
 
 ## Rendering:
