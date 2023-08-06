@@ -1,10 +1,10 @@
 ---
 layout: default
-title: drawio usage
+title: DRAWIO How-To
 nav_order: 4
 ---
 
-# How to use drawio
+# DRAWIO How To
 {: .no_toc }
 
 Draw.io has gained widespread popularity as an extensively used editor and file format. Apart from the standard web browser version, it offers various other scenarios for usage, which include:

@@ -2,12 +2,22 @@
 layout: default
 title: DynamoDB
 parent: AWS Components
-nav_order: 4
+nav_order: 2
 ---
 
 # DynamoDB
+{: .d-inline-block }
 
-Tables are responsive by default, allowing wide tables to have a horizontal scroll to access columns outside of the normal viewport.
+New (v0.2.0)
+{: .label .label-green }
+
+## Code Snippet:
+
+```python
+{% root_include ../tests/aws/test_dynamo.py 9:20 %}
+```
+
+## Rendering:
 
 <div class="code-example" markdown="1">
 
@@ -18,12 +28,5 @@ Tables are responsive by default, allowing wide tables to have a horizontal scro
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 
+TODO: add image here
 </div>
-```markdown
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-```

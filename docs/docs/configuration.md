@@ -48,7 +48,8 @@ Compatibility tests are included for latest LTS Python versions that have ``Secu
 | 3.8     | 14 Oct 2019 | 14 Oct 2024      | 3.8.17  |
 | 3.7     | 26 Jun 2018 | 27 Jun 2023      | 3.7.17  |
 
-You can use ``multicloud-diagrams`` with Python versions <3.7 that do not have official ``Security Support`` with own verification.
+{: .highlight }
+You can use ``multicloud-diagrams`` with ``Python`` versions ``<3.7`` that do not have official ``Security Support`` with your own verification.
 
 The package is readily accessible on [PyPI: https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
 for easy installation and usage. As an open-source project, it encourages community participation and welcomes contributions from developers
@@ -110,7 +111,9 @@ mcd.export_to_file(output_file)
 Considering that we haven't specified the coordinates or distribution algorithm yet (which will be detailed in the next instructions), by default, all elements will be placed in the left-top corner. 
 We have the flexibility to move and position them according to our preferences.
 
+<div class="code-example" markdown="1">
 ![IAM add Role and Lambda](images/open-iam.gif)
+</div>
 
 ## Reuse coordinates from previous diagram version
 
@@ -159,7 +162,9 @@ mcd.export_to_file('../output/diagram_v2.drawio')
 
 This approach allows for efficient placement of new elements while preserving the layout of existing ones based on the previous diagram's coordinates.
 
+<div class="code-example" markdown="1">
 ![IAM add Permissions](images/iam-add-permissions.gif)
+</div>
 
 By leveraging this feature, we can implement versioning effectively by consistently reading coordinates from the previous file, 
 which includes a timestamp (e.g., ``datetime`` in the file name). Subsequently, we write the updated elements to a new file. 
@@ -167,7 +172,10 @@ This functionality proves invaluable for tracking historical records and facilit
 
 ## Arrange Layout automatic positioning
 
+<div class="code-example" markdown="1">
 ![IAM add Permissions](images/arrange-layout.gif)
+</div>
 
+{: .highlight }
 For more advanced use cases, detailed customization options, and in-depth functionalities, please continue exploring the next sections in our documentation. There, you will find a wealth of
 information to help you leverage the full potential of multicloud-diagrams in your projects. Happy diagramming!

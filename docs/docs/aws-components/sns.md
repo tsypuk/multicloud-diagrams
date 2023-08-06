@@ -1,11 +1,11 @@
 ---
 layout: default
-title: SQS (Simple Queue Service)
+title: SNS (Simple Notification Service)
 parent: AWS Components
-nav_order: 3
+nav_order: 4
 ---
 
-# SQS (Simple Queue Service)
+# SNS (Simple Notification Service)
 {: .d-inline-block }
 
 New (v0.2.0)
@@ -14,7 +14,7 @@ New (v0.2.0)
 ## Code Snippet:
 
 ```python
-{% root_include ../tests/aws/test_sqs.py 9:21 %}
+{% root_include ../tests/aws/test_sns.py 9:19 %}
 ```
 
 ## Rendering:

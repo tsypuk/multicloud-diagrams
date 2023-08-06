@@ -2,14 +2,22 @@
 layout: default
 title: Lambda Function
 parent: AWS Components
-nav_order: 7
+nav_order: 1
 ---
 
 # Lambda Function
 {: .d-inline-block }
 
-New (v0.4.0)
+New (v0.2.0)
 {: .label .label-green }
+
+## Code Snippet:
+
+```python
+{% root_include ../tests/aws/test_lambda.py 9:25 %}
+```
+
+## Rendering:
 
 Markdown does not include support for callouts. However, you can style text as a callout using a Markdown extension supported by kramdown: [*block IALs*](https://kramdown.gettalong.org/quickref.html#block-attributes).
 
