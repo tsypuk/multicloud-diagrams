@@ -16,28 +16,33 @@ Draw.io has gained widespread popularity as an extensively used editor and file 
 {:toc}
 ---
 
-```python
-{% root_include ../samples/samples/aws_iam_from_yaml.py %}
-```
 
 ## Offline draw.io installation
+
+DrawIO is available for installation as standalone app: [https://github.com/jgraph/drawio-desktop/releases/](https://github.com/jgraph/drawio-desktop/releases/).
+
+MacOS command to install:
 
 ```shell
 brew cask install drawio
 ```
 
-https://github.com/jgraph/drawio-desktop/releases/
+![img.png](images/drawio-desktop.png)
 
-## draw.io in CLI
+## draw.io as CLI
 
-Here's a command-line example demonstrating how to convert the vector representation of a landscape.drawio file into an output PNG file, while scaling its size to be twice as large
-(you can use create and use short ``alias`` in ``CLI`` instead of specifying the full path):
+Also, not many users are aware, but you can use installed DrawIO app as a command-line tool.
+Here we are converting the vector representation of a ``landscape.drawio`` file into an output ``PNG`` file, while scaling its size to be twice as large
+(you define and use ``short`` or ``alias`` in ``CLI`` instead of specifying the full path):
 
 ```shell
 /Applications/draw.io.app/Contents/MacOS/draw.io -x --border 2 -f png --scale 2 -o landscape.png landscape.drawio
 ```
 
-Other arguments:
+{: .highlight }
+Very useful to use in automated Pipelines, to convert diagrams into desired output format (png, pdf, jpg, msvg, vsdx, xml) of you ``catalogue`` representation. 
+
+Other available CLI arguments:
 
 | argument                | description                                                                                                                                                                                        |
 |:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -49,10 +54,15 @@ Other arguments:
 | --width <width>         | fits the generated image/pdf into the specified width, preserves aspect ratio.                                                                                                                     |
 | --height <height>       | fits the generated image/pdf into the specified height, preserves aspect ratio.                                                                                                                    |
 
-## drawio in the browser
+## draw.io in any  browser
 
-Lorem Ipsum
+The browser version is likely the most widely used one, as I've observed numerous engineers start their journey from it.
+Also, useful when you are on another setup (any machine has ``browser``).
 
-## IntelijIdea drawio plugin
+Simply go to: [https://app.diagrams.net/](https://app.diagrams.net/)
 
-Lorem Ipsum
+![img.png](images/drawio-browser.png)
+
+## IntelliJ IDEA drawio plugin
+
+![img.png](images/drawio-idea.png)
