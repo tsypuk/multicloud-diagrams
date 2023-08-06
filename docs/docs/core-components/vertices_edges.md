@@ -27,3 +27,25 @@ Tables are responsive by default, allowing wide tables to have a horizontal scro
 | ok           | good `oreos`      | hmm   |
 | ok           | good `zoute` drop | yumm  |
 ```
+
+## Vertices and Edges
+
+Each ``vertex`` has a mandatory and optional attributes.
+
+Mandatory Attributes:
+
+- node_id
+- node_name
+- arn
+- node_type
+
+Optional Attributes:
+
+- metadata
+
+To see the list of all supported nodes (currently AWS and on-prem), syntax of each node with examples, please follow to ``AWS Components`` section
+
+Vertices are connected using edges, by specifying source and target Vertex IDs. Also allowing to add labels to connection.
+
+ID syntax is: ``RESOURCE_TYPE:ARN``
+Examples: f'lambda_function:{func_arn}' f'iam_role:{role_arn}'

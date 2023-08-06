@@ -7,7 +7,7 @@ nav_order: 2
 # Getting started
 {: .no_toc }
 
-Welcome to ``multicloud-diagrams`` 👋 This section will walk you through the basic installation process and provide a quick example to get you started. 
+Welcome to ``multicloud-diagrams`` 👋 This section will walk you through the basic installation process and provide a quick example to get you started.
 If you're looking for more advanced features and customization options, be sure to explore the subsequent sections in our comprehensive documentation.
 
 ## Table of contents
@@ -15,23 +15,45 @@ If you're looking for more advanced features and customization options, be sure 
 
 1. TOC
 {:toc}
-   
 ---
 
-
 ## Dependency details
+
+python-3.11
+{: .label .label-green }
+
+python-3.10
+{: .label .label-green }
+
+python-3.9
+{: .label .label-green }
+
+python-3.8
+{: .label .label-green }
+
+python-3.7
+{: .label .label-yellow }
 
 The ``multicloud-diagrams`` package is a Python library that provides support for major ``Python`` versions, including ``3.7``, ``3.8``, ``3.9``, ``3.10``, and ``3.11``.
 The package ensures compatibility with these Python versions by running tests using a Git workflow.
 These tests are designed to verify that the library functions as expected across each mentioned Python version.
 
-The package is readily accessible on [PyPI: https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/) 
+Compatibility tests are included for latest LTS Python versions that have ``Security Support``.
+
+| Release | Released    | Security Support | Latest  |  
+|:--------|:------------|:-----------------|:--------|
+| 3.11    | 24 Oct 2022 | 24 Oct 2027      | 3.11.4  |
+| 3.10    | 04 Oct 2021 | 04 Oct 2026      | 3.10.12 |
+| 3.9     | 05 Oct 2020 | 05 Oct 2025      | 3.9.1   |
+| 3.8     | 14 Oct 2019 | 14 Oct 2024      | 3.8.17  |
+| 3.7     | 26 Jun 2018 | 27 Jun 2023      | 3.7.17  |
+
+You can use ``multicloud-diagrams`` with Python versions <3.7 that do not have official ``Security Support`` with own verification.
+
+The package is readily accessible on [PyPI: https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
 for easy installation and usage. As an open-source project, it encourages community participation and welcomes contributions from developers
 [https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
 Whether you want to use the package's functionalities or contribute to its improvement, it offers a user-friendly experience, backed by an active and engaged community.
-
-
-
 
 ## Installation
 
@@ -60,7 +82,7 @@ Edit your ``project.toml`` and add ``multicloud-diagrams`` as dependecy:
 
 {: .d-inline-block }
 
-The minimum configuration requires importing MultiCloudDiagrams, adding vertices, connecting them with links and exporting to output file. 
+The minimum configuration requires importing MultiCloudDiagrams, adding vertices, connecting them with links and exporting to output file.
 
 ```python
 from multicloud_diagrams import MultiCloudDiagrams
@@ -113,25 +135,5 @@ mcd.export_to_file(output_file)
 mcd.export_to_file('../output/diagram.drawio')
 ```
 
-## Vertices and Edges
-
-Each ``vertex`` has a mandatory and optional attributes.
-
-Mandatory Attributes:
-- node_id
-- node_name
-- arn
-- node_type
-
-Optional Attributes:
-- metadata
-
-To see the list of all supported nodes (currently AWS and on-prem), syntax of each node with examples, please follow to ``AWS Components`` section
-
-
-Vertices are connected using edges, by specifying source and target Vertex IDs. Also allowing to add labels to connection.
-
-ID syntax is: ``RESOURCE_TYPE:ARN``
-Examples: f'lambda_function:{func_arn}' f'iam_role:{role_arn}'
-
-For more advanced use cases, detailed customization options, and in-depth functionalities, please continue exploring the next sections in our documentation. There, you will find a wealth of information to help you leverage the full potential of multicloud-diagrams in your projects. Happy diagramming!
+For more advanced use cases, detailed customization options, and in-depth functionalities, please continue exploring the next sections in our documentation. There, you will find a wealth of
+information to help you leverage the full potential of multicloud-diagrams in your projects. Happy diagramming!
