@@ -1,37 +1,37 @@
 ---
 layout: default
-title: DynamoDB
+title: Lambda Function
 parent: AWS Components
 nav_order: 1
 date: 2023-08-06
 ---
 
-# DynamoDB
+# Lambda Function
 {: .d-inline-block }
 
 New (v0.2.0)
 {: .label .label-green }
 
-## Node Type: ``dynamo``
+## Node Type: ``lambda_function``
 
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_dynamo.py %}
+{% root_include_snippet ../tests/aws/test_lambda_function.py %}
 ```
 
 ## Rendering:
 
-![lambda](output/jpg/dynamo.jpg)
+![lambda](output/jpg/lambda_function.jpg)
 
 
-## drawio dynamo vertex:
+## drawio lambda_function vertex:
 
 ```xml
 <?xml version="1.0" ?>
-<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" parent="1" vertex="1">
+<mxCell id="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:producer-lambda" parent="1" vertex="1">
 						
-	<mxGeometry width="72" height="81" as="geometry"/>
+	<mxGeometry width="69" height="72" as="geometry"/>
 					
 </mxCell>
 
@@ -41,13 +41,13 @@ New (v0.2.0)
 
 ### Style:
 ```html
-style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;"
+style="verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;shape=mxgraph.aws3.lambda_function;prIcon=server;fillColor=#F58534;gradientColor=none;html=1;"
 ```
 ### Vertex size:
 
 | width     | height   |
 |:----------|:---------|
-| 72 | 81|
+| 69 | 72|
 
 ### Full XML dump:
 ```xml
@@ -64,9 +64,9 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
 								
 				<mxCell id="1" parent="0"/>
 								
-				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" parent="1" vertex="1">
+				<mxCell id="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:producer-lambda" parent="1" vertex="1">
 										
-					<mxGeometry width="72" height="81" as="geometry"/>
+					<mxGeometry width="69" height="72" as="geometry"/>
 									
 				</mxCell>
 							
@@ -81,6 +81,6 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
 
 ### drawio file:
 
-Download generated ``dynamo.drawio``:
+Download generated ``lambda_function.drawio``:
 
-[Download](output/drawio/dynamo.drawio){: .btn .btn-purple }
+[Download](output/drawio/lambda_function.drawio){: .btn .btn-purple }

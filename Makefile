@@ -13,10 +13,14 @@ endef
 
 .PHONY: run
 
-doc:
+doc: test images
 	$(call colorecho, "Starting Documentation locally...")
 	cd docs && bundle exec just-the-docs rake search:init \
 	cd docs && bundle exec jekyll serve --trace
+
+images:
+	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio
+
 
 landscape:
 	$(call colorecho, "Generating new Landscape...")
@@ -30,6 +34,7 @@ changelog: test
 test:
 	$(call colorecho, "Run all Tests...")
 	poetry run python -m unittest -v tests/*.py
+	poetry run python -m unittest -v tests/aws/*.py
 	$(call colorecho, "Run flakehell lint...")
 	poetry run flakehell lint
 

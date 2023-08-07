@@ -5,7 +5,12 @@ dist/
 /__pycache__/
 */__pycache__
 tests/__pycache__/
+tests/*/__pycache__/
+samples/tests/__pycache__/
+*/tests/__pycache__/
+
 multicloud_diagrams/__pycache__/
 *.iml
 
-
+#docs/docs/aws-components/output/jpg/
+#docs/docs/aws-components/output/drawio/

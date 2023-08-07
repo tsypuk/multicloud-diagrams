@@ -16,6 +16,24 @@ layout: table_wrappers
       {% include components/breadcrumbs.html %}
       <div id="main-content" class="main-content">
         <main>
+
+          {% if site.last_edit_timestamp%}
+          <div class="d-flex mt-2">
+            {% if site.last_edit_timestamp and site.last_edit_time_format and page.date %}
+            <p class="text-small text-grey-dk-000 mb-0 mr-2">
+              {% assign page_create_date = page.date | date: "%Y-%m-%d" %}
+              {% assign page_file_update_date = page.path | file_date | date: "%Y-%m-%d" %}
+
+              Created: <span class="d-inline-block">{{ page_create_date }}</span>
+              {% if page_create_date != page_file_update_date %}
+              |
+              Updated: {{ page_file_update_date }}
+              {% endif %}
+            </p>
+            {% endif %}
+          </div>
+          {% endif %}
+
           {% if site.heading_anchors != false %}
             {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
           {% else %}

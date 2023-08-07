@@ -4,6 +4,7 @@ title: Core Components
 nav_order: 3
 has_children: true
 permalink: /docs/core-components
+date: 2023-08-07
 ---
 
 # Core Components

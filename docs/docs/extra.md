@@ -2,6 +2,7 @@
 layout: default
 title: DRAWIO How-To
 nav_order: 4
+date: 2023-08-07
 ---
 
 # DRAWIO How To
@@ -44,15 +45,25 @@ Very useful to use in automated Pipelines, to convert diagrams into desired outp
 
 Other available CLI arguments:
 
-| argument                | description                                                                                                                                                                                        |
-|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -f, --format <format>   | if output file name extension is specified, this option is ignored (file type is determined from output extension, possible export formats are pdf, png, jpg, svg, vsdx, and xml) (default: "pdf") |
-| -q, --quality <quality> | output image quality for JPEG (default: 90)                                                                                                                                                        |
-| t, --transparent        | set transparent background for PNG                                                                                                                                                                 |
-| -b, --border <border>   | sets the border width around the diagram (default: 0)                                                                                                                                              |
-| -s, --scale <scale>     | scales the diagram size                                                                                                                                                                            |
-| --width <width>         | fits the generated image/pdf into the specified width, preserves aspect ratio.                                                                                                                     |
-| --height <height>       | fits the generated image/pdf into the specified height, preserves aspect ratio.                                                                                                                    |
+| argument                          | description                                                                                                                                                                                        |
+|:----------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -f, --format <format>             | if output file name extension is specified, this option is ignored (file type is determined from output extension, possible export formats are pdf, png, jpg, svg, vsdx, and xml) (default: "pdf") |
+| -q, --quality <quality>           | output image quality for JPEG (default: 90)                                                                                                                                                        |
+| -t, --transparent                 | set transparent background for PNG                                                                                                                                                                 |
+| -b, --border <border>             | sets the border width around the diagram (default: 0)                                                                                                                                              |
+| -s, --scale <scale>               | scales the diagram size                                                                                                                                                                            |
+| --width <width>                   | fits the generated image/pdf into the specified width, preserves aspect ratio.                                                                                                                     |
+| --height <height>                 | fits the generated image/pdf into the specified height, preserves aspect ratio.                                                                                                                    |
+| -x, --export                      | export the input file/folder based on the given options                                                                                                                                            |
+| -r, --recursive                   | for a folder input, recursively convert all files in sub-folders also                                                                                                                              |
+| -o, --output <output file/folder> | specify the output file/folder. If omitted, the input file name is used for output with the specified format as extension                                                                          |
+
+Example of ``CLI`` command that will recursively convert all ``drawio`` files in ``docs/docs/aws-components/output/drawio`` folder, convert them into ``JPG`` with ``100%`` quality
+and output as multiple ``jpeg`` files into folder ``docs/docs/aws-components/output/jpg``
+
+```shell
+/Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio 
+```
 
 ## draw.io in any  browser
 

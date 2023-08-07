@@ -4,9 +4,10 @@ title: AWS Components
 nav_order: 4
 has_children: true
 permalink: /docs/aws-components
+date: 2023-08-06
 ---
 
 # AWS Components
 
-To make it as easy as possible to write documentation in plain Markdown, most UI components are styled using default Markdown elements with few additional CSS classes needed.
+This is a comprehensive library that provides support for various AWS services. The library is regularly updated, allowing you to keep track of when each AWS service was added and supported in different versions.
 {: .fs-6 .fw-300 }

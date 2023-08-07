@@ -1,37 +1,37 @@
 ---
 layout: default
-title: DynamoDB
+title: API Gateway
 parent: AWS Components
 nav_order: 1
 date: 2023-08-06
 ---
 
-# DynamoDB
+# API Gateway
 {: .d-inline-block }
 
 New (v0.2.0)
 {: .label .label-green }
 
-## Node Type: ``dynamo``
+## Node Type: ``api_gw``
 
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_dynamo.py %}
+{% root_include_snippet ../tests/aws/test_api_gw.py %}
 ```
 
 ## Rendering:
 
-![lambda](output/jpg/dynamo.jpg)
+![lambda](output/jpg/api_gw.jpg)
 
 
-## drawio dynamo vertex:
+## drawio api_gw vertex:
 
 ```xml
 <?xml version="1.0" ?>
-<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" parent="1" vertex="1">
+<mxCell id="vertex:api_gw:esf19s3pag" parent="1" vertex="1">
 						
-	<mxGeometry width="72" height="81" as="geometry"/>
+	<mxGeometry width="76.5" height="93" as="geometry"/>
 					
 </mxCell>
 
@@ -41,13 +41,13 @@ New (v0.2.0)
 
 ### Style:
 ```html
-style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;"
+style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;"
 ```
 ### Vertex size:
 
 | width     | height   |
 |:----------|:---------|
-| 72 | 81|
+| 76.5 | 93|
 
 ### Full XML dump:
 ```xml
@@ -64,9 +64,9 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
 								
 				<mxCell id="1" parent="0"/>
 								
-				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" parent="1" vertex="1">
+				<mxCell id="vertex:api_gw:esf19s3pag" parent="1" vertex="1">
 										
-					<mxGeometry width="72" height="81" as="geometry"/>
+					<mxGeometry width="76.5" height="93" as="geometry"/>
 									
 				</mxCell>
 							
@@ -81,6 +81,6 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
 
 ### drawio file:
 
-Download generated ``dynamo.drawio``:
+Download generated ``api_gw.drawio``:
 
-[Download](output/drawio/dynamo.drawio){: .btn .btn-purple }
+[Download](output/drawio/api_gw.drawio){: .btn .btn-purple }

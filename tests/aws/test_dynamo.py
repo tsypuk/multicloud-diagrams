@@ -1,13 +1,13 @@
 from multicloud_diagrams import MultiCloudDiagrams
+from utils.templating import TestRendering
 
-from utils.utils import TestUtilities
 
-
-# NOTE!!! Content of this file is mapped to documentation with lines position
-
-class TestAWSVertexInIsolation(TestUtilities):
+class TestAWSVertexInIsolation(TestRendering):
 
     def test_dynamo(self):
+        # docs
+        self.node_type = 'dynamo'
+
         # given
         mcd = MultiCloudDiagrams()
 
@@ -30,4 +30,7 @@ class TestAWSVertexInIsolation(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, 'prod-dynamo-table', 'dynamo')
+        self.verify_aws_resource(expected, mcd.mx_file, 'prod-dynamo-table', self.node_type)
+
+        # docs
+        self.mcd = mcd

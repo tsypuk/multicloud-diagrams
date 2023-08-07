@@ -1,13 +1,16 @@
 from multicloud_diagrams import MultiCloudDiagrams
 
-from utils.utils import TestUtilities
+from utils.templating import TestRendering
 
 
 # NOTE!!! Content of this file is mapped to documentation with lines position
 
-class TestAWSVertexInIsolation(TestUtilities):
+class TestAWSVertexInIsolation(TestRendering):
 
     def test_lambda(self):
+        # docs
+        self.node_type = 'lambda_function'
+
         # given
         mcd = MultiCloudDiagrams()
 
@@ -37,3 +40,6 @@ class TestAWSVertexInIsolation(TestUtilities):
             'vertex': '1'
         }
         self.verify_aws_resource(expected, mcd.mx_file, 'producer-lambda', 'lambda_function')
+
+        # docs
+        self.mcd = mcd

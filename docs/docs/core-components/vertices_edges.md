@@ -3,6 +3,7 @@ layout: default
 title: Vertices & Edges
 parent: Core Components
 nav_order: 1
+date: 2023-08-07
 ---
 
 # Vertices & Edges
