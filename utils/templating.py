@@ -1,6 +1,7 @@
 from xml.dom import minidom
 import xml.etree.ElementTree as Et
 from jinja2 import Environment, FileSystemLoader
+from copy import deepcopy
 
 from utils.utils import TestUtilities
 
@@ -17,7 +18,10 @@ def render_template(template_filename, context):
 def xml_to_string(data):
     rough_string = Et.tostring(data, 'utf-8').decode('utf-8')
     parsed = minidom.parseString(rough_string.replace('\n', ''))
-    return parsed.toprettyxml()
+    indentation = " " * 4  # Use 4 spaces for indentation
+    newline = "\n"  # Use newline character
+    non_empty_lines = [line for line in parsed.toprettyxml(indent=indentation, newl=newline).splitlines() if line.strip()]
+    return '\n'.join(non_empty_lines)
 
 
 class TestRendering(TestUtilities):
@@ -35,7 +39,7 @@ class TestRendering(TestUtilities):
     def create_index_html(self):
         tree = Et.ElementTree(self.mcd.mx_file)
         data = tree.findall("./*/*/*/")[2]
-        data_full = tree.findall(".")[0]
+        data_full = deepcopy(tree.findall(".")[0].__copy__())
 
         del data.attrib['style']
         del data.attrib['value']
@@ -59,10 +63,14 @@ class TestRendering(TestUtilities):
             'width': node_details['width'],
             'height': node_details['height'],
             'node_type': resource_type,
-            'provider': provider
+            'provider': provider,
         }
         if 'details' in node_details:
             context['details'] = node_details['details']
+
+        pairs = node_details['style'].split(';')
+        # Split each pair into key and value using '=' as the separator
+        context['styles'] = [pair.split('=') for pair in pairs]
 
         with open(output_file_name, 'w') as f:
             output_md = render_template('template.MD', context)

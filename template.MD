@@ -21,13 +21,12 @@ New (v{{version}})
 ## Code Snippet:
 
 ```python
-{{ "{% root_include_snippet ../tests/" + provider + "/test_" + node_type + ".py %" + "}" }}
+{{"{% root_include_snippet ../tests/" + provider + "/test_" + node_type + ".py %" + "}"}}
 ```
 
 ## Rendering:
 
 ![lambda](output/jpg/{{node_type}}.jpg)
-
 
 ## drawio {{node_type}} vertex:
 
@@ -41,11 +40,20 @@ New (v{{version}})
 ```html
 style="{{style}}"
 ```
+
+| attribute | value |
+|:----------|:------|
+{% for pair in styles| sort(attribute=0) %}
+    {% if pair[0] != '' %}
+        |{{ pair[0] }}| {{ pair[1] }} |
+    {% endif %}
+{% endfor %}
+
 ### Vertex size:
 
-| width     | height   |
-|:----------|:---------|
-| {{width}} | {{height}}|
+| width    | {{width}}  |
+|:---------|:-----------|
+| height   | {{height}} |
 
 ### Full XML dump:
 ```xml
