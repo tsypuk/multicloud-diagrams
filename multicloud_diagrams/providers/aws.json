@@ -1,6 +1,6 @@
 {
   "lambda_function": {
-    "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;shape=mxgraph.aws3.lambda_function;prIcon=server;fillColor=#F58534;gradientColor=none;html=1;",
+    "style": "verticalLabelPosition=bottom;verticalAlign=top;aspect=fixed;align=left;pointerEvents=1;shape=mxgraph.aws3.lambda_function;prIcon=server;fillColor=#F58534;gradientColor=none;html=1;",
     "width": "69",
     "height": "72",
     "version": "0.2.0",
