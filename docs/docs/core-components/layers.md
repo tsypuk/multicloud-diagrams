@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Layers
-parent: Core Components
+parent: CORE Components
 nav_order: 2
 date: 2023-08-07
 ---

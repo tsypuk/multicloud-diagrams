@@ -23,7 +23,13 @@ def xml_to_string(data):
 class TestRendering(TestUtilities):
 
     def tearDown(self) -> None:
-        self.mcd.export_to_file(f'docs/docs/aws-components/output/drawio/{self.node_type}.drawio')
+        provider = self.get_provider_by_service_name(self.node_type)
+        if 'fallback' == provider:
+            provider = 'core'
+        node_type = self.node_type
+        if node_type not in self.supported_vertex:
+            node_type = 'fallback_vertex'
+        self.mcd.export_to_file(f'docs/docs/{provider}-components/output/drawio/{node_type}.drawio')
         self.create_index_html()
 
     def create_index_html(self):
@@ -34,8 +40,15 @@ class TestRendering(TestUtilities):
         del data.attrib['style']
         del data.attrib['value']
 
-        output_file_name = f'docs/docs/aws-components/{self.node_type}.md'
-        node_details = self.supported_vertex[self.node_type]
+        resource_type = self.node_type
+        if resource_type not in self.supported_vertex:
+            resource_type = 'fallback_vertex'
+
+        provider = self.get_provider_by_service_name(self.node_type)
+        if 'fallback' == provider:
+            provider = 'core'
+        output_file_name = f'docs/docs/{provider}-components/{resource_type}.md'
+        node_details = self.supported_vertex[resource_type]
 
         context = {
             'xml_full': xml_to_string(data_full),
@@ -45,8 +58,11 @@ class TestRendering(TestUtilities):
             'style': node_details['style'],
             'width': node_details['width'],
             'height': node_details['height'],
-            'node_type': self.node_type
+            'node_type': resource_type,
+            'provider': provider
         }
+        if 'details' in node_details:
+            context['details'] = node_details['details']
 
         with open(output_file_name, 'w') as f:
             output_md = render_template('template.MD', context)

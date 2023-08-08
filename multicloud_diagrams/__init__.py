@@ -140,7 +140,7 @@ class MultiCloudDiagrams:
     supported_vertex = {}
 
     # Load supported vertexes for registered Cloud Providers
-    providers = ['aws_services', 'azure_services', 'gcp_services', 'on_prem_services', 'fallback']
+    providers = ['aws', 'azure', 'gcp', 'onprem', 'fallback']
     for provider in providers:
         path = pkgutil.get_data(__package__, f'providers/{provider}.json')
         supported_vertex.update(json.loads(path.decode("utf-8")))

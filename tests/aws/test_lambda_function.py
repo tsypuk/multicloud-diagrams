@@ -39,7 +39,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, 'producer-lambda', 'lambda_function')
+        self.verify_resource(expected, mcd.mx_file, 'producer-lambda', 'lambda_function')
 
         # docs
         self.mcd = mcd

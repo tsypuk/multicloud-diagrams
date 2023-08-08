@@ -29,7 +29,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, 'internal.fifo', 'sns')
+        self.verify_resource(expected, mcd.mx_file, 'internal.fifo', 'sns')
 
         # docs
         self.mcd = mcd

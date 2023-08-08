@@ -31,7 +31,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, 'int-eu-live-events.fifo', 'sqs')
+        self.verify_resource(expected, mcd.mx_file, 'int-eu-live-events.fifo', 'sqs')
 
         # docs
         self.mcd = mcd

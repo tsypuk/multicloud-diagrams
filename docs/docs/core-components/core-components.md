@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Core Components
+title: CORE Components
 nav_order: 3
 has_children: true
 permalink: /docs/core-components

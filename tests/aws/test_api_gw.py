@@ -30,7 +30,7 @@ class TestAWSVertexInIsolation(TestRendering):
                      "HEADER<BR><b>endpoint_configuration</b>: {'types': ['EDGE']}",
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, 'APIGW integration with DynamoDB', 'api_gw')
+        self.verify_resource(expected, mcd.mx_file, 'APIGW integration with DynamoDB', 'api_gw')
 
         # docs
         self.mcd = mcd

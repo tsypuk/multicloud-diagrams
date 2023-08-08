@@ -20,6 +20,8 @@ doc: test images
 
 images:
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio
+	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/core-components/output/jpg docs/docs/core-components/output/drawio
+	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/onprem-components/output/jpg docs/docs/onprem-components/output/drawio
 
 
 landscape:
@@ -35,23 +37,29 @@ test:
 	$(call colorecho, "Run all Tests...")
 	poetry run python -m unittest -v tests/*.py
 	poetry run python -m unittest -v tests/aws/*.py
+	poetry run python -m unittest -v tests/core/*.py
+	poetry run python -m unittest -v tests/onprem/*.py
 	$(call colorecho, "Run flakehell lint...")
 	poetry run flakehell lint
 
 check:
 	@echo Old tag: $(TAG) New tag: $(NEW_VERSION)
 
-release:
-	$(call colorecho, "Releasing new version...")
+pre-release:
+	$(call colorecho, "Preparing Release with new version...")
 	poetry version $(NEW_VERSION)
 	git add .
 	git tag $(NEW_VERSION)
 	$(MAKE) changelog
+	$(MAKE) release2docs
 	git tag -d $(NEW_VERSION)
 	git add . && git commit -m "bump: version $(TAG) -> $(NEW_VERSION)" && git tag $(NEW_VERSION)
+
+release:
+	$(call colorecho, "Push to origin with TAGs...")
 	git push
 	git push --tags
 
 release2docs:
-	$(call colorecho, "Releasing new version...")
+	$(call colorecho, "Adding changelog to online docs...")
 	{ echo '---'; echo 'title: CHANGELOG'; echo 'layout: default'; echo '---'; echo ''; cat CHANGELOG.MD; } > "docs/CHANGELOG.md"

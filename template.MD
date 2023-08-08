@@ -1,7 +1,7 @@
 ---
 layout: default
 title: {{desc}}
-parent: AWS Components
+parent: {{provider | upper }} Components
 nav_order: 1
 date: 2023-08-06
 ---
@@ -12,12 +12,16 @@ date: 2023-08-06
 New (v{{version}})
 {: .label .label-green }
 
+{% if details is defined %}
+{: .warning }
+{{details}}
+{% endif %}
 ## Node Type: ``{{node_type}}``
 
 ## Code Snippet:
 
 ```python
-{{ "{% root_include_snippet ../tests/aws/test_" + node_type + ".py %" + "}" }}
+{{ "{% root_include_snippet ../tests/" + provider + "/test_" + node_type + ".py %" + "}" }}
 ```
 
 ## Rendering:

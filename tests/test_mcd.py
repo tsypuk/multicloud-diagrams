@@ -80,7 +80,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=True)
+        self.verify_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=True)
 
     def test_shadow_drawio(self):
         # given
@@ -130,7 +130,7 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=False)
+        self.verify_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=False)
 
     def test_add_vertex_no_arn(self):
         # given
@@ -149,4 +149,4 @@ class TestMultiCloudDiagramsDefaultDrawIO(TestUtilities):
             'parent': '1',
             'vertex': '1'
         }
-        self.verify_aws_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=False)
+        self.verify_resource(expected, mcd.mx_file, resource_name, 'fallback_vertex', debug_mode=False)

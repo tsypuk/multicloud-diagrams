@@ -8,14 +8,22 @@ from multicloud_diagrams import update_fill_color
 
 class TestUtilities(unittest.TestCase):
     supported_vertex = {}
+    provider_services = {}
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))
-        for provides_file in ['aws_services', 'fallback']:
-            path = os.path.join(project_folder, f'../multicloud_diagrams/providers/{provides_file}.json')
+        for provider in ['aws', 'fallback', 'onprem', 'azure', 'gcp']:
+            path = os.path.join(project_folder, f'../multicloud_diagrams/providers/{provider}.json')
             with open(path, 'r') as file:
                 json_data = json.load(file)
             self.supported_vertex.update(json_data)
+            self.provider_services[provider] = list(json_data.keys())
+
+    def get_provider_by_service_name(self, service_name) -> str:
+        for provider, value in self.provider_services.items():
+            if service_name in value:
+                return provider
+        return 'fallback'
 
     def verify_mx_cell(self, mx_cell, expected):
         # then
@@ -76,12 +84,15 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-    def verify_aws_resource(self, expected: dict, mx_file: Et.Element, resource_name, resource_type, debug_mode=False, fill_color=None):
+    def verify_resource(self, expected: dict, mx_file: Et.Element, resource_name, resource_type, debug_mode=False, fill_color=None):
         tree = Et.ElementTree(mx_file)
         self.verify_mxfile_default(tree)
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_vertex_in_isolation(mx_cells)
+
+        if resource_type not in self.supported_vertex:
+            resource_type = 'fallback_vertex'
 
         # 'style' is verified based on providers file content
         if 'style' in expected:

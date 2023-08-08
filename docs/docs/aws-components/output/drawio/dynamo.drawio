@@ -4,7 +4,7 @@
 			<root>
 				<mxCell id="0" />
 				<mxCell id="1" parent="0" />
-				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DeletionProtectionEnabled&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;ItemCount&lt;/b&gt;: 900&lt;BR&gt;&lt;b&gt;TableSizeBytes&lt;/b&gt;: 123" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
+				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DeletionProtectionEnabled&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;ItemCount&lt;/b&gt;: 900&lt;BR&gt;&lt;b&gt;TableSizeBytes&lt;/b&gt;: 123&lt;BR&gt;&lt;b&gt;Replicas&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;RCU&lt;/b&gt;: 1&lt;BR&gt;&lt;b&gt;WCU&lt;/b&gt;: 1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
 					<mxGeometry width="72" height="81" as="geometry" />
 				</mxCell>
 			</root>
