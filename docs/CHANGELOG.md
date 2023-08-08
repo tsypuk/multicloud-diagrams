@@ -11,6 +11,37 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.11](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.11) - 2023-08-08
+
+<small>[Compare with 0.3.10](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.10...0.3.11)</small>
+
+### Docs
+
+- cosmetics ([86aa7e2](https://github.com/tsypuk/multicloud-diagrams/commit/86aa7e2f5b211f40adaa1e05b505ebfdcd7f8bf9) by Roman Tsypuk).
+- added animated gifs for getting started ([96f8716](https://github.com/tsypuk/multicloud-diagrams/commit/96f87161c5670e7fbfa826e865979f34bfe1bd20) by Roman Tsypuk).
+- python details, drawio usage ([6067f47](https://github.com/tsypuk/multicloud-diagrams/commit/6067f476d8bdd50df25fa1072d5aeb90a327ebae) by Roman Tsypuk).
+- changed copyright and signature ([757d45b](https://github.com/tsypuk/multicloud-diagrams/commit/757d45bb2edf1a5470eafc556151cdbc3d894669) by Roman Tsypuk).
+- updated getting started section ([ba80fc1](https://github.com/tsypuk/multicloud-diagrams/commit/ba80fc17bdfccc7079e1a421c695819eb3b3008f) by Roman Tsypuk).
+- updated docs ([abc45e9](https://github.com/tsypuk/multicloud-diagrams/commit/abc45e963713372a9646588aedd150732b9b0421) by Roman Tsypuk).
+- updated _config ([34433d0](https://github.com/tsypuk/multicloud-diagrams/commit/34433d023a70de022e8f7fa813c4077a72a17114) by Roman Tsypuk).
+
+### Features
+
+- added event bridge,dynamodb stream,iam role,iam policy, onprem, fallback ([f3012da](https://github.com/tsypuk/multicloud-diagrams/commit/f3012dae30585105b5fbb5a8e809b9a31163787c) by Roman Tsypuk).
+- doc generated from tests with code snapshots, images and xml dumps (lambda, sqs, sns, dynamo, apigw) ([bd9d407](https://github.com/tsypuk/multicloud-diagrams/commit/bd9d4075bf80561c53bbe4bd70d82fc7d1e7077a) by Roman Tsypuk).
+- created ruby jekyll plugin to parse python files and extracts code snippet for rendering in doc ([82b8a8f](https://github.com/tsypuk/multicloud-diagrams/commit/82b8a8f2aaf470bbef7bffbcc5b5330b7bc3cb4c) by Roman Tsypuk).
+- added current version through git tag to pages ([08af4bc](https://github.com/tsypuk/multicloud-diagrams/commit/08af4bcd83d014ec8dce6baf14d7b1a8cdbbe2e8) by Roman Tsypuk).
+- implement ruby jekyll plugins for git-hash and root-include ([1e62a1a](https://github.com/tsypuk/multicloud-diagrams/commit/1e62a1a9c5c2fc45eafeb2592fa49a2ebca35a3b) by Roman Tsypuk).
+- created hosted jekyll site for documentation; added base template ([e6aaa63](https://github.com/tsypuk/multicloud-diagrams/commit/e6aaa63b6c21b8ca8456b8fcf7fcdf22b97c3bc2) by Roman Tsypuk).
+- added github pages site for online documentation ([ef59b0e](https://github.com/tsypuk/multicloud-diagrams/commit/ef59b0eee1338ee0be98dae60780ff3a32bd723f) by Roman Tsypuk).
+- added nodes distribution algorithm on palet according to Table strategy ([9a4a8e1](https://github.com/tsypuk/multicloud-diagrams/commit/9a4a8e10bbd335a2056b391d90addcb10942ee40) by Roman Tsypuk).
+- added event bridge support ([7e37551](https://github.com/tsypuk/multicloud-diagrams/commit/7e3755106176b944447f3e14bf10782443a89637) by Roman Tsypuk).
+- added landscape realtime generation with supported nodes ([a33fd4b](https://github.com/tsypuk/multicloud-diagrams/commit/a33fd4bc466979e74b0858536ce5ae570d1c92dd) by Roman Tsypuk).
+
+### Tests
+
+- migrate for aws nodes; linked to online documentation ([75f55e3](https://github.com/tsypuk/multicloud-diagrams/commit/75f55e3a23c437972489f69b2c0535c93a36dd8a) by Roman Tsypuk).
+
 ## [0.3.10](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.10) - 2023-08-01
 
 <small>[Compare with 0.3.9](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.9...0.3.10)</small>
