@@ -3,6 +3,7 @@ import xml.etree.ElementTree as Et
 from jinja2 import Environment, FileSystemLoader
 from copy import deepcopy
 
+from multicloud_diagrams import MultiCloudDiagrams
 from utils.utils import TestUtilities
 
 
@@ -25,6 +26,8 @@ def xml_to_string(data):
 
 
 class TestRendering(TestUtilities):
+    node_type = 'fallback_vertex'
+    mcd: MultiCloudDiagrams = None
 
     def tearDown(self) -> None:
         provider = self.get_provider_by_service_name(self.node_type)

@@ -26,7 +26,8 @@ class TestHttpVertexInIsolation(TestRendering):
         expected = {
             'id': 'vertex:mq_broker:mq.eventbroker.somedomain.com',
             'parent': '1',
-            'style': 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mq_broker;',
+            'style': 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;'
+                     'verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mq_broker;',
             'value': '<b>Name</b>: broker<BR><b>ARN</b>: '
                      'mq.eventbroker.somedomain.com<BR>-----------<BR><b>Nodes</b>: '
                      '4<BR><b>Active Master</b>: 1<BR><b>Errors</b>: 3<BR><b>Storage</b>: '

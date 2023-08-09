@@ -35,7 +35,9 @@ class TestAWSVertexInIsolation(TestRendering):
         expected = {
             'id': 'vertex:event_bridge:arn:aws:scheduler:eu-west-1:123456789012:schedule/group-1/schedule-rate',
             'parent': '1',
-            'style': 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;',
+            'style': 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;'
+                     'dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;'
+                     'resIcon=mxgraph.aws4.eventbridge;',
             'value': '<b>Name</b>: schedule-rate<BR><b>ARN</b>: '
                      'arn:aws:scheduler:eu-west-1:123456789012:schedule/group-1/schedule-rate<BR>-----------<BR><b>Creation '
                      'Date</b>: 2023-06-19 13:16:38<BR><b>End Date</b>: 2023-09-30 '
