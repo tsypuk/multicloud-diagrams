@@ -63,7 +63,9 @@
   "s3": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.bucket_with_objects;fillColor=#E05243;gradientColor=none;",
     "width": "78",
-    "height": "78"
+    "height": "78",
+    "version": "0.2.0",
+    "desc": "S3"
   },
   "kms": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.kms;fillColor=#759C3E;gradientColor=none;",

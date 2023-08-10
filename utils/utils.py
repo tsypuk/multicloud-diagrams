@@ -12,7 +12,7 @@ class TestUtilities(unittest.TestCase):
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))
-        for provider in ['aws', 'fallback', 'onprem', 'azure', 'gcp']:
+        for provider in ['aws', 'fallback', 'onprem', 'azure', 'gcp', 'core']:
             path = os.path.join(project_folder, f'../multicloud_diagrams/providers/{provider}.json')
             with open(path, 'r') as file:
                 json_data = json.load(file)
@@ -137,3 +137,32 @@ class TestUtilities(unittest.TestCase):
         mx_geometry = children[0]
         self.assertEqual('mxGeometry', mx_geometry.tag)
         self.assertEqual('geometry', mx_geometry.attrib['as'])
+
+    def verify_list(self, expected: dict, expected_list: [dict], mx_file: Et.Element, resource_name, debug_mode=False):
+        tree = Et.ElementTree(mx_file)
+        self.verify_mxfile_default(tree)
+
+        mx_cells = tree.findall("./*/*/*/")
+        self.assertEqual(len(expected_list), len(mx_cells))
+        for index, expected_item in enumerate(expected_list):
+            self.verify_mx_cell(mx_cells[index], expected=expected_item)
+
+        children = mx_cells[2].findall("./*")
+        self.verify_mx_cell(mx_cells[2], expected)
+
+        children_count = 1
+        if debug_mode:
+            comment = children[0]
+            self.assertEqual(f'vertex:{resource_name}', comment.text)
+            self.assertEqual(0, len(comment.attrib))
+            children_count = 2
+            mx_geometry = children[1]
+        else:
+            mx_geometry = children[0]
+
+        self.assertEqual(children_count, len(children))
+        self.assertEqual('mxGeometry', mx_geometry.tag)
+        self.assertEqual('geometry', mx_geometry.attrib['as'])
+        # 'height', 'width' are verified based on providers file content
+        # self.assertEqual(self.supported_vertex[resource_type]['height'], mx_geometry.attrib['height'])
+        # self.assertEqual(self.supported_vertex[resource_type]['width'], mx_geometry.attrib['width'])

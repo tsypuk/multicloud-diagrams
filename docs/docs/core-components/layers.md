@@ -43,7 +43,7 @@ A paragraph
 A paragraph
 ```
 
-{: .note }
+`{: .note }`
 A paragraph
 
 ```markdown

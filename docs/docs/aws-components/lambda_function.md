@@ -42,22 +42,23 @@ style="verticalLabelPosition=bottom;verticalAlign=top;aspect=fixed;align=left;po
 
 | attribute | value |
 |:----------|:------|
-                |align| left |
-                |aspect| fixed |
-                |fillColor| #F58534 |
-                |gradientColor| none |
-                |html| 1 |
-                |pointerEvents| 1 |
-                |prIcon| server |
-                |shape| mxgraph.aws3.lambda_function |
-                |verticalAlign| top |
-                |verticalLabelPosition| bottom |
-    
+|align| left |
+|aspect| fixed |
+|fillColor| #F58534 |
+|gradientColor| none |
+|html| 1 |
+|pointerEvents| 1 |
+|prIcon| server |
+|shape| mxgraph.aws3.lambda_function |
+|verticalAlign| top |
+|verticalLabelPosition| bottom |
+
 ### Vertex size:
 
-| width    | 69  |
+| attribute | value |
 |:---------|:-----------|
-| height   | 72 |
+| width    | 69  |
+| height   |72|
 
 ### Full XML dump:
 ```xml

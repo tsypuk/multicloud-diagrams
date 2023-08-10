@@ -1,0 +1,18 @@
+{
+  "list": {
+    "style": "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;",
+    "version": "0.2.0",
+    "desc": "List of Records",
+    "details": "Record is divided with ':' into key/value pairs. Each KEY is highlighted with bold font syntax."
+  },
+  "snapshot": {
+    "version": "0.3.8",
+    "desc": "Single Snapshot",
+    "details": "Single row table with a snapshot representation of XML, JSON or text/plain."
+  },
+  "row": {
+    "style": "text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;",
+    "version": "0.2.0",
+    "desc": "Internal ROW used in Table and Snapshot"
+  }
+}

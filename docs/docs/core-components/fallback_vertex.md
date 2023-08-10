@@ -12,7 +12,7 @@ date: 2023-08-06
 New (v0.2.0)
 {: .label .label-green }
 
-{: .warning }
+{: .note }
 Fallback Vertex for node types that currently not present in the framework. The fallback icon will be rendered for such element. 
 Also you will see console WARNING: No such nodeType: non_existing_super_cloud_service in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest``
 ## Node Type: ``fallback_vertex``
@@ -45,20 +45,21 @@ style="sketch=0;aspect=fixed;html=1;align=left;image;fontSize=12;image=img/lib/m
 
 | attribute | value |
 |:----------|:------|
-                |align| left |
-                |aspect| fixed |
-                |fontSize| 12 |
-                |html| 1 |
-                |image|  |
-                |image| img/lib/mscae/Info.svg |
-                |labelBackgroundColor| none |
-                |sketch| 0 |
-    
+|align| left |
+|aspect| fixed |
+|fontSize| 12 |
+|html| 1 |
+|image|  |
+|image| img/lib/mscae/Info.svg |
+|labelBackgroundColor| none |
+|sketch| 0 |
+
 ### Vertex size:
 
-| width    | 78  |
+| attribute | value |
 |:---------|:-----------|
-| height   | 78 |
+| width    | 78  |
+| height   |78|
 
 ### Full XML dump:
 ```xml

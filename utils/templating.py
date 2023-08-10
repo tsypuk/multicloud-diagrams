@@ -3,7 +3,6 @@ import xml.etree.ElementTree as Et
 from jinja2 import Environment, FileSystemLoader
 from copy import deepcopy
 
-from multicloud_diagrams import MultiCloudDiagrams
 from utils.utils import TestUtilities
 
 
@@ -26,52 +25,49 @@ def xml_to_string(data):
 
 
 class TestRendering(TestUtilities):
-    node_type = 'fallback_vertex'
-    mcd: MultiCloudDiagrams = None
+
+    def set_node_type(self):
+        self.provider = self.get_provider_by_service_name(self.node_type)
+        if self.node_type not in self.supported_vertex:
+            self.node_type = 'fallback_vertex'
+        if 'fallback' == self.provider:
+            self.provider = 'core'
 
     def tearDown(self) -> None:
-        provider = self.get_provider_by_service_name(self.node_type)
-        if 'fallback' == provider:
-            provider = 'core'
-        node_type = self.node_type
-        if node_type not in self.supported_vertex:
-            node_type = 'fallback_vertex'
-        self.mcd.export_to_file(f'docs/docs/{provider}-components/output/drawio/{node_type}.drawio')
+        self.set_node_type()
+        self.mcd.export_to_file(f'docs/docs/{self.provider}-components/output/drawio/{self.node_type}.drawio')
         self.create_index_html()
 
     def create_index_html(self):
         tree = Et.ElementTree(self.mcd.mx_file)
         data = tree.findall("./*/*/*/")[2]
         data_full = deepcopy(tree.findall(".")[0].__copy__())
-
+        style = data.attrib['style']
         del data.attrib['style']
         del data.attrib['value']
 
-        resource_type = self.node_type
-        if resource_type not in self.supported_vertex:
-            resource_type = 'fallback_vertex'
-
-        provider = self.get_provider_by_service_name(self.node_type)
-        if 'fallback' == provider:
-            provider = 'core'
-        output_file_name = f'docs/docs/{provider}-components/{resource_type}.md'
-        node_details = self.supported_vertex[resource_type]
+        output_file_name = f'docs/docs/{self.provider}-components/{self.node_type}.md'
+        node_details = self.supported_vertex[self.node_type]
 
         context = {
             'xml_full': xml_to_string(data_full),
             'xml_node': xml_to_string(data),
             'desc': node_details['desc'],
             'version': node_details['version'],
-            'style': node_details['style'],
-            'width': node_details['width'],
-            'height': node_details['height'],
-            'node_type': resource_type,
-            'provider': provider,
+            'style': style,
+            'node_type': self.node_type,
+            'provider': self.provider,
         }
         if 'details' in node_details:
             context['details'] = node_details['details']
 
-        pairs = node_details['style'].split(';')
+        if 'width' in node_details:
+            context['width'] = node_details['width']
+
+        if 'height' in node_details:
+            context['height'] = node_details['height']
+
+        pairs = style.split(';')
         # Split each pair into key and value using '=' as the separator
         context['styles'] = [pair.split('=') for pair in pairs]
 

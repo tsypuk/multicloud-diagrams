@@ -42,28 +42,29 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
 
 | attribute | value |
 |:----------|:------|
-                |align| left |
-                |aspect| fixed |
-                |dashed| 0 |
-                |fillColor| #B0084D |
-                |fontColor| #232F3E |
-                |fontSize| 12 |
-                |fontStyle| 0 |
-                |gradientColor| none |
-                |html| 1 |
-                |outlineConnect| 0 |
-                |pointerEvents| 1 |
-                |shape| mxgraph.aws4.mq_broker |
-                |sketch| 0 |
-                |strokeColor| none |
-                |verticalAlign| top |
-                |verticalLabelPosition| bottom |
-    
+|align| left |
+|aspect| fixed |
+|dashed| 0 |
+|fillColor| #B0084D |
+|fontColor| #232F3E |
+|fontSize| 12 |
+|fontStyle| 0 |
+|gradientColor| none |
+|html| 1 |
+|outlineConnect| 0 |
+|pointerEvents| 1 |
+|shape| mxgraph.aws4.mq_broker |
+|sketch| 0 |
+|strokeColor| none |
+|verticalAlign| top |
+|verticalLabelPosition| bottom |
+
 ### Vertex size:
 
-| width    | 78  |
+| attribute | value |
 |:---------|:-----------|
-| height   | 78 |
+| width    | 78  |
+| height   |78|
 
 ### Full XML dump:
 ```xml

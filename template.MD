@@ -13,7 +13,7 @@ New (v{{version}})
 {: .label .label-green }
 
 {% if details is defined %}
-{: .warning }
+{: .note }
 {{details}}
 {% endif %}
 ## Node Type: ``{{node_type}}``
@@ -44,16 +44,23 @@ style="{{style}}"
 | attribute | value |
 |:----------|:------|
 {% for pair in styles| sort(attribute=0) %}
-    {% if pair[0] != '' %}
-        |{{ pair[0] }}| {{ pair[1] }} |
-    {% endif %}
+{% if pair[0] != '' %}
+|{{ pair[0] }}| {{ pair[1] }} |
+{% endif %}
 {% endfor %}
 
 ### Vertex size:
 
-| width    | {{width}}  |
+{% if width is defined or height is defined%}
+| attribute | value |
 |:---------|:-----------|
-| height   | {{height}} |
+{% if width is defined %}
+| width    | {{width}}  |
+{% endif %}
+{% if height is defined %}
+| height   |{{height}}|
+{% endif %}
+{% endif %}
 
 ### Full XML dump:
 ```xml

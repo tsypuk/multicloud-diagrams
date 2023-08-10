@@ -42,21 +42,22 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
 
 | attribute | value |
 |:----------|:------|
-                |align| left |
-                |dashed| 0 |
-                |fillColor| #5294CF |
-                |gradientColor| none |
-                |html| 1 |
-                |outlineConnect| 0 |
-                |shape| mxgraph.aws3.http_protocol |
-                |verticalAlign| top |
-                |verticalLabelPosition| bottom |
-    
+|align| left |
+|dashed| 0 |
+|fillColor| #5294CF |
+|gradientColor| none |
+|html| 1 |
+|outlineConnect| 0 |
+|shape| mxgraph.aws3.http_protocol |
+|verticalAlign| top |
+|verticalLabelPosition| bottom |
+
 ### Vertex size:
 
-| width    | 63  |
+| attribute | value |
 |:---------|:-----------|
-| height   | 66 |
+| width    | 63  |
+| height   |66|
 
 ### Full XML dump:
 ```xml

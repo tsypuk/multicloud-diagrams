@@ -140,7 +140,7 @@ class MultiCloudDiagrams:
     supported_vertex = {}
 
     # Load supported vertexes for registered Cloud Providers
-    providers = ['aws', 'azure', 'gcp', 'onprem', 'fallback']
+    providers = ['aws', 'azure', 'gcp', 'onprem', 'fallback', 'core']
     for provider in providers:
         path = pkgutil.get_data(__package__, f'providers/{provider}.json')
         supported_vertex.update(json.loads(path.decode("utf-8")))
@@ -181,9 +181,7 @@ class MultiCloudDiagrams:
                                 'mxCell',
                                 id=f'vertex:{table_id}:row:{index}',
                                 value=snapshot,
-                                style=("text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;"
-                                       "spacingLeft=4;spacingRight=4;overflow=hidden;"
-                                       "portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;"),
+                                style=self.get_node_template('row')['style'],
                                 parent=f'vertex:{table_id}:list',
                                 vertex="1")
 
@@ -194,11 +192,7 @@ class MultiCloudDiagrams:
 
     def prepare_table(self, table_id='', table_name='', fill_color='', rows_count=0, width="300", parent_id: str = "1",
                       x: int = None, y: int = None):
-        # TODO mode all styling to external resource file
-        style = (
-            "swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;"
-            "resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;"
-        )
+        style = self.get_node_template('list')['style']
 
         if fill_color:
             style += f"fillColor={fill_color}"

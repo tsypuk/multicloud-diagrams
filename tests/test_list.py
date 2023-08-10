@@ -9,7 +9,6 @@ class TestMCDList(TestUtilities):
     def test_list(self):
         # given
         table_name = 'prod-dynamo-table'
-        # table_arn = 'arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table'
         mcd = MultiCloudDiagrams()
         rows_keys = [
             'First: row',
@@ -19,6 +18,7 @@ class TestMCDList(TestUtilities):
         # when
         mcd.add_list(table_name=f'Schema:{table_name}', rows=rows_keys)
         # mcd.dump()
+
         # then
 
         tree = Et.ElementTree(mcd.mx_file)
@@ -26,7 +26,29 @@ class TestMCDList(TestUtilities):
 
         mx_cells = tree.findall("./*/*/*/")
         self.assertEqual(5, len(mx_cells))
-        self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
-        self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-        # TODO finish test
+        expected = {
+            'id': 'vertex:Schema:prod-dynamo-table:list',
+            'parent': '1',
+            'style': 'swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;'
+                     'resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;',
+            'value': '<b>Schema:prod-dynamo-table</b>',
+            'vertex': '1'
+        }
+
+        expected_list = [
+            {'id': '0'},
+            {'id': '1', 'parent': '0'},
+            {'id': 'vertex:Schema:prod-dynamo-table:list', 'value': '<b>Schema:prod-dynamo-table</b>',
+             'style': 'swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;'
+                      'resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;',
+             'parent': '1', 'vertex': '1'},
+            {'id': 'vertex:Schema:prod-dynamo-table:row:0', 'value': '<b>First</b>:  row',
+             'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
+             'parent': 'vertex:Schema:prod-dynamo-table:list', 'vertex': '1'},
+            {'id': 'vertex:Schema:prod-dynamo-table:row:1', 'value': '<b>Second</b>:  row',
+             'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
+             'parent': 'vertex:Schema:prod-dynamo-table:list', 'vertex': '1'}
+        ]
+
+        self.verify_list(expected=expected, mx_file=mcd.mx_file, resource_name='LSI:users_to_model-users-idx', expected_list=expected_list)

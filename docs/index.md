@@ -17,6 +17,19 @@ Throughout my journey, I have explored multiple tools available in the market bu
 
 {: .fs-6 .fw-300 }
 
+# Why multicloud-diagrams is written on Python
+
+The choice of Python as the programming language for our initial project was driven by several key factors that align seamlessly with our goals and requirements. Here's why Python was selected as the foundation for our project's development:
+
+- **Seamless Integration and Data Ingestion using AWS Boto3** (official SDK for Amazon Web Services, developed in Python).
+- **Simplicity**: Python's clean and readable syntax simplifies the development process. 
+Its ease of use and elegant structure enable to focus on the core components without being bogged down by unnecessary complexities.
+- **Broad Appeal among DevOps and Developers**: Python's popularity within the DevOps and Development communities is undeniable. 
+Its extensive adoption is a testament to its effectiveness for building robust applications. 
+By choosing Python, we cater to a broader audience, fostering collaboration and easing the learning curve for newcomers.
+- **Cross-Platform Availability**: Python's cross-platform compatibility ensures that our project can be run on a wide array of environments without compatibility issues.
+Whether you're working on Windows, macOS, or Linux, Python's ubiquity guarantees consistent functionality across platforms.
+
 [Get started now](docs/configuration.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][multicloud-diagrams repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 

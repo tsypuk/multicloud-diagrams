@@ -42,29 +42,30 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradien
 
 | attribute | value |
 |:----------|:------|
-                |align| left |
-                |aspect| fixed |
-                |dashed| 0 |
-                |fillColor| #BC1356 |
-                |fontColor| #232F3E |
-                |fontSize| 12 |
-                |fontStyle| 0 |
-                |gradientColor| #FF4F8B |
-                |gradientDirection| north |
-                |html| 1 |
-                |outlineConnect| 0 |
-                |resIcon| mxgraph.aws4.sns |
-                |shape| mxgraph.aws4.resourceIcon |
-                |sketch| 0 |
-                |strokeColor| #ffffff |
-                |verticalAlign| top |
-                |verticalLabelPosition| bottom |
-    
+|align| left |
+|aspect| fixed |
+|dashed| 0 |
+|fillColor| #BC1356 |
+|fontColor| #232F3E |
+|fontSize| 12 |
+|fontStyle| 0 |
+|gradientColor| #FF4F8B |
+|gradientDirection| north |
+|html| 1 |
+|outlineConnect| 0 |
+|resIcon| mxgraph.aws4.sns |
+|shape| mxgraph.aws4.resourceIcon |
+|sketch| 0 |
+|strokeColor| #ffffff |
+|verticalAlign| top |
+|verticalLabelPosition| bottom |
+
 ### Vertex size:
 
-| width    | 78  |
+| attribute | value |
 |:---------|:-----------|
-| height   | 78 |
+| width    | 78  |
+| height   |78|
 
 ### Full XML dump:
 ```xml
