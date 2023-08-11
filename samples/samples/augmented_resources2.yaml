@@ -1,0 +1,20 @@
+vertices:
+  - name: event-broker
+    type: mq_broker
+    id: host.broker.com
+  - name: on-prem-server
+    type: http
+    id: domain.com
+edges:
+  - {
+    src_id: arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name,
+    src_type: lambda_function,
+    dst: event-broker,
+    label: Publish user activity log,
+    link_type: none }
+  - {
+    src_id: arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name,
+    src_type: lambda_function,
+    dst: on-prem-server,
+    label: HTTP GET user actions,
+    link_type: none }

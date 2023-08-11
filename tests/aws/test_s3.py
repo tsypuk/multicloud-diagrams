@@ -28,7 +28,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'MFADelete': 'Disabled'
         }
 
-        mcd.add_vertex(node_id=s3_arn, node_name='content_bucket', arn=s3_arn, node_type='s3', metadata=metadata)
+        mcd.add_vertex(node_id=s3_arn, node_name='content_bucket', node_type='s3', metadata=metadata)
 
         # then
         expected = {

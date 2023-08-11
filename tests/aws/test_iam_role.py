@@ -13,7 +13,7 @@ class TestAWSVertexInIsolation(TestRendering):
 
         # when
         iam_role_arn = 'arn:aws:iam::123456789012:role/ec2-cloudwatch-role'
-        mcd.add_vertex(node_id=iam_role_arn, node_name='ec2-cloudwatch', arn=iam_role_arn, node_type='iam_role')
+        mcd.add_vertex(node_id=iam_role_arn, node_name='ec2-cloudwatch', node_type='iam_role')
 
         # then
         expected = {

@@ -13,7 +13,7 @@ class TestAWSVertexInIsolation(TestRendering):
 
         # when
         iam_policy_arn = 'arn:aws:iam::123456789012:policy/ecs-cloudwatch-userPolicy'
-        mcd.add_vertex(node_id=iam_policy_arn, node_name='ecs-cloudwatch-userPolicy', arn=iam_policy_arn, node_type='iam_policy')
+        mcd.add_vertex(node_id=iam_policy_arn, node_name='ecs-cloudwatch-userPolicy', node_type='iam_policy')
 
         # then
         expected = {

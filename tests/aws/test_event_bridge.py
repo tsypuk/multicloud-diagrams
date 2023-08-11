@@ -29,7 +29,7 @@ class TestAWSVertexInIsolation(TestRendering):
             "Target": "arn:aws:lambda:eu-west-1:123456789012:function:target-lambda"
         }
 
-        mcd.add_vertex(node_id=event_bridge_arn, node_name='schedule-rate', arn=event_bridge_arn, node_type='event_bridge', metadata=metadata)
+        mcd.add_vertex(node_id=event_bridge_arn, node_name='schedule-rate', node_type='event_bridge', metadata=metadata)
 
         # then
         expected = {

@@ -18,6 +18,7 @@ class TestUtilities(unittest.TestCase):
                 json_data = json.load(file)
             self.supported_vertex.update(json_data)
             self.provider_services[provider] = list(json_data.keys())
+        self.supported_vertex['yaml'] = {}
 
     def get_provider_by_service_name(self, service_name) -> str:
         for provider, value in self.provider_services.items():

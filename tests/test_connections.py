@@ -21,8 +21,8 @@ class TestMCDConnections(TestUtilities):
         }
 
         # when
-        mcd.add_vertex(node_id=func_arn, node_name='consumer_lambda', arn=func_arn, node_type='lambda_function', metadata=func_metadata)
-        mcd.add_vertex(node_id=sqs_arn, node_name='int-eu-live-events.fifo', arn=sqs_arn, node_type='sqs', metadata=sqs_metadata)
+        mcd.add_vertex(node_id=func_arn, node_name='consumer_lambda', node_type='lambda_function', metadata=func_metadata)
+        mcd.add_vertex(node_id=sqs_arn, node_name='int-eu-live-events.fifo', node_type='sqs', metadata=sqs_metadata)
         mcd.add_link(src_node_id=f'lambda_function:{func_arn}', dst_node_id=f'sqs:{sqs_arn}', action=['Action1, Action2'])
 
         # then

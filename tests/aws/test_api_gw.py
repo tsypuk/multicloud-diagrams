@@ -18,7 +18,7 @@ class TestAWSVertexInIsolation(TestRendering):
             "endpoint_configuration": "{'types': ['EDGE']}"
         }
 
-        mcd.add_vertex(node_id=api_gw_arn, node_name='APIGW integration with DynamoDB', arn=api_gw_arn, node_type='api_gw', metadata=metadata)
+        mcd.add_vertex(node_id=api_gw_arn, node_name='APIGW integration with DynamoDB', node_type='api_gw', metadata=metadata)
 
         # then
         expected = {

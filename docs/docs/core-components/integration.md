@@ -2,7 +2,7 @@
 layout: default
 title: Integration
 parent: CORE Components
-nav_order: 1
+nav_order: 4
 date: 2023-08-07
 ---
 

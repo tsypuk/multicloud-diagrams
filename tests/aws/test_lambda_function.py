@@ -27,7 +27,7 @@ class TestAWSVertexInIsolation(TestRendering):
             "TracingConfig": "{'Mode': 'Active'}",
             "Version": "$LATEST"
         }
-        mcd.add_vertex(node_id=func_arn, node_name='producer-lambda', arn=func_arn, node_type='lambda_function', metadata=metadata)
+        mcd.add_vertex(node_id=func_arn, node_name='producer-lambda', node_type='lambda_function', metadata=metadata)
 
         # then
         expected = {

@@ -8,11 +8,14 @@ date: 2023-08-07
 
 # Vertices & Edges
 
+{: .highlight }
+Vertices & Edges are core components of ``multicloud-diagrams`` framework. It supports ingestion of these elements 
+through programming API, YAML-based file.
 ## Vertex
 
 ```python
 def add_vertex(self, 
-               node_id: str, node_name: str, arn: str = None, metadata: dict = None,
+               node_id: str, node_name: str, metadata: dict = None,
                node_type: str = '', layer_name: str = None, layer_id: str = None,
                fill_color: str = None, x: int = None, y: int = None)
 ```
@@ -21,7 +24,6 @@ def add_vertex(self,
 |:----------|:------------------|
 | node_id   | good swedish fish |
 | node_name | good and plenty   |
-| arn       | good `oreos`      |
 | node_type | good `zoute` drop |
 
 

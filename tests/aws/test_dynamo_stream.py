@@ -19,7 +19,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'StreamViewType': 'NEW_AND_OLD_IMAGES'
         }
 
-        mcd.add_vertex(node_id=stream_arn, node_name=stream_name, arn=stream_arn, node_type='dynamo_stream', metadata=metadata)
+        mcd.add_vertex(node_id=stream_arn, node_name=stream_name, node_type='dynamo_stream', metadata=metadata)
 
         # then
         expected = {

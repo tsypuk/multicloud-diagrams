@@ -18,7 +18,7 @@ class TestAWSVertexInIsolation(TestRendering):
             "SubscriptionsConfirmed": 3,
             "SubscriptionsPending": 0
         }
-        mcd.add_vertex(node_id=sns_arn, node_name='internal.fifo', arn=sns_arn, node_type='sns', metadata=metadata)
+        mcd.add_vertex(node_id=sns_arn, node_name='internal.fifo', node_type='sns', metadata=metadata)
 
         # then
         expected = {

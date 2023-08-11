@@ -20,7 +20,7 @@ class TestAWSVertexInIsolation(TestRendering):
             "SqsManagedSseEnabled": "false",
             "VisibilityTimeout": 30
         }
-        mcd.add_vertex(node_id=sqs_arn, node_name='int-eu-live-events.fifo', arn=sqs_arn, node_type='sqs', metadata=metadata)
+        mcd.add_vertex(node_id=sqs_arn, node_name='int-eu-live-events.fifo', node_type='sqs', metadata=metadata)
 
         # then
         expected = {

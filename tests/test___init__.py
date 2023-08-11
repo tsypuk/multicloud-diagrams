@@ -4,11 +4,11 @@ from multicloud_diagrams import update_fill_color, stringify_dict, build_vertex_
 
 
 class TestMultiCloudDiagrams(TestCase):
-    vertex_details = [{'name': 'prod-lambda-name', 'type': 'lambda_function', 'arn': 'arn:aws:lambda:eu-west-1:123456789:function:prod-lambda-name'},
-                      {'name': 'role-lambda-name', 'type': 'iam_role', 'arn': 'arn:aws:iam::123456789:role/prod-lambda-name'},
-                      {'name': 'prod-cloudwatch-policy', 'icon': 'broker', 'type': 'iam_policy', 'arn': 'arn:aws:iam::123456789:policy/prod-cloudwatch-policy'},
-                      {'name': 'prod-s3-policy', 'type': 'iam_policy', 'arn': 'arn:aws:iam::123456789:policy/prod-s3-policy'},
-                      {'name': 'prod-dynamodb-policy', 'type': 'iam_policy', 'arn': 'arn:aws:iam::123456789:policy/prod-dynamo-policy'}]
+    vertex_details = [{'name': 'prod-lambda-name', 'type': 'lambda_function', 'id': 'arn:aws:lambda:eu-west-1:123456789:function:prod-lambda-name'},
+                      {'name': 'role-lambda-name', 'type': 'iam_role', 'id': 'arn:aws:iam::123456789:role/prod-lambda-name'},
+                      {'name': 'prod-cloudwatch-policy', 'icon': 'broker', 'type': 'iam_policy', 'id': 'arn:aws:iam::123456789:policy/prod-cloudwatch-policy'},
+                      {'name': 'prod-s3-policy', 'type': 'iam_policy', 'id': 'arn:aws:iam::123456789:policy/prod-s3-policy'},
+                      {'name': 'prod-dynamodb-policy', 'type': 'iam_policy', 'id': 'arn:aws:iam::123456789:policy/prod-dynamo-policy'}]
 
     def test__build_vertex_id_approach_1_src(self):
         # given
@@ -28,7 +28,7 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test__build_vertex_id_approach_2_dst_arn(self):
         # given
-        edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst_arn': 'arn:aws:iam::123456789:policy/prod-s3-policy', 'dst_type': 'iam_policy',
+        edge = {'src_id': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst_id': 'arn:aws:iam::123456789:policy/prod-s3-policy', 'dst_type': 'iam_policy',
                 'label': 'Allow S3 access', 'link_type': 'none'}
         # when
         result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')
@@ -37,7 +37,7 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test__build_vertex_id_approach_2_src_arn(self):
         # given
-        edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst_arn': 'arn:aws:iam::123456789:policy/prod-s3-policy', 'dst_type': 'iam_policy',
+        edge = {'src_id': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst_id': 'arn:aws:iam::123456789:policy/prod-s3-policy', 'dst_type': 'iam_policy',
                 'label': 'Allow S3 access', 'link_type': 'none'}
         # when
         result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
@@ -46,7 +46,7 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test__build_vertex_id_approach_3_src_arn(self):
         # given
-        edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst': 'prod-dynamodb-policy',
+        edge = {'src_id': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst': 'prod-dynamodb-policy',
                 'label': 'Allow DynamoDB read access', 'link_type': 'none'}
         # when
         result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='src')
@@ -55,7 +55,7 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test__build_vertex_id_approach_3_dst(self):
         # given
-        edge = {'src_arn': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst': 'prod-dynamodb-policy',
+        edge = {'src_id': 'arn:aws:iam::123456789:role/prod-lambda-name', 'src_type': 'iam_role', 'dst': 'prod-dynamodb-policy',
                 'label': 'Allow DynamoDB read access', 'link_type': 'none'}
         # when
         result = build_vertex_id(vertex_details=self.vertex_details, edge=edge, src_dst_marker='dst')

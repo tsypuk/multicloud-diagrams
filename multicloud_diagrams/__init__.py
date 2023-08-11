@@ -50,12 +50,12 @@ def stringify_dict(metadata: dict) -> str:
 
 def build_vertex_id(vertex_details, edge, src_dst_marker: str):
     resource = {}
-    if f'{src_dst_marker}_arn' in edge:
+    if f'{src_dst_marker}_id' in edge:
         resource["type"] = edge[f"{src_dst_marker}_type"]
-        resource["arn"] = edge[f'{src_dst_marker}_arn']
+        resource["id"] = edge[f'{src_dst_marker}_id']
     elif src_dst_marker in edge:
         resource = [vertex for vertex in vertex_details if vertex['name'] == edge[src_dst_marker]][0]
-    return f'{resource["type"]}:{resource["arn"]}'
+    return f'{resource["type"]}:{resource["id"]}'
 
 
 def stringify_labels(labels: []) -> str:
@@ -63,10 +63,6 @@ def stringify_labels(labels: []) -> str:
         return '<BR>'.join([f'{k}' for k in labels])
     else:
         return ''
-
-
-def assemble_node_name(node_name, arn, metadata):
-    return f'<b>Name</b>: {node_name}{"<BR><b>ARN</b>: " + arn if arn else ""}{"<BR>-----------<BR>" + stringify_dict(metadata) if metadata else ""}'
 
 
 class Distribution:
@@ -138,12 +134,30 @@ class MultiCloudDiagrams:
     prev_coords = {}
 
     supported_vertex = {}
+    provider_services = {}
+
+    def assemble_node_name(self, node_name, node_id, metadata, node_type):
+        node_id if node_id else ""
+        metadata = f"<BR>-----------<BR>{stringify_dict(metadata)}" if metadata else ""
+        identifier = 'ID'
+        match self.get_provider_by_service_name(node_type):
+            case 'aws':
+                identifier = 'ARN'
+        return f'<b>Name</b>: {node_name}<BR><b>{identifier}</b>: {node_id}{metadata}'
+
+    def get_provider_by_service_name(self, node_type) -> str:
+        for provider, value in self.provider_services.items():
+            if node_type in value:
+                return provider
+        return 'fallback'
 
     # Load supported vertexes for registered Cloud Providers
     providers = ['aws', 'azure', 'gcp', 'onprem', 'fallback', 'core']
     for provider in providers:
         path = pkgutil.get_data(__package__, f'providers/{provider}.json')
-        supported_vertex.update(json.loads(path.decode("utf-8")))
+        json_data = json.loads(path.decode("utf-8"))
+        supported_vertex.update(json_data)
+        provider_services[provider] = list(json_data.keys())
 
     def get_node_template(self, node_type: str) -> dict:
         if node_type in self.supported_vertex:
@@ -226,7 +240,7 @@ class MultiCloudDiagrams:
             raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
         self.add_vertex(node_id, node_name, arn, metadata, cast(str, node_enum.value))
 
-    def add_vertex(self, node_id: str, node_name: str, arn: str = None, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
+    def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
                    x: int = None, y: int = None):
         if metadata is None:
             metadata = {}
@@ -248,7 +262,7 @@ class MultiCloudDiagrams:
             mx_cell = Et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{node_id}',
-                                    value=assemble_node_name(node_name, arn, metadata),
+                                    value=self.assemble_node_name(node_name, node_id, metadata, node_type),
                                     style=f"{node_template['style']}",
                                     parent=parent_id,
                                     vertex="1")
@@ -419,9 +433,8 @@ class MultiCloudDiagrams:
             data = yaml.safe_load(file)
             for vertex in data['vertices']:
                 self.add_vertex(
-                    node_id=vertex['arn'],
+                    node_id=vertex['id'],
                     node_name=vertex['name'],
-                    arn=vertex['arn'],
                     node_type=vertex['type'],
                     # optional attributes
                     metadata={},

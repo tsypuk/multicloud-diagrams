@@ -2,7 +2,7 @@
 layout: default
 title: Fallback Vertex
 parent: CORE Components
-nav_order: 1
+nav_order: 3
 date: 2023-08-06
 ---
 
@@ -70,7 +70,7 @@ style="sketch=0;aspect=fixed;html=1;align=left;image;fontSize=12;image=img/lib/m
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:non_existing_super_cloud_service:arn:aws:non_existing_super_cloud_service:eu-west-1:123456789012:mock_data" value="&lt;b&gt;Name&lt;/b&gt;: non_existing_super_cloud_service&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:non_existing_super_cloud_service:eu-west-1:123456789012:mock_data&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Owner&lt;/b&gt;: 123456789012&lt;BR&gt;&lt;b&gt;CDC Offset&lt;/b&gt;: 3&lt;BR&gt;&lt;b&gt;Throttling&lt;/b&gt;: 100" style="sketch=0;aspect=fixed;html=1;align=left;image;fontSize=12;image=img/lib/mscae/Info.svg;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="vertex:non_existing_super_cloud_service:arn:aws:non_existing_super_cloud_service:eu-west-1:123456789012:mock_data" value="&lt;b&gt;Name&lt;/b&gt;: non_existing_super_cloud_service&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: arn:aws:non_existing_super_cloud_service:eu-west-1:123456789012:mock_data&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Owner&lt;/b&gt;: 123456789012&lt;BR&gt;&lt;b&gt;CDC Offset&lt;/b&gt;: 3&lt;BR&gt;&lt;b&gt;Throttling&lt;/b&gt;: 100" style="sketch=0;aspect=fixed;html=1;align=left;image;fontSize=12;image=img/lib/mscae/Info.svg;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>

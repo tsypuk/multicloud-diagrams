@@ -1,34 +1,34 @@
 vertices:
   - name: prod-lambda-name
     type: lambda_function
-    arn: arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name
+    id: arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name
   - name: role-lambda-name
     type: iam_role
-    arn: arn:aws:iam::123456789012:role/prod-lambda-name
+    id: arn:aws:iam::123456789012:role/prod-lambda-name
   - name: prod-cloudwatch-policy
     type: iam_policy
-    arn: arn:aws:iam::123456789012:policy/prod-cloudwatch-policy
+    id: arn:aws:iam::123456789012:policy/prod-cloudwatch-policy
   - name: prod-s3-policy
     type: iam_policy
-    arn: arn:aws:iam::123456789012:policy/prod-s3-policy
+    id: arn:aws:iam::123456789012:policy/prod-s3-policy
   - name: prod-dynamodb-policy
     type: iam_policy
-    arn: arn:aws:iam::123456789012:policy/prod-dynamo-policy
+    id: arn:aws:iam::123456789012:policy/prod-dynamo-policy
 edges:
 #  1st approach src/dst are linked to yaml vertices by name
   - { src: prod-lambda-name, dst: role-lambda-name, label: HasRole, link_type: none }
   - { src: role-lambda-name, dst: prod-cloudwatch-policy, label: Allow CloudWatch logs, link_type: none }
 #  2nd approach src/dst are linked by ARN (ARN can be present in same yaml, or loaded programmatically)
   - {
-    src_arn: arn:aws:iam::123456789012:role/prod-lambda-name,
+    src_id: arn:aws:iam::123456789012:role/prod-lambda-name,
     src_type: iam_role,
-    dst_arn: arn:aws:iam::123456789012:policy/prod-s3-policy,
+    dst_id: arn:aws:iam::123456789012:policy/prod-s3-policy,
     dst_type: iam_policy,
     label: Allow S3 access,
     link_type: none }
 # 3rd approach is mixed of 1st and 2nd
   - {
-    src_arn: arn:aws:iam::123456789012:role/prod-lambda-name,
+    src_id: arn:aws:iam::123456789012:role/prod-lambda-name,
     src_type: iam_role,
     dst: prod-dynamodb-policy,
     label: Allow DynamoDB read access,

@@ -2,7 +2,7 @@
 layout: default
 title: DynamoDB Stream
 parent: AWS Components
-nav_order: 1
+nav_order: 3
 date: 2023-08-06
 ---
 

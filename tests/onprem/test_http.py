@@ -18,14 +18,14 @@ class TestHttpVertexInIsolation(TestRendering):
             "authorizer": "auth0",
             "Throttling": 500
         }
-        mcd.add_vertex(node_id=arn, node_name='mock_data', arn=arn, node_type='http', metadata=metadata)
+        mcd.add_vertex(node_id=arn, node_name='mock_data', node_type='http', metadata=metadata)
 
         # then
         expected = {
             'id': 'vertex:http:https://somedomain.com',
             'parent': '1',
             'style': 'outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.http_protocol;fillColor=#5294CF;gradientColor=none;',
-            'value': '<b>Name</b>: mock_data<BR><b>ARN</b>: '
+            'value': '<b>Name</b>: mock_data<BR><b>ID</b>: '
                      'https://somedomain.com<BR>-----------<BR><b>Owner</b>: '
                      'organization1<BR><b>authorizer</b>: auth0<BR><b>Throttling</b>: 500',
             'vertex': '1'

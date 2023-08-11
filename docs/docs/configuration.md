@@ -88,20 +88,7 @@ The minimum configuration requires importing MultiCloudDiagrams, adding vertices
 Let's add 2 vertices ``IAM Role`` and ``Lambda function``:
 
 ```python
-from multicloud_diagrams import MultiCloudDiagrams
-
-# Create a new cloud diagram
-mcd = MultiCloudDiagrams()
-
-output_file = '../output/diagram.drawio'
-func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name'
-mcd.add_vertex(node_id=func_arn, node_name='prod-lambda-name', arn=func_arn, node_type='lambda_function')
-
-role_arn = 'arn:aws:iam::123456789012:role/prod-lambda-name'
-mcd.add_vertex(node_id=role_arn, node_name='role-lambda-name', arn=role_arn, node_type='iam_role')
-mcd.add_link(src_node_id=f'lambda_function:{func_arn}', dst_node_id=f'iam_role:{role_arn}')
-
-mcd.export_to_file(output_file)
+{% root_include_snippet ../tests/aws/test_getting_started.py getting_started_1 %}
 ```
 
 ## Open drawio editor and position nodes manually
@@ -129,35 +116,7 @@ If certain vertices were removed from the framework, they will not be present in
 Now, we are adding 2 more vertices ``IAM Permissions`` to see how it works.
 
 ```python
-from multicloud_diagrams import MultiCloudDiagrams
-
-# Create a new cloud diagram
-mcd = MultiCloudDiagrams()
-
-output_file = '../output/diagram.drawio'
-mcd.read_coords_from_file(output_file)
-
-func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name'
-mcd.add_vertex(node_id=func_arn, node_name='prod-lambda-name', arn=func_arn, node_type='lambda_function')
-
-role_arn = 'arn:aws:iam::123456789012:role/prod-lambda-name'
-mcd.add_vertex(node_id=role_arn, node_name='role-lambda-name', arn=role_arn, node_type='iam_role')
-
-cw_policy_arn = "arn:aws:iam::123456789012:policy/prod-cloudwatch-policy"
-mcd.add_vertex(node_id=cw_policy_arn, node_name='prod-cloudwatch-policy', arn=cw_policy_arn, node_type='iam_policy')
-
-s3_policy_arn = "arn:aws:iam::123456789012:policy/prod-s3-policy"
-mcd.add_vertex(node_id=s3_policy_arn, node_name='prod-s3-policy', arn=s3_policy_arn, node_type='iam_policy')
-
-mcd.add_link(src_node_id=f'lambda_function:{func_arn}', dst_node_id=f'iam_role:{role_arn}')
-mcd.add_link(f'iam_role:{role_arn}', f'iam_policy:{cw_policy_arn}')
-mcd.add_link(f'iam_role:{role_arn}', f'iam_policy:{s3_policy_arn}')
-
-# We can write to same Diagram
-mcd.export_to_file(output_file)
-
-# Or write to a new Diagram version
-mcd.export_to_file('../output/diagram_v2.drawio')
+{% root_include_snippet ../tests/aws/test_getting_started.py getting_started_2 %}
 ```
 
 This approach allows for efficient placement of new elements while preserving the layout of existing ones based on the previous diagram's coordinates.

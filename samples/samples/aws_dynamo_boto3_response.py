@@ -134,7 +134,7 @@ def prepare_data_model(mcd):
         'TableSizeBytes': dynamo_table['TableSizeBytes']
     }
 
-    mcd.add_vertex(node_id=table_arn, node_name=table_name, arn=table_arn, node_type='dynamo', metadata=metadata)
+    mcd.add_vertex(node_id=table_arn, node_name=table_name, node_type='dynamo', metadata=metadata)
 
     # DynamoDB Stream
     stream_arn = dynamo_table['LatestStreamArn']
@@ -142,7 +142,7 @@ def prepare_data_model(mcd):
         "LatestStreamLabel": dynamo_table['LatestStreamLabel'],
         "StreamViewType": dynamo_table['StreamSpecification']['StreamViewType']
     }
-    mcd.add_vertex(node_id=stream_arn, node_name=dynamo_table['LatestStreamLabel'], arn=stream_arn, node_type='dynamo_stream', metadata=stream_metadata)
+    mcd.add_vertex(node_id=stream_arn, node_name=dynamo_table['LatestStreamLabel'], node_type='dynamo_stream', metadata=stream_metadata)
     mcd.add_link(f'dynamo:{table_arn}', f'dynamo_stream:{stream_arn}', action=['DynamoDBStream'])
 
     # KeySchema

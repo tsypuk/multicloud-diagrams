@@ -22,7 +22,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'RCU': 1,
             'WCU': 1
         }
-        mcd.add_vertex(node_id=table_arn, node_name=table_name, arn=table_arn, node_type='dynamo', metadata=metadata)
+        mcd.add_vertex(node_id=table_arn, node_name=table_name, node_type='dynamo', metadata=metadata)
 
         # then
         expected = {

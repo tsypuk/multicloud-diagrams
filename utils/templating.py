@@ -28,15 +28,17 @@ class TestRendering(TestUtilities):
 
     def set_node_type(self):
         self.provider = self.get_provider_by_service_name(self.node_type)
-        if self.node_type not in self.supported_vertex:
-            self.node_type = 'fallback_vertex'
+        if 'yaml' not in self.node_type:
+            if self.node_type not in self.supported_vertex:
+                self.node_type = 'fallback_vertex'
         if 'fallback' == self.provider:
             self.provider = 'core'
 
     def tearDown(self) -> None:
         self.set_node_type()
         self.mcd.export_to_file(f'docs/docs/{self.provider}-components/output/drawio/{self.node_type}.drawio')
-        self.create_index_html()
+        if 'yaml' not in self.node_type:
+            self.create_index_html()
 
     def create_index_html(self):
         tree = Et.ElementTree(self.mcd.mx_file)
@@ -52,12 +54,17 @@ class TestRendering(TestUtilities):
         context = {
             'xml_full': xml_to_string(data_full),
             'xml_node': xml_to_string(data),
-            'desc': node_details['desc'],
-            'version': node_details['version'],
             'style': style,
             'node_type': self.node_type,
             'provider': self.provider,
         }
+
+        if 'desc' in node_details:
+            context['desc'] = node_details['desc']
+
+        if 'version' in node_details:
+            context['version'] = node_details['version']
+
         if 'details' in node_details:
             context['details'] = node_details['details']
 

@@ -2,7 +2,7 @@
 layout: default
 title: Layers
 parent: CORE Components
-nav_order: 2
+nav_order: 3
 date: 2023-08-07
 ---
 
