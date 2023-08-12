@@ -1,0 +1,11 @@
+vertices:
+  - name: oauth-server
+    type: http
+    id: domain2.com
+edges:
+  - {
+    src_id: arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name,
+    src_type: lambda_function,
+    dst: oauth-server,
+    label: check user authority,
+    link_type: none }

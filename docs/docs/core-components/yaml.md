@@ -15,20 +15,29 @@ New (v0.3.8)
 {: .highlight }
 Ingest extra resources from yaml configuration into DRAWIO diagram. Allows to add vertices and edges to empty diagram
 or to existing one. To cover the case if there are relationships that you can not programmatically query but want to visualtize.
-## Node Type: ``snapshot``
+
+{: .note-title }
+> ``YAML``-format supports declaration using 3 forms dialects for vertices and edges and also any mix of them:
+>- src/dst are linked to yaml vertices by name
+>- src/dst are linked by ARN (ARN can be present in same yaml, or loaded programmatically)
+>- mixed of 1st and 2nd
+
+
+## Option 1: All resources are from YAML:
+{: .d-inline-block }
+
+All of these dialects are present in the first ``yaml`` snippet:
 
 ## yaml file with declaration of resource:
-
-Currently, it is supports 3 different syntax's of declaration: 
-- src/dst are linked to yaml vertices by name
-- src/dst are linked by ARN (ARN can be present in same yaml, or loaded programmatically)
-- mixed of 1st and 2nd
 
 ```yaml
 {% root_include ../samples/samples/augmented_resources.yaml %}
 ```
 
 ## Code Snippet:
+{: .highlight }
+``read_coords_from_file`` is used for positioning Vertices - coordinates from previous version ``drawio`` file will be reused for
+Vertices that have same ``ID``. This function does not reload Vertices from previous version, it only operates with coordinates history.
 
 ```python
 {% root_include_snippet ../tests/core/test_yaml.py yaml%}
@@ -45,7 +54,7 @@ Download generated ``yaml.drawio``:
 
 [Download](output/drawio/yaml.drawio){: .btn .btn-purple }
 
-## Augment resources both from code and YAML:
+## Option 2: resources are in the code (Diagrams as a Code), additionally augmented from YAML:
 
 {: .highlight }
 Other option is to combine Diagrams as Code (DaC) by declaring all resources in code and also ingest additional vertices from YAML file.
@@ -60,7 +69,7 @@ This is very useful when you have custom resources that are not supported by lib
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/core/test_yaml.py yaml_to_existing_file %}
+{% root_include_snippet ../tests/core/test_yaml.py yaml_with_code %}
 ```
 
 ## Rendering:
@@ -73,3 +82,34 @@ This is very useful when you have custom resources that are not supported by lib
 Download generated ``yaml2.drawio``:
 
 [Download](output/drawio/yaml2.drawio){: .btn .btn-purple }
+
+
+## Option 3: Existing diagram has all resources, additionally augmented from YAML:
+
+{: .highlight }
+We already have ``drawio`` file with rendered resources (from previous example).
+Now we want to instrument ``multicloud-diagrams`` that there are additional resources that are declared in ``yaml`` that should be added.
+Previous resources will stay in ``drawio`` diagram, ``yaml``-based resources will be added to existing one.
+
+## yaml file with resources declaration:
+
+```yaml
+{% root_include ../samples/samples/augmented_resources3.yaml %}
+```
+
+## Code Snippet:
+
+```python
+{% root_include_snippet ../tests/core/test_yaml.py yaml_to_existing %}
+```
+
+## Rendering:
+
+![lambda](output/jpg/yaml3.jpg)
+
+
+### drawio file:
+
+Download generated ``yaml3.drawio``:
+
+[Download](output/drawio/yaml3.drawio){: .btn .btn-purple }

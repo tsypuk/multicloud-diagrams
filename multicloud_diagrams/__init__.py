@@ -423,7 +423,7 @@ class MultiCloudDiagrams:
             # Layers
             mx_cells = tree.findall("./*/*/*/")
             for layer in mx_cells:
-                if ('parent' in layer.attrib) and (int(layer.attrib['parent']) == 0):
+                if ('parent' in layer.attrib) and layer.attrib['parent'].isdigit() and (int(layer.attrib['parent']) == 0):
                     layer_id = int(layer.attrib['id'])
                     if layer_id > 1:
                         self.layers[layer_id] = layer.attrib['value']
