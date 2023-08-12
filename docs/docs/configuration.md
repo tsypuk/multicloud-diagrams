@@ -56,6 +56,16 @@ for easy installation and usage. As an open-source project, it encourages commun
 [https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
 Whether you want to use the package's functionalities or contribute to its improvement, it offers a user-friendly experience, backed by an active and engaged community.
 
+## On-line Documentation is Dynamic and generated from Tests
+{: .d-inline-block }
+
+{: .highlight }
+> All the resources within this documentation, including code snippets, rendered images, and XML dumps, are compiled and generated through tests conducted during the publishing process.
+>
+This comprehensive testing not only ensures verification but also guarantees that the provided examples remain current, up-to-date, aligning seamlessly with the latest API updates and method signatures.
+> 
+>Furthermore, the rendering process showcases authentic images, presenting an accurate desired output.
+
 ## Installation
 
 You can install ``multicloud-diagrams`` using ``pip``, the package manager for Python:
@@ -64,13 +74,13 @@ You can install ``multicloud-diagrams`` using ``pip``, the package manager for P
 pip install multicloud-diagrams
 ```
 
-If you are using ``poetry`` follow this instructions:
+If you are using ``poetry`` follow these instructions:
 
 ```shell
 poetry add multicloud-diagrams
 ```
 
-Edit your ``project.toml`` and add ``multicloud-diagrams`` as dependecy:
+Edit your ``project.toml`` and add ``multicloud-diagrams`` as dependency:
 
 ```yaml
 [ tool.poetry.dependencies ]
@@ -137,4 +147,4 @@ This functionality proves invaluable for tracking historical records and facilit
 
 {: .highlight }
 For more advanced use cases, detailed customization options, and in-depth functionalities, please continue exploring the next sections in our documentation. There, you will find a wealth of
-information to help you leverage the full potential of multicloud-diagrams in your projects. Happy diagramming!
+information to help you leverage the full potential of ``multicloud-diagrams`` in your projects. Happy diagramming!
