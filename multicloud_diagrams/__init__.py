@@ -3,35 +3,8 @@ import xml.etree.ElementTree as Et
 import logging
 import os.path
 import pkgutil
-from enum import Enum
-from typing import Union
 import re
-from typing import cast
 import yaml
-
-
-class AWS(Enum):
-    lambda_function = "lambda_function"
-    sqs = "sqs"
-    sns = "sns"
-    iam_role = "iam_role"
-    iam_policy = "iam_policy"
-    iam_permission = "iam_permission"
-    dynamo = "dynamo"
-    dynamo_stream = "dynamo_stream"
-    api_gw = "api_gw"
-    s3 = "s3"
-    kms = "kms"
-    ssm = "ssm"
-    mq = "mq"
-
-
-class OnPrem(Enum):
-    http = "http"
-    mq_broker = "mq_broker"
-
-
-Services = Union[AWS, OnPrem]
 
 
 def update_fill_color(style_str, node_color):
@@ -84,16 +57,16 @@ class MultiCloudDiagrams:
                                   agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                   type="MultiCloud")
 
-        self.diagram = Et.SubElement(self.mx_file, 'diagram', id="diagram_1", name="AWS components")
-        self.mx_graph_model = Et.SubElement(self.diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
-                                            guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
-                                            pageScale="1", pageWidth="850", pageHeight="1100", math="0")
+        diagram = Et.SubElement(self.mx_file, 'diagram', id="diagram_1", name="AWS components")
+        mx_graph_model = Et.SubElement(diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
+                                       guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
+                                       pageScale="1", pageWidth="850", pageHeight="1100", math="0")
         if shadow:
-            self.mx_graph_model.attrib['shadow'] = '1'
+            mx_graph_model.attrib['shadow'] = '1'
         else:
-            self.mx_graph_model.attrib['shadow'] = '0'
+            mx_graph_model.attrib['shadow'] = '0'
 
-        self.root = Et.SubElement(self.mx_graph_model, 'root')
+        self.root = Et.SubElement(mx_graph_model, 'root')
         self.layers = {}
         self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id="0")
         self.add_layer(layer_name)
@@ -231,14 +204,6 @@ class MultiCloudDiagrams:
 
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
-
-    def add_service(self, node_id: str, node_name: str, node_enum: Services, arn: str = None, metadata: dict = None):
-        if metadata is None:
-            metadata = {}
-        # Type checking
-        if not isinstance(node_enum, Services):
-            raise TypeError('node_enum must be an instance of AWS,OnPrem Enum')
-        self.add_vertex(node_id, node_name, arn, metadata, cast(str, node_enum.value))
 
     def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
                    x: int = None, y: int = None):
@@ -446,6 +411,23 @@ class MultiCloudDiagrams:
                     dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
                     action=[edge['label']]
                 )
+
+    def read_nodes_from_file(self, file_name: str):
+        print(file_name)
+        if os.path.isfile(file_name):
+            tree = Et.parse(file_name)
+            root = tree.getroot()
+            # self.root = Et.SubElement(self.mx_graph_model, 'root')
+            self.root = tree.findall("./*/*/")[0]
+            self.mx_file = root
+
+            # Layers
+            mx_cells = tree.findall("./*/*/*/")
+            for layer in mx_cells:
+                if ('parent' in layer.attrib) and (int(layer.attrib['parent']) == 0):
+                    layer_id = int(layer.attrib['id'])
+                    if layer_id > 1:
+                        self.layers[layer_id] = layer.attrib['value']
 
     def read_coords_from_file(self, file_name: str):
         if os.path.isfile(file_name):

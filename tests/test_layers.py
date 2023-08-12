@@ -65,6 +65,10 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
 
         self.verify_layers(mx_cells, 3, mcd)
 
+        # This file will be used to verify that layers are loaded
+        file_name = 'tests/3_layers.drawio'
+        mcd.export_to_file(file_name)
+
     def test_get_layer_id_single_layer(self):
         # given
         mcd = MultiCloudDiagrams(debug_mode=True)
@@ -145,3 +149,21 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
 
         mx_cells = tree.findall("./*/*/*/")
         self.verify_layers(mx_cells, 1, mcd)
+
+    def test_read_layers_from_file(self):
+        # given
+        mcd = MultiCloudDiagrams()
+        # file contains 3 layers default, L2, L3
+        # file_name = '3_layers.drawio'
+        file_name = 'tests/3_layers.drawio'
+
+        # when
+        mcd.read_nodes_from_file(file_name)
+
+        # then
+        tree = Et.ElementTree(mcd.mx_file)
+        self.verify_mxfile_default(tree)
+
+        mx_cells = tree.findall("./*/*/*/")
+
+        self.verify_layers(mx_cells, 3, mcd)
