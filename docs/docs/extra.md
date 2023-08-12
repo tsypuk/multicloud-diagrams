@@ -76,4 +76,6 @@ Simply go to: [https://app.diagrams.net/](https://app.diagrams.net/)
 
 ## IntelliJ IDEA drawio plugin
 
+The best IDEA for development, perfectly integrated ``drawio`` plugin. Nothing to add, just enjoy it 😎
+
 ![img.png](images/drawio-idea.png)
