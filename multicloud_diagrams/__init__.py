@@ -49,7 +49,6 @@ class Distribution:
     columns: int = 1
 
 
-# noinspection SpellCheckingInspection
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
         self.mx_file = Et.Element('mxfile',
@@ -67,17 +66,19 @@ class MultiCloudDiagrams:
             mx_graph_model.attrib['shadow'] = '0'
 
         self.root = Et.SubElement(mx_graph_model, 'root')
+
         self.layers = {}
-        self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id="0")
+        Et.SubElement(self.root, 'mxCell', id="0")
         self.add_layer(layer_name)
+
         self.debug_mode = debug_mode
 
     def add_layer(self, layer_name: str = ''):
         if self.get_layer_id_by_name(layer_name) is None:
             self.layers[self.get_current_layer_count() + 1] = layer_name
-            self.mx_cell_id_0 = Et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
+            layer_cell = Et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
             if layer_name != '':
-                self.mx_cell_id_0.attrib['value'] = layer_name
+                layer_cell.attrib['value'] = layer_name
 
     def get_current_layer_count(self):
         return len(self.layers)
@@ -110,7 +111,6 @@ class MultiCloudDiagrams:
     provider_services = {}
 
     def assemble_node_name(self, node_name, node_id, metadata, node_type):
-        node_id if node_id else ""
         metadata = f"<BR>-----------<BR>{stringify_dict(metadata)}" if metadata else ""
         identifier = 'ID'
         match self.get_provider_by_service_name(node_type):
@@ -417,7 +417,6 @@ class MultiCloudDiagrams:
         if os.path.isfile(file_name):
             tree = Et.parse(file_name)
             root = tree.getroot()
-            # self.root = Et.SubElement(self.mx_graph_model, 'root')
             self.root = tree.findall("./*/*/")[0]
             self.mx_file = root
 
