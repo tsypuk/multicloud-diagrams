@@ -155,7 +155,7 @@ class TestMultiCloudDiagramsLayers(TestUtilities):
         mcd = MultiCloudDiagrams()
         # file contains 3 layers default, L2, L3
         # file_name = '3_layers.drawio'
-        file_name = 'tests/3_layers.drawio'
+        file_name = 'tests/3_layers_copy.drawio'
 
         # when
         mcd.read_nodes_from_file(file_name)
