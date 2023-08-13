@@ -12,6 +12,9 @@ date: 2023-08-06
 New (v0.3.3)
 {: .label .label-green }
 
+
+---
+
 ## Node Type: ``http``
 
 ## Code Snippet:
@@ -32,6 +35,7 @@ New (v0.3.3)
     <mxGeometry width="63" height="66" as="geometry"/>
 </mxCell>
 ```
+---
 
 ## Advanced for Geeks:
 

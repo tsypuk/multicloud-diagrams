@@ -12,6 +12,9 @@ date: 2023-08-06
 New (v0.2.0)
 {: .label .label-green }
 
+
+---
+
 ## Node Type: ``dynamo``
 
 ## Code Snippet:
@@ -32,6 +35,7 @@ New (v0.2.0)
     <mxGeometry width="72" height="81" as="geometry"/>
 </mxCell>
 ```
+---
 
 ## Advanced for Geeks:
 

@@ -14,6 +14,9 @@ New (v0.3.8)
 
 {: .note }
 Single row table with a snapshot representation of XML, JSON or text/plain.
+
+---
+
 ## Node Type: ``snapshot``
 
 ## Code Snippet:
@@ -34,6 +37,7 @@ Single row table with a snapshot representation of XML, JSON or text/plain.
     <mxGeometry width="560" height="190" as="geometry" x="-180"/>
 </mxCell>
 ```
+---
 
 ## Advanced for Geeks:
 

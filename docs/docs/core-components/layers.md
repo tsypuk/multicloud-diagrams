@@ -9,10 +9,16 @@ date: 2023-08-07
 # Layers
 {: .d-inline-block }
 
-New (v0.4.0)
+New (v0.3.10)
 {: .label .label-green }
 
-Markdown does not include support for callouts. However, you can style text as a callout using a Markdown extension supported by kramdown: [*block IALs*](https://kramdown.gettalong.org/quickref.html#block-attributes).
+Layers enable the division of infrastructure representation into segmented domains, each with a specific focus on functionality or system attributes.
+
+The following example illustrates the utilization of layers to show the progression of ``api-gateway`` flows, spanning from ``endpoints`` and ``methods`` to the storage system of ``DynamoDB``.
+In this context, an additional "IAM" layer is incorporated at the apex, further enhancing the representation.
+
+
+![draw-apigw.gif](../images/draw-apigw.gif)
 
 Common kinds of callouts include `highlight`, `important`, `new`, `note`, and `warning`.
 

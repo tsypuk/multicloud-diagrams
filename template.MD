@@ -16,6 +16,9 @@ New (v{{version}})
 {: .note }
 {{details}}
 {% endif %}
+
+---
+
 ## Node Type: ``{{node_type}}``
 
 ## Code Snippet:
@@ -33,6 +36,7 @@ New (v{{version}})
 ```xml
 {{xml_node}}
 ```
+---
 
 ## Advanced for Geeks:
 

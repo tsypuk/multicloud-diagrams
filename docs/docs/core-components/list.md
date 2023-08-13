@@ -14,6 +14,9 @@ New (v0.2.0)
 
 {: .note }
 Record is divided with ':' into key/value pairs. Each KEY is highlighted with bold font syntax.
+
+---
+
 ## Node Type: ``list``
 
 ## Code Snippet:
@@ -34,6 +37,7 @@ Record is divided with ':' into key/value pairs. Each KEY is highlighted with bo
     <mxGeometry width="300" height="270" as="geometry"/>
 </mxCell>
 ```
+---
 
 ## Advanced for Geeks:
 

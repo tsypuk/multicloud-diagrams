@@ -113,9 +113,8 @@ class MultiCloudDiagrams:
     def assemble_node_name(self, node_name, node_id, metadata, node_type):
         metadata = f"<BR>-----------<BR>{stringify_dict(metadata)}" if metadata else ""
         identifier = 'ID'
-        match self.get_provider_by_service_name(node_type):
-            case 'aws':
-                identifier = 'ARN'
+        if 'aws' == self.get_provider_by_service_name(node_type):
+            identifier = 'ARN'
         return f'<b>Name</b>: {node_name}<BR><b>{identifier}</b>: {node_id}{metadata}'
 
     def get_provider_by_service_name(self, node_type) -> str:
@@ -148,6 +147,7 @@ class MultiCloudDiagrams:
         self.prepare_row(1, snapshot, table_id, width)
 
     # add_map
+    # add_table
     def add_list(self, table_id='', table_name='', fill_color='', rows=None, width="300", layer_name: str = None, layer_id: str = None,
                  x: int = None, y: int = None):
         if rows is None:
@@ -262,37 +262,29 @@ class MultiCloudDiagrams:
                 mx_geometry.set('y', self.prev_coords[vertex_id]['y'])
 
     def add_vertex_list(self, vertexes, distribution: Distribution = None):
-        match getattr(distribution, 'algorithm', None):
-            case 'Table':
-                if distribution.algorithm == 'Table':
-                    r = (len(vertexes) + distribution.columns - 1) // distribution.columns
-                    current_row = 0
-                    current_column = 0
+        algo = getattr(distribution, 'algorithm', None)
+        if 'Table' == algo:
+            if distribution.algorithm == 'Table':
+                r = (len(vertexes) + distribution.columns - 1) // distribution.columns
+                current_row = 0
+                current_column = 0
 
-                    for index, vertex in enumerate(vertexes):
-                        row_index = current_row % r
-                        column_index = current_column % distribution.columns
-                        x_position = column_index * distribution.element_width + distribution.start_x
-                        y_position = row_index * distribution.element_height + distribution.start_y
-                        vertex['x'] = x_position
-                        vertex['y'] = y_position
-                        self.add_vertex(**vertex)
-
-                        current_column += 1
-                        if current_column >= distribution.columns:
-                            current_column = 0
-                            current_row += 1
-            case 'Pyramid':
-                print('TODO implement')
-            case 'Line':
-                print('TODO implement')
-            case 'Cycle':
-                print('TODO implement')
-            case 'Sphere':
-                print('TODO implement')
-            case None, _:
-                for vertex in vertexes:
+                for index, vertex in enumerate(vertexes):
+                    row_index = current_row % r
+                    column_index = current_column % distribution.columns
+                    x_position = column_index * distribution.element_width + distribution.start_x
+                    y_position = row_index * distribution.element_height + distribution.start_y
+                    vertex['x'] = x_position
+                    vertex['y'] = y_position
                     self.add_vertex(**vertex)
+
+                    current_column += 1
+                    if current_column >= distribution.columns:
+                        current_column = 0
+                        current_row += 1
+        elif algo is None:
+            for vertex in vertexes:
+                self.add_vertex(**vertex)
 
     def add_connection(self, src_node_id, dest_node_id, start, end, labels=None):
         if labels is None:
