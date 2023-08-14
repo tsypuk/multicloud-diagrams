@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.12](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.12) - 2023-08-14
+
+<small>[Compare with 0.3.11](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.11...0.3.12)</small>
+
+### Docs
+
+- added layers, vertex, edge, cosmetics ([68e1cde](https://github.com/tsypuk/multicloud-diagrams/commit/68e1cde89e8bba83ab59ffd6a3a4648824d4f6c6) by Roman Tsypuk).
+- updated templated, added layers ([611ba2e](https://github.com/tsypuk/multicloud-diagrams/commit/611ba2e06dec0cf5dfbceb73907c12dadf540be6) by Roman Tsypuk).
+- cosmetics ([44787ed](https://github.com/tsypuk/multicloud-diagrams/commit/44787ed6d851b9680c545007f2d1244bad769a4d) by Roman Tsypuk).
+- getting started updated ([c043cd6](https://github.com/tsypuk/multicloud-diagrams/commit/c043cd6c58244fffba3d7e493084dfa261ba09f4) by Roman Tsypuk).
+- yaml loading complete setup ([4237119](https://github.com/tsypuk/multicloud-diagrams/commit/42371195c02d998dfa0a22b04a980769777a4d41) by Roman Tsypuk).
+- added attributes and values; xml prettified ([f7c81c3](https://github.com/tsypuk/multicloud-diagrams/commit/f7c81c3f7ace2ec3aba012a1fcd3e13a79b7924c) by Roman Tsypuk).
+
+### Features
+
+- read nodes and layers from file; added test for yaml load and layers loads ([470677c](https://github.com/tsypuk/multicloud-diagrams/commit/470677c980a38720e59d1ca9c0aba4e525677141) by Roman Tsypuk).
+- removed arn param of node, reading from yaml completed ([a42d360](https://github.com/tsypuk/multicloud-diagrams/commit/a42d360542c40ec690db03455f8c97cce76c864c) by Roman Tsypuk).
+- ruby plugin root-include-snippet now able to read content based on func name ([130a6fc](https://github.com/tsypuk/multicloud-diagrams/commit/130a6fc316f665046f138df4a41eedccb93eb471) by Roman Tsypuk).
+- added integration; added s3 to docs; added list and snapshot ([f67e53e](https://github.com/tsypuk/multicloud-diagrams/commit/f67e53e90af9f2fa488cda7cd1263880110632af) by Roman Tsypuk).
+
 ## [0.3.11](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.11) - 2023-08-08
 
 <small>[Compare with 0.3.10](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.10...0.3.11)</small>
