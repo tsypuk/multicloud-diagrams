@@ -458,6 +458,7 @@ class MultiCloudDiagrams:
     def export_to_file(self, file_path):
         with open(file_path, 'wb') as file:
             tree = Et.ElementTree(self.mx_file)
-            Et.indent(tree, space="\t", level=0)
+            # removed for older Python versions compatibility
+            # Et.indent(tree, space="\t", level=0)
             tree.write(file, encoding='utf-8')
         return

@@ -15,12 +15,19 @@ def render_template(template_filename, context):
     return template_environment.get_template(template_filename).render(context)
 
 
+def delete_first_line(text):
+    lines = text.splitlines()
+    if lines:
+        del lines[0]
+    return '\n'.join(lines)
+
+
 def xml_to_string(data):
     rough_string = Et.tostring(data, 'utf-8').decode('utf-8')
     parsed = minidom.parseString(rough_string.replace('\n', ''))
     indentation = " " * 4  # Use 4 spaces for indentation
     newline = "\n"  # Use newline character
-    non_empty_lines = [line for line in parsed.toprettyxml(indent=indentation, newl=newline).splitlines() if line.strip()]
+    non_empty_lines = [line for line in delete_first_line(parsed.toprettyxml(indent=indentation, newl=newline)).splitlines() if line.strip()]
     return '\n'.join(non_empty_lines)
 
 

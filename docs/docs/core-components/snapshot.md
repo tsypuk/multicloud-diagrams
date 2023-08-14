@@ -32,7 +32,6 @@ Single row table with a snapshot representation of XML, JSON or text/plain.
 ## drawio snapshot vertex:
 
 ```xml
-<?xml version="1.0" ?>
 <mxCell id="vertex:Integration Response:list" parent="1" vertex="1">
     <mxGeometry width="560" height="190" as="geometry" x="-180"/>
 </mxCell>
@@ -67,7 +66,6 @@ style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;ho
 
 ### Full XML dump:
 ```xml
-        <?xml version="1.0" ?>
 <mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
     <diagram id="diagram_1" name="AWS components">
         <mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">

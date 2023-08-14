@@ -30,7 +30,6 @@ New (v0.3.3)
 ## drawio mq_broker vertex:
 
 ```xml
-<?xml version="1.0" ?>
 <mxCell id="vertex:mq_broker:mq.eventbroker.somedomain.com" parent="1" vertex="1">
     <mxGeometry width="78" height="78" as="geometry"/>
 </mxCell>
@@ -72,7 +71,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
 
 ### Full XML dump:
 ```xml
-        <?xml version="1.0" ?>
 <mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
     <diagram id="diagram_1" name="AWS components">
         <mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">

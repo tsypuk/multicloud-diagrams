@@ -68,7 +68,7 @@ style="{{style}}"
 
 ### Full XML dump:
 ```xml
-        {{xml_full}}
+{{xml_full}}
 ```
 
 ### drawio file:
