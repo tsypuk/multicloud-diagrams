@@ -13,9 +13,12 @@ New (v0.2.0)
 {: .label .label-green }
 
 {: .note }
-Fallback Vertex for node types that currently not present in the framework. The fallback icon will be rendered for such element. 
-Also you will see console WARNING: No such nodeType: non_existing_super_cloud_service in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest``
-
+Framework library is periodically updated with new ``Vertex`` types added. 
+If you are using not currently supported vertex type, the fallback icon will be rendered for such element. 
+Also, you will see console message: 
+```shell
+WARNING: No such nodeType: non_existing_super_cloud_service in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest``
+```
 ---
 
 ## Node Type: ``fallback_vertex``

@@ -1,231 +1,97 @@
-# MultiCloud Diagrams
+# Explore and Document Your Cloud Infrastructure with ``multicloud-diagrams``
 
+---
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 [![PyPI version](https://badge.fury.io/py/multicloud-diagrams.svg)](https://badge.fury.io/py/multicloud-diagrams)
 ![python version](https://img.shields.io/badge/python-%3E%3D%203.7-blue?logo=python)
-![Run tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
+![tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
 
-Generate and render Diagrams-As-a-Code (DAG) in popular ``drawio`` vector format  for multiple Cloud providers. This is graph not static, so you can  move, edit, position nodes like you want.
+> As **Professional** **Architects**, **Developers** and **DevOps**  with experience in operating on **Public Cloud Providers**, we all recognize the **crucial importance** of **well-documented**
+**Infrastructure** and **Architecture** in a representable form for driving successful projects.
 
-<a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+``multicloud-diagrams`` is a framework that combines multiple approaches: ``Diagrams as a Code`` (Dac), resources ingestion from external ``yaml`` sources, interaction through programmatic ``API`` integration.
 
-- **Source code:** https://github.com/tsypuk/multicloud-diagrams
-- **PyPI multicloud-diagrams:** https://pypi.org/project/multicloud-diagrams/
-- **Sponsor project:** https://patreon.com/tsypuk
-- **CHANGELOG:** https://github.com/tsypuk/multicloud-diagrams/blob/main/CHANGELOG.MD
-- **Bug reports:** https://github.com/tsypuk/multicloud-diagrams/issues
-- **Samples and examples:** https://github.com/tsypuk/multicloud-diagrams/tree/main/samples/samples
+It allows to store the Infrastructure snippet in ``drawio`` format, which is editable vector-based representation.
+Since source file is not a Raster form, it is easy to edit, customize, position elements based on our needs and track the history.
 
-### Supported Nodes Landscape:
+---
 
-![landscape.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/landscape.png)
+- **Check docs:** [https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html](https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html)
+- **Source Code:** [https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
+- **PyPI:** [https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
+- **Bug reports:** [https://github.com/tsypuk/multicloud-diagrams/issues](https://github.com/tsypuk/multicloud-diagrams/issues)
 
-### Cloud Provides:
+---
 
-#### Supported:
+## Support OS Project:
 
-![aws provider](https://img.shields.io/badge/AWS-orange?logo=amazon-aws&color=ff9900)
-![on premise provider](https://img.shields.io/badge/OnPremise-orange?color=5f87bf)
+> Support from sponsors is invaluable for the continued maintenance and development of open-source projects.
+You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by following these links:
 
-#### Planned to be added:
-![azure provider](https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6)
-![gcp provider](https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4)
+- <a href="https://patreon.com/tsypuk"><img width="32" height="32" class="octicon rounded-2 d-block" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg"></a>
+- <a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 32px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-### Features:
-- allows to generate drawio diagram with predefined styles for popular aws services, support graph-based connection with named edges
-- supports single and batch elements append to diagram
-- duplicates detection to prevent ball of mud in file format and diagram
-- verification that both vertices present on diagram when adding edge connection between them
-- if the node is not present, fallback to default icon when rendering
-- read previous version of drawio file and reuses existing vertices coordinates when generating a new version
-- generate diagram from ``YAML`` definition
-- mix and augment Diagram-as-code, real infra crawler, static yaml-based content to diagram
+---
 
-### Library usage samples:
+## Examples of diagrams generated using ``multicloud-diagrams``:
 
-#### 1. Generating AWS DynamoDB Details drawio diagram based on library, http, awscli, etc. Example based on boto3 DynamoDB response
+### End-to-End with AWS resources:
 
-```json
-{
-        'AttributeDefinitions': [
-            {
-                'AttributeName': 'first',
-                'AttributeType': 'S'
-            },
-            {
-                'AttributeName': 'second',
-                'AttributeType': 'N'
-            },
-            {
-                'AttributeName': 'third',
-                'AttributeType': 'B'
-            },
-        ],
-        'TableName': 'prod-dynamo-table',
-        'KeySchema': [
-            {
-                'AttributeName': 'string',
-                'KeyType': 'HASH'
-            },
-        ],
-        'TableSizeBytes': 123,
-        'ItemCount': 123,
-        'TableArn': 'arn:aws:dynamodb:eu-west-1:123456789:table/prod-dynamo-table',
-        'LocalSecondaryIndexes': [{
-...       
-...
-...
-          
-          'SSEDescription': {
-            'Status': 'ENABLED',
-            'SSEType': 'KMS',
-            'KMSMasterKeyArn': 'string',
-          },
-          'DeletionProtectionEnabled': True
-        }
-```
+![draw-e2e.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/drawio-end2end.gif?raw=True)
 
-- Source [aws_dynamo_boto3_response.py](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/samples/aws_dynamo_boto3_response.py)
-- Output compiled [output.prod.dynamo.drawio](https://raw.githubusercontent.com/tsypuk/multicloud-diagrams/main/samples/output/output.prod.dynamo.drawio):
+---
 
-![output.prod.dynamo.png](https://github.com/tsypuk/multicloud-diagrams/raw/main/samples/output/png/output.prod.dynamo.png?raw=True)
+### API Gateway with integrations:
 
-#### 2. Diagrams as a Code. DAG. Generating AWS IAM Graph from the code based on DAG declaration:
+![draw-apigw.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/draw-apigw.gif?raw=True)
 
-```python
-    producer_func_arn = 'arn:aws:lambda:eu-west-1:123456789:function:producer-lambda'
-metadata = {
-    "CodeSize": 1234,
-    "Handler": "main",
-    "Layers": 0,
-    "Memory": 128,
-    "PackageType": "Zip",
-    "Runtime": "go1.x",
-    "Timeout": 30,
-    "TracingConfig": "{'Mode': 'Active'}",
-    "Version": "$LATEST"
-}
-mcd.add_vertex(node_id=producer_func_arn, node_name='producer-lambda', arn=producer_func_arn, node_type='lambda_function', metadata=metadata)
+---
 
-consumer_func_arn = 'arn:aws:lambda:eu-west-1:123456789:function:consumer-lambda'
-mcd.add_vertex(node_id=consumer_func_arn, node_name='consumer-lambda', arn=consumer_func_arn, node_type='lambda_function')
+### DynamoDB Insights:
 
-dynamo_arn = 'arn:aws:dynamodb:eu-west-1:123456789:table/table1'
-mcd.add_vertex(node_id=dynamo_arn, node_name='table1', arn=dynamo_arn, node_type='dynamo')
+![drawio-dynamodb.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/drawio-dynamodb.gif?raw=True)
 
-sns_arn = 'arn:aws:sns:eu-west-1:123456789:internal.fifo'
-metadata = {
-    "Owner": 123456789,
-    "SubscriptionsConfirmed": 3,
-    "SubscriptionsPending": 0
-}
-mcd.add_vertex(node_id=sns_arn, node_name='internal', arn=sns_arn, node_type='sns', metadata=metadata)
+---
 
-sqs_arn = 'arn:aws:sqs:eu-west-1:123456789:int-eu-live-events.fifo'
-metadata = {
-    "DelaySeconds": 0,
-    "FifoQueue": "TRUE",
-    "ReceiveMessageWaitTimeSeconds": 0,
-    "SqsManagedSseEnabled": "false",
-    "VisibilityTimeout": 30
-}
-mcd.add_vertex(node_id=sqs_arn, node_name='events', arn=sqs_arn, node_type='sqs', metadata=metadata)
+## Supported Cloud Provides:
 
-sqs_arn2 = 'arn:aws:sqs:eu-west-1:123456789:int-eu-live-events2.fifo'
-mcd.add_vertex(node_id=sqs_arn2, node_name='events2', arn=sqs_arn2, node_type='sqs')
+| provider                                                                                       | supported in ``multicloud-diagrams`` |
+|:-----------------------------------------------------------------------------------------------|:-------------------------------------|
+| ![aws provider](https://img.shields.io/badge/AWS-orange?logo=amazon-aws&color=ff9900)          | **[x]** since project start          |
+| ![on premise provider](https://img.shields.io/badge/OnPremise-orange?color=5f87bf)             | **[x]** since **v0.2.1**             |
+| ![azure provider](https://img.shields.io/badge/Azure-orange?logo=microsoft-azure&color=0089d6) | **[  ]**                             |
+| ![gcp provider](https://img.shields.io/badge/GCP-orange?logo=google-cloud&color=4285f4)        | **[  ]**                             |
 
-s3_arn = 'arn:aws:s3:::bucket_name/key_name'
-mcd.add_vertex(node_id=s3_arn, node_name='key_name', arn=s3_arn, node_type='s3')
+---
 
-mcd.add_link(src_node_id=f'lambda_function:{producer_func_arn}', dst_node_id=f'sns:{sns_arn}')
-mcd.add_link(src_node_id=f'lambda_function:{producer_func_arn}', dst_node_id=f's3:{s3_arn}')
-mcd.add_link(src_node_id=f'sns:{sns_arn}', dst_node_id=f'sqs:{sqs_arn}')
-mcd.add_link(src_node_id=f'sns:{sns_arn}', dst_node_id=f'sqs:{sqs_arn2}')
-mcd.add_link(src_node_id=f'sqs:{sqs_arn}', dst_node_id=f'lambda_function:{consumer_func_arn}')
-mcd.add_link(src_node_id=f'lambda_function:{consumer_func_arn}', dst_node_id=f'dynamo:{dynamo_arn}')
-```
+## Supported Nodes Landscape (Autogenerated on-release):
 
-- Source [aws_service_end_2_end](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/samples/aws_service_end_2_end.py)
-- Output compiled [output.prod.end2end.drawio](https://raw.githubusercontent.com/tsypuk/multicloud-diagrams/main/samples/output/output.prod.end2end.drawio)
+![landscape.png](https://github.com/tsypuk/multicloud-diagrams/raw/main/landscape.png?raw=True)
 
-![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.end2end.png?raw=True)
+---
 
+## Why ``multicloud-diagrams`` is written on Python?
 
-#### 3. Generating Diagram from YAML source
+The choice of Python as the programming language for our initial project was driven by several key factors that align seamlessly with our goals and requirements. Here's why Python was selected as the foundation for our project's development:
 
-```yaml
-vertices:
-  - name: prod-lambda-name
-    type: lambda_function
-    arn: arn:aws:lambda:eu-west-1:123456789:function:prod-lambda-name
-  - name: role-lambda-name
-    type: iam_role
-    arn: arn:aws:iam::123456789:role/prod-lambda-name
-  - name: prod-cloudwatch-policy
-    icon: broker
-    type: iam_policy
-    arn: arn:aws:iam::123456789:policy/prod-cloudwatch-policy
-  - name: prod-s3-policy
-    type: iam_policy
-    arn: arn:aws:iam::123456789:policy/prod-s3-policy
-  - name: prod-dynamodb-policy
-    type: iam_policy
-    arn: arn:aws:iam::123456789:policy/prod-dynamo-policy
-edges:
-#  1st approach src/dst are linked to yaml vertices by name
-  - { src: prod-lambda-name, dst: role-lambda-name, label: HasRole, link_type: none }
-  - { src: role-lambda-name, dst: prod-cloudwatch-policy, label: Allow CloudWatch logs, link_type: none }
-#  2nd approach src/dst are linked by ARN (ARN can be present in same yaml, or loaded programmatically)
-  - {
-    src_arn: arn:aws:iam::123456789:role/prod-lambda-name,
-    src_type: iam_role,
-    dst_arn: arn:aws:iam::123456789:policy/prod-s3-policy,
-    dst_type: iam_policy,
-    label: Allow S3 access,
-    link_type: none }
-# 3rd approach is mixed of 1st and 2nd
-  - {
-    src_arn: arn:aws:iam::123456789:role/prod-lambda-name,
-    src_type: iam_role,
-    dst: prod-dynamodb-policy,
-    label: Allow DynamoDB read access,
-    link_type: none }
-```
-- Source [aws_iam_from_yaml.py](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/samples/aws_iam_from_yaml.py)
-- Output compiled [output.prod.iam-roles-from-yaml.drawio](https://raw.githubusercontent.com/tsypuk/multicloud-diagrams/main/samples/output/output.prod.iam-roles-from-yaml.drawio)
+- **Seamless Integration and Data Ingestion using AWS Boto3** (official SDK for Amazon Web Services, developed in Python).
+- **Simplicity**: Python's clean and readable syntax simplifies the development process.
+  Its ease of use and elegant structure enable to focus on the core components without being bogged down by unnecessary complexities.
+- **Broad Appeal among DevOps and Developers**: Python's popularity within the DevOps and Development communities is undeniable.
+  Its extensive adoption is a testament to its effectiveness for building robust applications.
+  By choosing Python, we cater to a broader audience, fostering collaboration and easing the learning curve for newcomers.
+- **Cross-Platform Availability**: Python's cross-platform compatibility ensures that our project can be run on a wide array of environments without compatibility issues.
+  Whether you're working on Windows, macOS, or Linux, Python's ubiquity guarantees consistent functionality across platforms.
 
-- ![output.prod.iam-roles.png](https://github.com/tsypuk/multicloud-diagrams/blob/main/samples/output/png/output.prod.iam-roles-from-yaml.png?raw=True)
+## Why ``multicloud-diagrams`` chooses ``drawio`` as the Output Format?
+During my exploration of various tools on this journey, I've encountered several options, each with its own set of advantages and compromises. However, after careful consideration,
+the decision to adopt the drawio format emerged as the optimal choice for several compelling reasons:
 
-### Publishing 
+- **Editable form** of drawio format provides a great level of customization, enabling users to easily fine-tune diagrams to meet specific needs and scenarios.
+- **Widespread Adoption**:  with a broad user base, drawio stands as one of the most widely used diagramming tools, ensuring familiarity and compatibility across diverse teams.
+- **Enhanced Plugin and Tool Support**: the format seamlessly integrates with a set of plugins and tools, enriching the ecosystem with expanded capabilities and possibilities.
+- **Compact File Sizes**: leveraging the drawio format results in compact file sizes, facilitating swift sharing and distribution without compromising visual quality.
+- **Git-trackable Infrastructure Evolution**: allowing for efficient tracking and visualization of infrastructure mutations over time.
+- **Smooth Compilation to Raster and other formats**: drawio supports out of the box converting to PNG, JPG, PDF, SVG, VSDX, XML
 
-```shell
-poetry build
-export PYPI_USERNAME=
-export PYPI_PASSWORD=
-poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
-
-cd samples/samples
-poetry install
-poetry run python aws_iam_roles_from_code_with_enum.py
-```
-
-```shell
-poetry run flakehell plugins
-NAME        | VERSION  | CODES            | RULES
-mccabe      | 0.6.1    | C90              | +*
-pycodestyle | 2.7.0    | E, W             | +*, -E501
-pyflakes    | 2.3.1    | F                | +*
-pylint      | 0.0.0    | C, E, F, I, R, W | +*
-
-poetry run flakehell lint
-
-```
-
-```shell
-poetry run git-changelog -c angular -s docs,feat,test --output CHANGELOG.MD
-git push --tags
-```
-
-### Contribution Guide:
-
-OpenSource Guide, [How to contribute to opensource](https://opensource.guide/)
+---

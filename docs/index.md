@@ -2,62 +2,68 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+description: "Explore and Document Your Cloud Infrastructure with multicloud-diagrams"
 permalink: /
 ---
 
-# Generate you Cloud Infrastructure into popular draw.io format
+# Explore and Document Your Cloud Infrastructure with ``multicloud-diagrams``
+
+---
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![PyPI version](https://badge.fury.io/py/multicloud-diagrams.svg)](https://badge.fury.io/py/multicloud-diagrams)
+![python version](https://img.shields.io/badge/python-%3E%3D%203.7-blue?logo=python)
+![tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
 
 {: .highlight }
-As Architects, Developers and DevOps Professionals with experience in operating on Public Cloud Providers, we all recognize the crucial importance of well-documented 
-Infrastructure and Architecture with diagrams for driving successful projects. 
+As **Professional** **Architects**, **Developers** and **DevOps**  with experience in operating on **Public Cloud Providers**, we all recognize the **crucial importance** of **well-documented**
+**Infrastructure** and **Architecture** in a representable form for driving successful projects. 
 
-``multicloud-diagrams`` is a framework that combines multiple approaches: ``Diagrams as a Code`` (Dac), ingestion from external ``yaml`` source, programmatic ``API`` integration.
-It allows to store the output diagram in ``drawio`` format, which editable vector-based representation. Since this is not a compiler rastr form, it allows to edit, position
-elements based on need.
+``multicloud-diagrams`` is a framework that combines multiple approaches: ``Diagrams as a Code`` (Dac), resources ingestion from external ``yaml`` sources, interaction through programmatic ``API`` integration.
 
+It allows to store the Infrastructure snippet in ``drawio`` format, which is editable vector-based representation. 
+Since source file is not a Raster form, it is easy to edit, customize, position elements based on our needs and track the history.
+
+---
+ 
+- **Documentation:** [https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html](https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html)
+- **Source code:** [https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
+- **PyPI multicloud-diagrams:** [https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
+- **Bug reports:** [https://github.com/tsypuk/multicloud-diagrams/issues](https://github.com/tsypuk/multicloud-diagrams/issues)
+
+---
+
+## Support OS Project:
+
+{: .highlight }
+Support from sponsors is invaluable for the continued maintenance and development of open-source projects.
+You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by following these links:
+
+- <a href="https://patreon.com/tsypuk"><img width="32" height="32" class="octicon rounded-2 d-block" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg"></a>
+- <a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 32px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+---
 
 ## Examples of diagrams generated using ``multicloud-diagrams``:
 
----
+### End-to-End with AWS resources:
 
-### End-to-End with ``AWS resources``:
-
-![draw-e2e.gif](docs/images/drawio-end2end.gif)
+![draw-e2e.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/drawio-end2end.gif?raw=True)
 
 ---
 
-### API Gateway with integration:
+### API Gateway with integrations:
 
-![draw-apigw.gif](docs/images/draw-apigw.gif)
+![draw-apigw.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/draw-apigw.gif?raw=True)
 
 ---
 
 ### DynamoDB Insights:
 
-![drawio-dynamodb.gif](docs/images/drawio-dynamodb.gif)
-
-[Get started now](docs/configuration.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View it on GitHub][multicloud-diagrams repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
+![drawio-dynamodb.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/drawio-dynamodb.gif?raw=True)
 
 ---
 
-{: .warning }
-> This website documents the features of the current `main` branch of the ``multicloud-diagrams``. See [the CHANGELOG]({% link CHANGELOG.md %}) for a list of releases, new features, and bug fixes.
-
-### Features:
-- allows to generate drawio diagram with predefined styles for popular aws services, support graph-based connection with named edges
-- supports single and batch elements append to diagram
-- duplicates detection to prevent ball of mud in file format and diagram
-- verification that both vertices present on diagram when adding edge connection between them
-- if the node is not present, fallback to default icon when rendering
-- read previous version of drawio file and reuses existing vertices coordinates when generating a new version
-- generate diagram from ``YAML`` definition
-- mix and augment Diagram-as-code, real infra crawler, static yaml-based content to diagram
-
----
-
-### Supported Cloud Provides:
+## Supported Cloud Provides:
 
 | provider                                                                                       | supported in ``multicloud-diagrams`` |
 |:-----------------------------------------------------------------------------------------------|:-------------------------------------|
@@ -68,13 +74,13 @@ elements based on need.
 
 ---
 
-### Supported Nodes Landscape (autogenerated with release):
+## Supported Nodes Landscape (Autogenerated on-release):
 
-![landscape.png](https://github.com/tsypuk/multicloud-diagrams/raw/main/landscape.png)
+![landscape.png](https://github.com/tsypuk/multicloud-diagrams/raw/main/landscape.png?raw=True)
 
 ---
 
-## Why ``multicloud-diagrams`` is written on Python
+## Why ``multicloud-diagrams`` is written on Python?
 
 The choice of Python as the programming language for our initial project was driven by several key factors that align seamlessly with our goals and requirements. Here's why Python was selected as the foundation for our project's development:
 
@@ -87,53 +93,31 @@ The choice of Python as the programming language for our initial project was dri
 - **Cross-Platform Availability**: Python's cross-platform compatibility ensures that our project can be run on a wide array of environments without compatibility issues.
   Whether you're working on Windows, macOS, or Linux, Python's ubiquity guarantees consistent functionality across platforms.
 
-## Why ``multicloud-diagrams`` use drawio format
-Throughout my journey, I have explored multiple tools, there is always a trade-off in using them. The biggest problem is that t
+## Why ``multicloud-diagrams`` chooses ``drawio`` as the Output Format?
+During my exploration of various tools on this journey, I've encountered several options, each with its own set of advantages and compromises. However, after careful consideration, 
+the decision to adopt the drawio format emerged as the optimal choice for several compelling reasons:
 
-- **Editable form** 
-- **The most Widely used**
-- **Excellent support in plugins/tools**
-- **Lightweight files**
-- **Git trackable infrastructure mutation**
+- **Editable form** of drawio format provides a great level of customization, enabling users to easily fine-tune diagrams to meet specific needs and scenarios.
+- **Widespread Adoption**:  with a broad user base, drawio stands as one of the most widely used diagramming tools, ensuring familiarity and compatibility across diverse teams.
+- **Enhanced Plugin and Tool Support**: the format seamlessly integrates with a set of plugins and tools, enriching the ecosystem with expanded capabilities and possibilities.
+- **Compact File Sizes**: leveraging the drawio format results in compact file sizes, facilitating swift sharing and distribution without compromising visual quality.
+- **Git-trackable Infrastructure Evolution**: allowing for efficient tracking and visualization of infrastructure mutations over time.
+- **Smooth Compilation to Raster and other formats**: drawio supports out of the box converting to PNG, JPG, PDF, SVG, VSDX, XML
 
-## Support the project
+---
 
-{: .highlight }
-Support from sponsors is invaluable for the continued maintenance and development of open-source projects.
-You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by following these links:
+[//]: # (#### Thank you to the contributors of ``multicloud-diagrams``)
 
-- <a href="https://patreon.com/tsypuk"><img width="32" height="32" class="octicon rounded-2 d-block" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg"></a>
-- <a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 32px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+[//]: # (<ul class="list-style-none">)
+[//]: # ({% for contributor in site.github.contributors %})
+[//]: # (  <li class="d-inline-block mr-1">)
+[//]: # (     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"></a>)
+[//]: # (  </li>)
+[//]: # ({% endfor %})
+[//]: # (</ul>)
 
 
-## About the project
-
-``Multicloud Diagrams`` is &copy; 2023-{{ "now" | date: "%Y" }} by [Roman Tsypuk](https://tsypuk.github.io/roman_tsypuk.html).
-
-### License
-
-``multicloud-diagrams`` is distributed by an [MIT license](https://github.com/tsypuk/multicloud-diagrams/tree/main/LICENSE.txt).
-
-### Contributing
-
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in [our GitHub repo](https://github.com/tsypuk/multicloud-diagrams#contributing).
-
-#### Thank you to the contributors of ``multicloud-diagrams``
-
-<ul class="list-style-none">
-{% for contributor in site.github.contributors %}
-  <li class="d-inline-block mr-1">
-     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"></a>
-  </li>
-{% endfor %}
-</ul>
-
-### Code of Conduct
-
-Just the Docs is committed to fostering a welcoming community.
-
-[View our Code of Conduct](https://github.com/tsypuk/multicloud-diagrams/tree/main/CODE_OF_CONDUCT.md) on GitHub repository.
+[//]: # ([View our Code of Conduct]&#40;https://github.com/tsypuk/multicloud-diagrams/tree/main/CODE_OF_CONDUCT.md&#41; on GitHub repository.)
 
 [Jekyll]: https://jekyllrb.com
 [Markdown]: https://daringfireball.net/projects/markdown/

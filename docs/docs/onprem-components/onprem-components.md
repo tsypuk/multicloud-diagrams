@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ONPREM Components
-nav_order: 4
+nav_order: 5
 has_children: true
 permalink: /docs/onprem-components
 date: 2023-08-06

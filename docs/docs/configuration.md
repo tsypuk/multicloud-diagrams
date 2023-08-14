@@ -49,7 +49,10 @@ Compatibility tests are included for latest LTS Python versions that have ``Secu
 | 3.7     | 26 Jun 2018 | 27 Jun 2023      | 3.7.17  |
 
 {: .highlight }
-You can use ``multicloud-diagrams`` with ``Python`` versions ``<3.7`` that do not have official ``Security Support`` with your own verification.
+>You can use ``multicloud-diagrams`` with ``Python`` versions ``<3.7`` that do not have official ``Security Support`` with your own verification.
+>
+>Since  ``27 Jun 2023`` Python ``3.7`` has no security support, ``multicloud-diagrams`` are still support this version (pipeline with full features compatibility check), however on next Python LTS releases
+it will be deprecated. This evolution will enable us to seamlessly embrace the latest language features not accessible in the 3.7 release.
 
 The package is readily accessible on [PyPI: https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
 for easy installation and usage. As an open-source project, it encourages community participation and welcomes contributions from developers

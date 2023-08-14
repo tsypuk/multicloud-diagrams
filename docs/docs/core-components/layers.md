@@ -20,148 +20,31 @@ In this context, an additional "IAM" layer is incorporated at the apex, further 
 
 ![draw-apigw.gif](../images/draw-apigw.gif)
 
-Common kinds of callouts include `highlight`, `important`, `new`, `note`, and `warning`.
+## Code Snippet:
 
-{: .warning }
-These callout names are *not* pre-defined by the theme: you need to define your own names.
+Let's explore how to interact with layer starting from simple example - by adding 2 layers ``Storage`` and ``Processing`` with dedicated resources ``lambda function`` and ``dynamoDB`` for each layer: 
 
-
-[^postfix]:
-    You can put the callout markup either before or after its content.
-
-#### An untitled callout
-{: .no_toc }
-
-```markdown
-{: .highlight }
-A paragraph
+```python
+{% root_include_snippet ../tests/core/test_layer.py layer%}
 ```
 
-{: .highlight }
-A paragraph
+## Rendering:
 
+![layers](output/jpg/layer_3.jpg)
 
-#### A single paragraph callout
-{: .no_toc }
+## Show/Hide Layers with assigned resources:
 
-```markdown
-{: .note }
-A paragraph
+![layers](../images/drawio-layers.gif)
+
+### Full XML dump:
+
+```xml
+{% root_include docs/core-components/output/drawio/layer_3.drawio%}
 ```
 
-`{: .note }`
-A paragraph
+### drawio file:
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+Download generated ``layer_3.drawio``:
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
+[Download](output/drawio/layer_3.drawio){: .btn .btn-purple }
 
-#### A multi-paragraph callout
-{: .no_toc }
-
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-#### An indented callout
-{: .no_toc }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-#### Indented multi-paragraph callouts
-{: .no_toc }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-#### Nested callouts
-{: .no_toc }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-#### Opaque background
-{: .no_toc }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>

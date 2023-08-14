@@ -35,19 +35,26 @@ class TestRendering(TestUtilities):
 
     def set_node_type(self):
         self.provider = self.get_provider_by_service_name(self.node_type)
-        if 'yaml' not in self.node_type:
+        if self.check_nodes_without_rendering():
             if self.node_type not in self.supported_vertex:
                 self.node_type = 'fallback_vertex'
         if 'fallback' == self.provider:
             self.provider = 'core'
 
+    def check_nodes_without_rendering(self):
+        no_rendering = ['yaml', 'vertex', 'layer', 'edge']
+        result = True
+        for name in no_rendering:
+            result = result and name not in self.node_type
+        return result
+
     def tearDown(self) -> None:
         self.set_node_type()
         self.mcd.export_to_file(f'docs/docs/{self.provider}-components/output/drawio/{self.node_type}.drawio')
-        if 'yaml' not in self.node_type:
-            self.create_index_html()
+        if self.check_nodes_without_rendering():
+            self.create_md_from_template()
 
-    def create_index_html(self):
+    def create_md_from_template(self):
         tree = Et.ElementTree(self.mcd.mx_file)
         data = tree.findall("./*/*/*/")[2]
         data_full = deepcopy(tree.findall(".")[0].__copy__())

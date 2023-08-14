@@ -1,11 +1,11 @@
 ---
 layout: default
-title: DRAWIO How-To
-nav_order: 4
+title: DRAWIO How-to
+nav_order: 6
 date: 2023-08-07
 ---
 
-# DRAWIO How To
+# DRAWIO How-to
 {: .no_toc }
 
 Draw.io has gained widespread popularity as an extensively used editor and file format. Apart from the standard web browser version, it offers various other scenarios for usage, which include:
