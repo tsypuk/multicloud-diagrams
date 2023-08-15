@@ -4,23 +4,25 @@ from utils.templating import TestRendering
 
 class TestCoreVertexInIsolation(TestRendering):
 
-    def test_list(self):
+    def test_map(self):
         # docs
-        self.node_type = 'list'
+        self.node_type = 'map'
 
         # given
         mcd = MultiCloudDiagrams()
-        rows = [
-            'IndexName',
-            'IndexSizeBytes',
-            'IndexStatus',
-            'ItemCount',
-            'RCU',
-            'WCU',
-        ]
+        map = {
+            'IndexName': 'users-idx',
+            'IndexSizeBytes': '284000',
+            'IndexStatus': 'ACTIVE',
+            'ItemCount': '5266',
+            'RCU': '0',
+            'WCU': '0',
+            'ProjectionType': 'ALL',
+            'Schema': '{ customer: HASH}'
+        }
 
         # when
-        mcd.add_list(table_name='LSI:users_to_model-users-idx', rows=rows)
+        mcd.add_map(table_name='LSI:users_to_model-users-idx', map=map)
 
         # then
         expected = {
@@ -44,38 +46,50 @@ class TestCoreVertexInIsolation(TestRendering):
              'parent': 'vertex:LSI:users_to_model-users-idx:list',
              'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
                       'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
-             'value': 'IndexName',
+             'value': '<b>IndexName</b>: users-idx',
              'vertex': '1'},
             {'id': 'vertex:LSI:users_to_model-users-idx:row:1',
              'parent': 'vertex:LSI:users_to_model-users-idx:list',
              'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
                       'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
-             'value': 'IndexSizeBytes',
+             'value': '<b>IndexSizeBytes</b>: 284000',
              'vertex': '1'},
             {'id': 'vertex:LSI:users_to_model-users-idx:row:2',
              'parent': 'vertex:LSI:users_to_model-users-idx:list',
              'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
                       'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
-             'value': 'IndexStatus',
+             'value': '<b>IndexStatus</b>: ACTIVE',
              'vertex': '1'},
             {'id': 'vertex:LSI:users_to_model-users-idx:row:3',
              'parent': 'vertex:LSI:users_to_model-users-idx:list',
              'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
                       'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
-             'value': 'ItemCount',
+             'value': '<b>ItemCount</b>: 5266',
              'vertex': '1'},
             {'id': 'vertex:LSI:users_to_model-users-idx:row:4',
              'parent': 'vertex:LSI:users_to_model-users-idx:list',
              'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
                       'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
-             'value': 'RCU',
+             'value': '<b>RCU</b>: 0',
              'vertex': '1'},
             {'id': 'vertex:LSI:users_to_model-users-idx:row:5',
              'parent': 'vertex:LSI:users_to_model-users-idx:list',
              'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
                       'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
-             'value': 'WCU',
+             'value': '<b>WCU</b>: 0',
              'vertex': '1'},
+            {'id': 'vertex:LSI:users_to_model-users-idx:row:6',
+             'parent': 'vertex:LSI:users_to_model-users-idx:list',
+             'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
+                      'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
+             'value': '<b>ProjectionType</b>: ALL',
+             'vertex': '1'},
+            {'id': 'vertex:LSI:users_to_model-users-idx:row:7',
+             'parent': 'vertex:LSI:users_to_model-users-idx:list',
+             'style': 'text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;'
+                      'overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;',
+             'value': '<b>Schema</b>: { customer: HASH}',
+             'vertex': '1'}
         ]
         self.verify_list(expected=expected, mx_file=mcd.mx_file, resource_name='LSI:users_to_model-users-idx', expected_list=expected_list)
 
