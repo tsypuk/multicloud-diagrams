@@ -35,23 +35,22 @@ class TestRendering(TestUtilities):
 
     def set_node_type(self):
         self.provider = self.get_provider_by_service_name(self.node_type)
-        if self.check_nodes_without_rendering():
+        if self.check_nodes_without_markdown_generation():
             if self.node_type not in self.supported_vertex:
                 self.node_type = 'fallback_vertex'
         if 'fallback' == self.provider:
             self.provider = 'core'
 
-    def check_nodes_without_rendering(self):
-        no_rendering = ['yaml', 'vertex', 'layer', 'edge']
+    def check_nodes_without_markdown_generation(self):
         result = True
-        for name in no_rendering:
+        for name in self.no_rendering:
             result = result and name not in self.node_type
         return result
 
     def tearDown(self) -> None:
         self.set_node_type()
         self.mcd.export_to_file(f'docs/docs/{self.provider}-components/output/drawio/{self.node_type}.drawio')
-        if self.check_nodes_without_rendering():
+        if self.check_nodes_without_markdown_generation():
             self.create_md_from_template()
 
     def create_md_from_template(self):

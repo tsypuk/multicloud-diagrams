@@ -9,6 +9,7 @@ from multicloud_diagrams import update_fill_color
 class TestUtilities(unittest.TestCase):
     supported_vertex = {}
     provider_services = {}
+    no_rendering = ['yaml', 'vertex', 'layer', 'edge', 'color']
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))
@@ -21,6 +22,9 @@ class TestUtilities(unittest.TestCase):
         self.supported_vertex['yaml'] = {}
 
     def get_provider_by_service_name(self, service_name) -> str:
+        for substring in self.no_rendering:
+            if substring in service_name:
+                return 'core'
         for provider, value in self.provider_services.items():
             if service_name in value:
                 return provider
