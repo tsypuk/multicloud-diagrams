@@ -7,10 +7,18 @@ date: 2023-08-06
 ---
 
 # Single Snapshot
-{: .d-inline-block }
+{: .d-inline-block .no_toc }
 
 New (v0.3.8)
 {: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 {: .note }
 Single row table with a snapshot representation of XML, JSON or text/plain.

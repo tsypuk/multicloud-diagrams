@@ -7,10 +7,18 @@ date: 2023-08-06
 ---
 
 # {{desc}}
-{: .d-inline-block }
+{: .d-inline-block .no_toc }
 
 New (v{{version}})
 {: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 {% if details is defined %}
 {: .note }

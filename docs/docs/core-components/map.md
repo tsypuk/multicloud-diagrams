@@ -7,10 +7,18 @@ date: 2023-08-06
 ---
 
 # Map of Records
-{: .d-inline-block }
+{: .d-inline-block .no_toc }
 
 New (v0.3.12)
 {: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 {: .note }
 Record is divided with ':' into key/value pairs. Each KEY is highlighted with bold font syntax.

@@ -7,10 +7,18 @@ date: 2023-08-06
 ---
 
 # Event Bridge
-{: .d-inline-block }
+{: .d-inline-block .no_toc }
 
 New (v0.3.11)
 {: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 
 ---

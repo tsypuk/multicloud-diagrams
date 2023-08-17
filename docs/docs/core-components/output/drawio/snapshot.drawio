@@ -1,1 +1,25 @@
-<mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud"><diagram id="diagram_1" name="AWS components"><mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1"><root><mxCell id="0" /><mxCell id="1" parent="0" /><mxCell id="vertex:Integration Response:list" value="&lt;b&gt;Integration Response&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1"><mxGeometry width="560" height="190" as="geometry" x="-180" /></mxCell><mxCell id="vertex:Integration Response:row:1" value="{&#10;    &quot;200&quot;: {&#10;        &quot;responseParameters&quot;: {&#10;            &quot;method.response.header.Access-Control-Allow-Headers&quot;: &quot;'Content-Type,X-Amz-Date,Authorization'&quot;,&#10;            &quot;method.response.header.Access-Control-Allow-Methods&quot;: &quot;'OPTIONS,GET,POST'&quot;,&#10;            &quot;method.response.header.Access-Control-Allow-Origin&quot;: &quot;'*'&quot;&#10;        },&#10;        &quot;statusCode&quot;: &quot;200&quot;&#10;    }&#10;}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Integration Response:list" vertex="1"><mxGeometry width="560" height="160" y="30" as="geometry" /></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
+	<diagram id="diagram_1" name="AWS components">
+		<mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="vertex:Integration Response:list" value="&lt;b&gt;Integration Response&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+					<mxGeometry width="560" height="190" as="geometry" x="-180"/>
+				</mxCell>
+				<mxCell id="vertex:Integration Response:row:1" value="{
+    &quot;200&quot;: {
+        &quot;responseParameters&quot;: {
+            &quot;method.response.header.Access-Control-Allow-Headers&quot;: &quot;'Content-Type,X-Amz-Date,Authorization'&quot;,
+            &quot;method.response.header.Access-Control-Allow-Methods&quot;: &quot;'OPTIONS,GET,POST'&quot;,
+            &quot;method.response.header.Access-Control-Allow-Origin&quot;: &quot;'*'&quot;
+        },
+        &quot;statusCode&quot;: &quot;200&quot;
+    }
+}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="vertex:Integration Response:list" vertex="1">
+					<mxGeometry width="560" height="160" y="30" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>

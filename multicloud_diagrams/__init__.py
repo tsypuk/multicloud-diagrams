@@ -146,7 +146,7 @@ class MultiCloudDiagrams:
                 f'No such nodeType: {node_type} in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest')
             return self.supported_vertex['fallback_vertex'].copy()
 
-    def add_snapshot(self, table_id='', table_name='', style: dict = None, snapshot: str = '', width="300"):
+    def add_snapshot(self, table_id='', table_name='', style: dict = None, snapshot: str = '', width=300):
         if not table_id:
             table_id = table_name
         self.prepare_table(table_id=table_id, table_name=table_name, style=style, rows_count=1, width=width)
@@ -165,7 +165,7 @@ class MultiCloudDiagrams:
             y = y + 30
             self.prepare_row(index, item, table_id, width, y=y)
 
-    def add_map(self, table_id='', table_name='', style: dict = None, map: dict = None, width="300", layer_name: str = None, layer_id: str = None,
+    def add_map(self, table_id='', table_name='', style: dict = None, map: dict = None, width=300, layer_name: str = None, layer_id: str = None,
                 x: int = None, y: int = None):
         rows = []
         if map is not None:
@@ -481,9 +481,24 @@ class MultiCloudDiagrams:
         print(parsed.toprettyxml(indent="  "))
 
     def export_to_file(self, file_path):
-        with open(file_path, 'wb') as file:
-            tree = Et.ElementTree(self.mx_file)
-            # removed for older Python versions compatibility
-            # Et.indent(tree, space="\t", level=0)
-            tree.write(file, encoding='utf-8')
-        return
+        # tree = Et.ElementTree(self.mx_file)
+        # removed for older Python versions compatibility
+        # Et.indent(tree, space="\t", level=0)
+        # tree.write(file, encoding='utf-8')
+        # Convert ElementTree to string
+        xml_string = Et.tostring(self.mx_file, encoding='utf-8')
+
+        # Parse the XML string and prettify with indentation
+        import xml.dom.minidom
+        parsed = xml.dom.minidom.parseString(xml_string)
+        pretty_xml = parsed.toprettyxml(indent="\t")
+
+        # Remove the first line containing the XML declaration
+        pretty_lines = pretty_xml.splitlines()
+        if pretty_lines and '<?xml' in pretty_lines[0].strip():
+            pretty_lines.pop(0)
+        resulting_xml = '\n'.join(pretty_lines)
+
+        # Write the prettified XML to a file
+        with open(file_path, 'w', encoding="utf-8") as file:
+            file.write(resulting_xml)
