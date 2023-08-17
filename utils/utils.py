@@ -3,7 +3,7 @@ import unittest
 import json
 import xml.etree.ElementTree as Et
 
-from multicloud_diagrams import update_fill_color
+from multicloud_diagrams import customize
 
 
 class TestUtilities(unittest.TestCase):
@@ -89,7 +89,9 @@ class TestUtilities(unittest.TestCase):
         self.verify_mx_cell(mx_cells[0], expected={'id': '0'})
         self.verify_mx_cell(mx_cells[1], expected={'id': '1', 'parent': '0'})
 
-    def verify_resource(self, expected: dict, mx_file: Et.Element, resource_name, resource_type, debug_mode=False, fill_color=None):
+    def verify_resource(self, expected: dict, mx_file: Et.Element, resource_name, resource_type, debug_mode=False, style=None):
+        if style is None:
+            style = {}
         tree = Et.ElementTree(mx_file)
         self.verify_mxfile_default(tree)
 
@@ -103,8 +105,8 @@ class TestUtilities(unittest.TestCase):
         if 'style' in expected:
             del expected['style']
         expected['style'] = self.supported_vertex[resource_type]['style']
-        if fill_color is not None:
-            expected['style'] = update_fill_color(expected['style'], fill_color)
+
+        customize(expected, style=style)
 
         children = mx_cells[2].findall("./*")
 

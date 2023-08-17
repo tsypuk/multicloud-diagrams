@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from multicloud_diagrams import update_fill_color, stringify_dict, build_vertex_id
+from multicloud_diagrams import update_style_by_key, stringify_dict, build_vertex_id
 
 
 class TestMultiCloudDiagrams(TestCase):
@@ -80,11 +80,12 @@ class TestMultiCloudDiagrams(TestCase):
 
     def test_update_fill_color(self):
         # given-when
-        result = update_fill_color(
+        result = update_style_by_key(
             style_str=('sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;'
                        'fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;'
                        'align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;'),
-            node_color='#FF0000')
+            key='fillColor',
+            value='#FF0000')
         # then
         self.assertEqual(
             ('sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;'

@@ -7,10 +7,17 @@ import re
 import yaml
 
 
-def update_fill_color(style_str, node_color):
-    pattern = r'fillColor=([^;]+)'
-    # Replace the 'fillColor' value with the node_color
-    return re.sub(pattern, f'fillColor={node_color}', style_str)
+def update_style_by_key(style_str: str, key: str, value: str):
+    pattern = r'{}=([^;]+)'.format(key)
+    if re.search(pattern, style_str) is None:
+        return f"{style_str}{key}={value};"
+    else:
+        return re.sub(pattern, f'{key}={value}', style_str)
+
+
+def customize(node_template: dict, style: dict = None):
+    for (key, value) in style.items():
+        node_template['style'] = update_style_by_key(style_str=node_template['style'], key=key, value=value)
 
 
 def stringify_dict(metadata: dict) -> str:
@@ -216,10 +223,12 @@ class MultiCloudDiagrams:
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
 
-    def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, fill_color: str = None,
+    def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, style: dict = None,
                    x: int = None, y: int = None):
         if metadata is None:
             metadata = {}
+        if style is None:
+            style = {}
         # check that there is no such vertex already
         exist = False
         for mx_cell in self.root:
@@ -231,8 +240,11 @@ class MultiCloudDiagrams:
 
         if not exist:
             node_template = self.get_node_template(node_type)
-            if fill_color is not None:
-                node_template['style'] = update_fill_color(node_template['style'], fill_color)
+
+            # Customization
+            customize(node_template=node_template, style=style)
+            # for (key, value) in style.items():
+            #     node_template['style'] = update_style_by_key(style_str=node_template['style'], key=key, value=value)
 
             parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = Et.SubElement(self.root,

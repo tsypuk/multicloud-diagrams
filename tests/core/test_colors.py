@@ -15,7 +15,7 @@ class TestCoreVertexInIsolation(TestRendering):
         mcd.add_vertex(node_id="arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name",
                        node_name='prod-lambda-name',
                        node_type='lambda_function',
-                       fill_color='#FF0000')
+                       style={'fillColor': '#FF0000'})
 
         # then
         # docs
@@ -32,7 +32,7 @@ class TestCoreVertexInIsolation(TestRendering):
         mcd.add_vertex(node_id="arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name",
                        node_name='prod-lambda-name',
                        node_type='lambda_function',
-                       fill_color='#0000FF')
+                       style={'fillColor': '#0000FF'})
 
         # then
         # docs
