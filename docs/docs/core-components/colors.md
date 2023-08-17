@@ -9,9 +9,16 @@ date: 2023-08-16
 # Customization
 {: .d-inline-block }
 
-New (v0.3.10)
+New (v0.3.12)
 {: .label .label-green }
 
+## Style
+
+```python
+style = {
+    'fillColor': '#FF0000'
+}
+```
 
 ## Code Snippet:
 
