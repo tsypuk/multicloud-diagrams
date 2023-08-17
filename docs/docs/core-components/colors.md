@@ -8,86 +8,103 @@ date: 2023-08-16
 
 # Customization
 {: .d-inline-block }
+{: .no_toc }
 
-New (v0.3.12)
+New (v0.3.13)
 {: .label .label-green }
 
-## Style
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## Use Style Object to override any parameter
+
+When passing ``style`` parameter, we can customize the representation of particular Vertex. Here is the list of most widely used
+parameters of style.
 
 ```python
 style = {
-    'fillColor': '#FF0000'
+    'fillColor': '#FF0000',
+    'fillOpacity': '50',
+    'shadow': '1',
+    'gradientColor': '#FFFF33',
+    'gradientDirection': 'north'
 }
 ```
 
-## Code Snippet:
+{: .highlight }
+Each Node in this documentation has full list of its style parameters. You can check all styles at ``Advanced for Geeks`` section.
+
+## Changing FillColor to RED (node with Error or Alarm):
+
+### Code Snippet:
+{: .no_toc }
 
 ```python
 {% root_include_snippet ../tests/core/test_colors.py color_red%}
 ```
 
 ## Rendering:
+{: .no_toc }
 
 ![layers](output/jpg/color_red.jpg)
 
-### Full XML dump:
 
-```xml
-{% root_include docs/core-components/output/drawio/color_red.drawio%}
-```
+## Adding Opacity and Background Shadow:
 
-### drawio file:
-
-Download generated ``color_red.drawio``:
-
-[Download](output/drawio/color_red.drawio){: .btn .btn-purple }
-
-
-## Code Snippet:
+### Code Snippet:
+{: .no_toc }
 
 ```python
-{% root_include_snippet ../tests/core/test_colors.py color_blue%}
+{% root_include_snippet ../tests/core/test_colors.py color_shadow_opacity%}
 ```
 
 ## Rendering:
+{: .no_toc }
 
-![layers](output/jpg/color_blue.jpg)
+![layers](output/jpg/color_shadow_opacity.jpg)
 
-### Full XML dump:
+## Gradient Fill
 
-```xml
-{% root_include docs/core-components/output/drawio/color_blue.drawio%}
-```
+When specifying ``gradient fill`` it is mandatory to set 3 style params:
+- fillColor
+- gradientColor
+- gradientDirection
 
-### drawio file:
-
-Download generated ``color_blue.drawio``:
-
-[Download](output/drawio/color_blue.drawio){: .btn .btn-purple }
-
+``gradientDirection`` can have the following values:
+- north
+- south
+- west
+- east
+- radial
 
 ## Code Snippet:
+{: .no_toc }
+
+```python
+{% root_include_snippet ../tests/core/test_colors.py color_gradient%}
+```
+
+## Rendering:
+{: .no_toc }
+![layers](output/jpg/color_gradient.jpg)
+
+
+## Applying Colors to Table
+
+## Code Snippet:
+{: .no_toc }
 
 ```python
 {% root_include_snippet ../tests/core/test_colors.py color_table%}
 ```
 
-## Rendering:
+## Rendering
+{: .no_toc }
 
 ![layers](output/jpg/color_table.jpg)
-
-### Full XML dump:
-
-```xml
-{% root_include docs/core-components/output/drawio/color_table.drawio%}
-```
-
-### drawio file:
-
-Download generated ``color_table.drawio``:
-
-[Download](output/drawio/color_table.drawio){: .btn .btn-purple }
-
-
-
-

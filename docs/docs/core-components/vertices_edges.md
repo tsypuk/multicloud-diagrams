@@ -15,10 +15,9 @@ through programming API or from YAML-based files.
 ## Vertex
 
 ```python
-def add_vertex(self, 
-               node_id: str, node_name: str, metadata: dict = None,
-               node_type: str = '', layer_name: str = None, layer_id: str = None,
-               fill_color: str = None, x: int = None, y: int = None)
+def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, 
+               node_type: str = '', layer_name: str = None, layer_id: str = None, 
+               style: dict = None, x: int = None, y: int = None)
 ```
 
 | Mandatory     |                                                                                                                                                                                                       |
@@ -27,14 +26,14 @@ def add_vertex(self,
 | **node_name** | any value (FQDN, URL, alpha-numeric value, etc.)                                                                                                                                                      |
 | **node_type** | there is a defined list of supported node_types for rendering (**dynamodb**, **lambda_function**, etc.), if node type is not supported, fallback will be used. Each node on documentation page has node_type. |
 
-| Optional       |                                                                                     |
-|:---------------|:------------------------------------------------------------------------------------|
-| **metadata**   | key/value pairs used to represent additional information                            |
-| **layer_name** | vertices can be added to specific layer, if not specified the default layer is used |
-| **layer_id**   | for programmatic access layers can be referenced also by ID                         |
-| **fill_color** | if specified changes default Vertex fill color                                      |
-| **x**          | positioning Vertex on palette                                                       |
-| **y**          | positioning Vertex on palette                                                       |
+| Optional       |                                                                                                                                                                  |
+|:---------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **metadata**   | key/value pairs used to represent additional information                                                                                                         |
+| **layer_name** | vertices can be added to specific layer, if not specified the default layer is used                                                                              |
+| **layer_id**   | for programmatic access layers can be referenced also by ID                                                                                                      |
+| **style**      | if specified changes default Vertex styling (color, fillColor, opacity, etc.) Check [Customization](/docs/core-components/colors.html) section for more details. |
+| **x**          | positioning Vertex on palette                                                                                                                                    |
+| **y**          | positioning Vertex on palette                                                                                                                                    |
 
 ### Code Snippet NO Metadata:
 

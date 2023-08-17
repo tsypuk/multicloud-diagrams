@@ -146,18 +146,18 @@ class MultiCloudDiagrams:
                 f'No such nodeType: {node_type} in the Library (using default fallback icon Info). Please contact maintainer to add it, or provide MergeRequest')
             return self.supported_vertex['fallback_vertex'].copy()
 
-    def add_snapshot(self, table_id='', table_name='', fill_color='', snapshot: str = '', width="300"):
+    def add_snapshot(self, table_id='', table_name='', style: dict = None, snapshot: str = '', width="300"):
         if not table_id:
             table_id = table_name
-        self.prepare_table(table_id=table_id, table_name=table_name, fill_color=fill_color, rows_count=1, width=width)
+        self.prepare_table(table_id=table_id, table_name=table_name, style=style, rows_count=1, width=width)
         self.prepare_row(1, snapshot, table_id, width)
 
-    def create_table(self, rows, table_id='', table_name='', fill_color='', width=300, layer_name: str = None, layer_id: str = None,
+    def create_table(self, rows, table_id='', table_name='', style: dict = None, width=300, layer_name: str = None, layer_id: str = None,
                      x: int = None, y: int = None):
         parent_id = str(self.get_layer_id(layer_name, layer_id))
         if not table_id:
             table_id = table_name
-        self.prepare_table(table_id=table_id, table_name=table_name, fill_color=fill_color, rows_count=len(rows),
+        self.prepare_table(table_id=table_id, table_name=table_name, style=style, rows_count=len(rows),
                            width=width, parent_id=parent_id, x=x, y=y)
 
         y = 0
@@ -165,20 +165,20 @@ class MultiCloudDiagrams:
             y = y + 30
             self.prepare_row(index, item, table_id, width, y=y)
 
-    def add_map(self, table_id='', table_name='', fill_color='', map: dict = None, width="300", layer_name: str = None, layer_id: str = None,
+    def add_map(self, table_id='', table_name='', style: dict = None, map: dict = None, width="300", layer_name: str = None, layer_id: str = None,
                 x: int = None, y: int = None):
         rows = []
         if map is not None:
             rows = [f'<b>{name}</b>: {value}' for name, value in map.items()]
-        self.create_table(rows=rows, table_id=table_id, table_name=table_name, fill_color=fill_color, width=width, layer_name=layer_name, layer_id=layer_id,
+        self.create_table(rows=rows, table_id=table_id, table_name=table_name, style=style, width=width, layer_name=layer_name, layer_id=layer_id,
                           x=x, y=y)
 
     # add_table
-    def add_list(self, table_id='', table_name='', fill_color='', rows=None, width=300, layer_name: str = None, layer_id: str = None,
+    def add_list(self, table_id='', table_name='', style: dict = None, rows=None, width=300, layer_name: str = None, layer_id: str = None,
                  x: int = None, y: int = None):
         if rows is None:
             rows = []
-        self.create_table(rows=rows, table_id=table_id, table_name=table_name, fill_color=fill_color, width=width, layer_name=layer_name, layer_id=layer_id,
+        self.create_table(rows=rows, table_id=table_id, table_name=table_name, style=style, width=width, layer_name=layer_name, layer_id=layer_id,
                           x=x, y=y)
 
     def prepare_row(self, index, snapshot, table_id='', width=300, y=30):
@@ -195,18 +195,22 @@ class MultiCloudDiagrams:
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:row:{index}')
 
-    def prepare_table(self, table_id='', table_name='', fill_color='', rows_count=0, width=300, parent_id: str = "1",
+    def prepare_table(self, table_id='', table_name='', style: dict = None, rows_count=0, width=300, parent_id: str = "1",
                       x: int = None, y: int = None):
-        style = self.get_node_template('list')['style']
 
-        if fill_color:
-            style += f"fillColor={fill_color}"
+        if style is None:
+            style = {}
+
+        node_template = self.get_node_template('list')
+
+        # Customization
+        customize(node_template=node_template, style=style)
 
         mx_cell = Et.SubElement(self.root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
-                                style=style,
+                                style=f"{node_template['style']}",
                                 parent=parent_id,
                                 vertex="1")
 
@@ -243,8 +247,6 @@ class MultiCloudDiagrams:
 
             # Customization
             customize(node_template=node_template, style=style)
-            # for (key, value) in style.items():
-            #     node_template['style'] = update_style_by_key(style_str=node_template['style'], key=key, value=value)
 
             parent_id = str(self.get_layer_id(layer_name, layer_id))
             mx_cell = Et.SubElement(self.root,
