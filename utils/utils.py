@@ -9,7 +9,7 @@ from multicloud_diagrams import customize
 class TestUtilities(unittest.TestCase):
     supported_vertex = {}
     provider_services = {}
-    no_rendering = ['yaml', 'vertex', 'layer', 'edge', 'color']
+    no_rendering = ['yaml', 'vertex', 'layer', 'edge', 'color', 'connection']
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))

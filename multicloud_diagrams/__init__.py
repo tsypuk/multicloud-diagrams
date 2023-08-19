@@ -228,7 +228,7 @@ class MultiCloudDiagrams:
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
 
     def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, style: dict = None,
-                   x: int = None, y: int = None):
+                   x: int = None, y: int = None) -> str:
         if metadata is None:
             metadata = {}
         if style is None:
@@ -270,6 +270,7 @@ class MultiCloudDiagrams:
                 mx_geometry.set('x', str(x))
             if y:
                 mx_geometry.set('y', str(y))
+        return f'{node_type}:{node_id}'
 
     def update_vertex_coords_width_height_from_prev_version(self, mx_geometry, vertex_id):
         self.update_vertex_coords_from_prev_version(mx_geometry, vertex_id)
@@ -311,16 +312,21 @@ class MultiCloudDiagrams:
             for vertex in vertexes:
                 self.add_vertex(**vertex)
 
-    def add_connection(self, src_node_id, dest_node_id, start, end, labels=None):
+    def add_connection(self, src_node_id, dst_node_id, edge_style=None, labels=None, label_style=None):
         if labels is None:
             labels = []
+        if edge_style is None:
+            edge_style = {}
+        if label_style is None:
+            label_style = {}
+
         # Check that both source and destination exist, before creating edge
         found = 0
         for mx_cell in self.root:
             # print(mxCell.attrib['id'])
             if mx_cell.attrib['id'] == f'vertex:{src_node_id}':
                 found += 1
-            if mx_cell.attrib['id'] == f'vertex:{dest_node_id}':
+            if mx_cell.attrib['id'] == f'vertex:{dst_node_id}':
                 found += 1
             if found == 2:
                 break
@@ -329,11 +335,11 @@ class MultiCloudDiagrams:
             # check that Edge does not exist
             edge_exist = False
             for mx_cell in self.root:
-                if mx_cell.attrib['id'] == f'edge:{src_node_id}:to:{dest_node_id}':
+                if mx_cell.attrib['id'] == f'edge:{src_node_id}:to:{dst_node_id}':
                     edge_exist = True
                     # update the labels
                     for mxLabel in self.root:
-                        if mxLabel.attrib['id'] == f'label:{src_node_id}:to:{dest_node_id}':
+                        if mxLabel.attrib['id'] == f'label:{src_node_id}:to:{dst_node_id}':
                             if 'value' in mxLabel.attrib:
 
                                 for label in labels:
@@ -346,30 +352,33 @@ class MultiCloudDiagrams:
                                 break
                     break
             if not edge_exist:
+                node_template = self.get_node_template('edge')
+                customize(node_template=node_template, style=edge_style)
+
                 mx_cell = Et.SubElement(self.root,
                                         'mxCell',
-                                        id=f'edge:{src_node_id}:to:{dest_node_id}',
-                                        style=f'endFill=0;endArrow={start};endArrow={end};',
+                                        id=f'edge:{src_node_id}:to:{dst_node_id}',
+                                        style=node_template['style'],
                                         parent="1",
                                         source=f'vertex:{src_node_id}',
-                                        target=f'vertex:{dest_node_id}',
+                                        target=f'vertex:{dst_node_id}',
                                         edge="2")
 
                 if self.debug_mode:
-                    mx_cell.insert(0, Et.Comment(f'edge:{src_node_id}:to:{dest_node_id}'))
+                    mx_cell.insert(0, Et.Comment(f'edge:{src_node_id}:to:{dst_node_id}'))
                 mx_geometry = Et.SubElement(mx_cell, 'mxGeometry')
                 mx_geometry.set('as', 'geometry')
 
                 # Add label to edge
                 if len(labels) > 0:
-                    # style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];"
-                    # style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;
+                    node_template = self.get_node_template('label')
+                    customize(node_template=node_template, style=label_style)
                     mx_cell = Et.SubElement(self.root,
                                             'mxCell',
-                                            id=f'label:{src_node_id}:to:{dest_node_id}',
+                                            id=f'label:{src_node_id}:to:{dst_node_id}',
                                             value=stringify_labels(labels),
-                                            style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;",
-                                            parent=f'edge:{src_node_id}:to:{dest_node_id}',
+                                            style=node_template['style'],
+                                            parent=f'edge:{src_node_id}:to:{dst_node_id}',
                                             vertex="1",
                                             connectable="0")
                     # <mxGeometry relative="1" as="geometry">
@@ -382,28 +391,44 @@ class MultiCloudDiagrams:
                     mx_geometry = Et.SubElement(mx_geometry, 'mxPoint')
                     mx_geometry.set('as', 'offset')
 
-                    self.update_vertex_coords_from_prev_version(mx_geometry, f'label:{src_node_id}:to:{dest_node_id}')
+                    self.update_vertex_coords_from_prev_version(mx_geometry, f'label:{src_node_id}:to:{dst_node_id}')
 
                     # </mxGeometry>
                     # </mxCell>
             else:
                 logging.warning(
-                    f'Already exist edge:{src_node_id}:to:{dest_node_id}')
+                    f'Already exist edge:{src_node_id}:to:{dst_node_id}')
         else:
             logging.error(
-                f'Not both vertexes present to build Edge between them (expected vertex:{src_node_id} & vertex:{dest_node_id})')
+                f'Not both vertexes present to build Edge between them (expected vertex:{src_node_id} & vertex:{dst_node_id})')
 
     def add_link(self, src_node_id, dst_node_id, action=None):
-        self.add_connection(src_node_id, dst_node_id, "none", "none", action)
+        style = {
+            'startArrow': 'none',
+            'endArrow': 'none'
+        }
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
-        self.add_connection(src_node_id, dst_node_id, "classic", "classic", action)
+        style = {
+            'startArrow': 'classic',
+            'endArrow': 'classic'
+        }
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
 
     def add_unidirectional_link(self, src_node_id, dst_node_id, action=None):
-        self.add_connection(src_node_id, dst_node_id, "none", "classic", action)
+        style = {
+            'startArrow': 'none',
+            'endArrow': 'classic'
+        }
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
 
     def add_unidirectional_reverse_link(self, src_node_id, dst_node_id, action=None):
-        self.add_connection(src_node_id, dst_node_id, "classic", "none", action)
+        style = {
+            'startArrow': 'classic',
+            'endArrow': 'none'
+        }
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
 
     def add_link_list(self, links):
         for link in links:

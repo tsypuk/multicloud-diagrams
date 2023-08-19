@@ -20,5 +20,15 @@
     "style": "text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;",
     "version": "0.2.0",
     "desc": "Internal ROW used in Table and Snapshot"
+  },
+  "edge": {
+    "style": "jettySize=auto;html=1;",
+    "version": "0.3.13",
+    "desc": "Edge Default connector"
+  },
+  "label": {
+    "style": "edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;",
+    "version": "0.3.13",
+    "desc": "Label on Edge"
   }
 }

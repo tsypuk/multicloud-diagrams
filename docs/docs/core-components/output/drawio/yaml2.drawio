@@ -10,7 +10,7 @@
 				<mxCell id="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamo-table&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" parent="1" vertex="1">
 					<mxGeometry width="72" height="81" as="geometry" x="100" y="-70"/>
 				</mxCell>
-				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" edge="2">
+				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" value="GET permissions" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table" vertex="1" connectable="0">
@@ -24,7 +24,7 @@
 				<mxCell id="vertex:http:domain.com" value="&lt;b&gt;Name&lt;/b&gt;: on-prem-server&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: domain.com" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.http_protocol;fillColor=#5294CF;gradientColor=none;" parent="1" vertex="1">
 					<mxGeometry width="63" height="66" as="geometry" x="103" y="-420"/>
 				</mxCell>
-				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:mq_broker:host.broker.com" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:mq_broker:host.broker.com" edge="2">
+				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:mq_broker:host.broker.com" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:mq_broker:host.broker.com" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:mq_broker:host.broker.com" value="Publish user activity log" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:mq_broker:host.broker.com" vertex="1" connectable="0">
@@ -32,7 +32,7 @@
 						<mxPoint as="offset" x="-49" y="-16"/>
 					</mxGeometry>
 				</mxCell>
-				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:http:domain.com" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:http:domain.com" edge="2">
+				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:http:domain.com" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:http:domain.com" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:http:domain.com" value="HTTP GET user actions" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:http:domain.com" vertex="1" connectable="0">

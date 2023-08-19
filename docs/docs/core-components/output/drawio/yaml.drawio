@@ -19,7 +19,7 @@
 				<mxCell id="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" value="&lt;b&gt;Name&lt;/b&gt;: prod-dynamodb-policy&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:iam::123456789012:policy/prod-dynamo-policy" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.policy;" parent="1" vertex="1">
 					<mxGeometry width="78" height="67" as="geometry" x="150" y="210"/>
 				</mxCell>
-				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" edge="2">
+				<mxCell id="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name" target="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" value="HasRole" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name:to:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" vertex="1" connectable="0">
@@ -27,7 +27,7 @@
 						<mxPoint as="offset" y="19"/>
 					</mxGeometry>
 				</mxCell>
-				<mxCell id="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-cloudwatch-policy" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" target="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-cloudwatch-policy" edge="2">
+				<mxCell id="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-cloudwatch-policy" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" target="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-cloudwatch-policy" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-cloudwatch-policy" value="Allow CloudWatch logs" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-cloudwatch-policy" vertex="1" connectable="0">
@@ -35,7 +35,7 @@
 						<mxPoint as="offset" x="-78" y="-5"/>
 					</mxGeometry>
 				</mxCell>
-				<mxCell id="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-s3-policy" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" target="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-s3-policy" edge="2">
+				<mxCell id="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-s3-policy" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" target="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-s3-policy" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-s3-policy" value="Allow S3 access" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-s3-policy" vertex="1" connectable="0">
@@ -43,7 +43,7 @@
 						<mxPoint as="offset" x="-20" y="31"/>
 					</mxGeometry>
 				</mxCell>
-				<mxCell id="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" style="endFill=0;endArrow=none;endArrow=none;" parent="1" source="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" target="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" edge="2">
+				<mxCell id="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" style="jettySize=auto;html=1;startArrow=none;endArrow=none;" parent="1" source="vertex:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name" target="vertex:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" value="Allow DynamoDB read access" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;" parent="edge:iam_role:arn:aws:iam::123456789012:role/prod-lambda-name:to:iam_policy:arn:aws:iam::123456789012:policy/prod-dynamo-policy" vertex="1" connectable="0">

@@ -51,7 +51,7 @@ class TestMCDConnections(TestUtilities):
             'id': 'edge:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer_lambda:to:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo',
             'parent': '1',
             'source': 'vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer_lambda',
-            'style': 'endFill=0;endArrow=none;endArrow=none;',
+            'style': 'jettySize=auto;html=1;startArrow=none;endArrow=none;',
             'target': 'vertex:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo'}
 
         expected_label = {
