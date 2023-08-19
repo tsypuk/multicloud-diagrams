@@ -12,7 +12,7 @@ class TestMCDList(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        mcd.add_map(table_name=f'Schema:{table_name}', map={
+        mcd.add_map(table_name=f'Schema:{table_name}', key_value_pairs={
             'First': 'Value1',
             'Second': 'Value2'
         })

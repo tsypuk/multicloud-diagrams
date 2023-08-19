@@ -61,9 +61,9 @@ style="{{style}}"
 {% endif %}
 {% endfor %}
 
+{% if width is defined or height is defined%}
 ### Vertex size:
 
-{% if width is defined or height is defined%}
 | attribute | value |
 |:---------|:-----------|
 {% if width is defined %}

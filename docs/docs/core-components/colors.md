@@ -7,8 +7,7 @@ date: 2023-08-16
 ---
 
 # Customization
-{: .d-inline-block }
-{: .no_toc }
+{: .d-inline-block  .no_toc}
 
 New (v0.3.13)
 {: .label .label-green }
@@ -93,6 +92,34 @@ When specifying ``gradient fill`` it is mandatory to set 3 style params:
 ## Rendering:
 {: .no_toc }
 ![layers](output/jpg/color_gradient.jpg)
+
+
+## Change the Direction of Vertex:
+
+## Code Snippet:
+{: .no_toc }
+
+```python
+{% root_include_snippet ../tests/core/test_colors.py color_direction%}
+```
+
+## Rendering:
+{: .no_toc }
+![layers](output/jpg/color_direction.jpg)
+
+
+## Vertex without any labels:
+
+## Code Snippet:
+{: .no_toc }
+
+```python
+{% root_include_snippet ../tests/core/test_colors.py color_nolabel%}
+```
+
+## Rendering:
+{: .no_toc }
+![layers](output/jpg/color_nolabel.jpg)
 
 
 ## Applying Colors to Table

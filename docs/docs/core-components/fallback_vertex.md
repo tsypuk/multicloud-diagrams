@@ -7,10 +7,18 @@ date: 2023-08-06
 ---
 
 # Fallback Vertex
-{: .d-inline-block }
+{: .d-inline-block .no_toc }
 
 New (v0.2.0)
 {: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 {: .note }
 Framework library is periodically updated with new ``Vertex`` types added. 

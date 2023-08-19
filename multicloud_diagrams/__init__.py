@@ -165,11 +165,11 @@ class MultiCloudDiagrams:
             y = y + 30
             self.prepare_row(index, item, table_id, width, y=y)
 
-    def add_map(self, table_id='', table_name='', style: dict = None, map: dict = None, width=300, layer_name: str = None, layer_id: str = None,
+    def add_map(self, table_id='', table_name='', style: dict = None, key_value_pairs: dict = None, width=300, layer_name: str = None, layer_id: str = None,
                 x: int = None, y: int = None):
         rows = []
-        if map is not None:
-            rows = [f'<b>{name}</b>: {value}' for name, value in map.items()]
+        if key_value_pairs is not None:
+            rows = [f'<b>{name}</b>: {value}' for name, value in key_value_pairs.items()]
         self.create_table(rows=rows, table_id=table_id, table_name=table_name, style=style, width=width, layer_name=layer_name, layer_id=layer_id,
                           x=x, y=y)
 
@@ -418,9 +418,6 @@ class MultiCloudDiagrams:
                     node_id=vertex['id'],
                     node_name=vertex['name'],
                     node_type=vertex['type'],
-                    # optional attributes
-                    metadata={},
-                    # icon
                 )
             for edge in data['edges']:
                 self.add_link(
@@ -497,7 +494,8 @@ class MultiCloudDiagrams:
         pretty_lines = pretty_xml.splitlines()
         if pretty_lines and '<?xml' in pretty_lines[0].strip():
             pretty_lines.pop(0)
-        resulting_xml = '\n'.join(pretty_lines)
+        non_empty_lines = [line for line in pretty_lines if line.strip()]
+        resulting_xml = '\n'.join(non_empty_lines)
 
         # Write the prettified XML to a file
         with open(file_path, 'w', encoding="utf-8") as file:

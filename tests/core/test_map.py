@@ -22,7 +22,7 @@ class TestCoreVertexInIsolation(TestRendering):
         }
 
         # when
-        mcd.add_map(table_name='LSI:users_to_model-users-idx', map=map)
+        mcd.add_map(table_name='LSI:users_to_model-users-idx', key_value_pairs=map)
 
         # then
         expected = {

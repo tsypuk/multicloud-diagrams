@@ -69,8 +69,6 @@ style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;ho
 |swimlane|  |
 |whiteSpace| wrap |
 
-### Vertex size:
-
 
 ### Full XML dump:
 ```xml

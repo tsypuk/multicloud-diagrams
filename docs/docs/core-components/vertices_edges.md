@@ -7,6 +7,15 @@ date: 2023-08-07
 ---
 
 # Vertices & Edges
+{: .no_toc}
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 {: .highlight }
 Vertices & Edges are core components of ``multicloud-diagrams`` framework. It supports ingestion of these elements 
@@ -35,17 +44,25 @@ def add_vertex(self, node_id: str, node_name: str, metadata: dict = None,
 | **x**          | positioning Vertex on palette                                                                                                                                    |
 | **y**          | positioning Vertex on palette                                                                                                                                    |
 
-### Code Snippet NO Metadata:
+### Vertex without Metadata:
+
+
+### Code Snippet
+{: .no_toc}
 
 ```python
 {% root_include_snippet ../tests/core/test_vertex.py vertex%}
 ```
 
 ### Rendering:
+{: .no_toc}
 
 ![layers](output/jpg/vertex.jpg)
 
-### Code Snippet with Metadata:
+### Vertex with Metadata:
+
+### Code Snippet
+{: .no_toc}
 
 ``Metadata`` is represented as dictionary of key/value pairs. When rendering ``key`` is be marked with bold, each key/value pair
 is located on dedicated line.
@@ -55,6 +72,7 @@ is located on dedicated line.
 ```
 
 ### Rendering:
+{: .no_toc}
 
 ![layers](output/jpg/vertex_meta.jpg)
 
@@ -84,13 +102,17 @@ def add_link(self, src_node_id, dst_node_id, action=None)
 'dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/prod-dynamo-table',
 ```
 
-### Code Snippet Edge with Label of Actions:
+### Edge with Label of Actions:
+
+### Code Snippet
+{: .no_toc}
 
 ```python
 {% root_include_snippet ../tests/core/test_vertex.py edge%}
 ```
 
 ### Rendering:
+{: .no_toc}
 
 ![layers](output/jpg/edge.jpg)
 
