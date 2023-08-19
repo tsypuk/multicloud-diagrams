@@ -9,6 +9,7 @@ packages = [{include = "multicloud_diagrams"}]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+pyyaml = "^6.0"
 
 [tool.poetry.dev-dependencies]
 flakehell = "^0.9.0"
@@ -16,7 +17,6 @@ flake8 = "3.9.0"
 
 [tool.poetry.group.dev.dependencies]
 git-changelog = "^1.0.1"
-pyyaml = "^6.0"
 jinja2 = "^3.1.2"
 
 [tool.flakehell]
