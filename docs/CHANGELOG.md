@@ -11,6 +11,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.13](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.13) - 2023-08-19
+
+<small>[Compare with 0.3.12](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.12...0.3.13)</small>
+
+### Docs
+
+- update references in online documentation ([5465422](https://github.com/tsypuk/multicloud-diagrams/commit/546542228123437f09f9939286e5bb4fe04067b3) by Roman Tsypuk).
+- updated customization page ([df8315f](https://github.com/tsypuk/multicloud-diagrams/commit/df8315fe7f6e5e02514f0f36fc3c0cf1c0970525) by Roman Tsypuk).
+
+### Features
+
+- customization edges completed ([ea458a9](https://github.com/tsypuk/multicloud-diagrams/commit/ea458a9e1098b10b5f9e74f6ff8dae16d31189b9) by Roman Tsypuk).
+- styling for all parameters added ([b8129d4](https://github.com/tsypuk/multicloud-diagrams/commit/b8129d45a071d5097ea71ad33d6eb3d8a72406a0) by Roman Tsypuk).
+- added customization of style ([84a6ca3](https://github.com/tsypuk/multicloud-diagrams/commit/84a6ca380581b9f416ff15397a86ecd2a10a7257) by Roman Tsypuk).
+- added color customization ([f58c658](https://github.com/tsypuk/multicloud-diagrams/commit/f58c65867ea1ae3c6b4bd99e1b06beb1faf3460d) by Roman Tsypuk).
+- add map, changed list ([b1610d6](https://github.com/tsypuk/multicloud-diagrams/commit/b1610d6986ead7efe97d769049653ecb6792cf3d) by Roman Tsypuk).
+
+### Tests
+
+- complete vertex directions; updated docs ([36b2db7](https://github.com/tsypuk/multicloud-diagrams/commit/36b2db7de75d525ade92e1df23b9cc1086271121) by Roman Tsypuk).
+
 ## [0.3.12](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.12) - 2023-08-14
 
 <small>[Compare with 0.3.11](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.11...0.3.12)</small>
