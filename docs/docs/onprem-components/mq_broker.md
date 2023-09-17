@@ -3,7 +3,7 @@ layout: default
 title: MQ Broker
 parent: ONPREM Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # MQ Broker
@@ -21,19 +21,17 @@ New (v0.3.3)
 ---
 
 
----
-
 ## Node Type: ``mq_broker``
+
+## Rendering:
+
+![lambda](output/jpg/mq_broker.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/onprem/test_mq_broker.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/mq_broker.jpg)
 
 ## drawio mq_broker vertex:
 

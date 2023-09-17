@@ -3,7 +3,7 @@ layout: default
 title: DynamoDB
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # DynamoDB
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``dynamo``
+
+## Rendering:
+
+![lambda](output/jpg/dynamo.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_dynamo.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/dynamo.jpg)
 
 ## drawio dynamo vertex:
 

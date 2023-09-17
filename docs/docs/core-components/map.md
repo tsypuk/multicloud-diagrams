@@ -3,7 +3,7 @@ layout: default
 title: Map of Records
 parent: CORE Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-18
 ---
 
 # Map of Records
@@ -27,15 +27,15 @@ Record is divided with ':' into key/value pairs. Each KEY is highlighted with bo
 
 ## Node Type: ``map``
 
+## Rendering:
+
+![lambda](output/jpg/map.jpg)
+
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/core/test_map.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/map.jpg)
 
 ## drawio map vertex:
 

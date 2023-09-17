@@ -3,7 +3,7 @@ layout: default
 title: HTTP server
 parent: ONPREM Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # HTTP server
@@ -21,19 +21,17 @@ New (v0.3.3)
 ---
 
 
----
-
 ## Node Type: ``http``
+
+## Rendering:
+
+![lambda](output/jpg/http.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/onprem/test_http.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/http.jpg)
 
 ## drawio http vertex:
 

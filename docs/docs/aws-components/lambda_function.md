@@ -3,7 +3,7 @@ layout: default
 title: Lambda Function
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # Lambda Function
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``lambda_function``
+
+## Rendering:
+
+![lambda](output/jpg/lambda_function.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_lambda_function.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/lambda_function.jpg)
 
 ## drawio lambda_function vertex:
 

@@ -3,7 +3,7 @@ layout: default
 title: DynamoDB Stream
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # DynamoDB Stream
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``dynamo_stream``
+
+## Rendering:
+
+![lambda](output/jpg/dynamo_stream.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_dynamo_stream.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/dynamo_stream.jpg)
 
 ## drawio dynamo_stream vertex:
 

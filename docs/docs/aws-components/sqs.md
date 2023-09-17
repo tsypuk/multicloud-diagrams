@@ -3,7 +3,7 @@ layout: default
 title: SQS
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # SQS
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``sqs``
+
+## Rendering:
+
+![lambda](output/jpg/sqs.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_sqs.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/sqs.jpg)
 
 ## drawio sqs vertex:
 

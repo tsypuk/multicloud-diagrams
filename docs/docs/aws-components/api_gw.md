@@ -3,7 +3,7 @@ layout: default
 title: API Gateway
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # API Gateway
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``api_gw``
+
+## Rendering:
+
+![lambda](output/jpg/api_gw.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_api_gw.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/api_gw.jpg)
 
 ## drawio api_gw vertex:
 

@@ -3,7 +3,7 @@ layout: default
 title: {{desc}}
 parent: {{provider | upper }} Components
 nav_order: 3
-date: 2023-08-06
+date: {{date}}
 ---
 
 # {{desc}}
@@ -23,21 +23,21 @@ New (v{{version}})
 {% if details is defined %}
 {: .note }
 {{details}}
-{% endif %}
 
 ---
+{% endif %}
 
 ## Node Type: ``{{node_type}}``
+
+## Rendering:
+
+![lambda](output/jpg/{{node_type}}.jpg)
 
 ## Code Snippet:
 
 ```python
 {{"{% root_include_snippet ../tests/" + provider + "/test_" + node_type + ".py %" + "}"}}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/{{node_type}}.jpg)
 
 ## drawio {{node_type}} vertex:
 

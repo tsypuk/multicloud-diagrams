@@ -3,7 +3,7 @@ layout: default
 title: SNS
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # SNS
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``sns``
+
+## Rendering:
+
+![lambda](output/jpg/sns.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_sns.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/sns.jpg)
 
 ## drawio sns vertex:
 

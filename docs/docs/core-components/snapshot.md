@@ -3,7 +3,7 @@ layout: default
 title: Single Snapshot
 parent: CORE Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-14
 ---
 
 # Single Snapshot
@@ -27,15 +27,15 @@ Single row table with a snapshot representation of XML, JSON or text/plain.
 
 ## Node Type: ``snapshot``
 
+## Rendering:
+
+![lambda](output/jpg/snapshot.jpg)
+
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/core/test_snapshot.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/snapshot.jpg)
 
 ## drawio snapshot vertex:
 

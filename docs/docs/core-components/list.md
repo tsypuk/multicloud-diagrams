@@ -3,7 +3,7 @@ layout: default
 title: List of Records
 parent: CORE Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-15
 ---
 
 # List of Records
@@ -27,15 +27,15 @@ Record are rows of text.
 
 ## Node Type: ``list``
 
+## Rendering:
+
+![lambda](output/jpg/list.jpg)
+
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/core/test_list.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/list.jpg)
 
 ## drawio list vertex:
 

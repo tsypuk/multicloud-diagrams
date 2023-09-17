@@ -1,7 +1,10 @@
-from xml.dom import minidom
+import os
 import xml.etree.ElementTree as Et
-from jinja2 import Environment, FileSystemLoader
 from copy import deepcopy
+from datetime import datetime
+from xml.dom import minidom
+
+from jinja2 import Environment, FileSystemLoader
 
 from utils.utils import TestUtilities
 
@@ -86,6 +89,12 @@ class TestRendering(TestUtilities):
 
         if 'height' in node_details:
             context['height'] = node_details['height']
+
+        # Date based on test file creation
+        test_file_name = f'./tests/{self.provider}/test_{self.node_type}.py'
+        creation_time = os.path.getctime(test_file_name)
+        context['date'] = datetime.fromtimestamp(creation_time).strftime("%Y-%m-%d")
+        # context['date'] = date.today().strftime("%Y-%m-%d")
 
         pairs = style.split(';')
         # Split each pair into key and value using '=' as the separator

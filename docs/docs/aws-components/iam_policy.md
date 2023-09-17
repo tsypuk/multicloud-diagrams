@@ -3,7 +3,7 @@ layout: default
 title: IAM Policy
 parent: AWS Components
 nav_order: 3
-date: 2023-08-06
+date: 2023-08-11
 ---
 
 # IAM Policy
@@ -21,19 +21,17 @@ New (v0.2.0)
 ---
 
 
----
-
 ## Node Type: ``iam_policy``
+
+## Rendering:
+
+![lambda](output/jpg/iam_policy.jpg)
 
 ## Code Snippet:
 
 ```python
 {% root_include_snippet ../tests/aws/test_iam_policy.py %}
 ```
-
-## Rendering:
-
-![lambda](output/jpg/iam_policy.jpg)
 
 ## drawio iam_policy vertex:
 
