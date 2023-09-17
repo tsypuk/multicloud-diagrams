@@ -167,5 +167,37 @@
         "Target": "arn:aws:lambda:eu-west-1:123456789012:function:executor"
       }
     }
+  },
+  {
+    "resource_type": "client_vpn",
+    "data": {
+      "arn": "aws:clientvpn:us-west-1:prod/cvpn-endpoint-0e3b",
+      "name": "vpc-client-vpn",
+      "metadata": {
+        "SplitTunnel": false,
+        "DNSServer": "8.8.8.8",
+        "VPNProtocol": "openVPN",
+        "Transport": "UDP",
+        "VPNPort": 443,
+        "ClientCertificateARN": "arn:aws:acm:us-west-1:123456789012:certificate/cd2e",
+        "ServerCertificateARN": "arn:aws:acm:us-west-1:123456789012:certificate/7d100",
+        "Authentication type": "certificate-authentication",
+        "DNS Name": "*.cvpn-endpoint-0e3b.prod.clientvpn.us-west-1.amazonaws.com"
+      }
+    }
+  },
+  {
+    "resource_type": "certificate_manager",
+    "data": {
+      "arn": "arn:aws:acm:us-west-1:123456789012:certificate/cd2e",
+      "name": "Client Certificate",
+      "metadata": {
+        "ARN": "arn:aws:acm:us-west-1:123456789012:certificate/cd2e",
+        "Domain": "client1.domain.tld",
+        "Type": "Imported",
+        "Public Key info": "RSA 2048",
+        "Signature algorithm": "SHA-256 with RSA"
+      }
+    }
   }
 ]

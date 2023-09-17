@@ -51,7 +51,7 @@ def main():
         meta = None
         if 'metadata' in resource['data']:
             meta = resource['data']['metadata']
-        mcd.add_vertex(node_id=resource['data']['arn'], node_name=resource['data']['name'], arn=resource['data']['arn'], node_type=resource['resource_type'], metadata=meta)
+        mcd.add_vertex(node_id=resource['data']['arn'], node_name=resource['data']['name'], node_type=resource['resource_type'], metadata=meta)
     mcd.export_to_file('../landscape.drawio')
 
 
