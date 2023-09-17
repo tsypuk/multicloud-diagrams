@@ -11,7 +11,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
-## [0.3.13](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.13) - 2023-08-19
+## [0.3.14](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.14) - 2023-09-17
+
+<small>[Compare with 0.3.13](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.13...0.3.14)</small>
+
+### Docs
+
+- updated landscape ([c600297](https://github.com/tsypuk/multicloud-diagrams/commit/c600297d5bdc66b019b3f29ed884ca429c40e528) by Roman Tsypuk).
+- cosmetics fix ([bf8c64e](https://github.com/tsypuk/multicloud-diagrams/commit/bf8c64e9160948fd62d3bb8cba8c6930475ee541) by Roman Tsypuk).
+
+### Features
+
+- added aws certificate manager node ([d1945b6](https://github.com/tsypuk/multicloud-diagrams/commit/d1945b6e411a12f3ceaf163e9e0f62196718f555) by Roman Tsypuk).
+- added aws client vpn node ([6161406](https://github.com/tsypuk/multicloud-diagrams/commit/6161406a1c9e563d0d8502a5d3112f25cdb92324) by Roman Tsypuk).
+- template generation file date shows based on test file creation - real true date ([80c8c4e](https://github.com/tsypuk/multicloud-diagrams/commit/80c8c4e761a431d06b549b5243fca6e6206c1e0e) by Roman Tsypuk).
+
+## [0.3.13](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.13) - 2023-08-20
 
 <small>[Compare with 0.3.12](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.12...0.3.13)</small>
 
