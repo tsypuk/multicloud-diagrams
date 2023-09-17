@@ -48,7 +48,7 @@ Compatibility tests are included for latest LTS Python versions that have ``Secu
 | 3.8     | 14 Oct 2019 | 14 Oct 2024      | 3.8.17  |
 | 3.7     | 26 Jun 2018 | 27 Jun 2023      | 3.7.17  |
 
-`{: .highlight }`
+{: .highlight }
 >You can use ``multicloud-diagrams`` with ``Python`` versions ``<3.7`` that do not have official ``Security Support`` with your own verification.
 >
 >Since  ``27 Jun 2023`` Python ``3.7`` has no security support, ``multicloud-diagrams`` are still support this version (pipeline with full features compatibility check), however on next Python LTS releases
