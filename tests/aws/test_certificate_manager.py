@@ -15,7 +15,6 @@ class TestAWSVertexInIsolation(TestRendering):
         cert_manager_arn = 'arn:aws:acm:us-west-1:123456789012:certificate/cd2e'
         cert_manager_name = 'Client Certificate'
         metadata = {
-            'ARN': 'arn:aws:acm:us-west-1:123456789012:certificate/cd2e',
             'Domain': 'client1.domain.tld',
             'Type': 'Imported',
             'Public Key info': 'RSA 2048',
