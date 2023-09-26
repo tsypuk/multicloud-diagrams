@@ -3,7 +3,7 @@ layout: default
 title: Certificate Manager
 parent: AWS Components
 nav_order: 3
-date: 2023-09-17
+date: 2023-09-27
 ---
 
 # Certificate Manager
@@ -83,7 +83,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:certificate_manager:arn:aws:acm:us-west-1:123456789012:certificate/cd2e" value="&lt;b&gt;Name&lt;/b&gt;: Client Certificate&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:acm:us-west-1:123456789012:certificate/cd2e&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:acm:us-west-1:123456789012:certificate/cd2e&lt;BR&gt;&lt;b&gt;Domain&lt;/b&gt;: client1.domain.tld&lt;BR&gt;&lt;b&gt;Type&lt;/b&gt;: Imported&lt;BR&gt;&lt;b&gt;Public Key info&lt;/b&gt;: RSA 2048&lt;BR&gt;&lt;b&gt;Signature algorithm&lt;/b&gt;: SHA-256 with RSA" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.certificate_manager;" parent="1" vertex="1">
+                <mxCell id="vertex:certificate_manager:arn:aws:acm:us-west-1:123456789012:certificate/cd2e" value="&lt;b&gt;Name&lt;/b&gt;: Client Certificate&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:acm:us-west-1:123456789012:certificate/cd2e&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Domain&lt;/b&gt;: client1.domain.tld&lt;BR&gt;&lt;b&gt;Type&lt;/b&gt;: Imported&lt;BR&gt;&lt;b&gt;Public Key info&lt;/b&gt;: RSA 2048&lt;BR&gt;&lt;b&gt;Signature algorithm&lt;/b&gt;: SHA-256 with RSA" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.certificate_manager;" parent="1" vertex="1">
                     <mxGeometry width="59" height="78" as="geometry"/>
                 </mxCell>
             </root>

@@ -27,8 +27,7 @@ class TestAWSVertexInIsolation(TestRendering):
                     'parent': '1',
                     'style': 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.certificate_manager;',
                     'value': '<b>Name</b>: Client Certificate<BR><b>ARN</b>: '
-                             'arn:aws:acm:us-west-1:123456789012:certificate/cd2e<BR>-----------<BR><b>ARN</b>: '
-                             'arn:aws:acm:us-west-1:123456789012:certificate/cd2e<BR><b>Domain</b>: '
+                             'arn:aws:acm:us-west-1:123456789012:certificate/cd2e<BR>-----------<BR><b>Domain</b>: '
                              'client1.domain.tld<BR><b>Type</b>: Imported<BR><b>Public Key '
                              'info</b>: RSA 2048<BR><b>Signature algorithm</b>: SHA-256 with RSA',
                     'vertex': '1'}
