@@ -313,7 +313,7 @@ class MultiCloudDiagrams:
             for vertex in vertexes:
                 self.add_vertex(**vertex)
 
-    def add_connection(self, src_node_id, dst_node_id, edge_style=None, labels=None, label_style=None):
+    def add_connection(self, src_node_id, dst_node_id, edge_style=None, labels=None, label_style=None, layer_name=None, layer_id=None):
         if labels is None:
             labels = []
         if edge_style is None:
@@ -356,11 +356,12 @@ class MultiCloudDiagrams:
                 node_template = self.get_node_template('edge')
                 customize(node_template=node_template, style=edge_style)
 
+                parent_id = str(self.get_layer_id(layer_name, layer_id))
                 mx_cell = Et.SubElement(self.root,
                                         'mxCell',
                                         id=f'edge:{src_node_id}:to:{dst_node_id}',
                                         style=node_template['style'],
-                                        parent="1",
+                                        parent=parent_id,
                                         source=f'vertex:{src_node_id}',
                                         target=f'vertex:{dst_node_id}',
                                         edge="2")
@@ -403,12 +404,13 @@ class MultiCloudDiagrams:
             logging.error(
                 f'Not both vertexes present to build Edge between them (expected vertex:{src_node_id} & vertex:{dst_node_id})')
 
-    def add_link(self, src_node_id, dst_node_id, action=None):
+    def add_link(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None):
+
         style = {
             'startArrow': 'none',
             'endArrow': 'none'
         }
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style)
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
@@ -537,7 +539,9 @@ class MultiCloudDiagrams:
         for actor in actors:
             print(actor)
 
-        self.extract_message(sequence_diagram, actors)
+        # create Layer with UML file name
+        self.add_layer(file_name)
+        self.extract_messages_from_uml(sequence_diagram, actors, layer_name=file_name)
 
     def extract_actors(self, sequence_diagram):
         actors = []
@@ -549,13 +553,22 @@ class MultiCloudDiagrams:
                 actors.append(actor)
         return actors
 
-    def extract_message(self, sequence_diagram, actors):
+    def extract_messages_from_uml(self, sequence_diagram, actors, layer_name):
         lines = sequence_diagram.split('\n')
         for line in lines:
             strip = line.strip()
             if any(strip.startswith(actor) for actor in actors):
                 data = self.extract_info(line)
                 print(data)
+                try:
+                    # connect vertex of actor1 actor2 using arrow and message
+                    self.add_link(
+                        self.actors_to_nodes[data[0]],
+                        self.actors_to_nodes[data[1]],
+                        action=[data[2]],
+                        layer_name=layer_name)
+                except:
+                    print('No such node')
 
     # [Actor][Arrow][Actor]:Message text
 

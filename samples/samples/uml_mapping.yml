@@ -1,13 +1,13 @@
 nodes:
   - actor: S3Bucket
-    node_id: arn:aws:s3:::bucket_name/key_name
+    node_id: s3:arn:aws:s3:::bucket_name/key_name
   - actor: LambdaFunction1
-    node_id: arn:aws:lambda:eu-west-1:123456789012:function:producer-lambda
+    node_id: lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:producer-lambda
   - actor: LambdaFunction2
-    node_id: arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda
+    node_id: lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda
   - actor: SNS
-    node_id: arn:aws:sns:eu-west-1:123456789012:internal.fifo
+    node_id: sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo
   - actor: SQS
-    node_id: arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo
+    node_id: sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo
   - actor: Storage
-    node_id: arn:aws:dynamodb:eu-west-1:123456789012:table/table1
+    node_id: dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/table1
