@@ -525,3 +525,56 @@ class MultiCloudDiagrams:
         # Write the prettified XML to a file
         with open(file_path, 'w', encoding="utf-8") as file:
             file.write(resulting_xml)
+
+    def read_uml_from_file(self, file_name):
+        with open(file_name, 'r') as file:
+            sequence_diagram = file.read()
+
+        actors = self.extract_actors(sequence_diagram)
+
+        print("Actors:")
+        for actor in actors:
+            print(actor)
+
+        self.extract_message(sequence_diagram, actors)
+
+    def extract_actors(self, sequence_diagram):
+        actors = []
+        lines = sequence_diagram.split('\n')
+        for line in lines:
+            strip = line.strip()
+            if (strip.startswith('participant')) | (strip.startswith('actor')):
+                actor = line.strip().split()[1]
+                actors.append(actor)
+        return actors
+
+    def extract_message(self, sequence_diagram, actors):
+        lines = sequence_diagram.split('\n')
+        for line in lines:
+            strip = line.strip()
+            if any(strip.startswith(actor) for actor in actors):
+                data = self.extract_info(line)
+                print(data)
+
+    # [Actor][Arrow][Actor]:Message text
+
+    # Type	Description
+    # ->	Solid line without arrow
+    # -->	Dotted line without arrow
+    # ->>	Solid line with arrowhead
+    # -->>	Dotted line with arrowhead
+    # -x	Solid line with a cross at the end
+    # --x	Dotted line with a cross at the end.
+    # -)	Solid line with an open arrow at the end (async)
+    # --)	Dotted line with a open arrow at the end (async)
+    def extract_info(self, input_string):
+        pattern = r'(.*?)(?:-->|->>)(.*?):(.*)'
+        match = re.match(pattern, input_string)
+
+        if match:
+            actor1 = match.group(1).strip()
+            actor2 = match.group(2).strip()
+            message = match.group(3).lstrip()
+            return actor1, actor2, message
+        else:
+            return None
