@@ -12,6 +12,7 @@ def main():
     mcd.read_coords_from_file(prev_file)
     prepare_end2end(mcd)
 
+    mcd.read_uml_mappings('uml_mapping.yml')
     mcd.read_uml_from_file('uml.mermaid')
 
     mcd.export_to_file(result_file)

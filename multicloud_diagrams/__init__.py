@@ -58,6 +58,7 @@ class Distribution:
 
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
+        self.actors_to_nodes = {}
         self.mx_file = Et.Element('mxfile',
                                   host="multicloud-diagrams",
                                   agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
@@ -578,3 +579,12 @@ class MultiCloudDiagrams:
             return actor1, actor2, message
         else:
             return None
+
+    def read_uml_mappings(self, yaml_name: str):
+        self.actors_to_nodes = {}
+        with open(yaml_name, 'r') as file:
+            data = yaml.safe_load(file)
+            for vertex in data['nodes']:
+                node_id = vertex['node_id']
+                actor = vertex['actor']
+                self.actors_to_nodes[actor] = node_id
