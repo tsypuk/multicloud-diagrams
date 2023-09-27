@@ -13,6 +13,12 @@ def main():
     prepare_end2end(mcd)
 
     mcd.read_uml_mappings('uml_mapping.yml')
+    label_style = {
+        'labelBackgroundColor': 'none',
+        'fontColor': '#FF3333',
+        'fontStyle': 0,
+        'fontSize': 14
+    }
     style1 = {
         'orthogonalLoop': '1',
         'edgeStyle': 'orthogonalEdgeStyle',
@@ -24,7 +30,7 @@ def main():
         'strokeWidth': '3',
         'fontSize': '22'
     }
-    mcd.read_uml_from_file('file_upload.mermaid', style=style1)
+    mcd.read_uml_from_file('file_upload.mermaid', edge_style=style1, label_style=label_style)
 
     style2 = {
         'orthogonalLoop': '1',
@@ -33,12 +39,18 @@ def main():
         'startArrow': 'oval',
         'endArrow': 'classicThin',
         'dashed': '1',
-        'strokeColor': '#0000FF',
+        'strokeColor': '#FF0000',
         'strokeWidth': '3',
         'fontSize': '22'
     }
 
-    mcd.read_uml_from_file('process.mermaid', style=style2)
+    label_style = {
+        'labelBackgroundColor': 'none',
+        'fontColor': '#FF0000',
+        'fontStyle': 0,
+        'fontSize': 14
+    }
+    mcd.read_uml_from_file('process.mermaid', edge_style=style2, label_style=label_style)
 
     mcd.export_to_file(result_file)
 

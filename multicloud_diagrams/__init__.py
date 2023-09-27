@@ -432,8 +432,8 @@ class MultiCloudDiagrams:
         }
         self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
 
-    def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, style=None):
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id, prefix=layer_name)
+    def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, edge_style=None, label_style=None):
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id, prefix=layer_name)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
@@ -552,7 +552,7 @@ class MultiCloudDiagrams:
         with open(file_path, 'w', encoding="utf-8") as file:
             file.write(resulting_xml)
 
-    def read_uml_from_file(self, file_name, style=None):
+    def read_uml_from_file(self, file_name, edge_style=None, label_style=None):
         with open(file_name, 'r') as file:
             sequence_diagram = file.read()
 
@@ -565,9 +565,9 @@ class MultiCloudDiagrams:
         # create Layer with UML file name
         base_name = os.path.splitext(os.path.basename(file_name))[0]
         self.add_layer(base_name)
-        self.extract_messages_from_uml(sequence_diagram, actors, layer_name=base_name, style=style)
+        self.extract_messages_from_uml(sequence_diagram, actors, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
-    def extract_messages_from_uml(self, sequence_diagram, actors, layer_name, style):
+    def extract_messages_from_uml(self, sequence_diagram, actors, layer_name, edge_style, label_style):
         lines = sequence_diagram.split('\n')
         action_id = 0
         for line in lines:
@@ -583,7 +583,7 @@ class MultiCloudDiagrams:
                         self.actors_to_nodes[data[1]],
                         action=[f'{action_id}: {data[2]}'],
                         layer_name=layer_name,
-                        style=style)
+                        edge_style=edge_style, label_style=label_style)
                 except KeyError:
                     print('No such node')
 
