@@ -2,14 +2,10 @@ sequenceDiagram
     actor Donald
     participant S3Bucket
     participant LambdaFunction1
-    participant LambdaFunction2
     participant SNS
     participant SQS
-    participant Storage
 
     Donald->>S3Bucket: Put new file into S3 bucket
     S3Bucket->>LambdaFunction1: LifeConfig Rule invokes lambda function
     LambdaFunction1->>SNS: Send Event to SNS that file processing is finished
     SNS->>SQS: Fanout Event to SQS
-    SQS->>LambdaFunction2: poll message from SQS and invoke consumer lambda function
-    LambdaFunction2->>Storage: Update DynamoDB Table. Save image status.

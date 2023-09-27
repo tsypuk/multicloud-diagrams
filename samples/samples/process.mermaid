@@ -1,0 +1,7 @@
+sequenceDiagram
+    participant SQS
+    participant LambdaFunction2
+    participant Storage
+
+    SQS->>LambdaFunction2: poll message from SQS and invoke consumer lambda function
+    LambdaFunction2->>Storage: Update DynamoDB Table. Save image status.

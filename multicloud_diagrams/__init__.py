@@ -56,6 +56,17 @@ class Distribution:
     columns: int = 1
 
 
+def extract_actors(sequence_diagram):
+    actors = []
+    lines = sequence_diagram.split('\n')
+    for line in lines:
+        strip = line.strip()
+        if (strip.startswith('participant')) | (strip.startswith('actor')):
+            actor = line.strip().split()[1]
+            actors.append(actor)
+    return actors
+
+
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
         self.actors_to_nodes = {}
@@ -313,7 +324,7 @@ class MultiCloudDiagrams:
             for vertex in vertexes:
                 self.add_vertex(**vertex)
 
-    def add_connection(self, src_node_id, dst_node_id, edge_style=None, labels=None, label_style=None, layer_name=None, layer_id=None):
+    def add_connection(self, src_node_id, dst_node_id, edge_style=None, labels=None, label_style=None, layer_name=None, layer_id=None, prefix=None):
         if labels is None:
             labels = []
         if edge_style is None:
@@ -332,15 +343,24 @@ class MultiCloudDiagrams:
             if found == 2:
                 break
 
+        edge_id = f'edge:{src_node_id}:to:{dst_node_id}'
+        label_id = f'label:{src_node_id}:to:{dst_node_id}'
+        parent_edge_id = f'edge:{src_node_id}:to:{dst_node_id}'
+
+        if prefix is not None:
+            edge_id = f'edge_{prefix}:{src_node_id}:to:{dst_node_id}'
+            label_id = f'label_{prefix}:{src_node_id}:to:{dst_node_id}'
+            parent_edge_id = f'edge_{prefix}:{src_node_id}:to:{dst_node_id}'
+
         if found == 2:
             # check that Edge does not exist
             edge_exist = False
             for mx_cell in self.root:
-                if mx_cell.attrib['id'] == f'edge:{src_node_id}:to:{dst_node_id}':
+                if mx_cell.attrib['id'] == edge_id:
                     edge_exist = True
                     # update the labels
                     for mxLabel in self.root:
-                        if mxLabel.attrib['id'] == f'label:{src_node_id}:to:{dst_node_id}':
+                        if mxLabel.attrib['id'] == f'label_{prefix}:{src_node_id}:to:{dst_node_id}':
                             if 'value' in mxLabel.attrib:
 
                                 for label in labels:
@@ -359,7 +379,7 @@ class MultiCloudDiagrams:
                 parent_id = str(self.get_layer_id(layer_name, layer_id))
                 mx_cell = Et.SubElement(self.root,
                                         'mxCell',
-                                        id=f'edge:{src_node_id}:to:{dst_node_id}',
+                                        id=edge_id,
                                         style=node_template['style'],
                                         parent=parent_id,
                                         source=f'vertex:{src_node_id}',
@@ -377,10 +397,10 @@ class MultiCloudDiagrams:
                     customize(node_template=node_template, style=label_style)
                     mx_cell = Et.SubElement(self.root,
                                             'mxCell',
-                                            id=f'label:{src_node_id}:to:{dst_node_id}',
+                                            id=label_id,
                                             value=stringify_labels(labels),
                                             style=node_template['style'],
-                                            parent=f'edge:{src_node_id}:to:{dst_node_id}',
+                                            parent=parent_edge_id,
                                             vertex="1",
                                             connectable="0")
                     # <mxGeometry relative="1" as="geometry">
@@ -411,6 +431,9 @@ class MultiCloudDiagrams:
             'endArrow': 'none'
         }
         self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
+
+    def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, style=None):
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id, prefix=layer_name)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
@@ -529,32 +552,24 @@ class MultiCloudDiagrams:
         with open(file_path, 'w', encoding="utf-8") as file:
             file.write(resulting_xml)
 
-    def read_uml_from_file(self, file_name):
+    def read_uml_from_file(self, file_name, style=None):
         with open(file_name, 'r') as file:
             sequence_diagram = file.read()
 
-        actors = self.extract_actors(sequence_diagram)
+        actors = extract_actors(sequence_diagram)
 
         print("Actors:")
         for actor in actors:
             print(actor)
 
         # create Layer with UML file name
-        self.add_layer(file_name)
-        self.extract_messages_from_uml(sequence_diagram, actors, layer_name=file_name)
+        base_name = os.path.splitext(os.path.basename(file_name))[0]
+        self.add_layer(base_name)
+        self.extract_messages_from_uml(sequence_diagram, actors, layer_name=base_name, style=style)
 
-    def extract_actors(self, sequence_diagram):
-        actors = []
+    def extract_messages_from_uml(self, sequence_diagram, actors, layer_name, style):
         lines = sequence_diagram.split('\n')
-        for line in lines:
-            strip = line.strip()
-            if (strip.startswith('participant')) | (strip.startswith('actor')):
-                actor = line.strip().split()[1]
-                actors.append(actor)
-        return actors
-
-    def extract_messages_from_uml(self, sequence_diagram, actors, layer_name):
-        lines = sequence_diagram.split('\n')
+        action_id = 0
         for line in lines:
             strip = line.strip()
             if any(strip.startswith(actor) for actor in actors):
@@ -562,12 +577,14 @@ class MultiCloudDiagrams:
                 print(data)
                 try:
                     # connect vertex of actor1 actor2 using arrow and message
-                    self.add_link(
+                    action_id = action_id + 1
+                    self.add_link_uml(
                         self.actors_to_nodes[data[0]],
                         self.actors_to_nodes[data[1]],
-                        action=[data[2]],
-                        layer_name=layer_name)
-                except:
+                        action=[f'{action_id}: {data[2]}'],
+                        layer_name=layer_name,
+                        style=style)
+                except KeyError:
                     print('No such node')
 
     # [Actor][Arrow][Actor]:Message text
