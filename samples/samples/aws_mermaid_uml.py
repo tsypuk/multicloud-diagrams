@@ -39,14 +39,14 @@ def main():
         'startArrow': 'oval',
         'endArrow': 'classicThin',
         'dashed': '1',
-        'strokeColor': '#FF0000',
+        'strokeColor': '#0000FF',
         'strokeWidth': '3',
         'fontSize': '22'
     }
 
     label_style = {
         'labelBackgroundColor': 'none',
-        'fontColor': '#FF0000',
+        'fontColor': '#0000FF',
         'fontStyle': 0,
         'fontSize': 14
     }
