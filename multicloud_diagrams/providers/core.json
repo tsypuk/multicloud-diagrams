@@ -30,5 +30,12 @@
     "style": "edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;",
     "version": "0.3.13",
     "desc": "Label on Edge"
+  },
+  "actor": {
+    "style": "shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;",
+    "version": "0.3.15",
+    "desc": "Actor",
+    "width": "30",
+    "height": "60"
   }
 }

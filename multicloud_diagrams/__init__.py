@@ -5,6 +5,7 @@ import os.path
 import pkgutil
 import re
 import yaml
+import hashlib
 
 
 def update_style_by_key(style_str: str, key: str, value: str):
@@ -56,15 +57,56 @@ class Distribution:
     columns: int = 1
 
 
-def extract_actors(sequence_diagram):
+def starts_with_any(string, actors, participants):
+    if any(string.startswith(prefix) for prefix in actors):
+        return 'actor'
+    elif any(string.startswith(prefix) for prefix in participants):
+        return 'participant'
+
+
+def generate_hash(input_string):
+    sha256 = hashlib.sha256()
+    sha256.update(input_string.encode('utf-8'))
+    return sha256.hexdigest()[:8]
+
+
+def extract_actors_and_participants(sequence_diagram):
     actors = []
+    participants = []
     lines = sequence_diagram.split('\n')
     for line in lines:
         strip = line.strip()
-        if (strip.startswith('participant')) | (strip.startswith('actor')):
-            actor = line.strip().split()[1]
-            actors.append(actor)
-    return actors
+        if strip.startswith('actor'):
+            entity = line.strip().split()[1]
+            actors.append(entity)
+        elif strip.startswith('participant'):
+            entity = line.strip().split()[1]
+            participants.append(entity)
+    return actors, participants
+
+
+# [Actor][Arrow][Actor]:Message text
+
+# Type	Description
+# ->	Solid line without arrow
+# -->	Dotted line without arrow
+# ->>	Solid line with arrowhead
+# -->>	Dotted line with arrowhead
+# -x	Solid line with a cross at the end
+# --x	Dotted line with a cross at the end.
+# -)	Solid line with an open arrow at the end (async)
+# --)	Dotted line with a open arrow at the end (async)
+def extract_info(input_string):
+    pattern = r'(.*?)(?:-->|->>)(.*?):(.*)'
+    match = re.match(pattern, input_string)
+
+    if match:
+        actor1 = match.group(1).strip()
+        actor2 = match.group(2).strip()
+        message = match.group(3).lstrip()
+        return actor1, actor2, message
+    else:
+        return None
 
 
 class MultiCloudDiagrams:
@@ -433,7 +475,8 @@ class MultiCloudDiagrams:
         self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
 
     def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, edge_style=None, label_style=None):
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id, prefix=layer_name)
+        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id,
+                            prefix=layer_name)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
@@ -556,7 +599,7 @@ class MultiCloudDiagrams:
         with open(file_name, 'r') as file:
             sequence_diagram = file.read()
 
-        actors = extract_actors(sequence_diagram)
+        actors, participants = extract_actors_and_participants(sequence_diagram)
 
         print("Actors:")
         for actor in actors:
@@ -565,15 +608,17 @@ class MultiCloudDiagrams:
         # create Layer with UML file name
         base_name = os.path.splitext(os.path.basename(file_name))[0]
         self.add_layer(base_name)
-        self.extract_messages_from_uml(sequence_diagram, actors, layer_name=base_name, edge_style=edge_style, label_style=label_style)
+        self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
-    def extract_messages_from_uml(self, sequence_diagram, actors, layer_name, edge_style, label_style):
+    def extract_messages_from_uml(self, sequence_diagram, actors, participants, layer_name, edge_style, label_style):
         lines = sequence_diagram.split('\n')
         action_id = 0
         for line in lines:
             strip = line.strip()
-            if any(strip.startswith(actor) for actor in actors):
-                data = self.extract_info(line)
+            entity = starts_with_any(strip, actors, participants)
+            if (entity == 'actor') | (entity == 'participant'):
+                data = extract_info(line)
+                print(entity)
                 print(data)
                 try:
                     # connect vertex of actor1 actor2 using arrow and message
@@ -586,29 +631,16 @@ class MultiCloudDiagrams:
                         edge_style=edge_style, label_style=label_style)
                 except KeyError:
                     print('No such node')
+                    if entity == 'actor':
+                        node_id=generate_hash(data[0])
+                        self.add_vertex(node_id=node_id, node_name=data[0], node_type='actor', layer_name=layer_name)
 
-    # [Actor][Arrow][Actor]:Message text
-
-    # Type	Description
-    # ->	Solid line without arrow
-    # -->	Dotted line without arrow
-    # ->>	Solid line with arrowhead
-    # -->>	Dotted line with arrowhead
-    # -x	Solid line with a cross at the end
-    # --x	Dotted line with a cross at the end.
-    # -)	Solid line with an open arrow at the end (async)
-    # --)	Dotted line with a open arrow at the end (async)
-    def extract_info(self, input_string):
-        pattern = r'(.*?)(?:-->|->>)(.*?):(.*)'
-        match = re.match(pattern, input_string)
-
-        if match:
-            actor1 = match.group(1).strip()
-            actor2 = match.group(2).strip()
-            message = match.group(3).lstrip()
-            return actor1, actor2, message
-        else:
-            return None
+                        self.add_link_uml(
+                            f'actor:{node_id}',
+                            self.actors_to_nodes[data[1]],
+                            action=[f'{action_id}: {data[2]}'],
+                            layer_name=layer_name,
+                            edge_style=edge_style, label_style=label_style)
 
     def read_uml_mappings(self, yaml_name: str):
         self.actors_to_nodes = {}
