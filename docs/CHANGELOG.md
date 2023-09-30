@@ -11,6 +11,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.15](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.15) - 2023-09-30
+
+<small>[Compare with 0.3.14](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.14...0.3.15)</small>
+
+### Docs
+
+- added actor node ([0fa058d](https://github.com/tsypuk/multicloud-diagrams/commit/0fa058d9c64ad71d1bdfc7159fa2a37e49898634) by Roman Tsypuk).
+
+### Features
+
+- added actor node to core components ([d5bd4e8](https://github.com/tsypuk/multicloud-diagrams/commit/d5bd4e8653122325367c8f1b268a30735bb6bd63) by Roman Tsypuk).
+- added style for label on edge ([c987f3d](https://github.com/tsypuk/multicloud-diagrams/commit/c987f3d871e3b5f86d7ebeabfb91de28378fcd82) by Roman Tsypuk).
+- added styling; support multiple files on read ([5a5736c](https://github.com/tsypuk/multicloud-diagrams/commit/5a5736c44d7d6b63f0879965174f9e00d66cd45f) by Roman Tsypuk).
+- added layers support for edges ([4ed040e](https://github.com/tsypuk/multicloud-diagrams/commit/4ed040ec1678274d4be24333e495688585b70058) by Roman Tsypuk).
+- loading mapping between vertex ID and uml actor name ([311e0fb](https://github.com/tsypuk/multicloud-diagrams/commit/311e0fbd2cbe15cce11816699ad82bceab5725a1) by Roman Tsypuk).
+- reading mermaid uml from external file ([8379611](https://github.com/tsypuk/multicloud-diagrams/commit/837961139f92eb6b56d9a0178f7f96d3f94bfee9) by Roman Tsypuk).
+
 ## [0.3.14](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.14) - 2023-09-17
 
 <small>[Compare with 0.3.13](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.13...0.3.14)</small>
