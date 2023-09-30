@@ -632,7 +632,7 @@ class MultiCloudDiagrams:
                 except KeyError:
                     print('No such node')
                     if entity == 'actor':
-                        node_id=generate_hash(data[0])
+                        node_id = generate_hash(data[0])
                         self.add_vertex(node_id=node_id, node_name=data[0], node_type='actor', layer_name=layer_name)
 
                         self.add_link_uml(
