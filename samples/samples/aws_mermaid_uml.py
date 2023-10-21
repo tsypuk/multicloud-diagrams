@@ -7,7 +7,6 @@ def main():
 
     prefix = 'prod'
     prev_file = f'../output/output.{prefix}.end2end.drawio'
-    result_file = f'../output/output.{prefix}_uml.end2end.drawio'
 
     mcd.read_coords_from_file(prev_file)
     prepare_end2end(mcd)
@@ -52,6 +51,7 @@ def main():
     }
     mcd.read_uml_from_file('process.mermaid', edge_style=style2, label_style=label_style)
 
+    result_file = f'../output/output.{prefix}_uml.end2end.drawio'
     mcd.export_to_file(result_file)
 
 

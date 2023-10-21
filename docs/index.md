@@ -63,6 +63,12 @@ You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by
 
 ---
 
+### Augment Diagram from UML:
+
+![drawio-uml.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/uml_animated.gif?raw=True)
+
+---
+
 ## Project Evolution Timeline
 
 ```mermaid

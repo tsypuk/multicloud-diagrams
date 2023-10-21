@@ -6,12 +6,11 @@ nav_order: 4
 date: 2023-08-07
 ---
 
-## Integration
-
+## Integration:
 
 ```mermaid
 flowchart LR
-subgraph .
+subgraph Engine
 A[multicloud-diagrams\n Framework] <-->| r/w | B[DRAWIO \n diagram];
 end
 
@@ -25,7 +24,11 @@ M[Mingrammer migration] --> A
 end
 ```
 
+## Implemented Integartions:
+
 - ``Diagrams as a Code`` approach is initially implemented from early versions. You can track syntax of resources declaration
 for [Core](../core-components), [AWS](../aws-components) and [On-Prem](../onprem-components) resources.
 - ingestion resources declared in [external ``YAML`` file](../core-components/yaml.html)
+- augment from UML sequence diagrams [mermaid UML format](../core-components/uml_mermaid.md)
+- augment from UML sequence diagrams (plantuml UML format) UNDER DEVELOPMENT
   
