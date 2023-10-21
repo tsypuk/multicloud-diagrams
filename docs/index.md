@@ -63,6 +63,40 @@ You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by
 
 ---
 
+## Project Evolution Timeline
+
+```mermaid
+gantt
+       dateFormat  YYYY-MM-DD
+       title MultiCloud Diagrams
+
+       section Core
+       aws components, multicloud core    :active, des1, 2023-05-01,2023-05-14
+       coords reload                      :active, des2, after des1, 2023-05-15
+       dynamodb from boto                 :done, des3, after des2, 2023-05-17
+       read from YAML                     :active, des4, after des3, 2023-05-17
+       added list                         :done, des5, after des4, 2023-06-15
+       more aws services, persistent coords :done, des6, after des5, 2023-07-24
+       github test runner, more aws services : active, des7, after des6, 2023-08-01
+       layers support, snapshot : done, des8, after des7, 2023-08-01
+       docs generated from tests, online documentation, landscape :active, des9, after des8, 2023-08-08
+       added map, customization  :done, des10, after des9, 2023-08-20
+       vpn, cert manager  :done, des11, after des10, 2023-09-17
+       load from UML  :crit, des12, after des11, 2023-09-30
+
+       section Releases
+       v.0.1.0              :done, a1, des1
+       v.0.2.0              :done, a2, des2
+       v.0.2.4              :done, a3, des3
+       v.0.2.5              :done, a3, des4
+       v.0.3.2              :done, a3, des5
+       v.0.3.9              :done, after des10, 3d
+       v.3.14               :after des11, 3d
+       v.3.15               :after des12, 3d
+```
+
+---
+
 ## Supported Cloud Provides:
 
 | provider                                                                                       | supported in ``multicloud-diagrams`` |
