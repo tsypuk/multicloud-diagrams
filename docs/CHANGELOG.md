@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.16](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.16) - 2023-10-21
+
+<small>[Compare with 0.3.15](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.15...0.3.16)</small>
+
+### Docs
+
+- add mermaid documentation ([6cd4811](https://github.com/tsypuk/multicloud-diagrams/commit/6cd48114bb7ca9139f213269648b54ce99ded556) by Roman Tsypuk).
+
+### Features
+
+- add project timeline ([d1faacf](https://github.com/tsypuk/multicloud-diagrams/commit/d1faacf99887567aaad0f1b33fb429cbe110557c) by Roman Tsypuk).
+
 ## [0.3.15](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.15) - 2023-09-30
 
 <small>[Compare with 0.3.14](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.14...0.3.15)</small>
