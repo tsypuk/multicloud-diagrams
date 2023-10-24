@@ -11,6 +11,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.17](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.17) - 2023-10-24
+
+<small>[Compare with 0.3.16](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.16...0.3.17)</small>
+
+### Docs
+
+- add EC2 instance ([ee72646](https://github.com/tsypuk/multicloud-diagrams/commit/ee726467b4197cac15a0192ced0d20df229d18ca) by Roman Tsypuk).
+- add Elastic Container Service ([7c1dd85](https://github.com/tsypuk/multicloud-diagrams/commit/7c1dd8568b627cb380ea15e9b972beb2215adef6) by Roman Tsypuk).
+- updated README ([8d53208](https://github.com/tsypuk/multicloud-diagrams/commit/8d5320866799fa72336a92e4ca655beaae070a6b) by Roman Tsypuk).
+
 ## [0.3.16](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.16) - 2023-10-21
 
 <small>[Compare with 0.3.15](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.15...0.3.16)</small>
