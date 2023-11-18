@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.18](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.18) - 2023-11-18
+
+<small>[Compare with 0.3.17](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.17...0.3.18)</small>
+
+### Docs
+
+- add plantuml parsing to docs ([c39a6c6](https://github.com/tsypuk/multicloud-diagrams/commit/c39a6c6552fd6915ab73a2b27f39ba27a375fe50) by Roman Tsypuk).
+
+### Features
+
+- add parsing of plantUML format ([4c5800c](https://github.com/tsypuk/multicloud-diagrams/commit/4c5800c6d9626f4236b50b183e48d5f6d653e9df) by Roman Tsypuk).
+
 ## [0.3.17](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.17) - 2023-10-24
 
 <small>[Compare with 0.3.16](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.16...0.3.17)</small>

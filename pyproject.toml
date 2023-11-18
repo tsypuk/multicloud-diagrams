@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "multicloud-diagrams"
-version = "0.3.17"
+version = "0.3.18"
 description = "Library to generate DRAW.IO compatible diagrams to represent Cloud infrastructure. AWS Cloud supported."
 authors = ["Roman Tsypuk <tsypuk.conf@gmail.com>"]
 license = "MIT"
