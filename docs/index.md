@@ -77,28 +77,31 @@ gantt
        title MultiCloud Diagrams
 
        section Core
-       aws components, multicloud core    :active, des1, 2023-05-01,2023-05-14
+       aws components, multicloud core    :crit, des1, 2023-05-01,2023-05-14
        coords reload                      :active, des2, after des1, 2023-05-15
        dynamodb from boto                 :done, des3, after des2, 2023-05-17
-       read from YAML                     :active, des4, after des3, 2023-05-17
+       read from YAML                     :crit, des4, after des3, 2023-05-17
        added list                         :done, des5, after des4, 2023-06-15
        more aws services, persistent coords :done, des6, after des5, 2023-07-24
        github test runner, more aws services : active, des7, after des6, 2023-08-01
-       layers support, snapshot : done, des8, after des7, 2023-08-01
-       docs generated from tests, online documentation, landscape :active, des9, after des8, 2023-08-08
+       layers support, snapshot : crit, des8, after des7, 2023-08-01
+       docs generated from tests, online documentation, landscape :active, des9, after des8, `2023-08-08`
        added map, customization  :done, des10, after des9, 2023-08-20
        vpn, cert manager  :done, des11, after des10, 2023-09-17
-       load from UML  :crit, des12, after des11, 2023-09-30
+       load from mermaid UML  :crit, des12, after des11, 2023-09-30
+       load from plant UML  :crit, des13, after des12, 2023-11-18
 
        section Releases
-       v.0.1.0              :done, a1, des1
-       v.0.2.0              :done, a2, des2
-       v.0.2.4              :done, a3, des3
-       v.0.2.5              :done, a3, des4
-       v.0.3.2              :done, a3, des5
-       v.0.3.9              :done, after des10, 3d
-       v.3.14               :after des11, 3d
-       v.3.15               :after des12, 3d
+       v.0.1.0              :done, 2023-05-14, 3d
+       v.0.2.0              :done, 2023-05-15, 3d
+       v.0.2.4              :done, 2023-05-15, 3d
+       v.0.2.5              :done, 2023-05-16, 3d
+       v.0.3.2              :done, 2023-06-15, 3d
+       v.0.3.9              :done, 2023-07-24, 3d
+       v.3.14               :after 2023-09-17, 3d
+       v.3.15               :after 2023-09-30, 3d
+       v.3.17               :after 2023-10-24, 3d
+       v.3.18               :after 2023-11-18, 3d
 ```
 
 ---
