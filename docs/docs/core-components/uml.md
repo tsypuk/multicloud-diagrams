@@ -1,12 +1,12 @@
 ---
 layout: default
-title: UML from mermaid
+title: UML mermaid/plantuml
 parent: CORE Components
 nav_order: 5
 date: 2023-10-21
 ---
 
-## UML ingestion from mermaid format
+## UML ingestion from mermaid/plantuml formats
 
 {: .d-inline-block .no_toc }
 
@@ -28,7 +28,7 @@ Record are rows of text.
 ---
 
 Latest ``Multicloud-diagrams`` feature allows automatically parse sequence UML diagrams, detect actors, actions and represent them on source Diagram as additional connected nodes with aliases.
-This makes documenting infrastructure even more robust.
+This makes documenting infrastructure even more robust. Framework automatically detects diagram type passed into invocation parameter whether it is ``plantuml`` or ``mermaid``.
 
 ## Source infrastructure Diagram:
 
@@ -54,8 +54,8 @@ Following UML diagram in ``mermaid`` format describes ``File upload`` stage:
 {% root_include ../samples/samples/file_upload.mermaid%}
 ```
 
-Next UML diagram in ``mermaid`` format describes ``Processing`` stage:
-- [file_upload.mermaid](../samples/samples/process.mermaid)
+Next UML diagram in ``plantUML`` format that describes next ``Processing`` stage:
+- [file_upload.mermaid](../samples/samples/process.plantUML)
 
 ### Mermaid UML rendered diagram:
 
@@ -66,7 +66,7 @@ Next UML diagram in ``mermaid`` format describes ``Processing`` stage:
 ### Advanced for Geeks(Mermaid UML sources):
 
 ```
-{% root_include ../samples/samples/process.mermaid%}
+{% root_include ../samples/samples/process.plantuml%}
 ```
 
 ## Ingesting UML metadata into multicloud-diagrams:
@@ -76,7 +76,7 @@ Next UML diagram in ``mermaid`` format describes ``Processing`` stage:
 As usual, we create a new diagram using ``Diagrams-As-a-Code`` or open exising one:
 
 ```python
-{% root_include ../samples/samples/aws_mermaid_uml.py 1:11%}
+{% root_include ../samples/samples/aws_plant_uml.py 1:11%}
 ```
 
 ### Define mappings 
