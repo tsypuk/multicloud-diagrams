@@ -1,0 +1,12 @@
+@startuml
+actor Donald
+    participant S3Bucket
+    participant LambdaFunction1
+    participant SNS
+    participant SQS
+
+    Donald->>S3Bucket: Put new file into S3 bucket
+    S3Bucket->>LambdaFunction1: LifeConfig Rule invokes lambda function
+    LambdaFunction1->>SNS: Send Event to SNS that file processing is finished
+    SNS->>SQS: Fanout Event to SQS
+@enduml
