@@ -110,6 +110,20 @@
     "version": "0.3.17",
     "desc": "Elastic Container Service"
   },
+  "ecs_service": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ecs_service;",
+    "width": "39",
+    "height": "48",
+    "version": "0.3.19",
+    "desc": "ECS Service"
+  },
+  "ecs_task": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.ecs_task;",
+    "width": "37",
+    "height": "48",
+    "version": "0.3.19",
+    "desc": "ECS Task"
+  },
   "ec2": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;",
     "width": "78",

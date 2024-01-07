@@ -3,7 +3,7 @@ layout: default
 title: Elastic Container Service
 parent: AWS Components
 nav_order: 3
-date: 2023-10-24
+date: 2024-01-07
 ---
 
 # Elastic Container Service
@@ -36,7 +36,7 @@ New (v0.3.17)
 ## drawio ecs vertex:
 
 ```xml
-<mxCell id="vertex:ecs:arn:aws:ecs:us-west-1:123456789012:service/fargate-cluster/service-fg-svc" parent="1" vertex="1">
+<mxCell id="vertex:ecs:arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster" parent="1" vertex="1">
     <mxGeometry width="78" height="78" as="geometry"/>
 </mxCell>
 ```
@@ -83,7 +83,7 @@ style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirectio
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:ecs:arn:aws:ecs:us-west-1:123456789012:service/fargate-cluster/service-fg-svc" value="&lt;b&gt;Name&lt;/b&gt;: Nginx_Container&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:ecs:us-west-1:123456789012:service/fargate-cluster/service-fg-svc&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;serviceName&lt;/b&gt;: service-fg-svc&lt;BR&gt;&lt;b&gt;clusterArn&lt;/b&gt;: arn:aws:ecs:eu-west-1:123456789012:cluster/rules-dev-fargate-cluster&lt;BR&gt;&lt;b&gt;serviceRegistries&lt;/b&gt;: [{'registryArn': 'arn:aws:servicediscovery:eu-west-1:123456789012:service/srv-t'}]&lt;BR&gt;&lt;b&gt;status&lt;/b&gt;: ACTIVE&lt;BR&gt;&lt;b&gt;desiredCount&lt;/b&gt;: 1&lt;BR&gt;&lt;b&gt;runningCount&lt;/b&gt;: 1&lt;BR&gt;&lt;b&gt;pendingCount&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;launchType&lt;/b&gt;: FARGATE&lt;BR&gt;&lt;b&gt;platformVersion&lt;/b&gt;: LATEST&lt;BR&gt;&lt;b&gt;platformFamily&lt;/b&gt;: Linux&lt;BR&gt;&lt;b&gt;taskDefinition&lt;/b&gt;: arn:aws:ecs:eu-west-1:123456789012:task-definition/service-fg-task:15" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;" parent="1" vertex="1">
+                <mxCell id="vertex:ecs:arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster" value="&lt;b&gt;Name&lt;/b&gt;: Prod-cluster&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;runningTasksCount&lt;/b&gt;: 50&lt;BR&gt;&lt;b&gt;pendingTasksCount&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;activeServicesCount&lt;/b&gt;: 50&lt;BR&gt;&lt;b&gt;status&lt;/b&gt;: ACTIVE" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>
