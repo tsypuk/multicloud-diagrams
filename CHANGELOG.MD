@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.19](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.19) - 2024-01-07
+
+<small>[Compare with 0.3.18](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.18...0.3.19)</small>
+
+### Docs
+
+- update release diagram ([8fd07b6](https://github.com/tsypuk/multicloud-diagrams/commit/8fd07b61f423ec7377e31eca94835462e4037aa6) by Roman Tsypuk).
+
+### Features
+
+- update landscape ([9f32c7f](https://github.com/tsypuk/multicloud-diagrams/commit/9f32c7fb051e69116497824ae17a3b86b51754af) by Roman Tsypuk).
+- add ecs task node ([2849514](https://github.com/tsypuk/multicloud-diagrams/commit/28495142cc2803a0dc7d98e007fc4dab17d6d4a8) by Roman Tsypuk).
+- add ecs service node ([a8651dc](https://github.com/tsypuk/multicloud-diagrams/commit/a8651dc3f4c2b775d9db8c4227c6eac73e76e7e8) by Roman Tsypuk).
+- add docker node ([e17ef32](https://github.com/tsypuk/multicloud-diagrams/commit/e17ef3276852389a5936ffc4f578dac71f0133fb) by Roman Tsypuk).
+
 ## [0.3.18](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.18) - 2023-11-18
 
 <small>[Compare with 0.3.17](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.17...0.3.18)</small>
