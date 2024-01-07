@@ -199,5 +199,73 @@
         "Signature algorithm": "SHA-256 with RSA"
       }
     }
+  },
+  {
+    "resource_type": "ecs_task",
+    "data": {
+      "arn": "arn:aws:ecs:eu-west-1:123456789012:task/fargate-cluster/562320f29dbdc94",
+      "name": "arn:aws:ecs:eu-west-1:123456789012:task/fargate-cluster/562320f29dbdc94",
+      "metadata": {
+        "ecs.cpu-architecture": "x86_64",
+        "availabilityZone": "eu-west-1a",
+        "connectivity": "CONNECTED",
+        "cpu": "512",
+        "memory": "2048",
+        "platformVersion": "1.4.0",
+        "platformFamily": "Linux",
+        "version": 5,
+        "ephemeralStorage_sizeInGiB": 20
+      }
+    }
+  },
+  {
+    "resource_type": "ecs_service",
+    "data": {
+      "arn": "arn:aws:ecs:us-west-1:123456789012:service/fargate-cluster/service-fg-svc",
+      "name": "Nginx_Service",
+      "metadata": {
+        "serviceName": "service-fg-svc",
+        "clusterArn": "arn:aws:ecs:eu-west-1:123456789012:cluster/rules-dev-fargate-cluster",
+        "serviceRegistries": "arn:aws:servicediscovery:eu-west-1:123456789012:service/srv-t",
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-west-1:123456789012:task-definition/service-fg-task:15"
+      }
+    }
+  },
+  {
+    "resource_type": "ecs",
+    "data": {
+      "arn": "arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster",
+      "name": "Prod-cluster",
+      "metadata": {
+        "runningTasksCount": 50,
+        "pendingTasksCount": 0,
+        "activeServicesCount": 50,
+        "status": "ACTIVE"
+      }
+    }
+  },
+  {
+    "resource_type": "docker",
+    "data": {
+      "arn": "arn:aws:ecs:eu-west-1:123456789012:container/cluster/777/123",
+      "name": "docker",
+      "metadata": {
+        "name": "my-app",
+        "image": "123456789012.dkr.ecr.eu-west-1.amazonaws.com/cluster/myapp:v2-22-00",
+        "imageDigest": "sha256:5562sfsf60a6d1aaed5c2bb227d3d4ec14c755bdb446349b",
+        "runtimeId": "56832234bec86b30201dbdc94-11149226",
+        "lastStatus": "RUNNING",
+        "healthStatus": "UNKNOWN",
+        "cpu": "512",
+        "memory": "1024"
+      }
+    }
   }
 ]

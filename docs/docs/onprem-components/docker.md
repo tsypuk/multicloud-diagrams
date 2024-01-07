@@ -46,7 +46,7 @@ New (v0.3.19)
 
 ### Style:
 ```html
-style="sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;"
+style="sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;labelBackgroundColor=none;"
 ```
 
 | attribute | value |
@@ -57,6 +57,7 @@ style="sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image
 |html| 1 |
 |image|  |
 |image| img/lib/mscae/Docker.svg |
+|labelBackgroundColor| none |
 |points| [] |
 |sketch| 0 |
 
@@ -75,7 +76,7 @@ style="sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:docker:arn:aws:ecs:eu-west-1:123456789012:container/cluster/777/123" value="&lt;b&gt;Name&lt;/b&gt;: docker&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: arn:aws:ecs:eu-west-1:123456789012:container/cluster/777/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;name&lt;/b&gt;: my-app&lt;BR&gt;&lt;b&gt;image&lt;/b&gt;: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/cluster/myapp:v2-22-00&lt;BR&gt;&lt;b&gt;imageDigest&lt;/b&gt;: sha256:5562sfsf60a6d1aaed5c2bb227d3d4ec14c755bdb446349b&lt;BR&gt;&lt;b&gt;runtimeId&lt;/b&gt;: 56832234bec86b30201dbdc94-11149226&lt;BR&gt;&lt;b&gt;lastStatus&lt;/b&gt;: RUNNING&lt;BR&gt;&lt;b&gt;healthStatus&lt;/b&gt;: UNKNOWN&lt;BR&gt;&lt;b&gt;cpu&lt;/b&gt;: 512&lt;BR&gt;&lt;b&gt;memory&lt;/b&gt;: 1024" style="sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;" parent="1" vertex="1">
+                <mxCell id="vertex:docker:arn:aws:ecs:eu-west-1:123456789012:container/cluster/777/123" value="&lt;b&gt;Name&lt;/b&gt;: docker&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: arn:aws:ecs:eu-west-1:123456789012:container/cluster/777/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;name&lt;/b&gt;: my-app&lt;BR&gt;&lt;b&gt;image&lt;/b&gt;: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/cluster/myapp:v2-22-00&lt;BR&gt;&lt;b&gt;imageDigest&lt;/b&gt;: sha256:5562sfsf60a6d1aaed5c2bb227d3d4ec14c755bdb446349b&lt;BR&gt;&lt;b&gt;runtimeId&lt;/b&gt;: 56832234bec86b30201dbdc94-11149226&lt;BR&gt;&lt;b&gt;lastStatus&lt;/b&gt;: RUNNING&lt;BR&gt;&lt;b&gt;healthStatus&lt;/b&gt;: UNKNOWN&lt;BR&gt;&lt;b&gt;cpu&lt;/b&gt;: 512&lt;BR&gt;&lt;b&gt;memory&lt;/b&gt;: 1024" style="sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="50" height="41" as="geometry"/>
                 </mxCell>
             </root>

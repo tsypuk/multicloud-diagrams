@@ -14,7 +14,7 @@
     "desc": "MQ Broker"
   },
   "docker": {
-    "style": "sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;",
+    "style": "sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;labelBackgroundColor=none;",
     "width": "50",
     "height": "41",
     "version": "0.3.19",
