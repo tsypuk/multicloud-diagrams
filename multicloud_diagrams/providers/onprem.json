@@ -12,6 +12,13 @@
     "height": "78",
     "version": "0.3.3",
     "desc": "MQ Broker"
+  },
+  "docker": {
+    "style": "sketch=0;aspect=fixed;html=1;points=[];align=left;image;fontSize=12;image=img/lib/mscae/Docker.svg;",
+    "width": "50",
+    "height": "41",
+    "version": "0.3.19",
+    "desc": "Docker container"
   }
 }
 
