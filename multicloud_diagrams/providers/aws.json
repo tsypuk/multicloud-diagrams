@@ -144,5 +144,12 @@
     "height": "42",
     "version": "0.3.20",
     "desc": "Redis"
+  },
+  "mysql": {
+    "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.mysql_db_instance;fillColor=#2E73B8;gradientColor=none;labelBackgroundColor=none;",
+    "width": "60",
+    "height": "64.5",
+    "version": "0.3.20",
+    "desc": "MySQL"
   }
 }
