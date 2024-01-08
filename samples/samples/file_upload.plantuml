@@ -3,7 +3,7 @@ actor Donald
     participant S3Bucket
     participant LambdaFunction1
     participant SNS
-    participant SQS
+    queue SQS
 
     Donald->>S3Bucket: Put new file into S3 bucket
     S3Bucket->>LambdaFunction1: LifeConfig Rule invokes lambda function

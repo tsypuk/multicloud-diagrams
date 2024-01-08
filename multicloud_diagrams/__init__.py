@@ -79,10 +79,15 @@ def extract_actors_and_participants(sequence_diagram):
         if strip.startswith('actor'):
             entity = line.strip().split()[1]
             actors.append(entity)
-        elif strip.startswith('participant'):
+        elif check_if_starts_with_uml_entity(strip):
             entity = line.strip().split()[1]
             participants.append(entity)
     return actors, participants
+
+
+def check_if_starts_with_uml_entity(strip: str):
+    uml_entities = ['participant', 'boundary', 'control', 'entity', 'database', 'collections', 'queue']
+    return any(strip.startswith(prefix) for prefix in uml_entities)
 
 
 # [Actor][Arrow][Actor]:Message text
@@ -514,11 +519,31 @@ class MultiCloudDiagrams:
                     node_type=vertex['type'],
                 )
             for edge in data['edges']:
-                self.add_link(
-                    src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
-                    dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
-                    action=[edge['label']]
-                )
+                match edge['link_type']:
+                    case 'bi':
+                        self.add_bidirectional_link(
+                            src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
+                            dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                            action=[edge['label']]
+                        )
+                    case 'uni':
+                        self.add_unidirectional_link(
+                            src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
+                            dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                            action=[edge['label']]
+                        )
+                    case 'rev':
+                        self.add_unidirectional_reverse_link(
+                            src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
+                            dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                            action=[edge['label']]
+                        )
+                    case _:
+                        self.add_link(
+                            src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
+                            dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                            action=[edge['label']]
+                        )
 
     def read_nodes_from_file(self, file_name: str):
         print(file_name)

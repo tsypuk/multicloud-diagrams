@@ -16,7 +16,7 @@ vertices:
     id: arn:aws:iam::123456789012:policy/prod-dynamo-policy
 edges:
 #  1st approach src/dst are linked to yaml vertices by name
-  - { src: prod-lambda-name, dst: role-lambda-name, label: HasRole, link_type: none }
+  - { src: prod-lambda-name, dst: role-lambda-name, label: HasRole, link_type: bi }
   - { src: role-lambda-name, dst: prod-cloudwatch-policy, label: Allow CloudWatch logs, link_type: none }
 #  2nd approach src/dst are linked by ARN (ARN can be present in same yaml, or loaded programmatically)
   - {
