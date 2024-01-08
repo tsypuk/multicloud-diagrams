@@ -137,5 +137,12 @@
     "height": "78",
     "version": "0.3.20",
     "desc": "Managed Kafka Service"
+  },
+  "redis": {
+    "style": "sketch=0;aspect=fixed;html=1;align=left;image;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;labelBackgroundColor=none;",
+    "width": "50",
+    "height": "42",
+    "version": "0.3.20",
+    "desc": "Redis"
   }
 }
