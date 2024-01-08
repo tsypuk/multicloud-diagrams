@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.20](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.20) - 2024-01-08
+
+<small>[Compare with 0.3.19](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.19...0.3.20)</small>
+
+### Features
+
+- add web client node ([938bc83](https://github.com/tsypuk/multicloud-diagrams/commit/938bc8357449fe9f94b9ff4809e7a97ea94d17ad) by Roman Tsypuk).
+- add mobile client node ([0a05e88](https://github.com/tsypuk/multicloud-diagrams/commit/0a05e887c3b29e133f362095d0142d84ed84bff5) by Roman Tsypuk).
+- add rectangle core component ([766b83a](https://github.com/tsypuk/multicloud-diagrams/commit/766b83a79ad3a39e00c3d0b3e32aba6b30c8549e) by Roman Tsypuk).
+- add mysql node ([feabb36](https://github.com/tsypuk/multicloud-diagrams/commit/feabb36bb13932c5c9fb9d150a3ce42f629854c3) by Roman Tsypuk).
+- add redis node ([09c2085](https://github.com/tsypuk/multicloud-diagrams/commit/09c2085f9cce32c4851b96b66a5aa5c3ba334783) by Roman Tsypuk).
+- plantuml add bi/re/none arrows ([a65eec1](https://github.com/tsypuk/multicloud-diagrams/commit/a65eec1f4c7486835a32610722a5177dca6edbcf) by Roman Tsypuk).
+- add managed kafka service ([5eaa391](https://github.com/tsypuk/multicloud-diagrams/commit/5eaa391149292ffd6963695bc99632ffa4a992aa) by Roman Tsypuk).
+- extend plantuml entities with 'participant', 'boundary', 'control', 'entity', 'database', 'collections', 'queue' ([dccb771](https://github.com/tsypuk/multicloud-diagrams/commit/dccb7710a8aec99f6fd5f326146858929b66ce9c) by Roman Tsypuk).
+
 ## [0.3.19](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.19) - 2024-01-07
 
 <small>[Compare with 0.3.18](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.18...0.3.19)</small>
