@@ -37,5 +37,12 @@
     "desc": "Actor",
     "width": "30",
     "height": "60"
+  },
+  "rectangle": {
+    "style": "rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;",
+    "width": "120",
+    "height": "60",
+    "version": "0.3.20",
+    "desc": "Block Rectangle"
   }
 }
