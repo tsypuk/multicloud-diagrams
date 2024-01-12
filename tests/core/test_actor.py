@@ -14,7 +14,8 @@ class TestCoreVertexInIsolation(TestRendering):
         # when
         mcd.add_vertex(node_id="777abc",
                        node_name='User',
-                       node_type='actor')
+                       node_type='actor',
+                       hide_id=True)
 
         # then
         # docs

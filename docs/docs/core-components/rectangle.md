@@ -3,7 +3,7 @@ layout: default
 title: Block Rectangle
 parent: CORE Components
 nav_order: 3
-date: 2024-01-08
+date: 2024-01-12
 ---
 
 # Block Rectangle
@@ -71,7 +71,7 @@ style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;"
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:rectangle:rect1" value="&lt;b&gt;Name&lt;/b&gt;: microservice1&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: rect1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="vertex:rectangle:rect1" value="&lt;b&gt;Name&lt;/b&gt;: microservice1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>

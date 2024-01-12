@@ -3,7 +3,7 @@ layout: default
 title: WEB Client
 parent: CORE Components
 nav_order: 3
-date: 2024-01-08
+date: 2024-01-12
 ---
 
 # WEB Client
@@ -84,7 +84,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:web_client:web" value="&lt;b&gt;Name&lt;/b&gt;: Chrome v.52&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: web" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="vertex:web_client:web" value="&lt;b&gt;Name&lt;/b&gt;: Chrome v.52" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="78" height="76" as="geometry"/>
                 </mxCell>
             </root>

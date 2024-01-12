@@ -176,11 +176,11 @@ class MultiCloudDiagrams:
     supported_vertex = {}
     provider_services = {}
 
-    def assemble_node_name(self, node_name, node_id, metadata, node_type, hide_id=False):
+    def assemble_node_name(self, node_name, node_id, metadata, node_type, hide_id):
         metadata = f"<BR>-----------<BR>{stringify_dict(metadata)}" if metadata else ""
         identifier = 'ID'
-        if not hide_id:
-            return f'<b>Name</b>: {node_name}<b>'
+        if hide_id:
+            return f'<b>Name</b>: {node_name}'
 
         if 'aws' == self.get_provider_by_service_name(node_type):
             identifier = 'ARN'

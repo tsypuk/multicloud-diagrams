@@ -3,7 +3,7 @@ layout: default
 title: Mobile Client
 parent: CORE Components
 nav_order: 3
-date: 2024-01-08
+date: 2024-01-12
 ---
 
 # Mobile Client
@@ -84,7 +84,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColo
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:mobile_client:mobile" value="&lt;b&gt;Name&lt;/b&gt;: Android&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: mobile" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile_client;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="vertex:mobile_client:mobile" value="&lt;b&gt;Name&lt;/b&gt;: Android" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile_client;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="60" height="60" as="geometry"/>
                 </mxCell>
             </root>

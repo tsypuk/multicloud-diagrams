@@ -3,7 +3,7 @@ layout: default
 title: Actor
 parent: CORE Components
 nav_order: 3
-date: 2023-09-27
+date: 2024-01-12
 ---
 
 # Actor
@@ -72,7 +72,7 @@ style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outl
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:actor:777abc" value="&lt;b&gt;Name&lt;/b&gt;: User&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: 777abc" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                <mxCell id="vertex:actor:777abc" value="&lt;b&gt;Name&lt;/b&gt;: User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
                     <mxGeometry width="30" height="60" as="geometry"/>
                 </mxCell>
             </root>
