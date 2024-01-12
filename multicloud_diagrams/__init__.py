@@ -176,9 +176,12 @@ class MultiCloudDiagrams:
     supported_vertex = {}
     provider_services = {}
 
-    def assemble_node_name(self, node_name, node_id, metadata, node_type):
+    def assemble_node_name(self, node_name, node_id, metadata, node_type, hide_id=False):
         metadata = f"<BR>-----------<BR>{stringify_dict(metadata)}" if metadata else ""
         identifier = 'ID'
+        if not hide_id:
+            return f'<b>Name</b>: {node_name}<b>'
+
         if 'aws' == self.get_provider_by_service_name(node_type):
             identifier = 'ARN'
         return f'<b>Name</b>: {node_name}<BR><b>{identifier}</b>: {node_id}{metadata}'
@@ -287,7 +290,7 @@ class MultiCloudDiagrams:
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
 
     def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, style: dict = None,
-                   x: int = None, y: int = None) -> str:
+                   x: int = None, y: int = None, hide_id: bool = False) -> str:
         if metadata is None:
             metadata = {}
         if style is None:
@@ -311,7 +314,7 @@ class MultiCloudDiagrams:
             mx_cell = Et.SubElement(self.root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{node_id}',
-                                    value=self.assemble_node_name(node_name, node_id, metadata, node_type),
+                                    value=self.assemble_node_name(node_name, node_id, metadata, node_type, hide_id),
                                     style=f"{node_template['style']}",
                                     parent=parent_id,
                                     vertex="1")
