@@ -133,3 +133,23 @@ class TestCoreVertexInIsolation(TestRendering):
         # then
         # docs
         self.mcd = mcd
+
+    def test_no_id(self):
+        # docs
+        self.node_type = 'color_no_id'
+
+        # given
+        mcd = MultiCloudDiagrams()
+
+        # when
+        sns_arn = 'arn:aws:sns:eu-west-1:123456789012:internal.fifo'
+        metadata = {
+            "Owner": 123456789012,
+            "SubscriptionsConfirmed": 3,
+            "SubscriptionsPending": 0
+        }
+        mcd.add_vertex(node_id=sns_arn, node_name='internal.fifo', node_type='sns', metadata=metadata, hide_id=True)
+
+        # then
+        # docs
+        self.mcd = mcd

@@ -135,3 +135,20 @@ When specifying ``gradient fill`` it is mandatory to set 3 style params:
 {: .no_toc }
 
 ![layers](output/jpg/color_table.jpg)
+
+## Hiding NODE ID information when rendering
+
+{: .highlight }
+Extra parameter, **hide_id = true** allows to render only node name avoiding any additional information.
+
+## Code Snippet:
+{: .no_toc }
+
+```python
+{% root_include_snippet ../tests/core/test_colors.py no_id%}
+```
+
+## Rendering
+{: .no_toc }
+
+![layers](output/jpg/color_no_id.jpg)
