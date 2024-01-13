@@ -6,7 +6,13 @@ actor Donald
     queue SQS
 
     Donald->>S3Bucket: Put new file into S3 bucket
+    note left: Single line note on the left
     S3Bucket->>LambdaFunction1: LifeConfig Rule invokes lambda function
     LambdaFunction1->>SNS: Send Event to SNS that file processing is finished
+    note right
+    multiline
+    note
+    added on the right
+    end note
     SNS->>SQS: Fanout Event to SQS
 @enduml

@@ -464,6 +464,7 @@ class MultiCloudDiagrams:
                     mx_geometry.set('as', 'offset')
 
                     self.update_vertex_coords_from_prev_version(mx_geometry, f'label:{src_node_id}:to:{dst_node_id}')
+                    return edge_id
 
                     # </mxGeometry>
                     # </mxCell>
@@ -483,8 +484,8 @@ class MultiCloudDiagrams:
         self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
 
     def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, edge_style=None, label_style=None):
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id,
-                            prefix=layer_name)
+        return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id,
+                                   prefix=layer_name)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
@@ -512,7 +513,7 @@ class MultiCloudDiagrams:
             self.add_link(src_node_id=link['sourceNodeID'], dst_node_id=link['destinationNodeID'])
         return
 
-    def augment_from_yaml(self, yaml_name: str):
+    def augment_from_yaml(self, yaml_name: str, hide_id: bool = False):
         with open(yaml_name, 'r') as file:
             data = yaml.safe_load(file)
             for vertex in data['vertices']:
@@ -520,6 +521,7 @@ class MultiCloudDiagrams:
                     node_id=vertex['id'],
                     node_name=vertex['name'],
                     node_type=vertex['type'],
+                    hide_id=hide_id
                 )
             for edge in data['edges']:
                 if edge['link_type'] == 'bi':
@@ -637,11 +639,52 @@ class MultiCloudDiagrams:
         self.add_layer(base_name)
         self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
+    def add_note_to_existing_edge(self, current_note, prev_edge):
+        pass
+
     def extract_messages_from_uml(self, sequence_diagram, actors, participants, layer_name, edge_style, label_style):
         lines = sequence_diagram.split('\n')
         action_id = 0
+
+        note_pattern = re.compile(r'note\s+(left|right)\s*:\s*(.+)')
+        multiline_note_pattern = re.compile(r'note\s+(left|right)')
+        end_note_pattern = re.compile(r'end\s+note\s*')
+
+        current_note = ''
+        in_note_section = False
+        prev_edge = None
         for line in lines:
             strip = line.strip()
+
+            # Single-line note
+            note_match = note_pattern.match(strip)
+            if note_match:
+                # note_type = note_match.group(1)
+                current_note = note_match.group(2).strip()
+                print(f'NOTE === {current_note} ===')
+                # add current_note to last edge (prev_edge)
+                current_note = ''
+                continue
+
+            # Multi-line note
+            note_match = multiline_note_pattern.match(strip)
+            if note_match:
+                in_note_section = True
+                continue
+
+            end_note_match = end_note_pattern.match(strip)
+            if end_note_match:
+                print(f'NOTE ==={current_note} ===')
+                # add current_note to last edge (prev_edge)
+                self.add_note_to_existing_edge(current_note, prev_edge)
+                current_note = ''
+                in_note_section = False
+                continue
+
+            if in_note_section:
+                current_note = current_note + '\n' + strip
+                continue
+
             entity = starts_with_any(strip, actors, participants)
             if (entity == 'actor') | (entity == 'participant'):
                 data = extract_info(line)
@@ -650,7 +693,7 @@ class MultiCloudDiagrams:
                 try:
                     # connect vertex of actor1 actor2 using arrow and message
                     action_id = action_id + 1
-                    self.add_link_uml(
+                    prev_edge = self.add_link_uml(
                         self.actors_to_nodes[data[0]],
                         self.actors_to_nodes[data[1]],
                         action=[f'{action_id}: {data[2]}'],
@@ -660,9 +703,9 @@ class MultiCloudDiagrams:
                     print('No such node')
                     if entity == 'actor':
                         node_id = generate_hash(data[0])
-                        self.add_vertex(node_id=node_id, node_name=data[0], node_type='actor', layer_name=layer_name)
+                        self.add_vertex(node_id=node_id, node_name=data[0], node_type='actor', layer_name=layer_name, hide_id=True)
 
-                        self.add_link_uml(
+                        prev_edge = self.add_link_uml(
                             f'actor:{node_id}',
                             self.actors_to_nodes[data[1]],
                             action=[f'{action_id}: {data[2]}'],
