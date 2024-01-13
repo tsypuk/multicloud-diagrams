@@ -427,18 +427,19 @@ class MultiCloudDiagrams:
                 customize(node_template=node_template, style=edge_style)
 
                 parent_id = str(self.get_layer_id(layer_name, layer_id))
-                mx_cell = Et.SubElement(self.root,
-                                        'mxCell',
-                                        id=edge_id,
-                                        style=node_template['style'],
-                                        parent=parent_id,
-                                        source=f'vertex:{src_node_id}',
-                                        target=f'vertex:{dst_node_id}',
-                                        edge="2")
+                mx_cell_edge = Et.SubElement(
+                    self.root,
+                    'mxCell',
+                    id=edge_id,
+                    style=node_template['style'],
+                    parent=parent_id,
+                    source=f'vertex:{src_node_id}',
+                    target=f'vertex:{dst_node_id}',
+                    edge="2")
 
                 if self.debug_mode:
-                    mx_cell.insert(0, Et.Comment(f'edge:{src_node_id}:to:{dst_node_id}'))
-                mx_geometry = Et.SubElement(mx_cell, 'mxGeometry')
+                    mx_cell_edge.insert(0, Et.Comment(f'edge:{src_node_id}:to:{dst_node_id}'))
+                mx_geometry = Et.SubElement(mx_cell_edge, 'mxGeometry')
                 mx_geometry.set('as', 'geometry')
 
                 # Add label to edge
@@ -464,7 +465,7 @@ class MultiCloudDiagrams:
                     mx_geometry.set('as', 'offset')
 
                     self.update_vertex_coords_from_prev_version(mx_geometry, f'label:{src_node_id}:to:{dst_node_id}')
-                    return edge_id
+                    return mx_cell_edge
 
                     # </mxGeometry>
                     # </mxCell>
@@ -481,7 +482,7 @@ class MultiCloudDiagrams:
             'startArrow': 'none',
             'endArrow': 'none'
         }
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
+        return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
 
     def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, edge_style=None, label_style=None):
         return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id,
@@ -492,21 +493,21 @@ class MultiCloudDiagrams:
             'startArrow': 'classic',
             'endArrow': 'classic'
         }
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
+        return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
 
     def add_unidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
             'startArrow': 'none',
             'endArrow': 'classic'
         }
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
+        return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
 
     def add_unidirectional_reverse_link(self, src_node_id, dst_node_id, action=None):
         style = {
             'startArrow': 'classic',
             'endArrow': 'none'
         }
-        self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
+        return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, edge_style=style, labels=action)
 
     def add_link_list(self, links):
         for link in links:
@@ -639,8 +640,17 @@ class MultiCloudDiagrams:
         self.add_layer(base_name)
         self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
-    def add_note_to_existing_edge(self, current_note, prev_edge):
-        pass
+    def add_note_to_existing_edge(self, current_note, prev_edge, prefix=None):
+        if (prefix):
+            id = prev_edge.attrib['id'].replace(f'edge_{prefix}:', '')
+            for mxLabel in self.root:
+                if mxLabel.attrib['id'] == f'label_{prefix}:{id}':
+                    mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
+        else:
+            id = prev_edge.attrib['id'].replace('edge:', '')
+            for mxLabel in self.root:
+                if mxLabel.attrib['id'] == f'label:{id}':
+                    mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
 
     def extract_messages_from_uml(self, sequence_diagram, actors, participants, layer_name, edge_style, label_style):
         lines = sequence_diagram.split('\n')
@@ -663,6 +673,7 @@ class MultiCloudDiagrams:
                 current_note = note_match.group(2).strip()
                 print(f'NOTE === {current_note} ===')
                 # add current_note to last edge (prev_edge)
+                self.add_note_to_existing_edge(current_note, prev_edge, layer_name)
                 current_note = ''
                 continue
 
@@ -676,13 +687,16 @@ class MultiCloudDiagrams:
             if end_note_match:
                 print(f'NOTE ==={current_note} ===')
                 # add current_note to last edge (prev_edge)
-                self.add_note_to_existing_edge(current_note, prev_edge)
+                self.add_note_to_existing_edge(current_note, prev_edge, layer_name)
                 current_note = ''
                 in_note_section = False
                 continue
 
             if in_note_section:
-                current_note = current_note + '\n' + strip
+                if (len(current_note) > 0):
+                    current_note = current_note + '<BR>' + strip
+                else:
+                    current_note = strip
                 continue
 
             entity = starts_with_any(strip, actors, participants)

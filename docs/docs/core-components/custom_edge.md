@@ -146,3 +146,18 @@ that has ``style`` parameter to customize any style.
 {: .no_toc }
 
 ![layers](output/jpg/connection_edgeStyle.jpg)
+
+
+# Add additional note to existing Label of existing Edge
+
+### Code Snippet:
+{: .no_toc }
+
+```python
+{% root_include_snippet ../tests/test_adding_note.py note%}
+```
+
+## Rendering:
+{: .no_toc }
+
+![layers](output/jpg/note.jpg)
