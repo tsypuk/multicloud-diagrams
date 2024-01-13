@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.21](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.21) - 2024-01-13
+
+<small>[Compare with 0.3.20](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.20...0.3.21)</small>
+
+### Features
+
+- add rendering of additional notes; append additional note to existing edge label ([79faefb](https://github.com/tsypuk/multicloud-diagrams/commit/79faefb4578095bc454d42d431e8c0911ec2b433) by Roman Tsypuk).
+- add parsing single and multi-line notes from UML sequence diagram ([5fdb194](https://github.com/tsypuk/multicloud-diagrams/commit/5fdb194e5843ad1b88d397d9e8fa19deb3ff1795) by Roman Tsypuk).
+- update colors to support hide_id for nodes ([358e853](https://github.com/tsypuk/multicloud-diagrams/commit/358e853af6a4ada05c9af5695e19b47600604a15) by Roman Tsypuk).
+- propagate hide_id to actor, mobile_client, web_client, rectangle ([f5842b1](https://github.com/tsypuk/multicloud-diagrams/commit/f5842b1cea31db29abf31e69d19cc6335bb35d77) by Roman Tsypuk).
+- add hide_id param on node rendering ([a928a7e](https://github.com/tsypuk/multicloud-diagrams/commit/a928a7ea67836e643a56162749c4a125e9131a67) by Roman Tsypuk).
+
 ## [0.3.20](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.20) - 2024-01-08
 
 <small>[Compare with 0.3.19](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.19...0.3.20)</small>
