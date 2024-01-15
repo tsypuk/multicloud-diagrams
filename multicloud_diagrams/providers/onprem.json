@@ -19,6 +19,20 @@
     "height": "41",
     "version": "0.3.19",
     "desc": "Docker container"
+  },
+  "github_code": {
+    "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=left;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;",
+    "width": "50",
+    "height": "50",
+    "version": "0.3.22",
+    "desc": "Github code"
+  },
+  "git_repository": {
+    "style": "verticalLabelPosition=bottom;html=1;verticalAlign=top;align=left;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.git_repository;",
+    "width": "50",
+    "height": "50",
+    "version": "0.3.22",
+    "desc": "Git Repository"
   }
 }
 

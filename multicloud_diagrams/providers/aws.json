@@ -151,5 +151,19 @@
     "height": "64.5",
     "version": "0.3.20",
     "desc": "MySQL"
+  },
+  "ecr": {
+    "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.ecr;fillColor=#F58534;gradientColor=none;",
+    "width": "69",
+    "height": "72",
+    "version": "0.3.22",
+    "desc": "Elastic Container Registry"
+  },
+  "ec2": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.22",
+    "desc": "Elastic Compute Cloud"
   }
 }
