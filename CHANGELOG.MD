@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.22](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.22) - 2024-01-15
+
+<small>[Compare with 0.3.21](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.21...0.3.22)</small>
+
+### Features
+
+- add elastic search nodes ([e5d9740](https://github.com/tsypuk/multicloud-diagrams/commit/e5d97400bb82314babfcb2a7c59e22a354915bca) by Roman Tsypuk).
+- add tests, documentation for ecr, github_code, git_repository nodes ([675d703](https://github.com/tsypuk/multicloud-diagrams/commit/675d703349c544d6719e57df8502ca128551235f) by Roman Tsypuk).
+- add ec2, ecr, github_code, git_repository nodes ([719964c](https://github.com/tsypuk/multicloud-diagrams/commit/719964cf5030ddcedd3323ec241d0a4817625111) by Roman Tsypuk).
+
 ## [0.3.21](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.21) - 2024-01-13
 
 <small>[Compare with 0.3.20](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.20...0.3.21)</small>
