@@ -158,5 +158,12 @@
     "height": "72",
     "version": "0.3.22",
     "desc": "Elastic Container Registry"
-  }
+  },
+  "elasticsearch_service": {
+  "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.elasticsearch_service;fillColor=#F58534;gradientColor=none;",
+  "width": "67.5",
+  "height": "81",
+  "version": "0.3.22",
+  "desc": "Elastic Search Service"
+}
 }
