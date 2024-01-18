@@ -484,9 +484,9 @@ class MultiCloudDiagrams:
         }
         return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=style, layer_name=layer_name, layer_id=layer_id)
 
-    def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, edge_style=None, label_style=None):
+    def add_link_uml(self, src_node_id, dst_node_id, action=None, layer_name=None, layer_id=None, edge_style=None, label_style=None, prefix=None):
         return self.add_connection(src_node_id=src_node_id, dst_node_id=dst_node_id, labels=action, edge_style=edge_style, label_style=label_style, layer_name=layer_name, layer_id=layer_id,
-                                   prefix=layer_name)
+                                   prefix=prefix)
 
     def add_bidirectional_link(self, src_node_id, dst_node_id, action=None):
         style = {
@@ -663,6 +663,7 @@ class MultiCloudDiagrams:
         current_note = ''
         in_note_section = False
         prev_edge = None
+        prefix_counter = 0
         for line in lines:
             strip = line.strip()
 
@@ -707,12 +708,14 @@ class MultiCloudDiagrams:
                 try:
                     # connect vertex of actor1 actor2 using arrow and message
                     action_id = action_id + 1
+                    prefix_counter = prefix_counter + 1
+
                     prev_edge = self.add_link_uml(
                         self.actors_to_nodes[data[0]],
                         self.actors_to_nodes[data[1]],
                         action=[f'{action_id}: {data[2]}'],
                         layer_name=layer_name,
-                        edge_style=edge_style, label_style=label_style)
+                        edge_style=edge_style, label_style=label_style, prefix=prefix_counter)
                 except KeyError:
                     print('No such node')
                     if entity == 'actor':
@@ -724,7 +727,7 @@ class MultiCloudDiagrams:
                             self.actors_to_nodes[data[1]],
                             action=[f'{action_id}: {data[2]}'],
                             layer_name=layer_name,
-                            edge_style=edge_style, label_style=label_style)
+                            edge_style=edge_style, label_style=label_style, prefix=prefix_counter)
 
     def read_uml_mappings(self, yaml_name: str):
         self.actors_to_nodes = {}
