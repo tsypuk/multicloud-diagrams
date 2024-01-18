@@ -1,0 +1,20 @@
+@startuml
+actor Donald
+    participant stage1
+    participant S3Bucket
+    participant stage2
+    participant SNS
+    queue SQS
+
+    Donald->>stage1: Put new file into S3 bucket
+    stage1->>S3Bucket: Put new file into S3 bucket
+    note left: Single line note on the left
+    Donald->>stage2: Put new file into S3 bucket
+    stage2->>SNS: Send Event to SNS that file processing is finished
+    note right
+    multiline
+    note
+    added on the right
+    end note
+    SNS->>SQS: Fanout Event to SQS
+@enduml
