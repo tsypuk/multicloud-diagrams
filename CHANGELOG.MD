@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.23](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.23) - 2024-01-18
+
+<small>[Compare with 0.3.22](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.22...0.3.23)</small>
+
+### Features
+
+- add plantuml parsing for case on 2 disctinct participants are mapped to same entity ([d13c55a](https://github.com/tsypuk/multicloud-diagrams/commit/d13c55ab934ca03dde931d447d41e8125ab8f9fb) by Roman Tsypuk).
+
 ## [0.3.22](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.22) - 2024-01-15
 
 <small>[Compare with 0.3.21](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.21...0.3.22)</small>
