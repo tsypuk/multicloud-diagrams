@@ -674,7 +674,7 @@ class MultiCloudDiagrams:
                 current_note = note_match.group(2).strip()
                 print(f'NOTE === {current_note} ===')
                 # add current_note to last edge (prev_edge)
-                self.add_note_to_existing_edge(current_note, prev_edge, layer_name)
+                self.add_note_to_existing_edge(current_note, prev_edge, prefix_counter)
                 current_note = ''
                 continue
 
@@ -688,7 +688,7 @@ class MultiCloudDiagrams:
             if end_note_match:
                 print(f'NOTE ==={current_note} ===')
                 # add current_note to last edge (prev_edge)
-                self.add_note_to_existing_edge(current_note, prev_edge, layer_name)
+                self.add_note_to_existing_edge(current_note, prev_edge, prefix_counter)
                 current_note = ''
                 in_note_section = False
                 continue

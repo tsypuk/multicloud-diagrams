@@ -7,9 +7,11 @@ actor Donald
     queue SQS
 
     Donald->>stage1: Put new file into S3 bucket
+    note left: First NOTE
     stage1->>S3Bucket: Put new file into S3 bucket
     note left: Single line note on the left
     Donald->>stage2: Put new file into S3 bucket
+    note left: Second NOTE
     stage2->>SNS: Send Event to SNS that file processing is finished
     note right
     multiline
