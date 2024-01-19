@@ -716,7 +716,7 @@ class MultiCloudDiagrams:
                         self.actors_to_nodes[data[1]],
                         action=[f'{action_id}: {data[2]}'],
                         layer_name=layer_name,
-                        edge_style=edge_style, label_style=label_style, prefix=prefix_counter)
+                        edge_style=edge_style, label_style=label_style, prefix=f'{layer_name}_{prefix_counter}')
                 except KeyError:
                     print('No such node')
                     if entity == 'actor':
@@ -728,7 +728,7 @@ class MultiCloudDiagrams:
                             self.actors_to_nodes[data[1]],
                             action=[f'{action_id}: {data[2]}'],
                             layer_name=layer_name,
-                            edge_style=edge_style, label_style=label_style, prefix=prefix_counter)
+                            edge_style=edge_style, label_style=label_style, prefix=f'{layer_name}_{prefix_counter}')
 
     def read_uml_mappings(self, yaml_name: str):
         self.actors_to_nodes = {}

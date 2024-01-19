@@ -1,0 +1,9 @@
+@startuml
+actor Donald
+    participant stage1
+    participant S3Bucket
+
+    Donald->>stage1: Put another file into S3 bucket
+    stage1->>S3Bucket: Put another file into S3 bucket
+    note left: Single line note on the left
+@enduml
