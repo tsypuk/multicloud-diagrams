@@ -638,6 +638,7 @@ class MultiCloudDiagrams:
         # create Layer with UML file name
         base_name = os.path.splitext(os.path.basename(file_name))[0]
         self.add_layer(base_name)
+        self.add_layer('actors')
         self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
     def add_note_to_existing_edge(self, current_note, prev_edge, prefix=None):
@@ -720,7 +721,7 @@ class MultiCloudDiagrams:
                     print('No such node')
                     if entity == 'actor':
                         node_id = generate_hash(data[0])
-                        self.add_vertex(node_id=node_id, node_name=data[0], node_type='actor', layer_name=layer_name, hide_id=True)
+                        self.add_vertex(node_id=node_id, node_name=data[0], node_type='actor', layer_name='actors', hide_id=True)
 
                         prev_edge = self.add_link_uml(
                             f'actor:{node_id}',
