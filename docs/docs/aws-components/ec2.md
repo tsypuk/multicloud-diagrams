@@ -46,7 +46,7 @@ New (v0.3.17)
 
 ### Style:
 ```html
-style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;"
+style="sketch=0;outlineConnect=0;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;"
 ```
 
 | attribute | value |
@@ -55,7 +55,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradien
 |aspect| fixed |
 |dashed| 0 |
 |fillColor| #D05C17 |
-|fontColor| #232F3E |
 |fontSize| 12 |
 |fontStyle| 0 |
 |gradientColor| #F78E04 |
@@ -84,7 +83,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradien
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:ec2:arn:i-1234567890abcdef0" value="&lt;b&gt;Name&lt;/b&gt;: Test Instance&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:i-1234567890abcdef0&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;AmiLaunchIndex&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;ImageId&lt;/b&gt;: ami-0abcdef1234567890&lt;BR&gt;&lt;b&gt;InstanceId&lt;/b&gt;: i-1234567890abcdef0&lt;BR&gt;&lt;b&gt;InstanceType&lt;/b&gt;: t3.nano&lt;BR&gt;&lt;b&gt;KeyName&lt;/b&gt;: my-key-pair&lt;BR&gt;&lt;b&gt;LaunchTime&lt;/b&gt;: 2022-11-15T10:48:59+00:00&lt;BR&gt;&lt;b&gt;Monitoring&lt;/b&gt;: {'State': 'disabled'}&lt;BR&gt;&lt;b&gt;Placement&lt;/b&gt;: {'AvailabilityZone': 'us-east-2a', 'GroupName': '', 'Tenancy': 'default'}&lt;BR&gt;&lt;b&gt;PrivateDnsName&lt;/b&gt;: ip-10-0-0-157.us-east-2.compute.internal&lt;BR&gt;&lt;b&gt;PrivateIpAddress&lt;/b&gt;: 10-0-0-157&lt;BR&gt;&lt;b&gt;ProductCodes&lt;/b&gt;: []&lt;BR&gt;&lt;b&gt;PublicDnsName&lt;/b&gt;: ec2-34-253-223-13.us-east-2.compute.amazonaws.com&lt;BR&gt;&lt;b&gt;PublicIpAddress&lt;/b&gt;: 34.253.223.13&lt;BR&gt;&lt;b&gt;SubnetId&lt;/b&gt;: subnet-04a636d18e83cfacb&lt;BR&gt;&lt;b&gt;VpcId&lt;/b&gt;: vpc-1234567890abcdef0&lt;BR&gt;&lt;b&gt;Architecture&lt;/b&gt;: x86_64&lt;BR&gt;&lt;b&gt;Hypervisor&lt;/b&gt;: xen" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;" parent="1" vertex="1">
+                <mxCell id="vertex:ec2:arn:i-1234567890abcdef0" value="&lt;b&gt;Name&lt;/b&gt;: Test Instance&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:i-1234567890abcdef0&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;AmiLaunchIndex&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;ImageId&lt;/b&gt;: ami-0abcdef1234567890&lt;BR&gt;&lt;b&gt;InstanceId&lt;/b&gt;: i-1234567890abcdef0&lt;BR&gt;&lt;b&gt;InstanceType&lt;/b&gt;: t3.nano&lt;BR&gt;&lt;b&gt;KeyName&lt;/b&gt;: my-key-pair&lt;BR&gt;&lt;b&gt;LaunchTime&lt;/b&gt;: 2022-11-15T10:48:59+00:00&lt;BR&gt;&lt;b&gt;Monitoring&lt;/b&gt;: {'State': 'disabled'}&lt;BR&gt;&lt;b&gt;Placement&lt;/b&gt;: {'AvailabilityZone': 'us-east-2a', 'GroupName': '', 'Tenancy': 'default'}&lt;BR&gt;&lt;b&gt;PrivateDnsName&lt;/b&gt;: ip-10-0-0-157.us-east-2.compute.internal&lt;BR&gt;&lt;b&gt;PrivateIpAddress&lt;/b&gt;: 10-0-0-157&lt;BR&gt;&lt;b&gt;ProductCodes&lt;/b&gt;: []&lt;BR&gt;&lt;b&gt;PublicDnsName&lt;/b&gt;: ec2-34-253-223-13.us-east-2.compute.amazonaws.com&lt;BR&gt;&lt;b&gt;PublicIpAddress&lt;/b&gt;: 34.253.223.13&lt;BR&gt;&lt;b&gt;SubnetId&lt;/b&gt;: subnet-04a636d18e83cfacb&lt;BR&gt;&lt;b&gt;VpcId&lt;/b&gt;: vpc-1234567890abcdef0&lt;BR&gt;&lt;b&gt;Architecture&lt;/b&gt;: x86_64&lt;BR&gt;&lt;b&gt;Hypervisor&lt;/b&gt;: xen" style="sketch=0;outlineConnect=0;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>

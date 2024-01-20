@@ -46,7 +46,7 @@ New (v0.2.0)
 
 ### Style:
 ```html
-style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;"
+style="sketch=0;outlineConnect=0;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;"
 ```
 
 | attribute | value |
@@ -55,7 +55,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradien
 |aspect| fixed |
 |dashed| 0 |
 |fillColor| #BC1356 |
-|fontColor| #232F3E |
 |fontSize| 12 |
 |fontStyle| 0 |
 |gradientColor| #FF4F8B |
@@ -84,7 +83,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradien
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" value="&lt;b&gt;Name&lt;/b&gt;: int-eu-live-events.fifo&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DelaySeconds&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;FifoQueue&lt;/b&gt;: TRUE&lt;BR&gt;&lt;b&gt;ReceiveMessageWaitTimeSeconds&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;SqsManagedSseEnabled&lt;/b&gt;: false&lt;BR&gt;&lt;b&gt;VisibilityTimeout&lt;/b&gt;: 30" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" parent="1" vertex="1">
+                <mxCell id="vertex:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" value="&lt;b&gt;Name&lt;/b&gt;: int-eu-live-events.fifo&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DelaySeconds&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;FifoQueue&lt;/b&gt;: TRUE&lt;BR&gt;&lt;b&gt;ReceiveMessageWaitTimeSeconds&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;SqsManagedSseEnabled&lt;/b&gt;: false&lt;BR&gt;&lt;b&gt;VisibilityTimeout&lt;/b&gt;: 30" style="sketch=0;outlineConnect=0;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>

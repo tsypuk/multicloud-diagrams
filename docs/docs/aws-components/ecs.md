@@ -46,7 +46,7 @@ New (v0.3.17)
 
 ### Style:
 ```html
-style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;"
+style="outlineConnect=0;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;"
 ```
 
 | attribute | value |
@@ -55,7 +55,6 @@ style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirectio
 |aspect| fixed |
 |dashed| 0 |
 |fillColor| #D05C17 |
-|fontColor| #232F3E |
 |fontSize| 12 |
 |fontStyle| 0 |
 |gradientColor| #F78E04 |
@@ -83,7 +82,7 @@ style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirectio
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:ecs:arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster" value="&lt;b&gt;Name&lt;/b&gt;: Prod-cluster&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;runningTasksCount&lt;/b&gt;: 50&lt;BR&gt;&lt;b&gt;pendingTasksCount&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;activeServicesCount&lt;/b&gt;: 50&lt;BR&gt;&lt;b&gt;status&lt;/b&gt;: ACTIVE" style="outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;" parent="1" vertex="1">
+                <mxCell id="vertex:ecs:arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster" value="&lt;b&gt;Name&lt;/b&gt;: Prod-cluster&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:ecs:eu-west-1:12345689012:cluster/fargate-cluster&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;runningTasksCount&lt;/b&gt;: 50&lt;BR&gt;&lt;b&gt;pendingTasksCount&lt;/b&gt;: 0&lt;BR&gt;&lt;b&gt;activeServicesCount&lt;/b&gt;: 50&lt;BR&gt;&lt;b&gt;status&lt;/b&gt;: ACTIVE" style="outlineConnect=0;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>
