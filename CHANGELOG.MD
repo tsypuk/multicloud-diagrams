@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.24](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.24) - 2024-01-20
+
+<small>[Compare with 0.3.23](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.23...0.3.24)</small>
+
+### Features
+
+- labels positions are placed the same X,Y that were in the previous diagrams version ([6d2185d](https://github.com/tsypuk/multicloud-diagrams/commit/6d2185da1453346948df74155d333bb33b636c4b) by Roman Tsypuk).
+- support dark/light day/night mode for diagrams (fond on nodes will be white or black based on OS configuration) ([8d188ae](https://github.com/tsypuk/multicloud-diagrams/commit/8d188ae204e7612b44783c4f26584a4a5ec8228c) by Roman Tsypuk).
+- parsed connections from different UMLs between same nodes are added as distinct edges (to allow editing) ([db55741](https://github.com/tsypuk/multicloud-diagrams/commit/db55741bd714c2fa8e25af7c455705c68fa2a8e8) by Roman Tsypuk).
+- actors are rendered on dedicated layer ([b162a0d](https://github.com/tsypuk/multicloud-diagrams/commit/b162a0d5985c4b5d6083baa4ee35d46373509be2) by Roman Tsypuk).
+
 ## [0.3.23](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.23) - 2024-01-18
 
 <small>[Compare with 0.3.22](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.22...0.3.23)</small>
