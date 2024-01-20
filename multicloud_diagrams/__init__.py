@@ -585,7 +585,7 @@ class MultiCloudDiagrams:
                         cords['width'] = data.get('width')
                     self.prev_coords[neighbor.get('id')] = cords
 
-                elif neighbor.get('id').startswith("label:"):
+                elif neighbor.get('id').startswith("label"):
                     data = neighbor.find('mxGeometry')
                     mx_point = data.find('mxPoint')
                     cords = {}
@@ -641,8 +641,15 @@ class MultiCloudDiagrams:
         self.add_layer('actors')
         self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
+        # set coords for all labels
+        for mxLabel in self.root:
+            if mxLabel.attrib['id'].startswith('label'):
+                data = mxLabel.find('mxGeometry')
+                mx_point = data.find('mxPoint')
+                self.update_vertex_coords_from_prev_version(mx_point, mxLabel.attrib['id'])
+
     def add_note_to_existing_edge(self, current_note, prev_edge, prefix=None):
-        if (prefix):
+        if prefix:
             id = prev_edge.attrib['id'].replace(f'edge_{prefix}:', '')
             for mxLabel in self.root:
                 if mxLabel.attrib['id'] == f'label_{prefix}:{id}':
