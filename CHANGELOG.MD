@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.25](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.25) - 2024-01-31
+
+<small>[Compare with 0.3.24](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.24...0.3.25)</small>
+
+### Features
+
+- add amazon aurora node ([c056735](https://github.com/tsypuk/multicloud-diagrams/commit/c0567358c3b47c2901cb43c397222e00f634e69d) by Roman Tsypuk).
+- appending multiline text to single label ([5274228](https://github.com/tsypuk/multicloud-diagrams/commit/5274228f103413424d33461bde3cb2142229cc00) by Roman Tsypuk).
+
 ## [0.3.24](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.24) - 2024-01-20
 
 <small>[Compare with 0.3.23](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.23...0.3.24)</small>
