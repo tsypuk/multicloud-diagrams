@@ -631,10 +631,6 @@ class MultiCloudDiagrams:
 
         actors, participants = extract_actors_and_participants(sequence_diagram)
 
-        print("Actors:")
-        for actor in actors:
-            print(actor)
-
         # create Layer with UML file name
         base_name = os.path.splitext(os.path.basename(file_name))[0]
         self.add_layer(base_name)
@@ -650,9 +646,9 @@ class MultiCloudDiagrams:
 
     def add_note_to_existing_edge(self, current_note, prev_edge, prefix=None):
         if prefix:
-            id = prev_edge.attrib['id'].replace(f'edge_{prefix}:', '')
+            label_id = 'label_' + prev_edge.attrib['id'].replace('edge_', '')
             for mxLabel in self.root:
-                if mxLabel.attrib['id'] == f'label_{prefix}:{id}':
+                if mxLabel.attrib['id'] == label_id:
                     mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
         else:
             id = prev_edge.attrib['id'].replace('edge:', '')
