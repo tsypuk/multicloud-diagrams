@@ -160,10 +160,17 @@
     "desc": "Elastic Container Registry"
   },
   "elasticsearch_service": {
-  "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.elasticsearch_service;fillColor=#F58534;gradientColor=none;",
-  "width": "67.5",
-  "height": "81",
-  "version": "0.3.22",
-  "desc": "Elastic Search Service"
-}
+    "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.elasticsearch_service;fillColor=#F58534;gradientColor=none;",
+    "width": "67.5",
+    "height": "81",
+    "version": "0.3.22",
+    "desc": "Elastic Search Service"
+  },
+  "aurora": {
+    "style": "sketch=0;outlineConnect=0;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.aurora;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.25",
+    "desc": "Amazon Aurora"
+  }
 }

@@ -46,7 +46,7 @@ New (v0.3.20)
 
 ### Style:
 ```html
-style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile_client;labelBackgroundColor=none;"
+style="sketch=0;outlineConnect=0;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile_client;labelBackgroundColor=none;"
 ```
 
 | attribute | value |
@@ -55,7 +55,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColo
 |aspect| fixed |
 |dashed| 0 |
 |fillColor| none |
-|fontColor| #232F3E |
 |fontSize| 12 |
 |fontStyle| 0 |
 |gradientColor| none |
@@ -84,7 +83,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColo
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:mobile_client:mobile" value="&lt;b&gt;Name&lt;/b&gt;: Android" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile_client;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="vertex:mobile_client:mobile" value="&lt;b&gt;Name&lt;/b&gt;: Android" style="sketch=0;outlineConnect=0;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.mobile_client;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="60" height="60" as="geometry"/>
                 </mxCell>
             </root>

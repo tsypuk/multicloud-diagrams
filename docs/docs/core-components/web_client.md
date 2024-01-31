@@ -46,7 +46,7 @@ New (v0.3.20)
 
 ### Style:
 ```html
-style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;labelBackgroundColor=none;"
+style="sketch=0;outlineConnect=0;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;labelBackgroundColor=none;"
 ```
 
 | attribute | value |
@@ -55,7 +55,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
 |aspect| fixed |
 |dashed| 0 |
 |fillColor| #232F3D |
-|fontColor| #232F3E |
 |fontSize| 12 |
 |fontStyle| 0 |
 |gradientColor| none |
@@ -84,7 +83,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:web_client:web" value="&lt;b&gt;Name&lt;/b&gt;: Chrome v.52" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="vertex:web_client:web" value="&lt;b&gt;Name&lt;/b&gt;: Chrome v.52" style="sketch=0;outlineConnect=0;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry width="78" height="76" as="geometry"/>
                 </mxCell>
             </root>

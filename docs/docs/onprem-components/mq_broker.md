@@ -46,7 +46,7 @@ New (v0.3.3)
 
 ### Style:
 ```html
-style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mq_broker;"
+style="sketch=0;outlineConnect=0;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mq_broker;"
 ```
 
 | attribute | value |
@@ -55,7 +55,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
 |aspect| fixed |
 |dashed| 0 |
 |fillColor| #B0084D |
-|fontColor| #232F3E |
 |fontSize| 12 |
 |fontStyle| 0 |
 |gradientColor| none |
@@ -83,7 +82,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:mq_broker:mq.eventbroker.somedomain.com" value="&lt;b&gt;Name&lt;/b&gt;: broker&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: mq.eventbroker.somedomain.com&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Nodes&lt;/b&gt;: 4&lt;BR&gt;&lt;b&gt;Active Master&lt;/b&gt;: 1&lt;BR&gt;&lt;b&gt;Errors&lt;/b&gt;: 3&lt;BR&gt;&lt;b&gt;Storage&lt;/b&gt;: 4G&lt;BR&gt;&lt;b&gt;Client&lt;/b&gt;: 15" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mq_broker;" parent="1" vertex="1">
+                <mxCell id="vertex:mq_broker:mq.eventbroker.somedomain.com" value="&lt;b&gt;Name&lt;/b&gt;: broker&lt;BR&gt;&lt;b&gt;ID&lt;/b&gt;: mq.eventbroker.somedomain.com&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Nodes&lt;/b&gt;: 4&lt;BR&gt;&lt;b&gt;Active Master&lt;/b&gt;: 1&lt;BR&gt;&lt;b&gt;Errors&lt;/b&gt;: 3&lt;BR&gt;&lt;b&gt;Storage&lt;/b&gt;: 4G&lt;BR&gt;&lt;b&gt;Client&lt;/b&gt;: 15" style="sketch=0;outlineConnect=0;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.mq_broker;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>
