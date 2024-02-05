@@ -110,7 +110,7 @@ def extract_info(input_string):
         actor1 = match.group(1).strip()
         actor2 = match.group(2).strip()
         message = ""
-        if (match.group(3) != None):
+        if (match.group(3) is not None):
             message = match.group(3).strip()
         return actor1, actor2, message
     else:
@@ -648,19 +648,16 @@ class MultiCloudDiagrams:
                 self.update_vertex_coords_from_prev_version(mx_point, mxLabel.attrib['id'])
 
     def add_note_to_existing_edge(self, current_note, prev_edge, prefix=None):
-        try:
-            if prefix:
-                label_id = 'label_' + prev_edge.attrib['id'].replace('edge_', '')
-                for mxLabel in self.root:
-                    if mxLabel.attrib['id'] == label_id:
-                        mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
-            else:
-                id = prev_edge.attrib['id'].replace('edge:', '')
-                for mxLabel in self.root:
-                    if mxLabel.attrib['id'] == f'label:{id}':
-                        mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
-        except:
-            print(f'ERROR processing current_note={current_note} prev_edge={prev_edge} prefix={prefix}')
+        if prefix:
+            label_id = 'label_' + prev_edge.attrib['id'].replace('edge_', '')
+            for mxLabel in self.root:
+                if mxLabel.attrib['id'] == label_id:
+                    mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
+        else:
+            id = prev_edge.attrib['id'].replace('edge:', '')
+            for mxLabel in self.root:
+                if mxLabel.attrib['id'] == f'label:{id}':
+                    mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
 
     def extract_messages_from_uml(self, sequence_diagram, actors, participants, layer_name, edge_style, label_style):
         lines = sequence_diagram.split('\n')
