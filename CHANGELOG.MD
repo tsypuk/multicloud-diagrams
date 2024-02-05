@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.26](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.26) - 2024-02-05
+
+<small>[Compare with 0.3.25](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.25...0.3.26)</small>
+
+### Features
+
+- add support for different connectors in uml ([743009e](https://github.com/tsypuk/multicloud-diagrams/commit/743009ebd4c5ca901156f7ab2013d1ed0e1c07b0) by Roman Tsypuk).
+
 ## [0.3.25](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.25) - 2024-01-31
 
 <small>[Compare with 0.3.24](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.24...0.3.25)</small>
