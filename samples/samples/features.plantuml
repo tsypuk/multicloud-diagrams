@@ -1,0 +1,19 @@
+@startuml
+    participant S3Bucket
+    participant LambdaFunction1
+    participant SNS
+    queue SQS
+    participant LambdaFunction2
+    database Storage
+
+    S3Bucket-->LambdaFunction1: LifeConfig Rule invokes lambda function
+    LambdaFunction1 ->> SNS: Send Event to SNS that file processing is finished
+    note right
+    multiline
+    note
+    added on the right
+    end note
+    SNS-->SQS
+    SQS->LambdaFunction2: poll message from SQS and invoke consumer lambda function
+    LambdaFunction2 -->> Storage: Update DynamoDB Table. Save image status.
+@enduml
