@@ -11,22 +11,22 @@ class Test(TestCase):
 
     def test_extract_info_2(self):
         testcases = [
-            # {"name": "-->",
-            #  "input": "S3Bucket --> LambdaFunction1: LifeConfig Rule invokes lambda function",
-            #  "expected": ('S3Bucket', 'LambdaFunction1', 'LifeConfig Rule invokes lambda function')
-            #  },
-            # {"name": "->>",
-            #  "input": "LambdaFunction1 ->> SNS: Send Event to SNS that file processing is finished",
-            #  "expected": ('LambdaFunction1', 'SNS', 'Send Event to SNS that file processing is finished')
-            #  },
-            # {"name": "->",
-            #  "input": "SQS -> LambdaFunction2: poll message from SQS and invoke consumer lambda function",
-            #  "expected": ('SQS', 'LambdaFunction2', 'poll message from SQS and invoke consumer lambda function')
-            #  },
-            # {"name": "-->>",
-            #  "input": "LambdaFunction2 -->> Storage: Update DynamoDB Table. Save image status.",
-            #  "expected": ('LambdaFunction2', 'Storage', 'Update DynamoDB Table. Save image status.')
-            #  },
+            {"name": "-->",
+             "input": "S3Bucket --> LambdaFunction1: LifeConfig Rule invokes lambda function",
+             "expected": ('S3Bucket', 'LambdaFunction1', 'LifeConfig Rule invokes lambda function')
+             },
+            {"name": "->>",
+             "input": "LambdaFunction1 ->> SNS: Send Event to SNS that file processing is finished",
+             "expected": ('LambdaFunction1', 'SNS', 'Send Event to SNS that file processing is finished')
+             },
+            {"name": "->",
+             "input": "SQS -> LambdaFunction2: poll message from SQS and invoke consumer lambda function",
+             "expected": ('SQS', 'LambdaFunction2', 'poll message from SQS and invoke consumer lambda function')
+             },
+            {"name": "-->>",
+             "input": "LambdaFunction2 -->> Storage: Update DynamoDB Table. Save image status.",
+             "expected": ('LambdaFunction2', 'Storage', 'Update DynamoDB Table. Save image status.')
+             },
             {"name": "--> nospace",
              "input": "S3Bucket-->LambdaFunction1: LifeConfig Rule invokes lambda function",
              "expected": ('S3Bucket', 'LambdaFunction1', 'LifeConfig Rule invokes lambda function')

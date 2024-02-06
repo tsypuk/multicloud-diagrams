@@ -103,7 +103,7 @@ def check_if_starts_with_uml_entity(strip: str):
 # --)	Dotted line with a open arrow at the end (async)
 def extract_info(input_string):
     # pattern = r'(.*?)(?:->>|->|-->>|-->)(.*?):(.*)'
-    pattern = r'(.[a-zA-Z0-9_]*)(?:->>|->|-->>|-->)([a-zA-Z0-9_]*)?(?::(.*))?'
+    pattern = r'(.[a-zA-Z0-9_]*)(?: ->> | -> | -->> | --> |->>|->|-->>|-->)([a-zA-Z0-9_]*)?(?::(.*))?'
     match = re.match(pattern, input_string)
 
     if match:
@@ -710,8 +710,6 @@ class MultiCloudDiagrams:
             entity = starts_with_any(strip, actors, participants)
             if (entity == 'actor') | (entity == 'participant'):
                 data = extract_info(line)
-                print(entity)
-                print(data)
                 try:
                     # connect vertex of actor1 actor2 using arrow and message
                     action_id = action_id + 1
