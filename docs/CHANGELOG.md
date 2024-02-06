@@ -11,6 +11,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.27](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.27) - 2024-02-06
+
+<small>[Compare with 0.3.26](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.26...0.3.27)</small>
+
+### Features
+
+- add aws s3 glacier node ([5acff2f](https://github.com/tsypuk/multicloud-diagrams/commit/5acff2f5ee15d41de394af1bb5127b1fe2dc0146) by Roman Tsypuk).
+- extend UML parsing with more syntax + whitespace expressions ([5bbdb6c](https://github.com/tsypuk/multicloud-diagrams/commit/5bbdb6c7fed34c080856a5bf08795651bb80c737) by Roman Tsypuk).
+
 ## [0.3.26](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.26) - 2024-02-05
 
 <small>[Compare with 0.3.25](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.25...0.3.26)</small>
