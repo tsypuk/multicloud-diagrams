@@ -161,10 +161,10 @@ class MultiCloudDiagrams:
         Et.SubElement(self.active_root, 'mxCell', id="0")
         self.add_layer(layer_name)
         self.debug_mode = debug_mode
+        self.pages[page_name] = diagram
 
     def switch_page(self, page_name: str = ''):
-        page_name = self.pages[page_name]
-        diagram = self.pages[f"diagram_{page_name}"]
+        diagram = self.pages[page_name]
         mx_graph_model = diagram.find('mxGraphModel')
         self.active_root = mx_graph_model.find('root')
 
