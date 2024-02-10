@@ -120,12 +120,15 @@ def extract_info(input_string):
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name=''):
         self.actors_to_nodes = {}
+        self.pages = {}
         self.mx_file = Et.Element('mxfile',
                                   host="multicloud-diagrams",
                                   agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
                                   type="MultiCloud")
 
-        diagram = Et.SubElement(self.mx_file, 'diagram', id="diagram_1", name="AWS components")
+        diagram = Et.SubElement(self.mx_file, 'diagram', id=f"diagram_{len(self.pages) + 1}", name="AWS components")
+        self.pages[f"diagram_{len(self.pages) + 1}"] = diagram
+
         mx_graph_model = Et.SubElement(diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
                                        guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
                                        pageScale="1", pageWidth="850", pageHeight="1100", math="0")
@@ -134,18 +137,41 @@ class MultiCloudDiagrams:
         else:
             mx_graph_model.attrib['shadow'] = '0'
 
-        self.root = Et.SubElement(mx_graph_model, 'root')
+        self.active_root = Et.SubElement(mx_graph_model, 'root')
 
         self.layers = {}
-        Et.SubElement(self.root, 'mxCell', id="0")
+        Et.SubElement(self.active_root, 'mxCell', id="0")
         self.add_layer(layer_name)
 
         self.debug_mode = debug_mode
 
+    def add_page(self, page_name: str = '', debug_mode=False, shadow=True, layer_name=''):
+        diagram = Et.SubElement(self.mx_file, 'diagram', id="", name=page_name)
+        mx_graph_model = Et.SubElement(diagram, 'mxGraphModel', dx="1015", dy="661", grid="1", gridSize="10",
+                                       guides="1", tooltips="1", connect="1", arrows="1", fold="1", page="1",
+                                       pageScale="1", pageWidth="850", pageHeight="1100", math="0")
+        if shadow:
+            mx_graph_model.attrib['shadow'] = '1'
+        else:
+            mx_graph_model.attrib['shadow'] = '0'
+
+        self.active_root = Et.SubElement(mx_graph_model, 'root')
+
+        self.layers = {}
+        Et.SubElement(self.active_root, 'mxCell', id="0")
+        self.add_layer(layer_name)
+        self.debug_mode = debug_mode
+
+    def switch_page(self, page_name: str = ''):
+        page_name = self.pages[page_name]
+        diagram = self.pages[f"diagram_{page_name}"]
+        mx_graph_model = diagram.find('mxGraphModel')
+        self.active_root = mx_graph_model.find('root')
+
     def add_layer(self, layer_name: str = ''):
         if self.get_layer_id_by_name(layer_name) is None:
             self.layers[self.get_current_layer_count() + 1] = layer_name
-            layer_cell = Et.SubElement(self.root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
+            layer_cell = Et.SubElement(self.active_root, 'mxCell', id=f"{self.get_current_layer_count()}", parent="0")
             if layer_name != '':
                 layer_cell.attrib['value'] = layer_name
 
@@ -247,7 +273,7 @@ class MultiCloudDiagrams:
                           x=x, y=y)
 
     def prepare_row(self, index, snapshot, table_id='', width=300, y=30):
-        mx_cell = Et.SubElement(self.root,
+        mx_cell = Et.SubElement(self.active_root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:row:{index}',
                                 value=snapshot,
@@ -271,7 +297,7 @@ class MultiCloudDiagrams:
         # Customization
         customize(node_template=node_template, style=style)
 
-        mx_cell = Et.SubElement(self.root,
+        mx_cell = Et.SubElement(self.active_root,
                                 'mxCell',
                                 id=f'vertex:{table_id}:list',
                                 value=f'<b>{table_name}</b>',
@@ -300,7 +326,7 @@ class MultiCloudDiagrams:
             style = {}
         # check that there is no such vertex already
         exist = False
-        for mx_cell in self.root:
+        for mx_cell in self.active_root:
             # print(mxCell.attrib['id'])
             if mx_cell.attrib['id'] == f'vertex:{node_type}:{node_id}':
                 logging.warning(f'Already exists: vertex:{node_type}:{node_id} name:{node_name}')
@@ -314,7 +340,7 @@ class MultiCloudDiagrams:
             customize(node_template=node_template, style=style)
 
             parent_id = str(self.get_layer_id(layer_name, layer_id))
-            mx_cell = Et.SubElement(self.root,
+            mx_cell = Et.SubElement(self.active_root,
                                     'mxCell',
                                     id=f'vertex:{node_type}:{node_id}',
                                     value=self.assemble_node_name(node_name, node_id, metadata, node_type, hide_id),
@@ -387,7 +413,7 @@ class MultiCloudDiagrams:
 
         # Check that both source and destination exist, before creating edge
         found = 0
-        for mx_cell in self.root:
+        for mx_cell in self.active_root:
             # print(mxCell.attrib['id'])
             if mx_cell.attrib['id'] == f'vertex:{src_node_id}':
                 found += 1
@@ -408,11 +434,11 @@ class MultiCloudDiagrams:
         if found == 2:
             # check that Edge does not exist
             edge_exist = False
-            for mx_cell in self.root:
+            for mx_cell in self.active_root:
                 if mx_cell.attrib['id'] == edge_id:
                     edge_exist = True
                     # update the labels
-                    for mxLabel in self.root:
+                    for mxLabel in self.active_root:
                         if mxLabel.attrib['id'] == f'label_{prefix}:{src_node_id}:to:{dst_node_id}':
                             if 'value' in mxLabel.attrib:
 
@@ -431,7 +457,7 @@ class MultiCloudDiagrams:
 
                 parent_id = str(self.get_layer_id(layer_name, layer_id))
                 mx_cell_edge = Et.SubElement(
-                    self.root,
+                    self.active_root,
                     'mxCell',
                     id=edge_id,
                     style=node_template['style'],
@@ -449,7 +475,7 @@ class MultiCloudDiagrams:
                 if len(labels) > 0:
                     node_template = self.get_node_template('label')
                     customize(node_template=node_template, style=label_style)
-                    mx_cell = Et.SubElement(self.root,
+                    mx_cell = Et.SubElement(self.active_root,
                                             'mxCell',
                                             id=label_id,
                                             value=stringify_labels(labels),
@@ -558,7 +584,7 @@ class MultiCloudDiagrams:
         if os.path.isfile(file_name):
             tree = Et.parse(file_name)
             root = tree.getroot()
-            self.root = tree.findall("./*/*/")[0]
+            self.active_root = tree.findall("./*/*/")[0]
             self.mx_file = root
 
             # Layers
@@ -641,7 +667,7 @@ class MultiCloudDiagrams:
         self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
 
         # set coords for all labels
-        for mxLabel in self.root:
+        for mxLabel in self.active_root:
             if mxLabel.attrib['id'].startswith('label'):
                 data = mxLabel.find('mxGeometry')
                 mx_point = data.find('mxPoint')
@@ -650,12 +676,12 @@ class MultiCloudDiagrams:
     def add_note_to_existing_edge(self, current_note, prev_edge, prefix=None):
         if prefix:
             label_id = 'label_' + prev_edge.attrib['id'].replace('edge_', '')
-            for mxLabel in self.root:
+            for mxLabel in self.active_root:
                 if mxLabel.attrib['id'] == label_id:
                     mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
         else:
             id = prev_edge.attrib['id'].replace('edge:', '')
-            for mxLabel in self.root:
+            for mxLabel in self.active_root:
                 if mxLabel.attrib['id'] == f'label:{id}':
                     mxLabel.attrib['value'] = mxLabel.attrib['value'] + '<BR>' + current_note
 
