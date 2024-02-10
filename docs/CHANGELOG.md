@@ -11,6 +11,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.28](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.28) - 2024-02-10
+
+<small>[Compare with 0.3.27](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.27...0.3.28)</small>
+
+### Features
+
+- add pages feature; rendering and switching between pages ([233e6de](https://github.com/tsypuk/multicloud-diagrams/commit/233e6de29507cce65d1350b61e2fa4e540ac1efd) by Roman Tsypuk).
+- add pages/tabs to diagrams ([39102e0](https://github.com/tsypuk/multicloud-diagrams/commit/39102e0e1a504dc835d0ac49d0342a0bfe4a4e59) by Roman Tsypuk).
+
 ## [0.3.27](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.27) - 2024-02-06
 
 <small>[Compare with 0.3.26](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.26...0.3.27)</small>
