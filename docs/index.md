@@ -13,8 +13,8 @@ permalink: /
 [![PyPI version](https://badge.fury.io/py/multicloud-diagrams.svg)](https://badge.fury.io/py/multicloud-diagrams)
 ![python version](https://img.shields.io/badge/python-%3E%3D%203.7-blue?logo=python)
 ![tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
-![tests](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/pages.yml/badge.svg)
-![tests](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/release.yaml/badge.svg)
+![pages](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/pages.yml/badge.svg)
+![release](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/release.yaml/badge.svg)
 
 {: .highlight }
 As **Professional** **Architects**, **Developers** and **DevOps**  with experience in operating on **Public Cloud Providers**, we all recognize the **crucial importance** of **well-documented**
