@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.29](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.29) - 2024-02-15
+
+<small>[Compare with 0.3.28](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.28...0.3.29)</small>
+
+### Docs
+
+- updated README icons ([aba83ee](https://github.com/tsypuk/multicloud-diagrams/commit/aba83ee3168fd25fee52ea3ac483b2cd0e8301f7) by Roman Tsypuk).
+
+### Features
+
+- load uml diagrams from MD files based on line number and section ([3cf209f](https://github.com/tsypuk/multicloud-diagrams/commit/3cf209f5a4bb018153cf3ef6544fc3f7577975c9) by Roman Tsypuk).
+
 ## [0.3.28](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.28) - 2024-02-10
 
 <small>[Compare with 0.3.27](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.27...0.3.28)</small>
