@@ -64,7 +64,7 @@
 				<mxCell id="edge_features_3:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo:to:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" style="jettySize=auto;html=1;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;curved=1;startArrow=oval;endArrow=classicThin;dashed=1;strokeColor=#0000FF;strokeWidth=3;fontSize=22;" parent="2" source="vertex:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo" target="vertex:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" edge="2">
 					<mxGeometry as="geometry"/>
 				</mxCell>
-				<mxCell id="label_features_3:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo:to:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" value="3: Fanout Event to SQS" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#00FF00;fontStyle=0;fontSize=14;" parent="edge_features_3:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo:to:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" vertex="1" connectable="0">
+				<mxCell id="label_features_3:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo:to:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" value="3: " style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#00FF00;fontStyle=0;fontSize=14;" parent="edge_features_3:sns:arn:aws:sns:eu-west-1:123456789012:internal.fifo:to:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo" vertex="1" connectable="0">
 					<mxGeometry relative="1" as="geometry">
 						<mxPoint as="offset"/>
 					</mxGeometry>
@@ -73,6 +73,14 @@
 					<mxGeometry as="geometry"/>
 				</mxCell>
 				<mxCell id="label_features_4:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo:to:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda" value="4: poll message from SQS and invoke consumer lambda function" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#00FF00;fontStyle=0;fontSize=14;" parent="edge_features_4:sqs:arn:aws:sqs:eu-west-1:123456789012:int-eu-live-events.fifo:to:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda" vertex="1" connectable="0">
+					<mxGeometry relative="1" as="geometry">
+						<mxPoint as="offset"/>
+					</mxGeometry>
+				</mxCell>
+				<mxCell id="edge_features_5:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/table1" style="jettySize=auto;html=1;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;curved=1;startArrow=oval;endArrow=classicThin;dashed=1;strokeColor=#0000FF;strokeWidth=3;fontSize=22;" parent="2" source="vertex:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda" target="vertex:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/table1" edge="2">
+					<mxGeometry as="geometry"/>
+				</mxCell>
+				<mxCell id="label_features_5:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/table1" value="5: Update DynamoDB Table. Save image status." style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;fontColor=#00FF00;fontStyle=0;fontSize=14;" parent="edge_features_5:lambda_function:arn:aws:lambda:eu-west-1:123456789012:function:consumer-lambda:to:dynamo:arn:aws:dynamodb:eu-west-1:123456789012:table/table1" vertex="1" connectable="0">
 					<mxGeometry relative="1" as="geometry">
 						<mxPoint as="offset"/>
 					</mxGeometry>

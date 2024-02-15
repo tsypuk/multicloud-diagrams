@@ -103,7 +103,7 @@ def check_if_starts_with_uml_entity(strip: str):
 # --)	Dotted line with a open arrow at the end (async)
 def extract_info(input_string):
     # pattern = r'(.*?)(?:->>|->|-->>|-->)(.*?):(.*)'
-    pattern = r'(.[a-zA-Z0-9_]*)(?: ->> | -> | -->> | --> |->>|->|-->>|-->)([a-zA-Z0-9_]*)?(?::(.*))?'
+    pattern = r'(.[a-zA-Z0-9_]*)(?: ->> | -> | -->> | --> |->>|->|-->>|->>|-->)([a-zA-Z0-9_]*)?(?::(.*))?'
     match = re.match(pattern, input_string)
 
     if match:
@@ -654,18 +654,41 @@ class MultiCloudDiagrams:
         with open(file_path, 'w', encoding="utf-8") as file:
             file.write(resulting_xml)
 
+    def read_uml_from_md(self, md_file_name, base, start_line=0, start_tag="@startuml", end_tag="@enduml", edge_style=None, label_style=None):
+        with open(md_file_name, 'r') as file:
+            lines = file.readlines()
+
+        sequence_diagram = []
+        in_uml = False
+        for line in lines[start_line - 1:]:
+            if start_tag in line:
+                in_uml = True
+            if end_tag in line:
+                in_uml = False
+                sequence_diagram.append(line)
+                break
+            if in_uml:
+                sequence_diagram.append(line)
+        sequence_diagram = ''.join(sequence_diagram)
+
+        if not base:
+            base = md_file_name
+
+        self.process_sequence_diagram(edge_style, base, label_style, sequence_diagram)
+
     def read_uml_from_file(self, file_name, edge_style=None, label_style=None):
         with open(file_name, 'r') as file:
             sequence_diagram = file.read()
-
-        actors, participants = extract_actors_and_participants(sequence_diagram)
-
-        # create Layer with UML file name
         base_name = os.path.splitext(os.path.basename(file_name))[0]
+        self.process_sequence_diagram(edge_style, base_name, label_style, sequence_diagram)
+
+    def process_sequence_diagram(self, edge_style, base_name, label_style, sequence_diagram):
+        actors, participants = extract_actors_and_participants(sequence_diagram)
+        # create Layer with UML file name
+
         self.add_layer(base_name)
         self.add_layer('actors')
         self.extract_messages_from_uml(sequence_diagram, actors=actors, participants=participants, layer_name=base_name, edge_style=edge_style, label_style=label_style)
-
         # set coords for all labels
         for mxLabel in self.active_root:
             if mxLabel.attrib['id'].startswith('label'):
@@ -705,7 +728,7 @@ class MultiCloudDiagrams:
             if note_match:
                 # note_type = note_match.group(1)
                 current_note = note_match.group(2).strip()
-                print(f'NOTE === {current_note} ===')
+                # print(f'NOTE === {current_note} ===')
                 # add current_note to last edge (prev_edge)
                 self.add_note_to_existing_edge(current_note, prev_edge, prefix_counter)
                 current_note = ''
@@ -719,7 +742,7 @@ class MultiCloudDiagrams:
 
             end_note_match = end_note_pattern.match(strip)
             if end_note_match:
-                print(f'NOTE ==={current_note} ===')
+                # print(f'NOTE ==={current_note} ===')
                 # add current_note to last edge (prev_edge)
                 self.add_note_to_existing_edge(current_note, prev_edge, prefix_counter)
                 current_note = ''
@@ -735,7 +758,7 @@ class MultiCloudDiagrams:
 
             entity = starts_with_any(strip, actors, participants)
             if (entity == 'actor') | (entity == 'participant'):
-                data = extract_info(line)
+                data = extract_info(strip)
                 try:
                     # connect vertex of actor1 actor2 using arrow and message
                     action_id = action_id + 1
