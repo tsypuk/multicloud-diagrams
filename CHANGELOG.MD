@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.30](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.30) - 2024-02-16
+
+<small>[Compare with 0.3.29](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.29...0.3.30)</small>
+
+### Features
+
+- load UML from any remote http/https endpoint ([ca72932](https://github.com/tsypuk/multicloud-diagrams/commit/ca729327e095cd57f194d8d072e8427906fc0087) by Roman Tsypuk).
+
 ## [0.3.29](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.29) - 2024-02-15
 
 <small>[Compare with 0.3.28](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.28...0.3.29)</small>
