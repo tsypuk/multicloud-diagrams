@@ -4,6 +4,8 @@ import logging
 import os.path
 import pkgutil
 import re
+
+import requests
 import yaml
 import hashlib
 
@@ -115,6 +117,30 @@ def extract_info(input_string):
         return actor1, actor2, message
     else:
         return None
+
+
+def extract_sequence_diagram(start_tag, end_tag, lines, start_line):
+    sequence_diagram = []
+
+    if isinstance(lines, str):
+        lines = lines.split("\n")
+
+    in_uml = False
+    for line in lines[start_line - 1:]:
+        if start_tag in line:
+            in_uml = True
+        if end_tag in line:
+            in_uml = False
+            sequence_diagram.append(line)
+            break
+        if in_uml:
+            sequence_diagram.append(line)
+    sequence_diagram = '\n'.join(sequence_diagram)
+    return sequence_diagram
+
+
+def extract_resource_from_endpoint(md_file_name):
+    return os.path.basename(md_file_name)
 
 
 class MultiCloudDiagrams:
@@ -654,25 +680,25 @@ class MultiCloudDiagrams:
         with open(file_path, 'w', encoding="utf-8") as file:
             file.write(resulting_xml)
 
+    def read_uml_from_http(self, md_http_endpoint, base, start_line=0, start_tag="@startuml", end_tag="@enduml", edge_style=None, label_style=None):
+        response = requests.get(md_http_endpoint)
+        # Check if the request was successful (status code 200)
+        if response.status_code == 200:
+            sequence_diagram = extract_sequence_diagram(start_tag, end_tag, response.text, start_line)
+            base = base if base else extract_resource_from_endpoint(md_http_endpoint)
+            print(sequence_diagram)
+            self.process_sequence_diagram(edge_style, base, label_style, sequence_diagram)
+        else:
+            print(f"Failed to read the file. Status code: {response.status_code}")
+
     def read_uml_from_md(self, md_file_name, base, start_line=0, start_tag="@startuml", end_tag="@enduml", edge_style=None, label_style=None):
         with open(md_file_name, 'r') as file:
             lines = file.readlines()
 
-        sequence_diagram = []
-        in_uml = False
-        for line in lines[start_line - 1:]:
-            if start_tag in line:
-                in_uml = True
-            if end_tag in line:
-                in_uml = False
-                sequence_diagram.append(line)
-                break
-            if in_uml:
-                sequence_diagram.append(line)
-        sequence_diagram = ''.join(sequence_diagram)
+        sequence_diagram = extract_sequence_diagram(start_tag, end_tag, lines, start_line)
+        print(sequence_diagram)
 
-        if not base:
-            base = md_file_name
+        base = base if base else md_file_name
 
         self.process_sequence_diagram(edge_style, base, label_style, sequence_diagram)
 
