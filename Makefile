@@ -55,7 +55,7 @@ pre-release:
 	git tag -d $(NEW_VERSION)
 	git add . && git commit -m "bump: version $(TAG) -> $(NEW_VERSION)" && git tag $(NEW_VERSION)
 
-release:
+release: pre-release
 	$(call colorecho, "Push to origin with TAGs...")
 	git push
 	git push --tags
