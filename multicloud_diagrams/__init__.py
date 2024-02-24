@@ -4,10 +4,19 @@ import logging
 import os.path
 import pkgutil
 import re
+from datetime import datetime
 
 import requests
 import yaml
 import hashlib
+
+
+def prepare_path(history_dir, file_path, now):
+    current_date = now.strftime("%Y/%m")
+    file_postfix = now.strftime("%Y%m%d.%H%M%S")
+
+    file_name = os.path.basename(file_path).replace('.drawio', f'.{file_postfix}.drawio')
+    return f"{os.path.dirname(file_path)}/{history_dir}/{current_date}/{file_name}"
 
 
 def update_style_by_key(style_str: str, key: str, value: str):
@@ -144,9 +153,10 @@ def extract_resource_from_endpoint(md_file_name):
 
 
 class MultiCloudDiagrams:
-    def __init__(self, debug_mode=False, shadow=True, layer_name=''):
+    def __init__(self, debug_mode=False, shadow=True, layer_name='', history_dir='history'):
         self.actors_to_nodes = {}
         self.pages = {}
+        self.history_dir = history_dir
         self.mx_file = Et.Element('mxfile',
                                   host="multicloud-diagrams",
                                   agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license.",
@@ -655,6 +665,13 @@ class MultiCloudDiagrams:
         rough_string = Et.tostring(self.mx_file, 'utf-8')
         parsed = minidom.parseString(rough_string)
         print(parsed.toprettyxml(indent="  "))
+
+    def update_history_repo(self, file_path):
+        now = datetime.now()
+        history_file = prepare_path(self.history_dir, file_path, now)
+        os.makedirs(os.path.dirname(history_file), exist_ok=True)
+        self.export_to_file(history_file)
+        # self.update_history_index_md()
 
     def export_to_file(self, file_path):
         # tree = Et.ElementTree(self.mx_file)
