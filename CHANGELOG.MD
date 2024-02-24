@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.31](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.31) - 2024-02-24
+
+<small>[Compare with 0.3.30](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.30...0.3.31)</small>
+
+### Features
+
+- automatically populate history repository with YYYY/MM path with new versions of generated diagrams ([d36635f](https://github.com/tsypuk/multicloud-diagrams/commit/d36635f26bf3b27b8daab3eb8c7c1633189057b6) by Roman Tsypuk).
+
 ## [0.3.30](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.30) - 2024-02-16
 
 <small>[Compare with 0.3.29](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.29...0.3.30)</small>
