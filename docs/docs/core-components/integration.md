@@ -11,7 +11,8 @@ date: 2023-08-07
 ```mermaid
 flowchart LR
 subgraph Engine
-A[multicloud-diagrams\n Framework] <-->| r/w | B[DRAWIO \n diagram];
+A[multicloud-diagrams\n Framework] <-->| r/w | B[DRAWIO \n diagram:latest];
+A[multicloud-diagrams\n Framework] -->| w | C[Historical \n repo];
 end
 
 subgraph Data Sources
