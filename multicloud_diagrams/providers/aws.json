@@ -179,5 +179,19 @@
     "height": "93",
     "version": "0.3.27",
     "desc": "Amazon S3 Glacier"
+  },
+  "chime_voice_connector": {
+    "style": "sketch=0;outlineConnect=0;gradientColor=#FF5252;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.chime;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.32",
+    "desc": "Amazon Chime Voice Connector"
+  },
+  "chime_sdk": {
+    "style": "sketch=0;outlineConnect=0;gradientColor=#FF5252;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.chime_sdk;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.32",
+    "desc": "Amazon Chime SDK"
   }
 }
