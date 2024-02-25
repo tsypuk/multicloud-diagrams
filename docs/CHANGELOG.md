@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.32](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.32) - 2024-02-25
+
+<small>[Compare with 0.3.31](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.31...0.3.32)</small>
+
+### Docs
+
+- add historical repo to integration page ([70f3f9e](https://github.com/tsypuk/multicloud-diagrams/commit/70f3f9ea82ab1fc7e3995a36b231f88202b71782) by Roman Tsypuk).
+
+### Features
+
+- add aws chime sdk & aws chime voice connector services ([8cd56fa](https://github.com/tsypuk/multicloud-diagrams/commit/8cd56faca939338bd565d2ca0368b53e72f82761) by Roman Tsypuk).
+
 ## [0.3.31](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.31) - 2024-02-24
 
 <small>[Compare with 0.3.30](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.30...0.3.31)</small>
