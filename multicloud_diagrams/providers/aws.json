@@ -193,5 +193,12 @@
     "height": "78",
     "version": "0.3.32",
     "desc": "Amazon Chime SDK"
+  },
+  "neptune": {
+    "style": "sketch=0;outlineConnect=0;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.neptune;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.33",
+    "desc": "Amazon Neptune Managed Service"
   }
 }
