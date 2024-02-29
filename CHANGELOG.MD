@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.33](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.33) - 2024-02-29
+
+<small>[Compare with 0.3.32](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.32...0.3.33)</small>
+
+### Features
+
+- add aws neptine managed service ([6541b50](https://github.com/tsypuk/multicloud-diagrams/commit/6541b5083c2b8a1dd5d61259aaa803633e41cf44) by Roman Tsypuk).
+
 ## [0.3.32](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.32) - 2024-02-25
 
 <small>[Compare with 0.3.31](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.31...0.3.32)</small>
