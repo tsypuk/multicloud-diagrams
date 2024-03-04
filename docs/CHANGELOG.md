@@ -11,6 +11,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.34](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.34) - 2024-03-04
+
+<small>[Compare with 0.3.33](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.33...0.3.34)</small>
+
+### Features
+
+- add support for rds postgresql engine ([0f265c4](https://github.com/tsypuk/multicloud-diagrams/commit/0f265c49e18daf842d423142326cd773d86f7357) by Roman Tsypuk).
+
 ## [0.3.33](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.33) - 2024-02-29
 
 <small>[Compare with 0.3.32](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.32...0.3.33)</small>
