@@ -11,6 +11,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.35](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.35) - 2024-03-08
+
+<small>[Compare with 0.3.34](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.34...0.3.35)</small>
+
+### Docs
+
+- update online documentation with glacier nodes ([cafa383](https://github.com/tsypuk/multicloud-diagrams/commit/cafa3832792434167f9871ae51a4f9eb1de807b7) by Roman Tsypuk).
+
+### Features
+
+- update supported aws nodes ([f6497ed](https://github.com/tsypuk/multicloud-diagrams/commit/f6497ed57a8ffebe78631b32fa1bf7fb9210dd03) by Roman Tsypuk).
+- add glacier standard ([2f626d7](https://github.com/tsypuk/multicloud-diagrams/commit/2f626d7bf8fb1d4013e7595909b2f2d9398ca526) by Roman Tsypuk).
+- add glacier instant retrival ([dde5dc0](https://github.com/tsypuk/multicloud-diagrams/commit/dde5dc0112bea7d5b359da752533db66bb17f32b) by Roman Tsypuk).
+- add glacier deep archival ([358bbf2](https://github.com/tsypuk/multicloud-diagrams/commit/358bbf263da6fca206a528e4ab00335aa9a7ad29) by Roman Tsypuk).
+
 ## [0.3.34](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.34) - 2024-03-04
 
 <small>[Compare with 0.3.33](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.33...0.3.34)</small>
