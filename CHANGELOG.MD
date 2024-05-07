@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.36](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.36) - 2024-05-07
+
+<small>[Compare with 0.3.35](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.35...0.3.36)</small>
+
+### Features
+
+- add aws eks ([f20574b](https://github.com/tsypuk/multicloud-diagrams/commit/f20574b3c0bc7fcba43ec256cc0d870576c64046) by Roman Tsypuk).
+
 ## [0.3.35](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.35) - 2024-03-08
 
 <small>[Compare with 0.3.34](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.34...0.3.35)</small>
