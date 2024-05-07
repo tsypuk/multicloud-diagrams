@@ -4,9 +4,9 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_eks_service(self):
+    def test_eks(self):
         # docs
-        self.node_type = 'eks_service'
+        self.node_type = 'eks'
 
         # given
         mcd = MultiCloudDiagrams()
@@ -27,13 +27,13 @@ class TestAWSVertexInIsolation(TestRendering):
             "platformFamily": "Linux",
             "deployment": "arn:aws:eks:eu-west-1:123456789012:deployment/service:15",
         }
-        mcd.add_vertex(node_id=eks_service_arn, node_name=eks_service_name, node_type='eks_service', metadata=metadata)
+        mcd.add_vertex(node_id=eks_service_arn, node_name=eks_service_name, node_type='eks', metadata=metadata)
 
         # then
-        expected = {'id': 'vertex:eks_service:arn:aws:eks:us-west-1:123456789012:service/eks-cluster/service-svc',
+        expected = {'id': 'vertex:eks:arn:aws:eks:us-west-1:123456789012:service/eks-cluster/service-svc',
                     'parent': '1',
-                    'style': 'sketch=0;aspect=fixed;html=1;align=left;image;fontSize=12;image=img/lib/mscae/Info.svg;labelBackgroundColor=none;',
-                    'value': '<b>Name</b>: Nginx_Service<BR><b>ID</b>: '
+                    'style': 'sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eks;',
+                    'value': '<b>Name</b>: Nginx_Service<BR><b>ARN</b>: '
                              'arn:aws:eks:us-west-1:123456789012:service/eks-cluster/service-svc<BR>-----------<BR><b>serviceName</b>: '
                              'service-svc<BR><b>clusterArn</b>: '
                              'arn:aws:eks:eu-west-1:123456789012:cluster/eks-cluster<BR><b>serviceRegistries</b>: '
@@ -44,7 +44,7 @@ class TestAWSVertexInIsolation(TestRendering):
                              'Linux<BR><b>deployment</b>: '
                              'arn:aws:eks:eu-west-1:123456789012:deployment/service:15',
                     'vertex': '1'}
-        self.verify_resource(expected, mcd.mx_file, 'eks_service', self.node_type)
+        self.verify_resource(expected, mcd.mx_file, 'eks', self.node_type)
 
         # docs
         self.mcd = mcd
