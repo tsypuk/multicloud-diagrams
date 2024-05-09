@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.38](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.38) - 2024-05-09
+
+<small>[Compare with 0.3.37](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.37...0.3.38)</small>
+
+### Features
+
+- add aws appflow ([722d97d](https://github.com/tsypuk/multicloud-diagrams/commit/722d97db1fa87d8717549445ce1a5696ebc2ae01) by Roman Tsypuk).
+
 ## [0.3.37](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.37) - 2024-05-08
 
 <small>[Compare with 0.3.36](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.36...0.3.37)</small>
