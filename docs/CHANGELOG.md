@@ -11,7 +11,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
-## [0.3.39](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.39) - 2024-05-11
+## [0.3.40](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.40) - 2024-05-12
+
+<small>[Compare with 0.3.39](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.39...0.3.40)</small>
+
+### Docs
+
+- updated online documentation with aws exchange service ([15949e7](https://github.com/tsypuk/multicloud-diagrams/commit/15949e7771f43dc6e26c63e06aebd143abf9a79e) by Roman Tsypuk).
+
+### Features
+
+- add aws exchange service ([50e54f7](https://github.com/tsypuk/multicloud-diagrams/commit/50e54f7f7fb29e1cb3943c0c849587a1df739611) by Roman Tsypuk).
+
+## [0.3.39](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.39) - 2024-05-12
 
 <small>[Compare with 0.3.38](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.38...0.3.39)</small>
 
