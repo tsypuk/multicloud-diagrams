@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.41](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.41) - 2024-05-14
+
+<small>[Compare with 0.3.40](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.40...0.3.41)</small>
+
+### Docs
+
+- added xray service to online documentation ([3a8a942](https://github.com/tsypuk/multicloud-diagrams/commit/3a8a942eac2a71b8c342e90beab7c8a7a13158a7) by Roman Tsypuk).
+
+### Features
+
+- add aws xray service ([c180295](https://github.com/tsypuk/multicloud-diagrams/commit/c180295acc85dbb160b78fbe6cfa1ab750925ef9) by Roman Tsypuk).
+
 ## [0.3.40](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.40) - 2024-05-12
 
 <small>[Compare with 0.3.39](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.39...0.3.40)</small>
