@@ -263,5 +263,12 @@
     "height": "78",
     "version": "0.3.40",
     "desc": "AWS Exchange"
+  },
+  "xray": {
+    "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.x_ray;fillColor=#759C3E;gradientColor=none;",
+    "width": "76.5",
+    "height": "85.5",
+    "version": "0.3.41",
+    "desc": "AWS Xray"
   }
 }
