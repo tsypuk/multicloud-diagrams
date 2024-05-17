@@ -270,5 +270,12 @@
     "height": "85.5",
     "version": "0.3.41",
     "desc": "AWS Xray"
+  },
+  "access_analyzer": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.access_analyzer;",
+    "width": "78",
+    "height": "77",
+    "version": "0.3.42",
+    "desc": "AWS Access Analyzer"
   }
 }
