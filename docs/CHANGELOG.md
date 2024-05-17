@@ -11,6 +11,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.42](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.42) - 2024-05-17
+
+<small>[Compare with 0.3.41](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.41...0.3.42)</small>
+
+### Features
+
+- added aws access analyzer service ([1db4b7c](https://github.com/tsypuk/multicloud-diagrams/commit/1db4b7c603e08ce5432ab925aa0cecb2518f674d) by Roman Tsypuk).
+
 ## [0.3.41](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.41) - 2024-05-14
 
 <small>[Compare with 0.3.40](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.40...0.3.41)</small>
