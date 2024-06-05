@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.43](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.43) - 2024-06-05
+
+<small>[Compare with 0.3.42](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.42...0.3.43)</small>
+
+### Docs
+
+- update online docs with aws resource manager node ([fd9fa53](https://github.com/tsypuk/multicloud-diagrams/commit/fd9fa53807538f0ab337cc326ba9ed30469bfc4f) by Roman Tsypuk).
+
+### Features
+
+- added aws resource manager ([02b9369](https://github.com/tsypuk/multicloud-diagrams/commit/02b9369d5a9595c05e28d7bdb61b4c427ec73a14) by Roman Tsypuk).
+
 ## [0.3.42](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.42) - 2024-05-17
 
 <small>[Compare with 0.3.41](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.41...0.3.42)</small>
