@@ -284,5 +284,12 @@
     "height": "78",
     "version": "0.3.43",
     "desc": "AWS Resource Access Manager"
+  },
+  "security_hub": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F54749;gradientDirection=north;fillColor=#C7131F;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.security_hub;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.43",
+    "desc": "Security Hub"
   }
 }
