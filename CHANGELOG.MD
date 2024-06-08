@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.45](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.45) - 2024-06-08
+
+<small>[Compare with 0.3.44](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.44...0.3.45)</small>
+
+### Docs
+
+- updated online documentation with aws app runner ([8fb8509](https://github.com/tsypuk/multicloud-diagrams/commit/8fb8509177ee1e4f0989f3be5ce9179b16703e75) by Roman Tsypuk).
+
+### Features
+
+- added aws app runner node ([dcd7620](https://github.com/tsypuk/multicloud-diagrams/commit/dcd7620e9ccbfc4817392ce93e6a8f3b6ae7d60f) by Roman Tsypuk).
+
 ## [0.3.44](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.44) - 2024-06-06
 
 <small>[Compare with 0.3.43](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.43...0.3.44)</small>
