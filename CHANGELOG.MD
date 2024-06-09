@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.46](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.46) - 2024-06-09
+
+<small>[Compare with 0.3.45](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.45...0.3.46)</small>
+
+### Docs
+
+- updated online documentation for aws app sync ([93a41a9](https://github.com/tsypuk/multicloud-diagrams/commit/93a41a94d523d34244ba2125495317b9827903ab) by Roman Tsypuk).
+
+### Features
+
+- added aws app sync node ([c492007](https://github.com/tsypuk/multicloud-diagrams/commit/c492007c4d8428367b8853829929e15ec32d3b09) by Roman Tsypuk).
+
 ## [0.3.45](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.45) - 2024-06-08
 
 <small>[Compare with 0.3.44](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.44...0.3.45)</small>
