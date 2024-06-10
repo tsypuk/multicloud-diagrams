@@ -11,9 +11,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.48](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.48) - 2024-06-10
+
+<small>[Compare with 0.3.47](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.47...0.3.48)</small>
+
+### Features
+
+- updated make file ([8baa407](https://github.com/tsypuk/multicloud-diagrams/commit/8baa4073c991ccc73e89f7b457335c386b08ac38) by Roman Tsypuk).
+- generate index.md section for icons ([9eeb14d](https://github.com/tsypuk/multicloud-diagrams/commit/9eeb14d3037f07c072b4e09394f7e29333c8cafc) by Roman Tsypuk).
+- resize 50% icons ([12161c7](https://github.com/tsypuk/multicloud-diagrams/commit/12161c797c6e181e584cb014e71ccba5fb6279b5) by Roman Tsypuk).
+- render node without metadata parameter ([b1ae0b7](https://github.com/tsypuk/multicloud-diagrams/commit/b1ae0b752ac170d5c5a7175c2714db8c00597af9) by Roman Tsypuk).
+
 ## [0.3.47](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.47) - 2024-06-10
 
-<small>[Compare with 0.3.46](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.46...0.3.47)</small>
+<small>[Compare with 0.3.46-a](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.46-a...0.3.47)</small>
+
+## [0.3.46-a](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.46-a) - 2024-06-10
+
+<small>[Compare with 0.3.46](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.46...0.3.46-a)</small>
 
 ### Docs
 
