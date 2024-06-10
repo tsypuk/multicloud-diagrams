@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS DataSync
+title: DataSync
 parent: AWS Components
 nav_order: 3
 date: 2024-05-11
 ---
 
-# AWS DataSync
+# DataSync
 {: .d-inline-block .no_toc }
 
 New (v0.3.39)

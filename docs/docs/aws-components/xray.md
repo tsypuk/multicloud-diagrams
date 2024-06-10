@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS Xray
+title: X-ray
 parent: AWS Components
 nav_order: 3
 date: 2024-05-14
 ---
 
-# AWS Xray
+# X-ray
 {: .d-inline-block .no_toc }
 
 New (v0.3.41)

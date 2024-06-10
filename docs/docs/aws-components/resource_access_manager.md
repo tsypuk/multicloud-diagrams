@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS Resource Access Manager
+title: Resource Access Manager
 parent: AWS Components
 nav_order: 3
 date: 2024-06-04
 ---
 
-# AWS Resource Access Manager
+# Resource Access Manager
 {: .d-inline-block .no_toc }
 
 New (v0.3.43)

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon Elastic Kubernetes Service
+title: Elastic Kubernetes Service
 parent: AWS Components
 nav_order: 3
 date: 2024-05-07
 ---
 
-# Amazon Elastic Kubernetes Service
+# Elastic Kubernetes Service
 {: .d-inline-block .no_toc }
 
 New (v0.3.36)

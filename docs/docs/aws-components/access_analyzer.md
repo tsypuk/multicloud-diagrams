@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS Access Analyzer
+title: Access Analyzer
 parent: AWS Components
 nav_order: 3
 date: 2024-05-17
 ---
 
-# AWS Access Analyzer
+# Access Analyzer
 {: .d-inline-block .no_toc }
 
 New (v0.3.42)

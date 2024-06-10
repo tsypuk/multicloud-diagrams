@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS Backup
+title: Backup
 parent: AWS Components
 nav_order: 3
 date: 2024-05-08
 ---
 
-# AWS Backup
+# Backup
 {: .d-inline-block .no_toc }
 
 New (v0.3.36)

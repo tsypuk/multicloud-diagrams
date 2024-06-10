@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.47](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.47) - 2024-06-10
+
+<small>[Compare with 0.3.46](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.46...0.3.47)</small>
+
+### Docs
+
+- updated online documentation aws route53 ([236f116](https://github.com/tsypuk/multicloud-diagrams/commit/236f116b08b80cf5503a7b84d2c43b29b8982d3e) by Roman Tsypuk).
+
+### Features
+
+- added aws route53 ([3f27a87](https://github.com/tsypuk/multicloud-diagrams/commit/3f27a8762aae9c4c2d046c8bc9899a0881e57d0f) by Roman Tsypuk).
+
 ## [0.3.46](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.46) - 2024-06-09
 
 <small>[Compare with 0.3.45](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.45...0.3.46)</small>

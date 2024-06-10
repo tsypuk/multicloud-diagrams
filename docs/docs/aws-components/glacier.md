@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon S3 Glacier
+title: S3 Glacier
 parent: AWS Components
 nav_order: 3
 date: 2024-02-06
 ---
 
-# Amazon S3 Glacier
+# S3 Glacier
 {: .d-inline-block .no_toc }
 
 New (v0.3.27)

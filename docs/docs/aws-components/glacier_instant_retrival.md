@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon S3 Glacier Instant Retrival
+title: S3 Glacier Instant Retrival
 parent: AWS Components
 nav_order: 3
 date: 2024-03-08
 ---
 
-# Amazon S3 Glacier Instant Retrival
+# S3 Glacier Instant Retrival
 {: .d-inline-block .no_toc }
 
 New (v0.3.35)

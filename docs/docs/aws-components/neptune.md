@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon Neptune Managed Service
+title: Neptune Managed Service
 parent: AWS Components
 nav_order: 3
 date: 2024-02-29
 ---
 
-# Amazon Neptune Managed Service
+# Neptune Managed Service
 {: .d-inline-block .no_toc }
 
 New (v0.3.33)

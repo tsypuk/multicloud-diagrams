@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS Exchange
+title: Exchange
 parent: AWS Components
 nav_order: 3
 date: 2024-05-12
 ---
 
-# AWS Exchange
+# Exchange
 {: .d-inline-block .no_toc }
 
 New (v0.3.40)

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon Chime Voice Connector
+title: Chime Voice Connector
 parent: AWS Components
 nav_order: 3
 date: 2024-02-25
 ---
 
-# Amazon Chime Voice Connector
+# Chime Voice Connector
 {: .d-inline-block .no_toc }
 
 New (v0.3.32)

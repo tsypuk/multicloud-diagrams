@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AWS AppFlow
+title: AppFlow
 parent: AWS Components
 nav_order: 3
 date: 2024-05-09
 ---
 
-# AWS AppFlow
+# AppFlow
 {: .d-inline-block .no_toc }
 
 New (v0.3.38)

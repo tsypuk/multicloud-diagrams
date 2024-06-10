@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Amazon Aurora
+title: Aurora
 parent: AWS Components
 nav_order: 3
 date: 2024-01-31
 ---
 
-# Amazon Aurora
+# Aurora
 {: .d-inline-block .no_toc }
 
 New (v0.3.25)
