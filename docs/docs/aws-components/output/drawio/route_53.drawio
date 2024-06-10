@@ -1,0 +1,13 @@
+<mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
+	<diagram id="diagram_1" name="AWS components">
+		<mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
+			<root>
+				<mxCell id="0"/>
+				<mxCell id="1" parent="0"/>
+				<mxCell id="vertex:route_53:arn:aws:route_53:us-west-1:123456789012:service/route_53/123" value="&lt;b&gt;Name&lt;/b&gt;: Route53&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:route_53:us-west-1:123456789012:service/route_53/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;serviceName&lt;/b&gt;: route_53&lt;BR&gt;&lt;b&gt;HostedZones&lt;/b&gt;: 4&lt;BR&gt;&lt;b&gt;dnsSec&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;Limit&lt;/b&gt;: MAX_HEALTH_CHECKS_BY_OWNER&lt;BR&gt;&lt;b&gt;HealthCheckConfig&lt;/b&gt;: {'IPAddress': '127.0.0.1', 'Port': 433, 'Type': 'HTTP | HTTPS'}" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;" parent="1" vertex="1">
+					<mxGeometry width="70.5" height="85.5" as="geometry"/>
+				</mxCell>
+			</root>
+		</mxGraphModel>
+	</diagram>
+</mxfile>
