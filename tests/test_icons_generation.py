@@ -27,6 +27,6 @@ class TestIconsGeneration(TestUtilities):
             # when
             mcd.add_vertex(node_id=aws_service, node_name=aws_service, node_type=aws_service, hide_name=True)
 
-            mcd.export_to_file(f'../docs/icons/drawio/{aws_service}.drawio')
+            mcd.export_to_file(f'../tmp/drawio/{aws_service}.drawio')
         # docs
         self.mcd = mcd

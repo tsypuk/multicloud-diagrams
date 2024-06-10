@@ -18,7 +18,12 @@ doc: test images
 	cd docs && bundle exec just-the-docs rake search:init \
 	cd docs && bundle exec jekyll serve --trace
 
-images:
+icons:
+	$(call colorecho, "Preparing aws service icons")
+	/Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/icons/jpg tmp/drawio \
+ 	mogrify -resize 50% *.jpg
+
+images: icons
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/core-components/output/jpg docs/docs/core-components/output/drawio
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/onprem-components/output/jpg docs/docs/onprem-components/output/drawio
