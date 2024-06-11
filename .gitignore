@@ -1,6 +1,8 @@
 .idea
 venv/
 
+tmp/drawio/
+
 draft.drawio
 
 dist/

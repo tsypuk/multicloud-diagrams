@@ -308,13 +308,15 @@
     "width": "78",
     "height": "78",
     "version": "0.3.46",
-    "desc": "App Sync"
+    "desc": "App Sync",
+    "category": "Application Integration"
   },
   "route_53": {
     "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;",
     "width": "70.5",
     "height": "85.5",
     "version": "0.3.47",
-    "desc": "Route53"
+    "desc": "Route53",
+    "category": "Compute"
   }
 }

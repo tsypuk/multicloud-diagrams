@@ -20,8 +20,8 @@ doc: test images
 
 icons:
 	$(call colorecho, "Preparing aws service icons")
-	/Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/icons/jpg tmp/drawio \
- 	cd docs/icons/jpg && mogrify -resize 50% *.jpg
+	/Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/icons/jpg tmp/drawio && \
+ 	./resize_icons.sh
 
 images: icons
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio

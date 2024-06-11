@@ -33,32 +33,34 @@ def modify_content_between_markers(file_path, start_marker, end_marker, new_cont
 
 class TestIconsGeneration(TestUtilities):
 
-    def test_datasync(self):
+    def test_update_aws_icons(self):
         # load aws provider nodes
-        file_path = './multicloud_diagrams/providers/aws.json'
+        file_paths = ['aws', 'onprem']
 
-        # Open and load the JSON file
-        with open(file_path, 'r') as file:
-            aws_provider_nodes = json.load(file)
+        md_content = '\n'
 
-        # Print all keys of the aws_provider_nodes
-        md_content = ''
-        for aws_service in aws_provider_nodes.keys():
-            print(aws_service)
-            service_data = aws_provider_nodes.get(aws_service, {})
-            # Print the content for verification
-            print(json.dumps(service_data, indent=4))
+        for file_path in file_paths:
+            # Open and load the JSON file
+            with open(f"./multicloud_diagrams/providers/{file_path}.json", 'r') as file:
+                aws_provider_nodes = json.load(file)
 
-            # prepare icons md text
-            md_content += f"![{aws_service}.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/{aws_service}.jpg?raw=True)"
+            md_content += f"### {file_path.upper()} nodes:\n"
+            for aws_service in aws_provider_nodes.keys():
+                # print(aws_service)
+                service_data = aws_provider_nodes.get(aws_service, {})
+                # Print the content for verification
+                print(json.dumps(service_data, indent=4))
 
-            # given
-            mcd = MultiCloudDiagrams()
+                # prepare icons md text
+                md_content += f"![{aws_service}.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/{aws_service}.jpg?raw=True)\n"
 
-            # when
-            mcd.add_vertex(node_id=aws_service, node_name=aws_service, node_type=aws_service, hide_name=True)
+                # given
+                mcd = MultiCloudDiagrams()
 
-            mcd.export_to_file(f'./tmp/drawio/{aws_service}.drawio')
+                # when
+                mcd.add_vertex(node_id=aws_service, node_name=aws_service, node_type=aws_service, hide_name=True)
+                mcd.export_to_file(f'./tmp/drawio/{aws_service}.drawio')
+            md_content += '\n'
 
         # update index.md file
         # Define the file path and markers
