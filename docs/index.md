@@ -84,6 +84,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 ![github_code.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/github_code.jpg?raw=True)
 ![git_repository.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/git_repository.jpg?raw=True)
 
+
 ---
  
 - **Documentation:** [https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html](https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html)

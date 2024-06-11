@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.49](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.49) - 2024-06-11
+
+<small>[Compare with 0.3.48](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.48...0.3.49)</small>
+
+### Features
+
+- added generation of icons; included on-prem and aws nodes ([0d4612f](https://github.com/tsypuk/multicloud-diagrams/commit/0d4612fa962009e1418b03f04f840f558d318ecc) by Roman Tsypuk).
+- update icons in README on release ([1edcb8c](https://github.com/tsypuk/multicloud-diagrams/commit/1edcb8ce34ccf79ee3269ac6999a19c34891c602) by Roman Tsypuk).
+
 ## [0.3.48](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.48) - 2024-06-10
 
 <small>[Compare with 0.3.47](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.47...0.3.48)</small>
