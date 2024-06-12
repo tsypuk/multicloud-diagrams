@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Features
 
+- updated outpost and changelog ([469e70c](https://github.com/tsypuk/multicloud-diagrams/commit/469e70c7b03da04b6149ce069a2f86586ed58026) by Roman Tsypuk).
 - added aws outpost node ([dbdaeac](https://github.com/tsypuk/multicloud-diagrams/commit/dbdaeac10e21dbf0e6f906fdd6195ff1a5c311c1) by Roman Tsypuk).
 - added extractor ([06c211e](https://github.com/tsypuk/multicloud-diagrams/commit/06c211e3b2d3f69e1a10ace433d572c36c12be54) by Roman Tsypuk).
 
