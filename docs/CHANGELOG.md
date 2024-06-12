@@ -11,6 +11,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.50](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.50) - 2024-06-12
+
+<small>[Compare with 0.3.49](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.49...0.3.50)</small>
+
+### Features
+
+- added aws outpost node ([dbdaeac](https://github.com/tsypuk/multicloud-diagrams/commit/dbdaeac10e21dbf0e6f906fdd6195ff1a5c311c1) by Roman Tsypuk).
+- added extractor ([06c211e](https://github.com/tsypuk/multicloud-diagrams/commit/06c211e3b2d3f69e1a10ace433d572c36c12be54) by Roman Tsypuk).
+
 ## [0.3.49](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.49) - 2024-06-11
 
 <small>[Compare with 0.3.48](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.48...0.3.49)</small>
