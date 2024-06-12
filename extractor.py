@@ -2,11 +2,13 @@ import xml.etree.ElementTree as ET
 import json
 import re
 
+
 # Function to read and parse XML file
 def read_xml_file(file_path):
     with open(file_path, 'r') as file:
         xml_content = file.read()
     return ET.fromstring(xml_content)
+
 
 # Function to remove points from style
 def modify_style(style):
