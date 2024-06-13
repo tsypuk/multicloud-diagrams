@@ -77,6 +77,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 ![app_sync.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/app_sync.jpg?raw=True)
 ![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)
 ![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)
+![step_functions.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/step_functions.jpg?raw=True)
 
 ### ONPREM nodes:
 ![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)
