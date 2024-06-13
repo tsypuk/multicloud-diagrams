@@ -19,9 +19,19 @@ def modify_style(style):
     return style
 
 
+def get_last_id(root):
+    mx_cells = root.findall(".//mxCell")
+    if mx_cells:
+        last_cell = mx_cells[-1]
+        return last_cell.get("id")
+    else:
+        return None
+
+
 def extract_data_to_json(root):
     # Extract the mxCell element with the desired attributes
-    mx_cell = root.find(".//mxCell[@id='3']")
+    id = get_last_id(root)
+    mx_cell = root.find(f".//mxCell[@id='{id}']")
     if mx_cell is not None:
         style = mx_cell.get("style")
         style = modify_style(style)
