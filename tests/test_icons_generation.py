@@ -39,27 +39,27 @@ class TestIconsGeneration(TestUtilities):
 
         md_content = '\n'
 
-        for file_path in file_paths:
+        for provider in file_paths:
             # Open and load the JSON file
-            with open(f"./multicloud_diagrams/providers/{file_path}.json", 'r') as file:
-                aws_provider_nodes = json.load(file)
+            with open(f"./multicloud_diagrams/providers/{provider}.json", 'r') as file:
+                provider_nodes = json.load(file)
 
-            md_content += f"### {file_path.upper()} nodes:\n"
-            for aws_service in aws_provider_nodes.keys():
+            md_content += f"### {provider.upper()} nodes:\n"
+            for service in provider_nodes.keys():
                 # print(aws_service)
-                service_data = aws_provider_nodes.get(aws_service, {})
+                service_data = provider_nodes.get(service, {})
                 # Print the content for verification
                 print(json.dumps(service_data, indent=4))
 
                 # prepare icons md text
-                md_content += f"![{aws_service}.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/{aws_service}.jpg?raw=True)\n"
+                md_content += f'[![{service}.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/{service}.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/{provider}-components/{service}.html)\n'
 
                 # given
                 mcd = MultiCloudDiagrams()
 
                 # when
-                mcd.add_vertex(node_id=aws_service, node_name=aws_service, node_type=aws_service, hide_name=True)
-                mcd.export_to_file(f'./tmp/drawio/{aws_service}.drawio')
+                mcd.add_vertex(node_id=service, node_name=service, node_type=service, hide_name=True)
+                mcd.export_to_file(f'./tmp/drawio/{service}.drawio')
             md_content += '\n'
 
         # update index.md file
