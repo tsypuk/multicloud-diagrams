@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.52](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.52) - 2024-06-14
+
+<small>[Compare with 0.3.51](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.51...0.3.52)</small>
+
+### Docs
+
+- updated online documentation with aws glue service ([1be6768](https://github.com/tsypuk/multicloud-diagrams/commit/1be6768228551ea7753f841a552c450b537b7275) by Roman Tsypuk).
+
+### Features
+
+- added aws glue service node ([2fdc89e](https://github.com/tsypuk/multicloud-diagrams/commit/2fdc89e20a32011cb541de8d5bfa60c52beabba2) by Roman Tsypuk).
+
 ## [0.3.51](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.51) - 2024-06-13
 
 <small>[Compare with 0.3.50](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.50...0.3.51)</small>
