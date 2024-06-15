@@ -249,7 +249,7 @@ class MultiCloudDiagrams:
         if hide_id:
             return f'<b>Name</b>: {node_name}'
 
-        if 'aws' == self.get_provider_by_service_name(node_type):
+        if 'aws' in self.get_provider_by_service_name(node_type):
             identifier = 'ARN'
         return f'<b>Name</b>: {node_name}<BR><b>{identifier}</b>: {node_id}{metadata}'
 
@@ -260,7 +260,7 @@ class MultiCloudDiagrams:
         return 'fallback'
 
     # Load supported vertexes for registered Cloud Providers
-    providers = ['aws', 'azure', 'gcp', 'onprem', 'fallback', 'core']
+    providers = ['aws', 'aws2024', 'azure', 'gcp', 'onprem', 'fallback', 'core']
     for provider in providers:
         path = pkgutil.get_data(__package__, f'providers/{provider}.json')
         json_data = json.loads(path.decode("utf-8"))

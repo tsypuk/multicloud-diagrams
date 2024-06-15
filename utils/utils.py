@@ -13,7 +13,7 @@ class TestUtilities(unittest.TestCase):
 
     def setUp(self) -> None:
         project_folder = os.path.dirname(os.path.abspath(__file__))
-        for provider in ['aws', 'fallback', 'onprem', 'azure', 'gcp', 'core']:
+        for provider in ['aws', 'aws2024', 'fallback', 'onprem', 'azure', 'gcp', 'core']:
             path = os.path.join(project_folder, f'../multicloud_diagrams/providers/{provider}.json')
             with open(path, 'r') as file:
                 json_data = json.load(file)

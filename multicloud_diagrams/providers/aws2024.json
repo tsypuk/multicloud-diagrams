@@ -1,0 +1,53 @@
+{
+  "app_sync": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.appsync;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.46",
+    "desc": "App Sync",
+    "category": "Application Integration"
+  },
+  "route_53": {
+    "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;",
+    "width": "70.5",
+    "height": "85.5",
+    "version": "0.3.47",
+    "desc": "Route53",
+    "category": "Compute"
+  },
+  "outpost": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.outposts;",
+    "width": "78",
+    "height": "78",
+    "desc": "Outpost",
+    "category": "Compute"
+  },
+  "step_functions": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;",
+    "width": "78",
+    "height": "78",
+    "desc": "Step Functions",
+    "category": "Application Integration"
+  },
+  "glue": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;",
+    "width": "78",
+    "height": "78",
+    "desc": "Glue",
+    "category": "Analytics"
+  },
+  "lake_formation": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lake_formation;",
+    "width": "78",
+    "height": "78",
+    "desc": "Lake Formation",
+    "category": "Analytics"
+  },
+  "kinesis_video_stream": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.kinesis_video_streams;",
+    "width": "78",
+    "height": "78",
+    "desc": "Kinesis Video Stream",
+    "category": "Analytics"
+  }
+}
