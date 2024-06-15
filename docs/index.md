@@ -74,12 +74,20 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![resource_access_manager.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/resource_access_manager.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/resource_access_manager.html)
 [![security_hub.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/security_hub.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/security_hub.html)
 [![app_runner.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/app_runner.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/app_runner.html)
-[![app_sync.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/app_sync.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/app_sync.html)
-[![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/route_53.html)
-[![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/outpost.html)
-[![step_functions.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/step_functions.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/step_functions.html)
-[![glue.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/glue.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/glue.html)
-[![lake_formation.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lake_formation.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/lake_formation.html)
+
+### AWS2024 nodes:
+### AWS2024 / Application Integration
+[![app_sync.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/app_sync.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/app_sync.html)
+[![step_functions.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/step_functions.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/step_functions.html)
+
+### AWS2024 / Compute
+[![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/route_53.html)
+[![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/outpost.html)
+
+### AWS2024 / Analytics
+[![glue.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/glue.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/glue.html)
+[![lake_formation.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lake_formation.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/lake_formation.html)
+[![kinesis_video_stream.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/kinesis_video_stream.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/kinesis_video_stream.html)
 
 ### ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)

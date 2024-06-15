@@ -25,6 +25,7 @@ icons:
 
 images: icons
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio
+	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws2024-components/output/jpg docs/docs/aws2024-components/output/drawio
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/core-components/output/jpg docs/docs/core-components/output/drawio
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/onprem-components/output/jpg docs/docs/onprem-components/output/drawio
 
@@ -42,6 +43,7 @@ test:
 	$(call colorecho, "Run all Tests...")
 	poetry run python -m unittest -v tests/*.py
 	poetry run python -m unittest -v tests/aws/*.py
+	poetry run python -m unittest -v tests/aws2024/*.py
 	poetry run python -m unittest -v tests/core/*.py
 	poetry run python -m unittest -v tests/onprem/*.py
 	$(call colorecho, "Run flakehell lint...")

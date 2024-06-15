@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Glue
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2024-06-13
+date: 2024-06-15
 ---
 
 # Glue
@@ -30,7 +30,7 @@ New (v)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_glue.py %}
+{% root_include_snippet ../tests/aws2024/test_glue.py %}
 ```
 
 ## drawio glue vertex:

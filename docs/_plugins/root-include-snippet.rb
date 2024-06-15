@@ -26,8 +26,6 @@ class RootIncludeSnippet < Liquid::Tag
     in_func = false
     func = 'def test_' + func_name
 
-    # print(func)
-
     File.foreach(file_path, **file_read_opts) do |line|
       # print(file_path)
       if line.include?(func)

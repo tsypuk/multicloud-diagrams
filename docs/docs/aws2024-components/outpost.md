@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Outpost
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2024-06-12
+date: 2024-06-15
 ---
 
 # Outpost
@@ -30,7 +30,7 @@ New (v)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_outpost.py %}
+{% root_include_snippet ../tests/aws2024/test_outpost.py %}
 ```
 
 ## drawio outpost vertex:

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: App Sync
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2024-06-08
+date: 2024-06-15
 ---
 
 # App Sync
@@ -30,7 +30,7 @@ New (v0.3.46)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_app_sync.py %}
+{% root_include_snippet ../tests/aws2024/test_app_sync.py %}
 ```
 
 ## drawio app_sync vertex:

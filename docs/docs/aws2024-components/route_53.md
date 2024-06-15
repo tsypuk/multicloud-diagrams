@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Route53
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2024-06-09
+date: 2024-06-15
 ---
 
 # Route53
@@ -30,7 +30,7 @@ New (v0.3.47)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_route_53.py %}
+{% root_include_snippet ../tests/aws2024/test_route_53.py %}
 ```
 
 ## drawio route_53 vertex:
