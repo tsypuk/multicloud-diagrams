@@ -69,6 +69,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/outpost.html)
 [![step_functions.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/step_functions.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/step_functions.html)
 [![glue.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/glue.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/glue.html)
+[![lake_formation.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lake_formation.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/lake_formation.html)
 
 ### ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
