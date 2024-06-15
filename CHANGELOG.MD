@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.53](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.53) - 2024-06-15
+
+<small>[Compare with 0.3.52](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.52...0.3.53)</small>
+
+### Docs
+
+- updated online documentation with aws lake formation ([9117554](https://github.com/tsypuk/multicloud-diagrams/commit/9117554438a96fd839f11763e864b89c13ae24f9) by Roman Tsypuk).
+
+### Features
+
+- resize icons for onprem ([f4258fa](https://github.com/tsypuk/multicloud-diagrams/commit/f4258fa6b211c096834e7e70ffacbb1e7d995f63) by Roman Tsypuk).
+- added aws lake formation node ([f26f9a1](https://github.com/tsypuk/multicloud-diagrams/commit/f26f9a1b2d7ee78b28dc9e39daaac256acd3fb6a) by Roman Tsypuk).
+
 ## [0.3.52](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.52) - 2024-06-14
 
 <small>[Compare with 0.3.51](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.51...0.3.52)</small>
