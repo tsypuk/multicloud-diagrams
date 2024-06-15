@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the files to exclude
-exclude_files=("./docs/icons/jpg/redis.jpg")
+exclude_files=("./docs/icons/jpg/redis.jpg" "./docs/icons/jpg/docker.jpg" "./docs/icons/jpg/github_code.jpg" "./docs/icons/jpg/git_repository.jpg")
 
 # Create an array of all .jpg files
 all_files=(./docs/icons/jpg/*.jpg)
