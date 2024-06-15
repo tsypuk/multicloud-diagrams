@@ -37,7 +37,7 @@ New (v0.3.47)
 
 ```xml
 <mxCell id="vertex:route_53:arn:aws:route_53:us-west-1:123456789012:service/route_53/123" parent="1" vertex="1">
-    <mxGeometry width="70.5" height="85.5" as="geometry"/>
+    <mxGeometry width="78" height="78" as="geometry"/>
 </mxCell>
 ```
 ---
@@ -46,18 +46,24 @@ New (v0.3.47)
 
 ### Style:
 ```html
-style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;"
+style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.route_53;"
 ```
 
 | attribute | value |
 |:----------|:------|
 |align| left |
+|aspect| fixed |
 |dashed| 0 |
-|fillColor| #F58536 |
-|gradientColor| none |
+|fillColor| #8C4FFF |
+|fontColor| #232F3E |
+|fontSize| 12 |
+|fontStyle| 0 |
 |html| 1 |
 |outlineConnect| 0 |
-|shape| mxgraph.aws3.route_53 |
+|resIcon| mxgraph.aws4.route_53 |
+|shape| mxgraph.aws4.resourceIcon |
+|sketch| 0 |
+|strokeColor| #ffffff |
 |verticalAlign| top |
 |verticalLabelPosition| bottom |
 
@@ -65,8 +71,8 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
 
 | attribute | value |
 |:---------|:-----------|
-| width    | 70.5  |
-| height   |85.5|
+| width    | 78  |
+| height   |78|
 
 ### Full XML dump:
 ```xml
@@ -76,8 +82,8 @@ style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:route_53:arn:aws:route_53:us-west-1:123456789012:service/route_53/123" value="&lt;b&gt;Name&lt;/b&gt;: Route53&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:route_53:us-west-1:123456789012:service/route_53/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;serviceName&lt;/b&gt;: route_53&lt;BR&gt;&lt;b&gt;HostedZones&lt;/b&gt;: 4&lt;BR&gt;&lt;b&gt;dnsSec&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;Limit&lt;/b&gt;: MAX_HEALTH_CHECKS_BY_OWNER&lt;BR&gt;&lt;b&gt;HealthCheckConfig&lt;/b&gt;: {'IPAddress': '127.0.0.1', 'Port': 433, 'Type': 'HTTP | HTTPS'}" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;" parent="1" vertex="1">
-                    <mxGeometry width="70.5" height="85.5" as="geometry"/>
+                <mxCell id="vertex:route_53:arn:aws:route_53:us-west-1:123456789012:service/route_53/123" value="&lt;b&gt;Name&lt;/b&gt;: Route53&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:route_53:us-west-1:123456789012:service/route_53/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;serviceName&lt;/b&gt;: route_53&lt;BR&gt;&lt;b&gt;HostedZones&lt;/b&gt;: 4&lt;BR&gt;&lt;b&gt;dnsSec&lt;/b&gt;: True&lt;BR&gt;&lt;b&gt;Limit&lt;/b&gt;: MAX_HEALTH_CHECKS_BY_OWNER&lt;BR&gt;&lt;b&gt;HealthCheckConfig&lt;/b&gt;: {'IPAddress': '127.0.0.1', 'Port': 433, 'Type': 'HTTP | HTTPS'}" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.route_53;" parent="1" vertex="1">
+                    <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

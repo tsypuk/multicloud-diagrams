@@ -9,7 +9,7 @@ date: 2024-06-15
 # Lake Formation
 {: .d-inline-block .no_toc }
 
-New (v)
+New (v0.3.53)
 {: .label .label-green }
 
 ## Table of contents

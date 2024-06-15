@@ -9,7 +9,7 @@ date: 2024-06-15
 # Glue
 {: .d-inline-block .no_toc }
 
-New (v)
+New (v0.3.52)
 {: .label .label-green }
 
 ## Table of contents

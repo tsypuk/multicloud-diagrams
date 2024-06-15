@@ -9,7 +9,7 @@ date: 2024-06-15
 # Outpost
 {: .d-inline-block .no_toc }
 
-New (v)
+New (v0.3.50)
 {: .label .label-green }
 
 ## Table of contents
