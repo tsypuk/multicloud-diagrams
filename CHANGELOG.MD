@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.55](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.55) - 2024-06-16
+
+<small>[Compare with 0.3.54](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.54...0.3.55)</small>
+
+### Docs
+
+- updated online documentation with aws kinesis video stream ([bfcb91f](https://github.com/tsypuk/multicloud-diagrams/commit/bfcb91f36585fa709f7e7198d4e5815573517c5e) by Roman Tsypuk).
+
+### Features
+
+- added kinesis video stream node ([41b926e](https://github.com/tsypuk/multicloud-diagrams/commit/41b926e10756c425093d28cec2bfedbc207251ba) by Roman Tsypuk).
+
 ## [0.3.54](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.54) - 2024-06-15
 
 <small>[Compare with 0.3.53](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.53...0.3.54)</small>
