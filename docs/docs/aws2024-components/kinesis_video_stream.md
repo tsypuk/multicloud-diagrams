@@ -9,7 +9,7 @@ date: 2024-06-15
 # Kinesis Video Stream
 {: .d-inline-block .no_toc }
 
-New (v)
+New (v0.3.55)
 {: .label .label-green }
 
 ## Table of contents

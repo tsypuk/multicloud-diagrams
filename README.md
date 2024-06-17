@@ -72,6 +72,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 
 ### AWS2024 / Network & Content Delivery
 [![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/route_53.html)
+[![direct_connect.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/direct_connect.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/direct_connect.html)
 
 ### AWS2024 / Compute
 [![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/outpost.html)
