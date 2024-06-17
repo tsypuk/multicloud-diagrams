@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.56](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.56) - 2024-06-17
+
+<small>[Compare with 0.3.55](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.55...0.3.56)</small>
+
+### Docs
+
+- updated online documentation with aws direct connect service ([1ecc568](https://github.com/tsypuk/multicloud-diagrams/commit/1ecc568cde22f065a8a7e24f632ef8f91e564049) by Roman Tsypuk).
+
+### Features
+
+- added aws direct connect node ([7a19d07](https://github.com/tsypuk/multicloud-diagrams/commit/7a19d077ee43a14ba5f9a57c5c87924805b418e8) by Roman Tsypuk).
+
 ## [0.3.55](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.55) - 2024-06-16
 
 <small>[Compare with 0.3.54](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.54...0.3.55)</small>
