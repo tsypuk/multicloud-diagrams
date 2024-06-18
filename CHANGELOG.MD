@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.57](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.57) - 2024-06-18
+
+<small>[Compare with 0.3.56](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.56...0.3.57)</small>
+
+### Docs
+
+- updated online documentation with aws sagemaker ground truth ([7b7864b](https://github.com/tsypuk/multicloud-diagrams/commit/7b7864b0074892619ad2ecf565d1842730553550) by Roman Tsypuk).
+
+### Features
+
+- added aws sagemaker ground truth node ([5bb7462](https://github.com/tsypuk/multicloud-diagrams/commit/5bb74620080faa5824748baba229b3710e9ae94c) by Roman Tsypuk).
+
 ## [0.3.56](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.56) - 2024-06-17
 
 <small>[Compare with 0.3.55](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.55...0.3.56)</small>
