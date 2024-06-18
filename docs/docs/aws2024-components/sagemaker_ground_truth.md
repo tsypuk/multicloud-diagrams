@@ -1,0 +1,98 @@
+---
+layout: default
+title: Sagemaker Ground Truth
+parent: AWS2024 Components
+nav_order: 3
+date: 2024-06-18
+---
+
+# Sagemaker Ground Truth
+{: .d-inline-block .no_toc }
+
+New (v0.3.57)
+{: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+
+## Node Type: ``sagemaker_ground_truth``
+
+## Rendering:
+
+![lambda](output/jpg/sagemaker_ground_truth.jpg)
+
+## Code Snippet:
+
+```python
+{% root_include_snippet ../tests/aws2024/test_sagemaker_ground_truth.py %}
+```
+
+## drawio sagemaker_ground_truth vertex:
+
+```xml
+<mxCell id="vertex:sagemaker_ground_truth:arn:aws:sagemaker_ground_truth:us-west-1:123456789012:sagemaker_ground_truth/123" parent="1" vertex="1">
+    <mxGeometry width="78" height="78" as="geometry"/>
+</mxCell>
+```
+---
+
+## Advanced for Geeks:
+
+### Style:
+```html
+style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker_ground_truth;"
+```
+
+| attribute | value |
+|:----------|:------|
+|align| left |
+|aspect| fixed |
+|dashed| 0 |
+|fillColor| #01A88D |
+|fontColor| #232F3E |
+|fontSize| 12 |
+|fontStyle| 0 |
+|html| 1 |
+|outlineConnect| 0 |
+|resIcon| mxgraph.aws4.sagemaker_ground_truth |
+|shape| mxgraph.aws4.resourceIcon |
+|sketch| 0 |
+|strokeColor| #ffffff |
+|verticalAlign| top |
+|verticalLabelPosition| bottom |
+
+### Vertex size:
+
+| attribute | value |
+|:---------|:-----------|
+| width    | 78  |
+| height   |78|
+
+### Full XML dump:
+```xml
+<mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
+    <diagram id="diagram_1" name="AWS components">
+        <mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="vertex:sagemaker_ground_truth:arn:aws:sagemaker_ground_truth:us-west-1:123456789012:sagemaker_ground_truth/123" value="&lt;b&gt;Name&lt;/b&gt;: Registry for images&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:sagemaker_ground_truth:us-west-1:123456789012:sagemaker_ground_truth/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;DataSource&lt;/b&gt;: {'S3DataSource': {'ManifestS3Uri': 'arn:aws:s3:::content_bucket'}, 'SnsDataSource': {'SnsTopicArn': 'arn:aws:sns:eu-west-1:123456789012:internal.fifo'}}&lt;BR&gt;&lt;b&gt;DataAttributes&lt;/b&gt;: {'ContentClassifiers': ['FreeOfAdultContent']}&lt;BR&gt;&lt;b&gt;StoppingConditions&lt;/b&gt;: {'MaxHumanLabeledObjectCount': 123, 'MaxPercentageOfInputDatasetLabeled': 123}&lt;BR&gt;&lt;b&gt;TaskTitle&lt;/b&gt;: Explore car parts&lt;BR&gt;&lt;b&gt;TaskDescription&lt;/b&gt;: Human-based detection&lt;BR&gt;&lt;b&gt;NumberOfHumanWorkersPerDataObject&lt;/b&gt;: 4&lt;BR&gt;&lt;b&gt;TaskTimeLimitInSeconds&lt;/b&gt;: 600&lt;BR&gt;&lt;b&gt;TaskAvailabilityLifetimeInSeconds&lt;/b&gt;: 3600&lt;BR&gt;&lt;b&gt;MaxConcurrentTaskCount&lt;/b&gt;: 5" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker_ground_truth;" parent="1" vertex="1">
+                    <mxGeometry width="78" height="78" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
+```
+
+### drawio file:
+
+Download generated ``sagemaker_ground_truth.drawio``:
+
+[Download](output/drawio/sagemaker_ground_truth.drawio){: .btn .btn-purple }

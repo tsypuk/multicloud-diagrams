@@ -82,6 +82,9 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![lake_formation.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lake_formation.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/lake_formation.html)
 [![kinesis_video_stream.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/kinesis_video_stream.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/kinesis_video_stream.html)
 
+### AWS2024 / Machine Learning
+[![sagemaker_ground_truth.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sagemaker_ground_truth.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sagemaker_ground_truth.html)
+
 ## ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
 [![mq_broker.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/mq_broker.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/mq_broker.html)
