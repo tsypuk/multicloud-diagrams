@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.58](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.58) - 2024-06-19
+
+<small>[Compare with 0.3.57](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.57...0.3.58)</small>
+
+### Docs
+
+- updated online documentation with elastic beanstalk ([cf8f1bc](https://github.com/tsypuk/multicloud-diagrams/commit/cf8f1bc93eff9c0052d3e2304cac7998af7c8ceb) by Roman Tsypuk).
+
+### Features
+
+- added aws elastic beanstalk node ([9426baa](https://github.com/tsypuk/multicloud-diagrams/commit/9426baa6d21c36369e843c6bc35af8f204f995d7) by Roman Tsypuk).
+
 ## [0.3.57](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.57) - 2024-06-18
 
 <small>[Compare with 0.3.56](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.56...0.3.57)</small>
