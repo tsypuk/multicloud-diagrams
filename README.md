@@ -76,6 +76,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 
 ### AWS2024 / Compute
 [![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/outpost.html)
+[![elastic_beanstalk.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/elastic_beanstalk.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/elastic_beanstalk.html)
 
 ### AWS2024 / Analytics
 [![glue.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/glue.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/glue.html)
