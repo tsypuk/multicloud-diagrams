@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.59](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.59) - 2024-06-20
+
+<small>[Compare with 0.3.58](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.58...0.3.59)</small>
+
+### Docs
+
+- updated online documentation with aws1 EFA ([b9feb52](https://github.com/tsypuk/multicloud-diagrams/commit/b9feb52c3be6b39c797df2752122f2ded0d79818) by Roman Tsypuk).
+
+### Features
+
+- added aws elastic fabric adapter node ([74f2cc0](https://github.com/tsypuk/multicloud-diagrams/commit/74f2cc0d1ecfe20342b8db99fc17fea10f985949) by Roman Tsypuk).
+
 ## [0.3.58](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.58) - 2024-06-19
 
 <small>[Compare with 0.3.57](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.57...0.3.58)</small>
