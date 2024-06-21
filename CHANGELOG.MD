@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.60](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.60) - 2024-06-21
+
+<small>[Compare with 0.3.59](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.59...0.3.60)</small>
+
+### Docs
+
+- updated online documentation with aws sumerian service ([84722df](https://github.com/tsypuk/multicloud-diagrams/commit/84722dfe488b7b79f16350aff95d5031427a3f9a) by Roman Tsypuk).
+
+### Features
+
+- added aws sumerian node ([e01fc7f](https://github.com/tsypuk/multicloud-diagrams/commit/e01fc7f2f4cfad702420627103e1d3842433b6d5) by Roman Tsypuk).
+
 ## [0.3.59](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.59) - 2024-06-20
 
 <small>[Compare with 0.3.58](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.58...0.3.59)</small>
