@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.61](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.61) - 2024-06-22
+
+<small>[Compare with 0.3.60](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.60...0.3.61)</small>
+
+### Docs
+
+- updated online documentation with aws ar & vr service ([19e9b10](https://github.com/tsypuk/multicloud-diagrams/commit/19e9b105093be17c2e31bb96ccf69ba08bb7f34c) by Roman Tsypuk).
+
+### Features
+
+- added aws ar&vr node ([b56a5de](https://github.com/tsypuk/multicloud-diagrams/commit/b56a5de8b601a2d264e75b27d97750fe1cb8b004) by Roman Tsypuk).
+
 ## [0.3.60](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.60) - 2024-06-21
 
 <small>[Compare with 0.3.59](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.59...0.3.60)</small>
