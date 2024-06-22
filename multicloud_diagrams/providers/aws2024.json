@@ -94,5 +94,13 @@
     "version": "0.3.60",
     "desc": "Sumerian",
     "category": "AR & VR"
+  },
+  "ar_vr": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=#F34482;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ar_vr;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.61",
+    "desc": "AR & VR",
+    "category": "AR & VR"
   }
 }
