@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.62](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.62) - 2024-06-23
+
+<small>[Compare with 0.3.61](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.61...0.3.62)</small>
+
+### Docs
+
+- updated online documentation with managed apache flink service ([349b6c0](https://github.com/tsypuk/multicloud-diagrams/commit/349b6c01dac6b67df71d841650aedae53b66e8a9) by Roman Tsypuk).
+
+### Features
+
+- added aws managed apache flink node ([3e73227](https://github.com/tsypuk/multicloud-diagrams/commit/3e7322706869610ca305ae4b300ffd49fcf9e4e4) by Roman Tsypuk).
+
 ## [0.3.61](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.61) - 2024-06-22
 
 <small>[Compare with 0.3.60](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.60...0.3.61)</small>
