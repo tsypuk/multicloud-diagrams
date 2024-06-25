@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.64](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.64) - 2024-06-25
+
+<small>[Compare with 0.3.63](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.63...0.3.64)</small>
+
+### Docs
+
+- updated online documentation with aws data pipeline service ([aaf4d69](https://github.com/tsypuk/multicloud-diagrams/commit/aaf4d6908b8ef6632ec77356883b2587e4e15d3e) by Roman Tsypuk).
+
+### Features
+
+- added aws data pipeline node ([929e6a7](https://github.com/tsypuk/multicloud-diagrams/commit/929e6a77601f1f3e4f168d003ae3dbcc878089cf) by Roman Tsypuk).
+
 ## [0.3.63](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.63) - 2024-06-24
 
 <small>[Compare with 0.3.62](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.62...0.3.63)</small>
