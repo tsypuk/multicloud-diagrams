@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.65](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.65) - 2024-06-26
+
+<small>[Compare with 0.3.64](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.64...0.3.65)</small>
+
+### Docs
+
+- update online documentation with aws lex service ([0eb6bd2](https://github.com/tsypuk/multicloud-diagrams/commit/0eb6bd247197a3dc9b2de791f53a0791245235d0) by Roman Tsypuk).
+
+### Features
+
+- added aws lex node ([063edcf](https://github.com/tsypuk/multicloud-diagrams/commit/063edcf677dd811708279d3e5347db3cab11c705) by Roman Tsypuk).
+
 ## [0.3.64](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.64) - 2024-06-25
 
 <small>[Compare with 0.3.63](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.63...0.3.64)</small>
