@@ -100,6 +100,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 ### AWS2024 / Machine Learning
 [![sagemaker_ground_truth.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sagemaker_ground_truth.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sagemaker_ground_truth.html)
 [![lex.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lex.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/lex.html)
+[![bedrock.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/bedrock.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/bedrock.html)
 
 ### AWS2024 / AR & VR
 [![sumerian.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sumerian.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sumerian.html)
