@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.66](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.66) - 2024-06-27
+
+<small>[Compare with 0.3.65](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.65...0.3.66)</small>
+
+### Docs
+
+- updated online documentation with aws bedrock service ([982108f](https://github.com/tsypuk/multicloud-diagrams/commit/982108f4de246d90400fc1b2a5c86a95840aea76) by Roman Tsypuk).
+
+### Features
+
+- added aws bedrock node ([74c7ace](https://github.com/tsypuk/multicloud-diagrams/commit/74c7aceec5b19433ef4787cf6a43fb7509dc55bc) by Roman Tsypuk).
+
 ## [0.3.65](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.65) - 2024-06-26
 
 <small>[Compare with 0.3.64](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.64...0.3.65)</small>
