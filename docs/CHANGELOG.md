@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.68](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.68) - 2024-06-29
+
+<small>[Compare with 0.3.67](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.67...0.3.68)</small>
+
+### Docs
+
+- updated online documentation with aws codewhisperer service ([595b0df](https://github.com/tsypuk/multicloud-diagrams/commit/595b0df980bf3aa83b92ab9ba534c32891bf1139) by Roman Tsypuk).
+
+### Features
+
+- added aws codewhisperer node ([2216fa1](https://github.com/tsypuk/multicloud-diagrams/commit/2216fa1c1588dd53cf36933d7a3b461acca42613) by Roman Tsypuk).
+
 ## [0.3.67](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.67) - 2024-06-28
 
 <small>[Compare with 0.3.66](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.66...0.3.67)</small>
