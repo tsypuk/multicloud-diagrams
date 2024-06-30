@@ -5,6 +5,12 @@ TAG := $(shell git describe --tags --abbrev=0)
 VERSION := TAG
 NEW_VERSION := $(shell echo $(TAG) | awk -F. '{$$NF = $$NF + 1;} 1' | sed 's/ /./g')
 
+DIRECTORY=docs/docs/aws2024-components/output/drawio
+OUTPUT_DIR=docs/docs/aws2024-components/output/jpg
+DRAWIO_APP=/Applications/draw.io.app/Contents/MacOS/draw.io
+QUALITY=100
+FORMAT=jpg
+
 define colorecho
       @tput setaf 6
       @echo $1
@@ -12,6 +18,20 @@ define colorecho
 endef
 
 .PHONY: run
+
+# Function to get the drawio file from git status
+get_drawio_file = $(shell git status $(DIRECTORY) | grep -oE "$(DIRECTORY)/[^\s]+\.drawio")
+
+# Target to process drawio file
+process_drawio:
+	@drawio_file=$(call get_drawio_file) && \
+	if [ -n "$$drawio_file" ]; then \
+		echo "Processing file: $$drawio_file"; \
+		$(DRAWIO_APP) -q $(QUALITY) -x -f $(FORMAT) $$drawio_file -o $(OUTPUT_DIR); \
+	else \
+		echo "No .drawio files found in the specified directory."; \
+	fi
+
 
 doc: test images
 	$(call colorecho, "Starting Documentation locally...")
