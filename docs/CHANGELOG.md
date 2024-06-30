@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.69](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.69) - 2024-06-30
+
+<small>[Compare with 0.3.68](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.68...0.3.69)</small>
+
+### Docs
+
+- updated online documentation for aws comprehend service ([3a30beb](https://github.com/tsypuk/multicloud-diagrams/commit/3a30bebc733eda95fd303d50ea3819d236c3480e) by Roman Tsypuk).
+
+### Features
+
+- added aws comprehend node ([ea66b2a](https://github.com/tsypuk/multicloud-diagrams/commit/ea66b2acc6f62b93d9d2f35b583531d78f14954a) by Roman Tsypuk).
+
 ## [0.3.68](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.68) - 2024-06-29
 
 <small>[Compare with 0.3.67](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.67...0.3.68)</small>
