@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.71](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.71) - 2024-07-01
+
+<small>[Compare with 0.3.70](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.70...0.3.71)</small>
+
+### Features
+
+- move appflow to 2024 ([13841a7](https://github.com/tsypuk/multicloud-diagrams/commit/13841a7e3dabde0b832d8d1991e468bb9b40776e) by Roman Tsypuk).
+- move event bridge, added aws mq ([7cabd93](https://github.com/tsypuk/multicloud-diagrams/commit/7cabd93735fb3818d2eee2406c49379cee73bc42) by Roman Tsypuk).
+- move sns, sqs ([d0c48da](https://github.com/tsypuk/multicloud-diagrams/commit/d0c48dae4e2677d5782be03bb0f9e2f69b74029f) by Roman Tsypuk).
+
 ## [0.3.70](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.70) - 2024-07-01
 
 <small>[Compare with 0.3.69](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.69...0.3.70)</small>
