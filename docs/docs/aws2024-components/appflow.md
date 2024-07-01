@@ -1,9 +1,9 @@
 ---
 layout: default
 title: AppFlow
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2024-05-09
+date: 2024-07-01
 ---
 
 # AppFlow
@@ -30,7 +30,7 @@ New (v0.3.38)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_appflow.py %}
+{% root_include_snippet ../tests/aws2024/test_appflow.py %}
 ```
 
 ## drawio appflow vertex:

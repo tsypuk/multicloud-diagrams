@@ -52,7 +52,6 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![neptune.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/neptune.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/neptune.html)
 [![eks.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/eks.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/eks.html)
 [![backup.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/backup.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/backup.html)
-[![appflow.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/appflow.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/appflow.html)
 [![datasync.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/datasync.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/datasync.html)
 [![exchange.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/exchange.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/exchange.html)
 [![xray.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/xray.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/xray.html)
@@ -69,6 +68,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![sns.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sns.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sns.html)
 [![mq.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/mq.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/mq.html)
 [![event_bridge.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/event_bridge.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/event_bridge.html)
+[![appflow.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/appflow.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/appflow.html)
 
 ### AWS2024 / Network & Content Delivery
 [![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/route_53.html)
