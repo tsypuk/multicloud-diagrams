@@ -40,8 +40,6 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![s3.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/s3.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/s3.html)
 [![kms.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/kms.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/kms.html)
 [![ssm.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/ssm.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/ssm.html)
-[![mq.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/mq.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/mq.html)
-[![event_bridge.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/event_bridge.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/event_bridge.html)
 [![client_vpn.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/client_vpn.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/client_vpn.html)
 [![certificate_manager.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/certificate_manager.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/certificate_manager.html)
 [![ecs.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/ecs.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/ecs.html)
@@ -79,6 +77,8 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![step_functions.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/step_functions.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/step_functions.html)
 [![sqs.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sqs.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sqs.html)
 [![sns.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sns.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sns.html)
+[![mq.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/mq.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/mq.html)
+[![event_bridge.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/event_bridge.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/event_bridge.html)
 
 ### AWS2024 / Network & Content Delivery
 [![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/route_53.html)

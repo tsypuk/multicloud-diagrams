@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Event Bridge
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2023-08-11
+date: 2024-07-01
 ---
 
 # Event Bridge
@@ -30,7 +30,7 @@ New (v0.3.11)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_event_bridge.py %}
+{% root_include_snippet ../tests/aws2024/test_event_bridge.py %}
 ```
 
 ## drawio event_bridge vertex:
