@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.70](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.70) - 2024-07-01
+
+<small>[Compare with 0.3.69](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.69...0.3.70)</small>
+
+### Docs
+
+- updated online documentation with aws comprehend medical service ([cb5c077](https://github.com/tsypuk/multicloud-diagrams/commit/cb5c077190c49b0945b5f776869a3d9f087456e1) by Roman Tsypuk).
+
+### Features
+
+- added aws comprehend medical node ([6f37221](https://github.com/tsypuk/multicloud-diagrams/commit/6f372217bb39157635d02ceeb3e96c40d9e279e8) by Roman Tsypuk).
+
 ## [0.3.69](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.69) - 2024-06-30
 
 <small>[Compare with 0.3.68](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.68...0.3.69)</small>
