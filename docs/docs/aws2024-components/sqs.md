@@ -1,9 +1,9 @@
 ---
 layout: default
 title: SQS
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2023-08-11
+date: 2024-07-01
 ---
 
 # SQS
@@ -30,7 +30,7 @@ New (v0.2.0)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_sqs.py %}
+{% root_include_snippet ../tests/aws2024/test_sqs.py %}
 ```
 
 ## drawio sqs vertex:

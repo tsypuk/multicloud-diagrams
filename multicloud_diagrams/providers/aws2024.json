@@ -174,5 +174,21 @@
     "version": "0.3.68",
     "desc": "Comprehend Medical",
     "category": "Machine Learning"
+  },
+  "sqs": {
+    "style": "sketch=0;outlineConnect=0;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;",
+    "width": "78",
+    "height": "78",
+    "version": "0.2.0",
+    "desc": "SQS",
+    "category": "Application Integration"
+  },
+  "sns": {
+    "style": "sketch=0;outlineConnect=0;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;",
+    "width": "78",
+    "height": "78",
+    "version": "0.2.0",
+    "desc": "SNS",
+    "category": "Application Integration"
   }
 }

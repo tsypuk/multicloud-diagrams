@@ -1,9 +1,9 @@
 ---
 layout: default
 title: SNS
-parent: AWS Components
+parent: AWS2024 Components
 nav_order: 3
-date: 2023-08-11
+date: 2024-07-01
 ---
 
 # SNS
@@ -30,7 +30,7 @@ New (v0.2.0)
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws/test_sns.py %}
+{% root_include_snippet ../tests/aws2024/test_sns.py %}
 ```
 
 ## drawio sns vertex:

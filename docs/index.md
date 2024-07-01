@@ -31,8 +31,6 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 
 ## AWS nodes:
 [![lambda_function.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lambda_function.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/lambda_function.html)
-[![sqs.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sqs.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/sqs.html)
-[![sns.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sns.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/sns.html)
 [![iam_role.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/iam_role.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/iam_role.html)
 [![iam_policy.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/iam_policy.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/iam_policy.html)
 [![iam_permission.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/iam_permission.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/iam_permission.html)
@@ -79,6 +77,8 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 ### AWS2024 / Application Integration
 [![app_sync.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/app_sync.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/app_sync.html)
 [![step_functions.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/step_functions.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/step_functions.html)
+[![sqs.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sqs.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sqs.html)
+[![sns.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sns.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sns.html)
 
 ### AWS2024 / Network & Content Delivery
 [![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/route_53.html)
