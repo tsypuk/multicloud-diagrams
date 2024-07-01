@@ -104,6 +104,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![codeguru.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codeguru.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codeguru.html)
 [![codewhisperer.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codewhisperer.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codewhisperer.html)
 [![comprehend.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/comprehend.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/comprehend.html)
+[![comprehend_medical.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/comprehend_medical.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/comprehend_medical.html)
 
 ### AWS2024 / AR & VR
 [![sumerian.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sumerian.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sumerian.html)
