@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.72](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.72) - 2024-07-02
+
+<small>[Compare with 0.3.71](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.71...0.3.72)</small>
+
+### Docs
+
+- updated online documentation with timestream service ([7ea9398](https://github.com/tsypuk/multicloud-diagrams/commit/7ea9398b2f0360b1109a4c0838fc9b44747ae620) by Roman Tsypuk).
+
+### Features
+
+- added aws timestream node ([a17527d](https://github.com/tsypuk/multicloud-diagrams/commit/a17527d18215a0d3fe2f5f4b384700586c34f2ad) by Roman Tsypuk).
+
 ## [0.3.71](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.71) - 2024-07-01
 
 <small>[Compare with 0.3.70](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.70...0.3.71)</small>
