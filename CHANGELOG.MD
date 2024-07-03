@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.73](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.73) - 2024-07-03
+
+<small>[Compare with 0.3.72](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.72...0.3.73)</small>
+
+### Docs
+
+- updated online documentation with aws managed casandra service ([1407c45](https://github.com/tsypuk/multicloud-diagrams/commit/1407c45dd04be7f3e3b8ad2edbdf30fa95eb120c) by Roman Tsypuk).
+
+### Features
+
+- added aws managed casandra node ([1264b01](https://github.com/tsypuk/multicloud-diagrams/commit/1264b01cf956b4d58286bdb448a9678457a2a106) by Roman Tsypuk).
+
 ## [0.3.72](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.72) - 2024-07-02
 
 <small>[Compare with 0.3.71](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.71...0.3.72)</small>
