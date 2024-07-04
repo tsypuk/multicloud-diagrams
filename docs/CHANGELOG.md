@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.74](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.74) - 2024-07-04
+
+<small>[Compare with 0.3.73](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.73...0.3.74)</small>
+
+### Docs
+
+- updated online documentation with aws db migration service ([a194cb5](https://github.com/tsypuk/multicloud-diagrams/commit/a194cb53f16660aab3c25c5818ac87c171c98c77) by Roman Tsypuk).
+
+### Features
+
+- added aws db migration service node ([8e98111](https://github.com/tsypuk/multicloud-diagrams/commit/8e981118fda10830bf4fa4ad5c1d22881cdeb6de) by Roman Tsypuk).
+
 ## [0.3.73](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.73) - 2024-07-03
 
 <small>[Compare with 0.3.72](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.72...0.3.73)</small>
