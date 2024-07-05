@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.75](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.75) - 2024-07-05
+
+<small>[Compare with 0.3.74](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.74...0.3.75)</small>
+
+### Docs
+
+- updated online documentation with aws quantum ledger service ([1c4cc36](https://github.com/tsypuk/multicloud-diagrams/commit/1c4cc36834ee077fb54b876825192d5d03ae992a) by Roman Tsypuk).
+
+### Features
+
+- added aws quantum ledger node ([8f06fac](https://github.com/tsypuk/multicloud-diagrams/commit/8f06fac838462884b0a7b2bee5988b32443ce3e6) by Roman Tsypuk).
+
 ## [0.3.74](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.74) - 2024-07-04
 
 <small>[Compare with 0.3.73](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.73...0.3.74)</small>
