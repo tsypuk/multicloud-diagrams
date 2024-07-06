@@ -115,6 +115,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![managed_casandra.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/managed_casandra.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/managed_casandra.html)
 [![db_migration.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/db_migration.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/db_migration.html)
 [![quantum_ledger.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/quantum_ledger.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/quantum_ledger.html)
+[![redshift.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/redshift.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/redshift.html)
 
 ## ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
