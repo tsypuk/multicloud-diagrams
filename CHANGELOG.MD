@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.76](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.76) - 2024-07-06
+
+<small>[Compare with 0.3.75](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.75...0.3.76)</small>
+
+### Docs
+
+- updated online documentation with aws redshift service ([176b373](https://github.com/tsypuk/multicloud-diagrams/commit/176b37376615a60aa9ec6e25639266e2ffd454d1) by Roman Tsypuk).
+
+### Features
+
+- added aws redshift node ([6ab2a82](https://github.com/tsypuk/multicloud-diagrams/commit/6ab2a828454956a3e93d4b604b809f0bb1ca90bf) by Roman Tsypuk).
+
 ## [0.3.75](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.75) - 2024-07-05
 
 <small>[Compare with 0.3.74](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.74...0.3.75)</small>
