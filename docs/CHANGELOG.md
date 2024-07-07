@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.77](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.77) - 2024-07-07
+
+<small>[Compare with 0.3.76](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.76...0.3.77)</small>
+
+### Docs
+
+- updated online documentation with aws local zone service ([7cbf61f](https://github.com/tsypuk/multicloud-diagrams/commit/7cbf61f17c4540fedd7ecfef798a7a958c53a457) by Roman Tsypuk).
+
+### Features
+
+- added aws local zone node ([ffe58ab](https://github.com/tsypuk/multicloud-diagrams/commit/ffe58ab2ecc3b560ddbadb7cb86d963789edd1e8) by Roman Tsypuk).
+
 ## [0.3.76](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.76) - 2024-07-06
 
 <small>[Compare with 0.3.75](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.75...0.3.76)</small>
