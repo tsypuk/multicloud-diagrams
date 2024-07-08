@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.78](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.78) - 2024-07-08
+
+<small>[Compare with 0.3.77](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.77...0.3.78)</small>
+
+### Docs
+
+- updated online documentation with aws lightsail service ([8ad7179](https://github.com/tsypuk/multicloud-diagrams/commit/8ad717954f5dac5e2f7eacdfe8289190273986e5) by Roman Tsypuk).
+
+### Features
+
+- added aws lightsail node ([5c38b54](https://github.com/tsypuk/multicloud-diagrams/commit/5c38b5469e6f35e98a9814f69afe3124038a8620) by Roman Tsypuk).
+
 ## [0.3.77](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.77) - 2024-07-07
 
 <small>[Compare with 0.3.76](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.76...0.3.77)</small>
