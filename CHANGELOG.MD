@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.79](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.79) - 2024-07-09
+
+<small>[Compare with 0.3.78](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.78...0.3.79)</small>
+
+### Docs
+
+- updated online documentation with aws elastic load balancing service ([c756c4c](https://github.com/tsypuk/multicloud-diagrams/commit/c756c4c3eaece84d6b402c78430894a135fab225) by Roman Tsypuk).
+
+### Features
+
+- added aws elastic load balancing service ([76f93bd](https://github.com/tsypuk/multicloud-diagrams/commit/76f93bd4cddc54db95a9af0de5a594014aea0634) by Roman Tsypuk).
+
 ## [0.3.78](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.78) - 2024-07-08
 
 <small>[Compare with 0.3.77](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.77...0.3.78)</small>
