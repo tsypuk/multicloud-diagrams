@@ -42,6 +42,17 @@ def extract_data_to_json(root):
         else:
             width = height = None
 
+        # Regular expression to extract the value of shape
+        pattern = r'resIcon=([^;]+);'
+
+        # Search for the pattern in the input string
+        match = re.search(pattern, style)
+
+        # Extract and print the value if found
+        if match:
+            shape_value = match.group(1)
+            print(shape_value)
+
         # Create the JSON structure
         data = {
             "style": style,
