@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_outpost(self):
+    def test_lake_formation(self):
         # docs
         self.node_type = 'lake_formation'
 

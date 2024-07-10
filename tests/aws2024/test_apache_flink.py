@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_apache_flink_adapter(self):
+    def test_apache_flink(self):
         # docs
         self.node_type = 'apache_flink'
 

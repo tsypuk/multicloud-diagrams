@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_timestream(self):
+    def test_managed_casandra(self):
         # docs
         self.node_type = 'managed_casandra'
 

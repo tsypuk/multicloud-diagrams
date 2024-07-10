@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_timestream(self):
+    def test_elastic_load_balancing(self):
         # docs
         self.node_type = 'elastic_load_balancing'
 

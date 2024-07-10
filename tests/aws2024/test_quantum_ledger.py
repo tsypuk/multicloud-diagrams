@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_db_migration(self):
+    def test_quantum_ledger(self):
         # docs
         self.node_type = 'quantum_ledger'
 

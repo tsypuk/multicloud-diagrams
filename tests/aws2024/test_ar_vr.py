@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_sumerian(self):
+    def test_ar_vr(self):
         # docs
         self.node_type = 'ar_vr'
 

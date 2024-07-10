@@ -4,16 +4,16 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_lightsail(self):
+    def test_auto_scaling2(self):
         # docs
-        self.node_type = 'lightsail'
+        self.node_type = 'auto_scaling2'
 
         # given
         mcd = MultiCloudDiagrams()
 
         # when
-        lightsail_service_arn = 'arn:aws:lightsail:eu-west-1:123456789012:lightsail/1'
-        lightsail_service_name = 'Lightsail'
+        auto_scaling2_service_arn = 'arn:aws:auto_scaling2:eu-west-1:123456789012:auto_scaling2/1'
+        auto_scaling2_service_name = 'Lightsail'
         metadata = {
             'name': 'Instance1',
             'arn': 'ARN',
@@ -26,7 +26,7 @@ class TestAWSVertexInIsolation(TestRendering):
             'resourceType': 'Instance',
         }
 
-        mcd.add_vertex(node_id=lightsail_service_arn, node_name=lightsail_service_name, node_type='lightsail', metadata=metadata)
+        mcd.add_vertex(node_id=auto_scaling2_service_arn, node_name=auto_scaling2_service_name, node_type='auto_scaling2', metadata=metadata)
 
         # then
         expected = {'id': 'vertex:lightsail:arn:aws:lightsail:eu-west-1:123456789012:lightsail/1',
@@ -40,7 +40,7 @@ class TestAWSVertexInIsolation(TestRendering):
                              "'us-east-1'}<BR><b>resourceType</b>: Instance",
                     'vertex': '1'}
 
-        self.verify_resource(expected, mcd.mx_file, 'lightsail', self.node_type)
+        self.verify_resource(expected, mcd.mx_file, 'auto_scaling2', self.node_type)
 
         # docs
         self.mcd = mcd

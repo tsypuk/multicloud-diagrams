@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_glue(self):
+    def test_kinesis_video_stream(self):
         # docs
         self.node_type = 'kinesis_video_stream'
 

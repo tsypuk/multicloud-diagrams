@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_bedrock(self):
+    def test_codeguru(self):
         # docs
         self.node_type = 'codeguru'
 

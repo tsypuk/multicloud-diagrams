@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_timestream(self):
+    def test_local_zones(self):
         # docs
         self.node_type = 'local_zones'
 
