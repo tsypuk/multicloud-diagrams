@@ -11,6 +11,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.80](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.80) - 2024-07-10
+
+<small>[Compare with 0.3.79](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.79...0.3.80)</small>
+
+### Docs
+
+- updated online documentation with aws auto scaling service ([76e3955](https://github.com/tsypuk/multicloud-diagrams/commit/76e39558e5cbf09ed198e5ee8d560dd64a9de8b9) by Roman Tsypuk).
+
+### Features
+
+- update service files accordingly ([8651a87](https://github.com/tsypuk/multicloud-diagrams/commit/8651a8795122da9fe7d417facc9eb3535ba36895) by Roman Tsypuk).
+- added autoscaling; fixed naming of other tests ([eca8a60](https://github.com/tsypuk/multicloud-diagrams/commit/eca8a6004817638dd5183dfff53e3046224c2f06) by Roman Tsypuk).
+
 ## [0.3.79](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.79) - 2024-07-09
 
 <small>[Compare with 0.3.78](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.78...0.3.79)</small>
