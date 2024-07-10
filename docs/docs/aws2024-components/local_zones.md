@@ -3,7 +3,7 @@ layout: default
 title: Local Zones
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-07-07
+date: 2024-07-10
 ---
 
 # Local Zones

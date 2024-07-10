@@ -3,7 +3,7 @@ layout: default
 title: Kinesis Video Stream
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-06-15
+date: 2024-07-10
 ---
 
 # Kinesis Video Stream

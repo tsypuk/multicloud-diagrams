@@ -3,7 +3,7 @@ layout: default
 title: Managed Casandra
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-07-03
+date: 2024-07-10
 ---
 
 # Managed Casandra

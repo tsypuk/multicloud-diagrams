@@ -3,7 +3,7 @@ layout: default
 title: Lightsail
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-07-08
+date: 2024-07-10
 ---
 
 # Lightsail

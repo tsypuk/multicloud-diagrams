@@ -91,6 +91,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![local_zones.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/local_zones.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/local_zones.html)
 [![lightsail.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/lightsail.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/lightsail.html)
 [![elastic_load_balancing.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/elastic_load_balancing.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/elastic_load_balancing.html)
+[![auto_scaling2.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/auto_scaling2.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/auto_scaling2.html)
 
 ### AWS2024 / Analytics
 [![glue.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/glue.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/glue.html)

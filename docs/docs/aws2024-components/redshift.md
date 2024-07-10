@@ -3,7 +3,7 @@ layout: default
 title: RedShift
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-07-06
+date: 2024-07-10
 ---
 
 # RedShift
