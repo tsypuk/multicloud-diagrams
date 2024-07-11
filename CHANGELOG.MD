@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.81](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.81) - 2024-07-11
+
+<small>[Compare with 0.3.80](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.80...0.3.81)</small>
+
+### Docs
+
+- updated online documentation with aws fargate service ([7db6aec](https://github.com/tsypuk/multicloud-diagrams/commit/7db6aec380f6038a102dd30a531ded048178a7b2) by Roman Tsypuk).
+
+### Features
+
+- added aws fargate node ([478a148](https://github.com/tsypuk/multicloud-diagrams/commit/478a14830e48652222340a0009f1068189fc19cb) by Roman Tsypuk).
+
 ## [0.3.80](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.80) - 2024-07-10
 
 <small>[Compare with 0.3.79](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.79...0.3.80)</small>
