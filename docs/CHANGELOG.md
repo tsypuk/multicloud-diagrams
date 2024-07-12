@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.82](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.82) - 2024-07-12
+
+<small>[Compare with 0.3.81](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.81...0.3.82)</small>
+
+### Docs
+
+- updated online documentation with aws textract service ([65a4b2f](https://github.com/tsypuk/multicloud-diagrams/commit/65a4b2fb43f9f77849d4cca0a5628ac536eafb77) by Roman Tsypuk).
+
+### Features
+
+- added aws textract node ([5e08fb4](https://github.com/tsypuk/multicloud-diagrams/commit/5e08fb4486aca248c2cc48a50ea8be82930fc3d4) by Roman Tsypuk).
+
 ## [0.3.81](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.81) - 2024-07-11
 
 <small>[Compare with 0.3.80](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.80...0.3.81)</small>
