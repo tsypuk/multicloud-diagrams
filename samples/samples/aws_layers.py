@@ -14,6 +14,9 @@ def main():
     mcd.add_layer("data")
     mcd.augment_from_yaml('l2-data.yml')
 
+    mcd.add_layer("streaming")
+    mcd.augment_from_yaml('l3-stream.yml')
+
     mcd.export_to_file(result_file)
 
 

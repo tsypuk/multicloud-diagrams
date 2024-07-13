@@ -1,5 +1,5 @@
 vertices:
-  - name: sqs
+  - name: sqs1
     type: sqs
     id: sqs1
 edges:
