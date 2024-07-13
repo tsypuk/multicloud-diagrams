@@ -154,6 +154,7 @@ def extract_resource_from_endpoint(md_file_name):
 
 class MultiCloudDiagrams:
     def __init__(self, debug_mode=False, shadow=True, layer_name='', history_dir='history'):
+        self.data_vertices = []
         self.actors_to_nodes = {}
         self.pages = {}
         self.history_dir = history_dir
@@ -584,6 +585,9 @@ class MultiCloudDiagrams:
     def augment_from_yaml(self, yaml_name: str, hide_id: bool = False):
         with open(yaml_name, 'r') as file:
             data = yaml.safe_load(file)
+
+            self.data_vertices.extend(data['vertices'])
+
             for vertex in data['vertices']:
                 self.add_vertex(
                     node_id=vertex['id'],
@@ -595,26 +599,26 @@ class MultiCloudDiagrams:
             for edge in data['edges']:
                 if edge['link_type'] == 'bi':
                     self.add_bidirectional_link(
-                        src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
-                        dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
                         action=[edge['label']],
                     )
                 elif edge['link_type'] == 'uni':
                     self.add_unidirectional_link(
-                        src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
-                        dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
                         action=[edge['label']]
                     )
                 elif edge['link_type'] == 'rev':
                     self.add_unidirectional_reverse_link(
-                        src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
-                        dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
                         action=[edge['label']]
                     )
                 else:
                     self.add_link(
-                        src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
-                        dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
+                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
                         action=[edge['label']]
                     )
 

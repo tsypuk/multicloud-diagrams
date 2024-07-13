@@ -1,0 +1,7 @@
+vertices:
+  - name: sqs
+    type: sqs
+    id: sqs1
+edges:
+  - { src: service3, dst: sqs1, label: sends, link_type: uni }
+  - { src: sqs1, dst: service1, label: sends, link_type: uni }
