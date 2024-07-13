@@ -153,10 +153,11 @@ def extract_resource_from_endpoint(md_file_name):
 
 
 class MultiCloudDiagrams:
-    def __init__(self, debug_mode=False, shadow=True, layer_name='', history_dir='history'):
+    def __init__(self, debug_mode=False, shadow=True, layer_name='', history_dir='history', hide_id=False):
         self.data_vertices = []
         self.actors_to_nodes = {}
         self.pages = {}
+        self.settings = {'hide_id': hide_id}
         self.history_dir = history_dir
         self.mx_file = Et.Element('mxfile',
                                   host="multicloud-diagrams",
@@ -358,7 +359,11 @@ class MultiCloudDiagrams:
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
 
     def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, style: dict = None,
-                   x: int = None, y: int = None, hide_id: bool = False, hide_name: bool = False) -> str:
+                   x: int = None, y: int = None, hide_id: bool = None, hide_name: bool = False) -> str:
+
+        if hide_id is None:
+            hide_id = self.settings['hide_id']
+
         if metadata is None:
             metadata = {}
         if style is None:
@@ -582,7 +587,7 @@ class MultiCloudDiagrams:
             self.add_link(src_node_id=link['sourceNodeID'], dst_node_id=link['destinationNodeID'])
         return
 
-    def augment_from_yaml(self, yaml_name: str, hide_id: bool = False):
+    def augment_from_yaml(self, yaml_name: str, hide_id: bool = None):
         with open(yaml_name, 'r') as file:
             data = yaml.safe_load(file)
 

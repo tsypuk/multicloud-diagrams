@@ -2,12 +2,11 @@ from multicloud_diagrams import MultiCloudDiagrams
 
 
 def main():
-    mcd = MultiCloudDiagrams()
+    mcd = MultiCloudDiagrams(hide_id=True)
 
     prefix = 'prod'
     result_file = f'../output/output.{prefix}_layers.drawio'
     mcd.read_coords_from_file(result_file)
-
     mcd.add_layer("services")
     mcd.augment_from_yaml('l1-services.yml')
 
