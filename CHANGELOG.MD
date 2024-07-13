@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.83](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.83) - 2024-07-13
+
+<small>[Compare with 0.3.82](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.82...0.3.83)</small>
+
+### Features
+
+- adding optional hide of ARN ([8c507bf](https://github.com/tsypuk/multicloud-diagrams/commit/8c507bf8ae9f6982cb5ef89aec6e3ee2354b5f20) by Roman Tsypuk).
+- loading with merge nodes ([bee5832](https://github.com/tsypuk/multicloud-diagrams/commit/bee58321c5c05db38abeef3d5fcb21d237933568) by Roman Tsypuk).
+- added one more layer ([a5f3c92](https://github.com/tsypuk/multicloud-diagrams/commit/a5f3c92b831979bef2a0f8b3f8d5955ab30a68f8) by Roman Tsypuk).
+- loading multiple ymls to dedicated layers ([b0eb8cf](https://github.com/tsypuk/multicloud-diagrams/commit/b0eb8cfa5d6a43951569456951a6a5c85e3777de) by Roman Tsypuk).
+
 ## [0.3.82](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.82) - 2024-07-12
 
 <small>[Compare with 0.3.81](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.81...0.3.82)</small>
