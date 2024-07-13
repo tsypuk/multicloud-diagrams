@@ -589,14 +589,15 @@ class MultiCloudDiagrams:
                     node_id=vertex['id'],
                     node_name=vertex['name'],
                     node_type=vertex['type'],
-                    hide_id=hide_id
+                    hide_id=hide_id,
+                    layer_id=self.get_current_layer_count()
                 )
             for edge in data['edges']:
                 if edge['link_type'] == 'bi':
                     self.add_bidirectional_link(
                         src_node_id=build_vertex_id(data['vertices'], edge, 'src'),
                         dst_node_id=build_vertex_id(data['vertices'], edge, 'dst'),
-                        action=[edge['label']]
+                        action=[edge['label']],
                     )
                 elif edge['link_type'] == 'uni':
                     self.add_unidirectional_link(

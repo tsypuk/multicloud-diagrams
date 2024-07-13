@@ -1,0 +1,14 @@
+vertices:
+  - name: Table1
+    type: dynamo
+    id: Table1
+  - name: Table2
+    type: dynamo
+    id: Table2
+  - name: Table3
+    type: dynamo
+    id: Table3
+edges:
+  - { src: service1, dst: Table1, label: uses, link_type: bi }
+  - { src: service2, dst: Table2, label: uses, link_type: bi }
+  - { src: service2, dst: Table3, label: uses, link_type: bi }

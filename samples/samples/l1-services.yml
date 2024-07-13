@@ -1,0 +1,9 @@
+vertices:
+  - name: service1
+    type: ecs_service
+    id: service1
+  - name: service2
+    type: ecs_service
+    id: service2
+edges:
+  - { src: service1, dst: service2, label: HasRole, link_type: bi }
