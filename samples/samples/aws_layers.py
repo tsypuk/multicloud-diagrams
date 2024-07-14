@@ -1,8 +1,8 @@
-from multicloud_diagrams import MultiCloudDiagrams
+from multicloud_diagrams import MultiCloudDiagrams, Settings
 
 
 def main():
-    mcd = MultiCloudDiagrams(hide_id=True)
+    mcd = MultiCloudDiagrams(Settings(hide_id=True))
 
     prefix = 'prod'
     result_file = f'../output/output.{prefix}_layers.drawio'

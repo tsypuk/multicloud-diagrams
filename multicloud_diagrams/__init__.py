@@ -4,6 +4,7 @@ import logging
 import os.path
 import pkgutil
 import re
+from dataclasses import dataclass
 from datetime import datetime
 
 import requests
@@ -155,12 +156,21 @@ def extract_resource_from_endpoint(md_file_name):
     return os.path.basename(md_file_name)
 
 
+@dataclass
+class Settings:
+    hide_id: bool
+
+
 class MultiCloudDiagrams:
-    def __init__(self, debug_mode=False, shadow=True, layer_name='', history_dir='history', hide_id=False):
+    def __init__(self, settings=None, debug_mode=False, shadow=True, layer_name='', history_dir='history'):
+        if settings is None:
+            settings = Settings(
+                hide_id=False,
+            )
         self.data_vertices = []
         self.actors_to_nodes = {}
         self.pages = {}
-        self.settings = {'hide_id': hide_id}
+        self.settings = settings
         self.history_dir = history_dir
         self.mx_file = Et.Element('mxfile',
                                   host="multicloud-diagrams",
@@ -365,7 +375,7 @@ class MultiCloudDiagrams:
                    x: int = None, y: int = None, hide_id: bool = None, hide_name: bool = False) -> str:
 
         if hide_id is None:
-            hide_id = self.settings['hide_id']
+            hide_id = self.settings.hide_id
 
         if metadata is None:
             metadata = {}
