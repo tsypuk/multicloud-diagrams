@@ -123,6 +123,9 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![quantum_ledger.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/quantum_ledger.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/quantum_ledger.html)
 [![redshift.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/redshift.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/redshift.html)
 
+### AWS2024 / Developer Tools
+[![codepipeline.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codepipeline.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codepipeline.html)
+
 ## ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
 [![mq_broker.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/mq_broker.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/mq_broker.html)
