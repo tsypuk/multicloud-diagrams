@@ -46,7 +46,10 @@ def build_vertex_id(vertex_details, edge, src_dst_marker: str):
         resource["type"] = edge[f"{src_dst_marker}_type"]
         resource["id"] = edge[f'{src_dst_marker}_id']
     elif src_dst_marker in edge:
-        resource = [vertex for vertex in vertex_details if vertex['name'] == edge[src_dst_marker]][0]
+        data = [vertex for vertex in vertex_details if vertex['name'] == edge[src_dst_marker]]
+        if len(data) == 0:
+            print(f"Error in edge: {edge}")
+        resource = data[0]
     return f'{resource["type"]}:{resource["id"]}'
 
 
