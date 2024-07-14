@@ -11,6 +11,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.85](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.85) - 2024-07-14
+
+<small>[Compare with 0.3.84](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.84...0.3.85)</small>
+
+### Features
+
+- introduce settings control ([01c4986](https://github.com/tsypuk/multicloud-diagrams/commit/01c498651ad6c10254af7bd24cd6aca9451af9ba) by Roman Tsypuk).
+- added check for not complete edge information ([efd0809](https://github.com/tsypuk/multicloud-diagrams/commit/efd0809555dab56ae4366aa7ca81e2752b95f9cf) by Roman Tsypuk).
+- added safe loading of edge/vertecies from yml files ([cd92818](https://github.com/tsypuk/multicloud-diagrams/commit/cd92818addac207568818f024fc9b30ef3831d8d) by Roman Tsypuk).
+
 ## [0.3.84](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.84) - 2024-07-14
 
 <small>[Compare with 0.3.83](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.83...0.3.84)</small>
