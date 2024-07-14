@@ -593,39 +593,41 @@ class MultiCloudDiagrams:
 
             self.data_vertices.extend(data['vertices'])
 
-            for vertex in data['vertices']:
-                self.add_vertex(
-                    node_id=vertex['id'],
-                    node_name=vertex['name'],
-                    node_type=vertex['type'],
-                    hide_id=hide_id,
-                    layer_id=self.get_current_layer_count()
-                )
-            for edge in data['edges']:
-                if edge['link_type'] == 'bi':
-                    self.add_bidirectional_link(
-                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
-                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
-                        action=[edge['label']],
+            if 'vertices' in data:
+                for vertex in data['vertices']:
+                    self.add_vertex(
+                        node_id=vertex['id'],
+                        node_name=vertex['name'],
+                        node_type=vertex['type'],
+                        hide_id=hide_id,
+                        layer_id=self.get_current_layer_count()
                     )
-                elif edge['link_type'] == 'uni':
-                    self.add_unidirectional_link(
-                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
-                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
-                        action=[edge['label']]
-                    )
-                elif edge['link_type'] == 'rev':
-                    self.add_unidirectional_reverse_link(
-                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
-                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
-                        action=[edge['label']]
-                    )
-                else:
-                    self.add_link(
-                        src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
-                        dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
-                        action=[edge['label']]
-                    )
+            if 'edges' in data:
+                for edge in data['edges']:
+                    if edge['link_type'] == 'bi':
+                        self.add_bidirectional_link(
+                            src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                            dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
+                            action=[edge['label']],
+                        )
+                    elif edge['link_type'] == 'uni':
+                        self.add_unidirectional_link(
+                            src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                            dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
+                            action=[edge['label']]
+                        )
+                    elif edge['link_type'] == 'rev':
+                        self.add_unidirectional_reverse_link(
+                            src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                            dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
+                            action=[edge['label']]
+                        )
+                    else:
+                        self.add_link(
+                            src_node_id=build_vertex_id(self.data_vertices, edge, 'src'),
+                            dst_node_id=build_vertex_id(self.data_vertices, edge, 'dst'),
+                            action=[edge['label']]
+                        )
 
     def read_nodes_from_file(self, file_name: str):
         print(file_name)
