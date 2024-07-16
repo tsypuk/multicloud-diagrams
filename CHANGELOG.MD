@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.87](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.87) - 2024-07-16
+
+<small>[Compare with 0.3.86](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.86...0.3.87)</small>
+
+### Docs
+
+- updated online documentation with aws code build service ([b3edb15](https://github.com/tsypuk/multicloud-diagrams/commit/b3edb1562c68ae808a3e90ebbdd798de95e31ca3) by Roman Tsypuk).
+
+### Features
+
+- added aws code build node ([b47bbcb](https://github.com/tsypuk/multicloud-diagrams/commit/b47bbcbe7bd30a71bd107b6d20066eae022161c2) by Roman Tsypuk).
+
 ## [0.3.86](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.86) - 2024-07-15
 
 <small>[Compare with 0.3.85](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.85...0.3.86)</small>
