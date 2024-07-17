@@ -1,0 +1,98 @@
+---
+layout: default
+title: CodeCommit
+parent: AWS2024 Components
+nav_order: 3
+date: 2024-07-17
+---
+
+# CodeCommit
+{: .d-inline-block .no_toc }
+
+New (v0.3.85)
+{: .label .label-green }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+
+## Node Type: ``codecommit``
+
+## Rendering:
+
+![lambda](output/jpg/codecommit.jpg)
+
+## Code Snippet:
+
+```python
+{% root_include_snippet ../tests/aws2024/test_codecommit.py %}
+```
+
+## drawio codecommit vertex:
+
+```xml
+<mxCell id="vertex:codecommit:arn:aws:codecommit:us-west-1:123456789012:service/codecommit/123" parent="1" vertex="1">
+    <mxGeometry width="78" height="78" as="geometry"/>
+</mxCell>
+```
+---
+
+## Advanced for Geeks:
+
+### Style:
+```html
+style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;"
+```
+
+| attribute | value |
+|:----------|:------|
+|align| left |
+|aspect| fixed |
+|dashed| 0 |
+|fillColor| #C925D1 |
+|fontColor| #232F3E |
+|fontSize| 12 |
+|fontStyle| 0 |
+|html| 1 |
+|outlineConnect| 0 |
+|resIcon| mxgraph.aws4.codecommit |
+|shape| mxgraph.aws4.resourceIcon |
+|sketch| 0 |
+|strokeColor| #ffffff |
+|verticalAlign| top |
+|verticalLabelPosition| bottom |
+
+### Vertex size:
+
+| attribute | value |
+|:---------|:-----------|
+| width    | 78  |
+| height   |78|
+
+### Full XML dump:
+```xml
+<mxfile host="multicloud-diagrams" agent="PIP package multicloud-diagrams. Generate resources in draw.io compatible format for Cloud infrastructure. Copyrights @ Roman Tsypuk 2023. MIT license." type="MultiCloud">
+    <diagram id="diagram_1" name="AWS components">
+        <mxGraphModel dx="1015" dy="661" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="vertex:codecommit:arn:aws:codecommit:us-west-1:123456789012:service/codecommit/123" value="&lt;b&gt;Name&lt;/b&gt;: Code Commit&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:codecommit:us-west-1:123456789012:service/codecommit/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;accountId&lt;/b&gt;: TestAcc&lt;BR&gt;&lt;b&gt;repositoryId&lt;/b&gt;: 45&lt;BR&gt;&lt;b&gt;repositoryName&lt;/b&gt;: SpringBootApp&lt;BR&gt;&lt;b&gt;repositoryDescription&lt;/b&gt;: Main Backend processing app&lt;BR&gt;&lt;b&gt;defaultBranch&lt;/b&gt;: main&lt;BR&gt;&lt;b&gt;creationDate&lt;/b&gt;: 2024-07-01&lt;BR&gt;&lt;b&gt;cloneUrlHttp&lt;/b&gt;: http://domain.com/testacc&lt;BR&gt;&lt;b&gt;cloneUrlSsh&lt;/b&gt;: ssh://domain.com/testacc&lt;BR&gt;&lt;b&gt;Arn&lt;/b&gt;: ARN&lt;BR&gt;&lt;b&gt;kmsKeyId&lt;/b&gt;: KMS-ARN" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecommit;" parent="1" vertex="1">
+                    <mxGeometry width="78" height="78" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
+```
+
+### drawio file:
+
+Download generated ``codecommit.drawio``:
+
+[Download](output/drawio/codecommit.drawio){: .btn .btn-purple }

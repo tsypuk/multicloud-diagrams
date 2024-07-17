@@ -117,6 +117,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![codepipeline.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codepipeline.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codepipeline.html)
 [![codeartifact.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codeartifact.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codeartifact.html)
 [![codebuild.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codebuild.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codebuild.html)
+[![codecommit.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codecommit.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codecommit.html)
 
 ## ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
