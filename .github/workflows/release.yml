@@ -1,0 +1,32 @@
+name: Create Release on Tag Push
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Read CHANGELOG until second ##
+        id: changelog
+        run: |
+          awk '/^## /{count++} {if (count==2) {exit} print}' CHANGELOG.MD > changelog_excerpt.txt
+          export CHANGELOG=$(cat changelog_excerpt.txt)
+          echo "::set-output name=changelog::${CHANGELOG}"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
