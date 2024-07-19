@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.90](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.90) - 2024-07-19
+
+<small>[Compare with 0.3.89](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.89...0.3.90)</small>
+
+### Docs
+
+- updated online documentation with aws codestar service ([0c062e2](https://github.com/tsypuk/multicloud-diagrams/commit/0c062e2663e574f58be9d66be2ac3b3c8b1a2bf8) by Roman Tsypuk).
+
+### Features
+
+- added aws codestar node ([48cbf9f](https://github.com/tsypuk/multicloud-diagrams/commit/48cbf9f5b883208e43384a040e01c936de20d998) by Roman Tsypuk).
+
 ## [0.3.89](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.89) - 2024-07-18
 
 <small>[Compare with 0.3.88](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.88...0.3.89)</small>
