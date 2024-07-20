@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.91](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.91) - 2024-07-20
+
+<small>[Compare with 0.3.90](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.90...0.3.91)</small>
+
+### Docs
+
+- updated online documentation with aws coretto service ([5d7f7c6](https://github.com/tsypuk/multicloud-diagrams/commit/5d7f7c6a2bf8f441451ced9c23ad300cf1e54b5f) by Roman Tsypuk).
+
+### Features
+
+- added aws coretto node ([e37f2b4](https://github.com/tsypuk/multicloud-diagrams/commit/e37f2b4b82f7f365ce1cc831d3c73f7977cd6554) by Roman Tsypuk).
+
 ## [0.3.90](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.90) - 2024-07-19
 
 <small>[Compare with 0.3.89](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.89...0.3.90)</small>
