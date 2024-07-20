@@ -4,6 +4,7 @@ venv/
 tmp/drawio/
 
 draft.drawio
+changelog_excerpt.txt
 
 dist/
 /__pycache__/

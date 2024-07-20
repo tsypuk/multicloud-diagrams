@@ -8,6 +8,10 @@ on:
 jobs:
   create-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,8 +20,6 @@ jobs:
         id: changelog
         run: |
           awk '/^## /{count++} {if (count==2) {exit} print}' CHANGELOG.MD > changelog_excerpt.txt
-          export CHANGELOG=$(cat changelog_excerpt.txt)
-          echo "::set-output name=changelog::${CHANGELOG}"
 
       - name: Create Release
         id: create_release
@@ -27,6 +29,6 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
-          body: ${{ steps.changelog.outputs.changelog }}
+          body_path: changelog_excerpt.txt
           draft: false
           prerelease: false
