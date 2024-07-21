@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.93](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.93) - 2024-07-21
+
+<small>[Compare with 0.3.92](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.92...0.3.93)</small>
+
+### Docs
+
+- updated online documentation with aws cloud9 service ([88c50d7](https://github.com/tsypuk/multicloud-diagrams/commit/88c50d78f2798aa5d401146afd19692583358e09) by Roman Tsypuk).
+
+### Features
+
+- added aws cloud9 node ([4889402](https://github.com/tsypuk/multicloud-diagrams/commit/488940287b71b5548410f1f8a785c822e9b0561f) by Roman Tsypuk).
+
 ## [0.3.92](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.92) - 2024-07-20
 
 <small>[Compare with 0.3.91](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.91...0.3.92)</small>
