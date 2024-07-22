@@ -64,7 +64,6 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![backup.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/backup.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/backup.html)
 [![datasync.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/datasync.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/datasync.html)
 [![exchange.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/exchange.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/exchange.html)
-[![xray.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/xray.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/xray.html)
 [![access_analyzer.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/access_analyzer.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/access_analyzer.html)
 [![resource_access_manager.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/resource_access_manager.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/resource_access_manager.html)
 [![security_hub.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/security_hub.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws-components/security_hub.html)
@@ -132,6 +131,8 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![codestar.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codestar.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codestar.html)
 [![coretto.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/coretto.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/coretto.html)
 [![cloud9.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/cloud9.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/cloud9.html)
+
+[![xray.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/xray.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/xray.html)
 
 ## ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
