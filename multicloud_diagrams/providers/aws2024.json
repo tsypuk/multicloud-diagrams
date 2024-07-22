@@ -365,5 +365,12 @@
     "version": "0.3.91",
     "desc": "Cloud9",
     "category": "Developer Tools"
+  },
+  "xray": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.xray;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.41",
+    "desc": "X-ray"
   }
 }
