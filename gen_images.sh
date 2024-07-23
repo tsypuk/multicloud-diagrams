@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the list of modified files in the tmp/drawio directory
-modified_files=$(git status --porcelain | grep '^ M docs/docs/aws2024-components/output/drawio/' | awk '{print $2}')
+modified_files=$(git status --porcelain | grep 'docs/docs/aws2024-components/output/drawio/' | awk '{print $2}')
 
 
 # Check if there are any modified files

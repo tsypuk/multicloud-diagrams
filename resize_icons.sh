@@ -6,7 +6,7 @@ exclude_files=("./docs/icons/jpg/redis.jpg" "./docs/icons/jpg/docker.jpg" "./doc
 # Create an array of all .jpg files
 all_files=(./docs/icons/jpg/*.jpg)
 # Get the list of modified files in the tmp/drawio directory
-modified_files=$(git status --porcelain | grep '^ M tmp/drawio/' | awk '{print $2}')
+modified_files=$(git status --porcelain | grep 'tmp/drawio/' | awk '{print $2}')
 
 
 # Check if there are any modified files
