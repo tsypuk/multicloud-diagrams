@@ -44,10 +44,10 @@ icons:
  	./resize_icons.sh
 
 images: icons
-	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio
+	# /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws-components/output/jpg docs/docs/aws-components/output/drawio
 	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/aws2024-components/output/jpg docs/docs/aws2024-components/output/drawio
-	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/core-components/output/jpg docs/docs/core-components/output/drawio
-	 /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/onprem-components/output/jpg docs/docs/onprem-components/output/drawio
+	# /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/core-components/output/jpg docs/docs/core-components/output/drawio
+	# /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/docs/onprem-components/output/jpg docs/docs/onprem-components/output/drawio
 
 
 landscape:
