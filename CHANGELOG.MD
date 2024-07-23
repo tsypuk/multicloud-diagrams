@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.95](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.95) - 2024-07-23
+
+<small>[Compare with 0.3.94](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.94...0.3.95)</small>
+
+### Docs
+
+- updated online documentation with aws application composer service ([50bf3e3](https://github.com/tsypuk/multicloud-diagrams/commit/50bf3e3af04cfb1f3574ec68a3e8caf778a136aa) by Roman Tsypuk).
+
+### Features
+
+- added aws application composer node ([20af7df](https://github.com/tsypuk/multicloud-diagrams/commit/20af7dff02104e4fbabbbbd5cfce09d7622ba547) by Roman Tsypuk).
+
 ## [0.3.94](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.94) - 2024-07-22
 
 <small>[Compare with 0.3.93](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.93...0.3.94)</small>
