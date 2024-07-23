@@ -39,8 +39,7 @@ doc: test images
 	cd docs && bundle exec jekyll serve --trace
 
 icons:
-	$(call colorecho, "Preparing aws service icons")
-	/Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/icons/jpg tmp/drawio && \
+	$(call colorecho, "Preparing aws service icons") \
  	./resize_icons.sh
 
 images: icons

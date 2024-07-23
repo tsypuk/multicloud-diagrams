@@ -5,17 +5,21 @@ exclude_files=("./docs/icons/jpg/redis.jpg" "./docs/icons/jpg/docker.jpg" "./doc
 
 # Create an array of all .jpg files
 all_files=(./docs/icons/jpg/*.jpg)
+# Get the list of modified files in the tmp/drawio directory
+modified_files=$(git status --porcelain | grep '^ M tmp/drawio/' | awk '{print $2}')
 
-# Create an array to hold the files to process
-include_files=()
 
-# Loop through all files and add to include_files if not in exclude_files
-for file in "${all_files[@]}"; do
+# Check if there are any modified files
+if [ -n "$modified_files" ]; then
+  for file in $modified_files; do
     echo $file
-    if [[ ! " ${exclude_files[@]} " =~ " ${file} " ]]; then
-        include_files+=("$file")
-    fi
-done
+    /Applications/draw.io.app/Contents/MacOS/draw.io -q 100 -x -f jpg -r -o docs/icons/jpg "$file"
+    jpg_file=$(echo "$file" | sed 's/\.drawio$/.jpg/')
+    filename=$(basename "$jpg_file")
 
-# Run mogrify on the include_files
-mogrify -resize 50% "${include_files[@]}"
+    # Run mogrify on the include_files
+    mogrify -resize 50% "docs/icons/jpg/$filename"
+  done
+else
+  echo "No modified files in tmp/drawio to process."
+fi

@@ -18,7 +18,7 @@ class TestAWSVertexInIsolation(TestUtilities):
         mcd.add_vertex(node_id=role_arn, node_name='role-lambda-name', node_type='iam_role')
         mcd.add_link(src_node_id=f'lambda_function:{func_arn}', dst_node_id=f'iam_role:{role_arn}')
 
-        mcd.export_to_file('/tmp/diagram.drawio')
+        mcd.export_to_file('./tmp/diagram.drawio')
 
         # then
         print('test')
@@ -29,7 +29,7 @@ class TestAWSVertexInIsolation(TestUtilities):
         mcd = MultiCloudDiagrams()
 
         # when
-        output_file = '/tmp/diagram.drawio'
+        output_file = './tmp/diagram.drawio'
         mcd.read_coords_from_file(output_file)
 
         func_arn = 'arn:aws:lambda:eu-west-1:123456789012:function:prod-lambda-name'
@@ -52,7 +52,7 @@ class TestAWSVertexInIsolation(TestUtilities):
         mcd.export_to_file(output_file)
 
         # Or write to a new Diagram version
-        mcd.export_to_file('/tmp/diagram_v2.drawio')
+        mcd.export_to_file('./tmp/diagram_v2.drawio')
 
         # then
         print('test')
