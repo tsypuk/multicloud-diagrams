@@ -1,7 +1,7 @@
 .idea
 venv/
 
-tmp/drawio/
+#tmp/drawio/
 
 draft.drawio
 changelog_excerpt.txt
