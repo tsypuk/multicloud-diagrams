@@ -9,7 +9,7 @@ date: 2024-07-24
 # CLI
 {: .d-inline-block .no_toc }
 
-New (v0.3.96)
+New (v0.3.97)
 {: .label .label-green }
 
 ## Table of contents
