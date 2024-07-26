@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.98](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.98) - 2024-07-26
+
+<small>[Compare with 0.3.97](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.97...0.3.98)</small>
+
+### Docs
+
+- updated online documentation with aws codecatalyst service ([ac31386](https://github.com/tsypuk/multicloud-diagrams/commit/ac31386d9b157c99d08683a5badd4847b6781a26) by Roman Tsypuk).
+
+### Features
+
+- added aws code catalyst node ([764f838](https://github.com/tsypuk/multicloud-diagrams/commit/764f8382db9591eae6f39dc36e1cb5fb2cdf0324) by Roman Tsypuk).
+
 ## [0.3.97](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.97) - 2024-07-25
 
 <small>[Compare with 0.3.96](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.96...0.3.97)</small>
