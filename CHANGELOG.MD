@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.99](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.99) - 2024-07-27
+
+<small>[Compare with 0.3.98](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.98...0.3.99)</small>
+
+### Docs
+
+- updated online documentation with aws cloudfront service ([c52fa85](https://github.com/tsypuk/multicloud-diagrams/commit/c52fa8557ba67c0f5a6c60c62d073e21ba46b333) by Roman Tsypuk).
+
+### Features
+
+- added aws acloudfront node ([5cc980e](https://github.com/tsypuk/multicloud-diagrams/commit/5cc980e918f6a70e8688d96bc2bc22330cd5da5a) by Roman Tsypuk).
+
 ## [0.3.98](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.98) - 2024-07-26
 
 <small>[Compare with 0.3.97](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.97...0.3.98)</small>
