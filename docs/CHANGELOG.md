@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.100](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.100) - 2024-07-28
+
+<small>[Compare with 0.3.99](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.99...0.3.100)</small>
+
+### Docs
+
+- updated online documentation for aws vpc privatelink service ([e702364](https://github.com/tsypuk/multicloud-diagrams/commit/e702364aa727bca0a4f9a1c20fb9d080a2c0e4cf) by Roman Tsypuk).
+
+### Features
+
+- added aws vpc privatelink node ([bdbb788](https://github.com/tsypuk/multicloud-diagrams/commit/bdbb7888ea300df1469dc743f104b9f7d5b83fcb) by Roman Tsypuk).
+
 ## [0.3.99](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.99) - 2024-07-27
 
 <small>[Compare with 0.3.98](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.98...0.3.99)</small>
