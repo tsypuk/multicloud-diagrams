@@ -1,12 +1,12 @@
 ---
 layout: default
-title: CloudFront
+title: VPC Private Link
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-07-26
+date: 2024-07-28
 ---
 
-# CloudFront
+# VPC Private Link
 {: .d-inline-block .no_toc }
 
 New (v0.3.99)
@@ -21,22 +21,22 @@ New (v0.3.99)
 ---
 
 
-## Node Type: ``cloudfront``
+## Node Type: ``vpc_privatelink``
 
 ## Rendering:
 
-![lambda](output/jpg/cloudfront.jpg)
+![lambda](output/jpg/vpc_privatelink.jpg)
 
 ## Code Snippet:
 
 ```python
-{% root_include_snippet ../tests/aws2024/test_cloudfront.py %}
+{% root_include_snippet ../tests/aws2024/test_vpc_privatelink.py %}
 ```
 
-## drawio cloudfront vertex:
+## drawio vpc_privatelink vertex:
 
 ```xml
-<mxCell id="vertex:cloudfront:arn:aws:cloudfront:us-west-1:123456789012:service/cloudfront/123" parent="1" vertex="1">
+<mxCell id="vertex:vpc_privatelink:arn:aws:vpc_privatelink:us-west-1:123456789012:service/vpc_privatelink/123" parent="1" vertex="1">
     <mxGeometry width="78" height="78" as="geometry"/>
 </mxCell>
 ```
@@ -46,7 +46,7 @@ New (v0.3.99)
 
 ### Style:
 ```html
-style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;"
+style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc_privatelink;"
 ```
 
 | attribute | value |
@@ -60,7 +60,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor
 |fontStyle| 0 |
 |html| 1 |
 |outlineConnect| 0 |
-|resIcon| mxgraph.aws4.cloudfront |
+|resIcon| mxgraph.aws4.vpc_privatelink |
 |shape| mxgraph.aws4.resourceIcon |
 |sketch| 0 |
 |strokeColor| #ffffff |
@@ -82,7 +82,7 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="vertex:cloudfront:arn:aws:cloudfront:us-west-1:123456789012:service/cloudfront/123" value="&lt;b&gt;Name&lt;/b&gt;: Code Catalyst&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:cloudfront:us-west-1:123456789012:service/cloudfront/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;Name&lt;/b&gt;: Token validation&lt;BR&gt;&lt;b&gt;Status&lt;/b&gt;: active&lt;BR&gt;&lt;b&gt;Runtime&lt;/b&gt;: cloudfront-js-1.0&lt;BR&gt;&lt;b&gt;FunctionMetadata&lt;/b&gt;: env data&lt;BR&gt;&lt;b&gt;FunctionARN&lt;/b&gt;: ARN" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" parent="1" vertex="1">
+                <mxCell id="vertex:vpc_privatelink:arn:aws:vpc_privatelink:us-west-1:123456789012:service/vpc_privatelink/123" value="&lt;b&gt;Name&lt;/b&gt;: Private Link Connection&lt;BR&gt;&lt;b&gt;ARN&lt;/b&gt;: arn:aws:vpc_privatelink:us-west-1:123456789012:service/vpc_privatelink/123&lt;BR&gt;-----------&lt;BR&gt;&lt;b&gt;service_name&lt;/b&gt;: s3&lt;BR&gt;&lt;b&gt;endpoint_url&lt;/b&gt;: https://bucket.vpce-abc123-abcdefgh.s3.us-east-1.vpce.amazonaws.com" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc_privatelink;" parent="1" vertex="1">
                     <mxGeometry width="78" height="78" as="geometry"/>
                 </mxCell>
             </root>
@@ -93,6 +93,6 @@ style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor
 
 ### drawio file:
 
-Download generated ``cloudfront.drawio``:
+Download generated ``vpc_privatelink.drawio``:
 
-[Download](output/drawio/cloudfront.drawio){: .btn .btn-purple }
+[Download](output/drawio/vpc_privatelink.drawio){: .btn .btn-purple }

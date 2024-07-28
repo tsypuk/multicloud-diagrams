@@ -82,6 +82,8 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 ### AWS2024 / Network & Content Delivery
 [![route_53.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/route_53.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/route_53.html)
 [![direct_connect.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/direct_connect.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/direct_connect.html)
+[![cloudfront.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/cloudfront.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/cloudfront.html)
+[![vpc_privatelink.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/vpc_privatelink.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/vpc_privatelink.html)
 
 ### AWS2024 / Compute
 [![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/outpost.html)
@@ -131,13 +133,11 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![codestar.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codestar.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codestar.html)
 [![coretto.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/coretto.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/coretto.html)
 [![cloud9.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/cloud9.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/cloud9.html)
-
 [![xray.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/xray.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/xray.html)
 [![application_composer.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/application_composer.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/application_composer.html)
 [![tools_and_sdks.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/tools_and_sdks.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/tools_and_sdks.html)
 [![command_line_interface.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/command_line_interface.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/command_line_interface.html)
 [![codecatalyst.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/codecatalyst.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/codecatalyst.html)
-[![cloudfront.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/cloudfront.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/cloudfront.html)
 
 ## ONPREM nodes:
 [![http.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/http.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/http.html)
