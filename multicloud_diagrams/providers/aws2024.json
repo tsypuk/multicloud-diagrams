@@ -371,41 +371,55 @@
     "width": "78",
     "height": "78",
     "version": "0.3.41",
-    "desc": "X-ray"
+    "desc": "X-ray",
+    "category": "Developer Tools"
   },
   "application_composer": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.application_composer;",
     "width": "78",
     "height": "78",
     "version": "0.3.92",
-    "desc": "Application Composer"
+    "desc": "Application Composer",
+    "category": "Developer Tools"
   },
   "tools_and_sdks": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.tools_and_sdks;",
     "width": "78",
     "height": "78",
     "version": "0.3.95",
-    "desc": "Tools&SDKs"
+    "desc": "Tools&SDKs",
+    "category": "Developer Tools"
   },
   "command_line_interface": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.command_line_interface;",
     "width": "78",
     "height": "78",
     "version": "0.3.97",
-    "desc": "CLI"
+    "desc": "CLI",
+    "category": "Developer Tools"
   },
   "codecatalyst": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.codecatalyst;",
     "width": "78",
     "height": "78",
     "version": "0.3.98",
-    "desc": "Code Catalyst"
+    "desc": "Code Catalyst",
+    "category": "Developer Tools"
   },
   "cloudfront": {
     "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;",
     "width": "78",
     "height": "78",
     "version": "0.3.99",
-    "desc": "Network & Content Delivery"
+    "category": "Network & Content Delivery",
+    "desc": "CloudFront"
+  },
+  "vpc_privatelink": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc_privatelink;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.99",
+    "category": "Network & Content Delivery",
+    "desc": "VPC Private Link"
   }
 }
