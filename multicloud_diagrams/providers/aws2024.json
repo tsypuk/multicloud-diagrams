@@ -421,5 +421,13 @@
     "version": "0.3.99",
     "category": "Network & Content Delivery",
     "desc": "VPC Private Link"
+  },
+  "vpc": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.100",
+    "category": "Network & Content Delivery",
+    "desc": "VPC"
   }
 }
