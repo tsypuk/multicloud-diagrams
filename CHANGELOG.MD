@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.101](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.101) - 2024-07-29
+
+<small>[Compare with 0.3.100](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.100...0.3.101)</small>
+
+### Docs
+
+- updated online documentation with aws vpc service ([21a65a9](https://github.com/tsypuk/multicloud-diagrams/commit/21a65a9cd995701e93fd26460f8a2856bdcf54e1) by Roman Tsypuk).
+
+### Features
+
+- added aws vpc node ([bd9defd](https://github.com/tsypuk/multicloud-diagrams/commit/bd9defd5eddf686dd0ff4c62c55829919b558660) by Roman Tsypuk).
+
 ## [0.3.100](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.100) - 2024-07-28
 
 <small>[Compare with 0.3.99](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.99...0.3.100)</small>
