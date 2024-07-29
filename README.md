@@ -74,6 +74,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![direct_connect.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/direct_connect.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/direct_connect.html)
 [![cloudfront.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/cloudfront.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/cloudfront.html)
 [![vpc_privatelink.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/vpc_privatelink.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/vpc_privatelink.html)
+[![vpc.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/vpc.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/vpc.html)
 
 ### AWS2024 / Compute
 [![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/outpost.html)
