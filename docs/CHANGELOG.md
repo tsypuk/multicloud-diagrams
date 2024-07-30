@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.102](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.102) - 2024-07-30
+
+<small>[Compare with 0.3.101](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.101...0.3.102)</small>
+
+### Docs
+
+- updated online documentation with aws vpc lattice service ([5d0a6fb](https://github.com/tsypuk/multicloud-diagrams/commit/5d0a6fbf3b88bfbccdaad7b4986b4e0c1ed76adb) by Roman Tsypuk).
+
+### Features
+
+- added aws vpc lattice node ([06afce7](https://github.com/tsypuk/multicloud-diagrams/commit/06afce79fbc3b4a69b8dd1ae0f54174fe98d1ff5) by Roman Tsypuk).
+
 ## [0.3.101](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.101) - 2024-07-29
 
 <small>[Compare with 0.3.100](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.100...0.3.101)</small>
