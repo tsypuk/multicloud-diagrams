@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.103](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.103) - 2024-07-31
+
+<small>[Compare with 0.3.102](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.102...0.3.103)</small>
+
+### Docs
+
+- updated online documentation with app mesh service ([39a991b](https://github.com/tsypuk/multicloud-diagrams/commit/39a991b0117f7ed7b145e20995863a454ba35c09) by Roman Tsypuk).
+
+### Features
+
+- added aws app mesh node ([a58a7dc](https://github.com/tsypuk/multicloud-diagrams/commit/a58a7dcfa150efbf0bbdab6a370d5d66ba31f0f6) by Roman Tsypuk).
+
 ## [0.3.102](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.102) - 2024-07-30
 
 <small>[Compare with 0.3.101](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.101...0.3.102)</small>
