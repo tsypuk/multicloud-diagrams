@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.104](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.104) - 2024-08-01
+
+<small>[Compare with 0.3.103](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.103...0.3.104)</small>
+
+### Docs
+
+- updated online documentation with site 2 site vpn service ([a086184](https://github.com/tsypuk/multicloud-diagrams/commit/a086184e604c9f8f0e9f98de0b237655922f61cf) by Roman Tsypuk).
+
+### Features
+
+- added aws site2site vpn node ([ffeb2cb](https://github.com/tsypuk/multicloud-diagrams/commit/ffeb2cb0609eed644313b4726d81dbb2790f8365) by Roman Tsypuk).
+
 ## [0.3.103](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.103) - 2024-07-31
 
 <small>[Compare with 0.3.102](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.102...0.3.103)</small>
