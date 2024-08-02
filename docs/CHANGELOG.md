@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.105](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.105) - 2024-08-02
+
+<small>[Compare with 0.3.104](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.104...0.3.105)</small>
+
+### Docs
+
+- updated online documentation with aws cloud map service ([490f568](https://github.com/tsypuk/multicloud-diagrams/commit/490f5685416d39c397f4925cab26c4143478fe88) by Roman Tsypuk).
+
+### Features
+
+- added cloud map node ([92c32bb](https://github.com/tsypuk/multicloud-diagrams/commit/92c32bb8a92ec14e8e54d90a74331245059586ca) by Roman Tsypuk).
+
 ## [0.3.104](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.104) - 2024-08-01
 
 <small>[Compare with 0.3.103](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.103...0.3.104)</small>
