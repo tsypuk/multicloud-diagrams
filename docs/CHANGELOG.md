@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.106](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.106) - 2024-08-03
+
+<small>[Compare with 0.3.105](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.105...0.3.106)</small>
+
+### Docs
+
+- updated online documentation with aws private 5g service ([9443212](https://github.com/tsypuk/multicloud-diagrams/commit/94432122901b8bba7c39926fb0368acca14f6573) by Roman Tsypuk).
+
+### Features
+
+- added aws private 5g node ([5b0deaf](https://github.com/tsypuk/multicloud-diagrams/commit/5b0deaf00b3540ed7ed625c0ae574cbeefdd2153) by Roman Tsypuk).
+
 ## [0.3.105](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.105) - 2024-08-02
 
 <small>[Compare with 0.3.104](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.104...0.3.105)</small>
