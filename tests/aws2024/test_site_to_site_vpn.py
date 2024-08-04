@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_vpc(self):
+    def test_site_to_site_vpn(self):
         # docs
         self.node_type = 'site_to_site_vpn'
 

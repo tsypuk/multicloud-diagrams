@@ -4,9 +4,9 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_private_5g(self):
+    def test_cloud_wan(self):
         # docs
-        self.node_type = 'private_5g'
+        self.node_type = 'cloud_wan'
 
         # given
         mcd = MultiCloudDiagrams()

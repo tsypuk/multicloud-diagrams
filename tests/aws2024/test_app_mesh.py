@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_vpc(self):
+    def test_app_mesh(self):
         # docs
         self.node_type = 'app_mesh'
 

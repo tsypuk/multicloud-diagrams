@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_vpc(self):
+    def test_vpc_lattice(self):
         # docs
         self.node_type = 'vpc_lattice'
 

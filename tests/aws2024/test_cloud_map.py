@@ -4,7 +4,7 @@ from utils.templating import TestRendering
 
 class TestAWSVertexInIsolation(TestRendering):
 
-    def test_vpc(self):
+    def test_cloud_map(self):
         # docs
         self.node_type = 'cloud_map'
 
