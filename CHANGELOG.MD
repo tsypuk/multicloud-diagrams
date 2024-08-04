@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.107](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.107) - 2024-08-04
+
+<small>[Compare with 0.3.106](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.106...0.3.107)</small>
+
+### Docs
+
+- updated online documentation with aws cloud wan service ([6fa13f8](https://github.com/tsypuk/multicloud-diagrams/commit/6fa13f8dc359993b103f0bdda636efad94d42358) by Roman Tsypuk).
+
+### Features
+
+- added aws cloud wan node ([1187c3e](https://github.com/tsypuk/multicloud-diagrams/commit/1187c3e9b21ff64e1d79f495f35e2fb8f33ba422) by Roman Tsypuk).
+
 ## [0.3.106](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.106) - 2024-08-03
 
 <small>[Compare with 0.3.105](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.105...0.3.106)</small>
