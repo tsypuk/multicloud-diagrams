@@ -3,7 +3,7 @@ layout: default
 title: Cloud map
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-08-02
+date: 2024-08-04
 ---
 
 # Cloud map

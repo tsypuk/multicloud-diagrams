@@ -3,7 +3,7 @@ layout: default
 title: Site to site vpn
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-08-01
+date: 2024-08-04
 ---
 
 # Site to site vpn

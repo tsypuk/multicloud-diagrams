@@ -3,7 +3,7 @@ layout: default
 title: Private 5G
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-08-02
+date: 2024-08-04
 ---
 
 # Private 5G

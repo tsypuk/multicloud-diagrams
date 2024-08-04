@@ -3,7 +3,7 @@ layout: default
 title: VPC Lattice
 parent: AWS2024 Components
 nav_order: 3
-date: 2024-07-30
+date: 2024-08-04
 ---
 
 # VPC Lattice
