@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.108](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.108) - 2024-08-05
+
+<small>[Compare with 0.3.107](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.107...0.3.108)</small>
+
+### Docs
+
+- updated online documentation with aws global accelerator service ([a7549ed](https://github.com/tsypuk/multicloud-diagrams/commit/a7549ed04cfc326cae12f2f8333a36865a4b8315) by Roman Tsypuk).
+
+### Features
+
+- added aws global accelerator node ([590f053](https://github.com/tsypuk/multicloud-diagrams/commit/590f05347909ea295d3e4f93cda3fec5e92420ab) by Roman Tsypuk).
+
 ## [0.3.107](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.107) - 2024-08-04
 
 <small>[Compare with 0.3.106](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.106...0.3.107)</small>
