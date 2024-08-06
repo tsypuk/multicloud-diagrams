@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.109](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.109) - 2024-08-06
+
+<small>[Compare with 0.3.108](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.108...0.3.109)</small>
+
+### Docs
+
+- update online documentation with aws transit gateway service ([ec1d1d0](https://github.com/tsypuk/multicloud-diagrams/commit/ec1d1d0b7d9bef6e25e09d69a06fea76e01ae3de) by Roman Tsypuk).
+
+### Features
+
+- added aws transit gateway node ([d72e064](https://github.com/tsypuk/multicloud-diagrams/commit/d72e0642edb027ae7bd673009ef5989e828d5acd) by Roman Tsypuk).
+
 ## [0.3.108](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.108) - 2024-08-05
 
 <small>[Compare with 0.3.107](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.107...0.3.108)</small>
