@@ -83,6 +83,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![cloud_wan.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/cloud_wan.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/cloud_wan.html)
 [![global_accelerator.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/global_accelerator.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/global_accelerator.html)
 [![transit_gateway.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/transit_gateway.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/transit_gateway.html)
+[![network_load_balancer.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/network_load_balancer.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/network_load_balancer.html)
 
 ### AWS2024 / Compute
 [![outpost.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/outpost.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/outpost.html)
