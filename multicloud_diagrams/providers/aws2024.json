@@ -493,5 +493,14 @@
     "version": "0.3.105",
     "category": "Network & Content Delivery",
     "desc": "Transit Gateway"
+  },
+  "network_load_balancer": {
+    "style": "sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=left;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.network_load_balancer;",
+    "width": "78",
+    "height": "78",
+    "version": "0.3.105",
+    "category": "Network & Content Delivery",
+    "desc": "Network Load Balancer"
   }
+
 }
