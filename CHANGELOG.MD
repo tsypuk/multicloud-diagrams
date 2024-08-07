@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.110](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.110) - 2024-08-07
+
+<small>[Compare with 0.3.109](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.109...0.3.110)</small>
+
+### Docs
+
+- updated online documentation with aws network load balancer service ([4598fe3](https://github.com/tsypuk/multicloud-diagrams/commit/4598fe3f46ef05df32dc97891789adb0a89bd1c0) by Roman Tsypuk).
+
+### Features
+
+- added aws network load balancer service ([1042eae](https://github.com/tsypuk/multicloud-diagrams/commit/1042eaef4b73729cdcd78338a61c0f37e2dae893) by Roman Tsypuk).
+
 ## [0.3.109](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.109) - 2024-08-06
 
 <small>[Compare with 0.3.108](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.108...0.3.109)</small>
