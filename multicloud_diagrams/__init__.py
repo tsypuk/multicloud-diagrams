@@ -301,13 +301,14 @@ class MultiCloudDiagrams:
         parent_id = str(self.get_layer_id(layer_name, layer_id))
         if not table_id:
             table_id = table_name
-        self.prepare_table(table_id=table_id, table_name=table_name, style=style, rows_count=len(rows),
-                           width=width, parent_id=parent_id, x=x, y=y)
+        table_cell = self.prepare_table(table_id=table_id, table_name=table_name, style=style, rows_count=len(rows),
+                                        width=width, parent_id=parent_id, x=x, y=y)
 
         y = 0
         for index, item in enumerate(rows):
             y = y + 30
             self.prepare_row(index, item, table_id, width, y=y)
+        return table_cell
 
     def add_map(self, table_id='', table_name='', style: dict = None, key_value_pairs: dict = None, width=300, layer_name: str = None, layer_id: str = None,
                 x: int = None, y: int = None):
@@ -322,8 +323,8 @@ class MultiCloudDiagrams:
                  x: int = None, y: int = None):
         if rows is None:
             rows = []
-        self.create_table(rows=rows, table_id=table_id, table_name=table_name, style=style, width=width, layer_name=layer_name, layer_id=layer_id,
-                          x=x, y=y)
+        return self.create_table(rows=rows, table_id=table_id, table_name=table_name, style=style, width=width, layer_name=layer_name, layer_id=layer_id,
+                                 x=x, y=y)
 
     def prepare_row(self, index, snapshot, table_id='', width=300, y=30):
         mx_cell = Et.SubElement(self.active_root,
@@ -370,6 +371,12 @@ class MultiCloudDiagrams:
 
         # Position Vertex based on X,Y cords
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
+        return mx_cell
+
+    def set_vertex_coords(self, node_cell, x, y):
+        mx_geometry: Et.Element = node_cell.find('mxGeometry')
+        mx_geometry.set('x', str(x))
+        mx_geometry.set('y', str(y))
 
     def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, style: dict = None,
                    x: int = None, y: int = None, hide_id: bool = None, hide_name: bool = False) -> str:
