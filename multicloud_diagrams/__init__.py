@@ -373,10 +373,12 @@ class MultiCloudDiagrams:
         self.update_vertex_coords_width_height_from_prev_version(mx_geometry, f'vertex:{table_id}:list')
         return mx_cell
 
-    def set_vertex_coords(self, node_cell, x, y):
+    def set_vertex_coords(self, node_cell, x=None, y=None):
         mx_geometry: Et.Element = node_cell.find('mxGeometry')
-        mx_geometry.set('x', str(x))
-        mx_geometry.set('y', str(y))
+        if x is not None:
+            mx_geometry.set('x', str(x))
+        if y is not None:
+            mx_geometry.set('y', str(y))
 
     def add_vertex(self, node_id: str, node_name: str, metadata: dict = None, node_type: str = '', layer_name: str = None, layer_id: str = None, style: dict = None,
                    x: int = None, y: int = None, hide_id: bool = None, hide_name: bool = False) -> str:
