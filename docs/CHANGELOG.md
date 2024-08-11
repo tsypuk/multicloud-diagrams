@@ -11,6 +11,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.111](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.111) - 2024-08-11
+
+<small>[Compare with 0.3.110](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.110...0.3.111)</small>
+
+### Docs
+
+- updated online documentation with aws elastic network adapter ([790cdfb](https://github.com/tsypuk/multicloud-diagrams/commit/790cdfb46dd9482abf3b70944cd40767624438af) by Roman Tsypuk).
+
+### Features
+
+- added aws elastic network adapter ([717e909](https://github.com/tsypuk/multicloud-diagrams/commit/717e90990a3d49307aad947470eb3f70c3c7beb5) by Roman Tsypuk).
+- coords update if were passed in params ([575f4ca](https://github.com/tsypuk/multicloud-diagrams/commit/575f4ca3e2aee0a0d4f2b09c1a6d1a1a9bedc677) by Roman Tsypuk).
+- added coords update for any node ([8756811](https://github.com/tsypuk/multicloud-diagrams/commit/8756811056a534457c0277216e74078c8db7e84f) by Roman Tsypuk).
+
 ## [0.3.110](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.110) - 2024-08-07
 
 <small>[Compare with 0.3.109](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.109...0.3.110)</small>
