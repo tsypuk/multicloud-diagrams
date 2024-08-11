@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.112](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.112) - 2024-08-11
+
+<small>[Compare with 0.3.111](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.111...0.3.112)</small>
+
 ## [0.3.111](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.111) - 2024-08-11
 
 <small>[Compare with 0.3.110](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.110...0.3.111)</small>
