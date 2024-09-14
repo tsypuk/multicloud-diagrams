@@ -10,6 +10,25 @@
 > As **Professional** **Architects**, **Developers** and **DevOps**  with experience in operating on **Public Cloud Providers**, we all recognize the **crucial importance** of **well-documented**
 **Infrastructure** and **Architecture** in a representable form for driving successful projects.
 
+---
+
+- **Check docs:** [https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html](https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html)
+- **Source Code:** [https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
+- **PyPI:** [https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
+- **Bug reports:** [https://github.com/tsypuk/multicloud-diagrams/issues](https://github.com/tsypuk/multicloud-diagrams/issues)
+
+---
+
+## Support OS Project:
+
+> Support from sponsors is invaluable for the continued maintenance and development of open-source projects.
+You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by following these links:
+
+- <a href="https://patreon.com/tsypuk"><img width="32" height="32" class="octicon rounded-2 d-block" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg"></a>
+- <a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 32px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+---
+
 ``multicloud-diagrams`` is a framework that combines multiple approaches: ``Diagrams as a Code`` (Dac), resources ingestion from external ``yaml`` sources, interaction through programmatic ``API`` integration.
 
 It allows to store the Infrastructure snippet in ``drawio`` format, which is editable vector-based representation.
@@ -146,26 +165,6 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![docker.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/docker.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/docker.html)
 [![github_code.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/github_code.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/github_code.html)
 [![git_repository.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/git_repository.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/git_repository.html)
-
-
----
-
-- **Check docs:** [https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html](https://tsypuk.github.io/multicloud-diagrams/docs/configuration.html)
-- **Source Code:** [https://github.com/tsypuk/multicloud-diagrams](https://github.com/tsypuk/multicloud-diagrams)
-- **PyPI:** [https://pypi.org/project/multicloud-diagrams/](https://pypi.org/project/multicloud-diagrams/)
-- **Bug reports:** [https://github.com/tsypuk/multicloud-diagrams/issues](https://github.com/tsypuk/multicloud-diagrams/issues)
-
----
-
-## Support OS Project:
-
-> Support from sponsors is invaluable for the continued maintenance and development of open-source projects.
-You can use any of most popular platforms: ``Patreon`` or ``Buy me a Cofee``, by following these links:
-
-- <a href="https://patreon.com/tsypuk"><img width="32" height="32" class="octicon rounded-2 d-block" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg"></a>
-- <a href="https://www.buymeacoffee.com/tsypuk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 32px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
----
 
 ## Examples of diagrams generated using ``multicloud-diagrams``:
 
