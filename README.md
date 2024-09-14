@@ -6,7 +6,7 @@
 ![python version](https://img.shields.io/badge/python-%3E%3D%203.7-blue?logo=python)
 ![tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
 ![pages](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/pages.yml/badge.svg)
-![release](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/release.yaml/badge.svg)
+![release](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/release.yml/badge.svg)
 
 > As **Professional** **Architects**, **Developers** and **DevOps**  with experience in operating on **Public Cloud Providers**, we all recognize the **crucial importance** of **well-documented**
 **Infrastructure** and **Architecture** in a representable form for driving successful projects.
