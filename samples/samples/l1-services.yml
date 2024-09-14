@@ -8,5 +8,8 @@ vertices:
   - name: service3
     type: ecs_service
     id: service3
+  - name: service4
+    type: ecs_service
+    id: service4
 edges:
   - { src: service1, dst: service2, label: http, link_type: uni }

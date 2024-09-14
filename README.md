@@ -7,6 +7,7 @@
 ![tests](https://github.com/tsypuk/multicloud-diagrams/workflows/Run%20tests/badge.svg?branch=main)
 ![pages](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/pages.yml/badge.svg)
 ![release](https://github.com/tsypuk/multicloud-diagrams/actions/workflows/release.yaml/badge.svg)
+
 > As **Professional** **Architects**, **Developers** and **DevOps**  with experience in operating on **Public Cloud Providers**, we all recognize the **crucial importance** of **well-documented**
 **Infrastructure** and **Architecture** in a representable form for driving successful projects.
 
@@ -166,11 +167,6 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![github_code.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/github_code.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/github_code.html)
 [![git_repository.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/git_repository.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/onprem-components/git_repository.html)
 
-## Examples of diagrams generated using ``multicloud-diagrams``:
-
-### End-to-End with AWS resources:
-
-![draw-e2e.gif](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/docs/images/drawio-end2end.gif?raw=True)
 
 ---
 

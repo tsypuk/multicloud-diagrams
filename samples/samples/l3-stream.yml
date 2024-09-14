@@ -2,6 +2,11 @@ vertices:
   - name: sqs1
     type: sqs
     id: sqs1
+  - name: sqs2
+    type: sqs
+    id: sqs2
 edges:
   - { src: service3, dst: sqs1, label: sends, link_type: uni }
+  - { src: service1, dst: sqs2, label: sends, link_type: uni }
+  - { src: sqs2, dst: service4, label: sends, link_type: uni }
   - { src: sqs1, dst: service1, label: sends, link_type: uni }

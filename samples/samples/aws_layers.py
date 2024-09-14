@@ -16,6 +16,7 @@ def main():
     mcd.add_layer("streaming")
     mcd.augment_from_yaml('l3-stream.yml')
 
+    mcd.update_history_repo(result_file)
     mcd.export_to_file(result_file)
 
 
