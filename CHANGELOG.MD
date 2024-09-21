@@ -6,9 +6,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.116](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.116) - 2024-09-21
+
+<small>[Compare with 0.3.115](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.115...0.3.116)</small>
+
+### Docs
+
+- updated online documentation with aws quicksight ([bf0b827](https://github.com/tsypuk/multicloud-diagrams/commit/bf0b8279ffe6ce52388c09b82703cb6fd24009ed) by Roman Tsypuk).
+
+### Features
+
+- added amazon quicksights node ([a396f64](https://github.com/tsypuk/multicloud-diagrams/commit/a396f644f30b00cce1624d9525c899752d3d3e24) by Roman Tsypuk).
+
 ## [0.3.115](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.115) - 2024-09-14
 
-<small>[Compare with 0.3.113](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.113...0.3.115)</small>
+<small>[Compare with 0.3.114](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.114...0.3.115)</small>
+
+## [0.3.114](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.114) - 2024-09-14
+
+<small>[Compare with 0.3.113](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.113...0.3.114)</small>
 
 ### Docs
 
