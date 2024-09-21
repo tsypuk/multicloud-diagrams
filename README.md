@@ -123,6 +123,7 @@ Since source file is not a Raster form, it is easy to edit, customize, position 
 [![apache_flink.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/apache_flink.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/apache_flink.html)
 [![data_brew.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/data_brew.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/data_brew.html)
 [![data_pipeline.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/data_pipeline.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/data_pipeline.html)
+[![quicksight.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/quicksight.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/quicksight.html)
 
 ### AWS2024 / Machine Learning
 [![sagemaker_ground_truth.jpg](https://github.com/tsypuk/multicloud-diagrams/raw/main/docs/icons/jpg/sagemaker_ground_truth.jpg?raw=True)]( https://tsypuk.github.io/multicloud-diagrams/docs/aws2024-components/sagemaker_ground_truth.html)
