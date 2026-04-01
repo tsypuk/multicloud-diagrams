@@ -11,6 +11,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [0.3.117](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.117) - 2026-04-01
+
+<small>[Compare with 0.3.116](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.116...0.3.117)</small>
+
+### Features
+
+- added ruby node ([53efb6d](https://github.com/tsypuk/multicloud-diagrams/commit/53efb6ddf5874a49426075d97b8769d61f888c16) by Roman Tsypuk).
+
 ## [0.3.116](https://github.com/tsypuk/multicloud-diagrams/releases/tag/0.3.116) - 2024-09-21
 
 <small>[Compare with 0.3.115](https://github.com/tsypuk/multicloud-diagrams/compare/0.3.115...0.3.116)</small>
