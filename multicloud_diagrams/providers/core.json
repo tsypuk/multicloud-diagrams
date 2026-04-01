@@ -58,5 +58,12 @@
     "height": "76",
     "version": "0.3.20",
     "desc": "WEB Client"
+  },
+  "ruby_client": {
+    "style": "outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.android;fillColor=#AE1F23;gradientColor=none;",
+    "width": "73.5",
+    "height": "84",
+    "version": "0.3.117",
+    "desc": "Ruby"
   }
 }
